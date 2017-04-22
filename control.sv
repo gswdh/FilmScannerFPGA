@@ -23,7 +23,8 @@ module control(
 	// Resolution setting (divider of max, multiplier for motor speed) reso_div = divider - 1
 	output reg [7:0]	reso_div = 0,
 
-	// 
+	// LED Brightness
+	output reg [7:0]	led_pwm_div = 0
 
 
 
