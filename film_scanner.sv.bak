@@ -47,23 +47,13 @@ module film_scanner(
 
 	output reg 			ft_wr = 1,
 						ft_rd = 1,
-						ft_siwu,
-						ft_pwrsav,
-						ft_nrst,
+						ft_siwu = 1,
+						ft_pwrsav = 1,
+						ft_nrst = 0,
 
 	// LEDs
 	output reg 			[3:0] led
 );
-
-	always_comb
-	begin
-		ft_siwu = 1;
-		ft_pwrsav = 1;
-		ft_nrst = 1;
-	end
-
-
-
 
 	dac dac0(
 
