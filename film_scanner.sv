@@ -25,14 +25,14 @@ module film_scanner(
 						ccd_cp = 0,
 
 	// Motor IO
-	output reg 			mtr_nen = 1,
-						mtr_step = 0, 
-						mtr_nrst = 0, 
-						mtr_slp = 0, 
-						mtr_decay = 0, 
-						mtr_dir = 0, 
+	output reg 			mtr_nen,
+						mtr_step, 
+						mtr_nrst, 
+						mtr_slp, 
+						mtr_decay, 
+						mtr_dir, 
 
-	output reg  [2:0] 	mtr_m = 0,
+	output reg  [2:0] 	mtr_m,
 
 	input logic 		mtr_nhome, mtr_nflt,
 
