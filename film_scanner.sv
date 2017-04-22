@@ -13,9 +13,9 @@ module film_scanner(
 	input logic 		adc_sdo,
 
 	// DAC IO
-	output reg 			dac_sclk = 0,
-						dac_sdin = 0,
-						dac_sync = 1,
+	output wire 		dac_sclk,
+						dac_sdin,
+						dac_sync,
 
 	// CCD control
 	output reg 			ccd_p1 = 0, 
@@ -55,10 +55,19 @@ module film_scanner(
 	output reg 			[3:0] led
 );
 
+	dac dac0(
 
+		// Input control
+		.clk_100M(clk_100M),
 
+		// Input data
+		.offset(32767), .gain(1000),
 
-
+		// DAC output signals
+		.sclk(dac_sclk),
+		.sdata(dac_sdin),
+		.sync(dac_sync)
+	);
 
 
 

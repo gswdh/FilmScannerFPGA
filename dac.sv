@@ -22,8 +22,8 @@ module dac(
 	);
 
 	// DAC PARAMETERS
-	parameter DAC_LOAD_A = 1048576;
-	parameter DAC_LOAD_B = 2359296;
+	parameter DAC_LOAD_A = 16;
+	parameter DAC_LOAD_B = 36;
 
 	// Clock divisor 
 	reg [4:0] clk_2MHz_cntr = 0;
@@ -90,6 +90,10 @@ module dac(
 
 					// Make sure the sync is high
 					sync <= 1;
+
+					// reset internal variables
+					dac_gain <= 0;
+					dac_offset <= 0;
 				end
 
 				// Else stay here
@@ -100,8 +104,8 @@ module dac(
 			1: begin
 
 				// Get the new values for conversion
-				dac_gain <= this_gain && DAC_LOAD_A;
-				dac_offset <= this_offset && DAC_LOAD_B;
+				dac_gain <= {DAC_LOAD_A, this_gain};
+				dac_offset <= {DAC_LOAD_B, this_offset};
 
 				// Set the SYNC line low to start the conversion
 				sync <= 0;
@@ -238,7 +242,7 @@ module dac(
 				sclk <= 0;
 
 				// Go to the rising edge
-				dac_state <= 6;
+				dac_state <= 7;
 			end
 
 			// Create the last falling edge
@@ -259,8 +263,8 @@ module dac(
 				sclk <= 1;
 
 				// Assign the previous values 
-				this_prev_gain <= dac_gain && 65535;
-				this_prev_offset <= dac_offset && 65535;
+				this_prev_gain <= dac_gain[15:0];
+				this_prev_offset <= dac_offset[15:0];
 
 				// Reset the state machine
 				dac_state <= 0;
