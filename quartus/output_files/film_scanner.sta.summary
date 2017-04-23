@@ -2,162 +2,148 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-<<<<<<< HEAD
 Type  : Slow 1200mV 85C Model Setup 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -4.049
-TNS   : -22.539
+Slack : -3.917
+TNS   : -22.779
 
 Type  : Slow 1200mV 85C Model Setup 'ccd_timing:ccd0|ccd_p1'
-Slack : -1.985
-TNS   : -15.994
+Slack : -1.890
+TNS   : -14.758
 
-Type  : Slow 1200mV 85C Model Hold 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.034
-TNS   : -0.034
-
-Type  : Slow 1200mV 85C Model Hold 'ccd_timing:ccd0|ccd_p1'
-Slack : 0.340
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ccd_timing:ccd0|ccd_p1'
-Slack : -1.000
-TNS   : -13.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_100M'
-Slack : 4.748
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 6.023
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Setup 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -3.508
-TNS   : -19.319
-
-Type  : Slow 1200mV 0C Model Setup 'ccd_timing:ccd0|ccd_p1'
-Slack : -1.685
-TNS   : -13.025
-
-Type  : Slow 1200mV 0C Model Hold 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -0.135
-TNS   : -0.135
-
-Type  : Slow 1200mV 0C Model Hold 'ccd_timing:ccd0|ccd_p1'
-Slack : 0.299
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ccd_timing:ccd0|ccd_p1'
-Slack : -1.000
-TNS   : -13.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_100M'
-Slack : 4.716
-TNS   : 0.000
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 6.007
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Setup 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -2.216
-TNS   : -12.225
-
-Type  : Fast 1200mV 0C Model Setup 'ccd_timing:ccd0|ccd_p1'
-Slack : -0.671
-TNS   : -3.601
-
-Type  : Fast 1200mV 0C Model Hold 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.026
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'ccd_timing:ccd0|ccd_p1'
-Slack : 0.176
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ccd_timing:ccd0|ccd_p1'
-Slack : -1.000
-TNS   : -13.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_100M'
-Slack : 4.422
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 6.025
-TNS   : 0.000
-=======
 Type  : Slow 1200mV 85C Model Setup 'dac:dac0|clk_2MHz'
-Slack : -1.645
-TNS   : -19.286
+Slack : -1.505
+TNS   : -19.503
 
 Type  : Slow 1200mV 85C Model Setup 'clk_100M'
-Slack : -1.423
-TNS   : -5.165
+Slack : -0.238
+TNS   : -0.238
+
+Type  : Slow 1200mV 85C Model Hold 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -0.018
+TNS   : -0.018
 
 Type  : Slow 1200mV 85C Model Hold 'clk_100M'
-Slack : 0.261
+Slack : 0.142
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'ccd_timing:ccd0|ccd_p1'
+Slack : 0.341
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'dac:dac0|clk_2MHz'
 Slack : 0.357
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_100M'
-Slack : -3.000
-TNS   : -9.000
-
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'dac:dac0|clk_2MHz'
 Slack : -1.000
 TNS   : -16.000
 
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'ccd_timing:ccd0|ccd_p1'
+Slack : -1.000
+TNS   : -13.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk_100M'
+Slack : 4.581
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 6.026
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -3.345
+TNS   : -19.306
+
+Type  : Slow 1200mV 0C Model Setup 'ccd_timing:ccd0|ccd_p1'
+Slack : -1.596
+TNS   : -11.925
+
 Type  : Slow 1200mV 0C Model Setup 'dac:dac0|clk_2MHz'
-Slack : -1.394
-TNS   : -15.820
+Slack : -1.261
+TNS   : -16.019
 
 Type  : Slow 1200mV 0C Model Setup 'clk_100M'
-Slack : -1.192
-TNS   : -3.955
+Slack : -0.110
+TNS   : -0.110
+
+Type  : Slow 1200mV 0C Model Hold 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -0.121
+TNS   : -0.121
 
 Type  : Slow 1200mV 0C Model Hold 'clk_100M'
-Slack : 0.242
+Slack : 0.139
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'ccd_timing:ccd0|ccd_p1'
+Slack : 0.299
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'dac:dac0|clk_2MHz'
 Slack : 0.311
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_100M'
-Slack : -3.000
-TNS   : -9.000
-
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'dac:dac0|clk_2MHz'
 Slack : -1.000
 TNS   : -16.000
 
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'ccd_timing:ccd0|ccd_p1'
+Slack : -1.000
+TNS   : -13.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk_100M'
+Slack : 4.590
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 6.006
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -2.158
+TNS   : -12.458
+
+Type  : Fast 1200mV 0C Model Setup 'ccd_timing:ccd0|ccd_p1'
+Slack : -0.591
+TNS   : -3.021
+
 Type  : Fast 1200mV 0C Model Setup 'dac:dac0|clk_2MHz'
-Slack : -0.457
-TNS   : -4.007
+Slack : -0.375
+TNS   : -4.174
 
 Type  : Fast 1200mV 0C Model Setup 'clk_100M'
-Slack : -0.370
-TNS   : -0.617
+Slack : -0.021
+TNS   : -0.021
 
 Type  : Fast 1200mV 0C Model Hold 'clk_100M'
-Slack : 0.091
+Slack : 0.030
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.036
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'ccd_timing:ccd0|ccd_p1'
+Slack : 0.176
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'dac:dac0|clk_2MHz'
 Slack : 0.186
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_100M'
-Slack : -3.000
-TNS   : -10.870
-
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'dac:dac0|clk_2MHz'
 Slack : -1.000
 TNS   : -16.000
->>>>>>> dac
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'ccd_timing:ccd0|ccd_p1'
+Slack : -1.000
+TNS   : -13.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk_100M'
+Slack : 4.264
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'pll_80_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 6.023
+TNS   : 0.000
 
 ------------------------------------------------------------
