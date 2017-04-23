@@ -6,8 +6,9 @@ module ccd_tb(
 
 
 
-	reg	adc_cs, adc_sclk, adc_sdo;
+	reg	adc_cs, adc_sclk, adc_sdo, pix_clk;
 
+	reg [15:0] pix_data;
 
 	reg clk_80M = 0;
 
@@ -20,6 +21,7 @@ module ccd_tb(
 
 		// Input clock
 		.clk_80M(clk_80M),
+		.en(1), .cal_mode(1),
 
 		// CCD control
 		.ccd_p1(), 
@@ -31,7 +33,11 @@ module ccd_tb(
 		// ADC stuff
 		.adc_cs(adc_cs), 
 		.adc_sclk(adc_sclk), 
-		.adc_sdo(adc_sdo)
+		.adc_sdo(1),
+
+		// Data output 
+		.pix_clk(pix_clk),
+		.pix_data(pix_data)
 	);
 
 

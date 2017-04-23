@@ -1,5 +1,5 @@
 Analysis & Synthesis report for film_scanner
-Sun Apr 23 16:53:15 2017
+Sun Apr 23 17:39:18 2017
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
 
 
@@ -21,9 +21,10 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edit
  13. Parameter Settings for User Entity Instance: pll_80:pll_80_inst|altpll:altpll_component
  14. Parameter Settings for User Entity Instance: ccd_timing:ccd0
  15. altpll Parameter Settings by Entity Instance
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+ 16. Port Connectivity Checks: "ccd_timing:ccd0"
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -50,15 +51,15 @@ agreement for further details.
 +------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                   ;
 +------------------------------------+-----------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Apr 23 16:53:15 2017                     ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 23 17:39:18 2017                     ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition ;
 ; Revision Name                      ; film_scanner                                              ;
 ; Top-level Entity Name              ; film_scanner                                              ;
 ; Family                             ; Cyclone IV E                                              ;
-; Total logic elements               ; 80                                                        ;
-;     Total combinational functions  ; 80                                                        ;
-;     Dedicated logic registers      ; 40                                                        ;
-; Total registers                    ; 40                                                        ;
+; Total logic elements               ; 83                                                        ;
+;     Total combinational functions  ; 83                                                        ;
+;     Dedicated logic registers      ; 41                                                        ;
+; Total registers                    ; 41                                                        ;
 ; Total pins                         ; 46                                                        ;
 ; Total virtual pins                 ; 0                                                         ;
 ; Total memory bits                  ; 0                                                         ;
@@ -194,20 +195,20 @@ agreement for further details.
 +---------------------------------------------+------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                    ;
 +---------------------------------------------+------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 80                                                                                       ;
+; Estimated Total logic elements              ; 83                                                                                       ;
 ;                                             ;                                                                                          ;
-; Total combinational functions               ; 80                                                                                       ;
+; Total combinational functions               ; 83                                                                                       ;
 ; Logic element usage by number of LUT inputs ;                                                                                          ;
-;     -- 4 input functions                    ; 45                                                                                       ;
-;     -- 3 input functions                    ; 3                                                                                        ;
-;     -- <=2 input functions                  ; 32                                                                                       ;
+;     -- 4 input functions                    ; 40                                                                                       ;
+;     -- 3 input functions                    ; 4                                                                                        ;
+;     -- <=2 input functions                  ; 39                                                                                       ;
 ;                                             ;                                                                                          ;
 ; Logic elements by mode                      ;                                                                                          ;
-;     -- normal mode                          ; 55                                                                                       ;
+;     -- normal mode                          ; 58                                                                                       ;
 ;     -- arithmetic mode                      ; 25                                                                                       ;
 ;                                             ;                                                                                          ;
-; Total registers                             ; 40                                                                                       ;
-;     -- Dedicated logic registers            ; 40                                                                                       ;
+; Total registers                             ; 41                                                                                       ;
+;     -- Dedicated logic registers            ; 41                                                                                       ;
 ;     -- I/O registers                        ; 0                                                                                        ;
 ;                                             ;                                                                                          ;
 ; I/O pins                                    ; 46                                                                                       ;
@@ -220,7 +221,7 @@ agreement for further details.
 ; Maximum fan-out node                        ; pll_80:pll_80_inst|altpll:altpll_component|pll_80_altpll:auto_generated|wire_pll1_clk[0] ;
 ; Maximum fan-out                             ; 30                                                                                       ;
 ; Total fan-out                               ; 418                                                                                      ;
-; Average fan-out                             ; 1.89                                                                                     ;
+; Average fan-out                             ; 1.86                                                                                     ;
 +---------------------------------------------+------------------------------------------------------------------------------------------+
 
 
@@ -229,8 +230,8 @@ agreement for further details.
 +-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Library Name ;
 +-----------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------+--------------+
-; |film_scanner                           ; 80 (0)            ; 40 (0)       ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |film_scanner                                                                         ; work         ;
-;    |ccd_timing:ccd0|                    ; 80 (80)           ; 40 (40)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ccd_timing:ccd0                                                         ; work         ;
+; |film_scanner                           ; 83 (0)            ; 41 (0)       ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |film_scanner                                                                         ; work         ;
+;    |ccd_timing:ccd0|                    ; 83 (83)           ; 41 (41)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ccd_timing:ccd0                                                         ; work         ;
 ;    |pll_80:pll_80_inst|                 ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|pll_80:pll_80_inst                                                      ; work         ;
 ;       |altpll:altpll_component|         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|pll_80:pll_80_inst|altpll:altpll_component                              ; work         ;
 ;          |pll_80_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|pll_80:pll_80_inst|altpll:altpll_component|pll_80_altpll:auto_generated ; work         ;
@@ -282,7 +283,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 40    ;
+; Total registers                              ; 41    ;
 ; Number of registers using Synchronous Clear  ; 16    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -300,7 +301,7 @@ Encoding Type:  One-Hot
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |film_scanner|ccd_timing:ccd0|timings_cntr[0] ;
 ; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |film_scanner|ccd_timing:ccd0|sh_delay[6]     ;
 ; 8:1                ; 3 bits    ; 15 LEs        ; 9 LEs                ; 6 LEs                  ; No         ; |film_scanner|ccd_timing:ccd0|Selector8       ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |film_scanner|ccd_timing:ccd0|Selector9       ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |film_scanner|ccd_timing:ccd0|Selector12      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
 
 
@@ -744,30 +745,41 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+--------------------------------------------+
 
 
++-------------------------------------------------------+
+; Port Connectivity Checks: "ccd_timing:ccd0"           ;
++----------+--------+----------+------------------------+
+; Port     ; Type   ; Severity ; Details                ;
++----------+--------+----------+------------------------+
+; en       ; Input  ; Info     ; Stuck at VCC           ;
+; cal_mode ; Input  ; Info     ; Stuck at VCC           ;
+; pix_data ; Output ; Info     ; Explicitly unconnected ;
++----------+--------+----------+------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 46                          ;
-; cycloneiii_ff         ; 40                          ;
+; cycloneiii_ff         ; 41                          ;
 ;     ENA SCLR          ; 8                           ;
 ;     SCLR              ; 8                           ;
-;     plain             ; 24                          ;
+;     plain             ; 25                          ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 82                          ;
+; cycloneiii_lcell_comb ; 86                          ;
 ;     arith             ; 25                          ;
 ;         2 data inputs ; 25                          ;
-;     normal            ; 57                          ;
+;     normal            ; 61                          ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 4                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 45                          ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 40                          ;
 ; cycloneiii_pll        ; 1                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 2.86                        ;
+; Average LUT depth     ; 2.88                        ;
 +-----------------------+-----------------------------+
 
 
@@ -786,7 +798,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
-    Info: Processing started: Sun Apr 23 16:53:02 2017
+    Info: Processing started: Sun Apr 23 17:39:05 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off film_scanner -c film_scanner
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/ccd_timing.sv
@@ -797,7 +809,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file pll_80.
     Info (12023): Found entity 1: pll_80
 Info (12127): Elaborating entity "film_scanner" for the top level hierarchy
 Warning (10034): Output port "mtr_m" at film_scanner.sv(35) has no driver
-Warning (10034): Output port "led[3..1]" at film_scanner.sv(57) has no driver
+Warning (10034): Output port "led[3..2]" at film_scanner.sv(57) has no driver
 Warning (10034): Output port "led_pwm" at film_scanner.sv(7) has no driver
 Warning (10034): Output port "dac_sclk" at film_scanner.sv(16) has no driver
 Warning (10034): Output port "dac_sdin" at film_scanner.sv(17) has no driver
@@ -876,13 +888,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/pll_
     Info (12023): Found entity 1: pll_80_altpll
 Info (12128): Elaborating entity "pll_80_altpll" for hierarchy "pll_80:pll_80_inst|altpll:altpll_component|pll_80_altpll:auto_generated"
 Info (12128): Elaborating entity "ccd_timing" for hierarchy "ccd_timing:ccd0"
-Warning (10036): Verilog HDL or VHDL warning at ccd_timing.sv(77): object "adc_data" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(104): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(226): truncated value with size 32 to match size of target (12)
-Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(274): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(295): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(316): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(337): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(79): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(80): truncated value with size 32 to match size of target (12)
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(83): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(145): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(278): truncated value with size 32 to match size of target (12)
+Warning (10763): Verilog HDL warning at ccd_timing.sv(298): case statement has overlapping case item expressions with non-constant or don't care bits - unable to check case statement for completeness
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(370): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(391): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(412): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(433): truncated value with size 32 to match size of target (8)
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "ft_bus[0]" has no driver
     Warning (13040): bidirectional pin "ft_bus[1]" has no driver
@@ -911,7 +926,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ft_siwu" is stuck at GND
     Warning (13410): Pin "ft_pwrsav" is stuck at GND
     Warning (13410): Pin "ft_nrst" is stuck at GND
-    Warning (13410): Pin "led[1]" is stuck at GND
     Warning (13410): Pin "led[2]" is stuck at GND
     Warning (13410): Pin "led[3]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
@@ -927,15 +941,15 @@ Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ft_rxf"
     Warning (15610): No output dependent on input pin "ft_ac8"
     Warning (15610): No output dependent on input pin "ft_ac9"
-Info (21057): Implemented 127 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 130 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 29 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 80 logic cells
+    Info (21061): Implemented 83 logic cells
     Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 64 warnings
-    Info: Peak virtual memory: 704 megabytes
-    Info: Processing ended: Sun Apr 23 16:53:15 2017
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 66 warnings
+    Info: Peak virtual memory: 703 megabytes
+    Info: Processing ended: Sun Apr 23 17:39:18 2017
     Info: Elapsed time: 00:00:13
     Info: Total CPU time (on all processors): 00:00:24
 

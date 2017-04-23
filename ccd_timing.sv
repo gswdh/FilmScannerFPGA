@@ -1,8 +1,8 @@
 module ccd_timing(
 
-	// Input clock
+	// Input clock and control
 	input logic 		clk_80M,
-
+						en, cal_mode,
 
 
 	// CCD control
@@ -19,7 +19,7 @@ module ccd_timing(
 	input logic 		adc_sdo,
 
 	// Output data
-	output reg			pix_clk = 0,
+	output reg			pix_clk,
 	output reg [15:0]	pix_data = 0
 
 	);
@@ -72,21 +72,36 @@ module ccd_timing(
 	parameter D0_LOW = D0_HIGH + 1;
 	parameter CS_HIGH = D0_LOW + 1;
 
+	// Timgings of the validity data
+	reg [11:0] pix_valid, pix_n_valid;
+	reg pix_valid_flag = 0;
+
+	assign pix_valid = cal_mode ? 32 : 1; // Cal mode clocks out all pixels
+	assign pix_n_valid = cal_mode ? 2080 : 2088; // Cal mode clocks out all pixels
+
+	// Create the pix_clk
+	assign pix_clk = pix_valid_flag ? ~adc_cs : 0;
+
+	// ADC data variable
+	reg [15:0]	adc_data = 0;
+
+	// Clock the data out on the negedge of the pix clk
+	always_ff @ (negedge pix_clk) pix_data <= adc_data;
+
 	// Stop signal
 	reg stop = 0;
 
 	// Create a counter to manage the timings from
 	reg [7:0] timings_cntr = 0;
 
-	// ADC data variable
-	reg [15:0]	adc_data = 0;
+	
 
 	// Use the 100MHz clock to create the timings
 	always_ff @ (posedge clk_80M)
 	begin
 
-		// If they should run (not SH time)
-		if(stop == 1)
+		// If we wish to stop
+		if(en == 0)
 		begin
 
 			// reset the counter
@@ -96,118 +111,139 @@ module ccd_timing(
 			ccd_p1 <= 1;
 			ccd_rs <= 0; 
 			ccd_cp <= 0;
+
+			// ADC signals
+			adc_cs <= 1;
+			adc_sclk <= 0;
 		end
 
 		// Run
 		else
 		begin
 
-			// Run the counter
-			if(timings_cntr == 39) timings_cntr <= 0;
+			// If they should run (not SH time)
+			if(stop == 1)
+			begin
 
-			// Increment
-			else timings_cntr <= timings_cntr + 1;
+				// reset the counter
+				timings_cntr <= 0;
 
-			// Create the timings
-			case(timings_cntr)
+				// Set the clocks
+				ccd_p1 <= 1;
+				ccd_rs <= 0; 
+				ccd_cp <= 0;
+			end
 
-				// CCD outputs
-				P1_HIGH: ccd_p1 <= 1;
-				P1_LOW: ccd_p1 <= 0;
-				RS_HIGH: ccd_rs <= 1;
-				RS_LOW: ccd_rs <= 0;
-				CP_HIGH: ccd_cp <= 1;
-				CP_LOW: ccd_cp <= 0;
-			endcase
+			// Run
+			else
+			begin
 
-			// For the ADC
-			case(timings_cntr)
-				// ADC outputs
-				CS_LOW: adc_cs <= 0;
-				CS_HIGH: adc_cs <= 1;
+				// Run the counter
+				if(timings_cntr == 39) timings_cntr <= 0;
 
+				// Increment
+				else timings_cntr <= timings_cntr + 1;
 
-				D15_HIGH: adc_sclk <= 1;
-				D15_LOW: begin
-					adc_data[15] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D14_HIGH: adc_sclk <= 1;
-				D14_LOW: begin
-					adc_data[14] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D13_HIGH: adc_sclk <= 1;
-				D13_LOW: begin
-					adc_data[13] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D12_HIGH: adc_sclk <= 1;
-				D12_LOW: begin
-					adc_data[12] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D11_HIGH: adc_sclk <= 1;
-				D11_LOW: begin
-					adc_data[11] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D10_HIGH: adc_sclk <= 1;
-				D10_LOW: begin
-					adc_data[10] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D9_HIGH: adc_sclk <= 1;
-				D9_LOW: begin
-					adc_data[9] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D8_HIGH: adc_sclk <= 1;
-				D8_LOW: begin
-					adc_data[8] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D7_HIGH: adc_sclk <= 1;
-				D7_LOW: begin
-					adc_data[7] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D6_HIGH: adc_sclk <= 1;
-				D6_LOW: begin
-					adc_data[6] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D5_HIGH: adc_sclk <= 1;
-				D5_LOW: begin
-					adc_data[5] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D4_HIGH: adc_sclk <= 1;
-				D4_LOW: begin
-					adc_data[4] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D3_HIGH: adc_sclk <= 1;
-				D3_LOW: begin
-					adc_data[3] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D2_HIGH: adc_sclk <= 1;
-				D2_LOW: begin
-					adc_data[2] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D1_HIGH: adc_sclk <= 1;
-				D1_LOW: begin
-					adc_data[1] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-				D0_HIGH: adc_sclk <= 1;
-				D0_LOW: begin
-					adc_data[0] <= adc_sdo;
-					adc_sclk <= 0;
-				end
-			endcase // timings_cntr
+				// Create the timings
+				case(timings_cntr)
+
+					// CCD outputs
+					P1_HIGH: ccd_p1 <= 1;
+					P1_LOW: ccd_p1 <= 0;
+					RS_HIGH: ccd_rs <= 1;
+					RS_LOW: ccd_rs <= 0;
+					CP_HIGH: ccd_cp <= 1;
+					CP_LOW: ccd_cp <= 0;
+				endcase
+
+				// For the ADC
+				case(timings_cntr)
+					// ADC outputs
+					CS_LOW: adc_cs <= 0;
+					CS_HIGH: adc_cs <= 1;
+					
+					D15_HIGH: adc_sclk <= 1;
+					D15_LOW: begin
+						adc_data[15] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D14_HIGH: adc_sclk <= 1;
+					D14_LOW: begin
+						adc_data[14] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D13_HIGH: adc_sclk <= 1;
+					D13_LOW: begin
+						adc_data[13] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D12_HIGH: adc_sclk <= 1;
+					D12_LOW: begin
+						adc_data[12] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D11_HIGH: adc_sclk <= 1;
+					D11_LOW: begin
+						adc_data[11] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D10_HIGH: adc_sclk <= 1;
+					D10_LOW: begin
+						adc_data[10] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D9_HIGH: adc_sclk <= 1;
+					D9_LOW: begin
+						adc_data[9] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D8_HIGH: adc_sclk <= 1;
+					D8_LOW: begin
+						adc_data[8] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D7_HIGH: adc_sclk <= 1;
+					D7_LOW: begin
+						adc_data[7] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D6_HIGH: adc_sclk <= 1;
+					D6_LOW: begin
+						adc_data[6] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D5_HIGH: adc_sclk <= 1;
+					D5_LOW: begin
+						adc_data[5] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D4_HIGH: adc_sclk <= 1;
+					D4_LOW: begin
+						adc_data[4] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D3_HIGH: adc_sclk <= 1;
+					D3_LOW: begin
+						adc_data[3] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D2_HIGH: adc_sclk <= 1;
+					D2_LOW: begin
+						adc_data[2] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D1_HIGH: adc_sclk <= 1;
+					D1_LOW: begin
+						adc_data[1] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+					D0_HIGH: adc_sclk <= 1;
+					D0_LOW: begin
+						adc_data[0] <= adc_sdo;
+						adc_sclk <= 0;
+					end
+				endcase // timings_cntr
+			end
 		end
 	end
 
@@ -219,16 +255,53 @@ module ccd_timing(
 	always_ff @ (posedge ccd_p1)
 	begin
 
-		// 
-		if(p1_cntr == 2100)
-		begin
+		// Halt
+		if(en == 0)
+		begin 
 
-			// 
 			p1_cntr <= 0;
 		end
 
-		// Increment
-		else p1_cntr <= p1_cntr + 1;
+		// Run
+		else 
+		begin
+
+			// 
+			if(p1_cntr == 2100)
+			begin
+
+				// 
+				p1_cntr <= 0;
+			end
+
+			// Increment
+			else p1_cntr <= p1_cntr + 1;
+		end
+	end
+
+	// A state machine to determine the Validity of the data
+	always_ff @ (negedge ccd_p1)
+	begin
+
+		// Halt
+		if(en == 0)
+		begin
+
+			pix_valid_flag <= 0;
+		end
+
+		// Run
+		else
+		begin
+
+			// To determine the output clock
+			case(p1_cntr)
+
+				pix_valid: pix_valid_flag <= 1;
+
+				pix_n_valid: pix_valid_flag <= 0;
+			endcase
+		end
 	end
 
 	// SH state machine variable
@@ -238,109 +311,128 @@ module ccd_timing(
 	always_ff @ (posedge clk_80M)
 	begin
 
-		case(sh_state)
+		// Halt
+		if(en == 0)
+		begin
 
-			// Stop the clocks
-			0: begin
+			// Reset the state
+			sh_state <= 0;
 
-				// Halt the clocks now were are at the end of the line
-				if(p1_cntr == 2100)
-				begin
+			stop <= 0;
 
-					// Stop
-					stop <= 1;
+			ccd_sh <= 0;
 
-					// Make sure sh is 0
+			sh_delay <= 0;
+		end
+
+		// Run
+		else
+		begin
+
+			case(sh_state)
+
+				// Stop the clocks
+				0: begin
+
+					// Halt the clocks now were are at the end of the line
+					if(p1_cntr == 2100)
+					begin
+
+						// Stop
+						stop <= 1;
+
+						// Make sure sh is 0
+						ccd_sh <= 0;
+
+						// Progress
+						sh_state <= 1;
+					end
+				end
+
+				// Delay for 500ns with sh low
+				1: begin
+
+					// 
 					ccd_sh <= 0;
 
-					// Progress
-					sh_state <= 1;
-				end
-			end
-
-			// Delay for 500ns with sh low
-			1: begin
-
-				// 
-				ccd_sh <= 0;
-
-				// 
-				if(sh_delay == 39)
-				begin
-
 					// 
-					sh_delay <= 0;
+					if(sh_delay == 39)
+					begin
 
-					// 
-					sh_state <= 2;
+						// 
+						sh_delay <= 0;
+
+						// 
+						sh_state <= 2;
+					end
+
+					//
+					else sh_delay <= sh_delay + 1;
 				end
 
-				//
-				else sh_delay <= sh_delay + 1;
-			end
-
-			// Delay for 50ns with sh high
-			2: begin
-
-				// 
-				ccd_sh <= 1;
-
-				// 
-				if(sh_delay == 3)
-				begin
+				// Delay for 50ns with sh high
+				2: begin
 
 					// 
-					sh_delay <= 0;
+					ccd_sh <= 1;
 
 					// 
-					sh_state <= 3;
+					if(sh_delay == 3)
+					begin
+
+						// 
+						sh_delay <= 0;
+
+						// 
+						sh_state <= 3;
+					end
+
+					//
+					else sh_delay <= sh_delay + 1;
 				end
 
-				//
-				else sh_delay <= sh_delay + 1;
-			end
-
-			// Delay for 500ns with sh low
-			3: begin
-				
-				// 
-				ccd_sh <= 0;
-
-				// 
-				if(sh_delay == 39)
-				begin
+				// Delay for 500ns with sh low
+				3: begin
+					
+					// 
+					ccd_sh <= 0;
 
 					// 
-					sh_delay <= 0;
+					if(sh_delay == 39)
+					begin
 
-					// 
-					sh_state <= 4;
+						// 
+						sh_delay <= 0;
+
+						// 
+						sh_state <= 4;
+					end
+
+					//
+					else sh_delay <= sh_delay + 1;
 				end
 
-				//
-				else sh_delay <= sh_delay + 1;
-			end
+				// Start the clocks
+				4: begin
 
-			// Start the clocks
-			4: begin
+					// Stop = 0
+					stop <= 0;
 
-				// Stop = 0
-				stop <= 0;
+					// Delay to wait for the p2 counter to reset
+					if(sh_delay == 255)
+					begin
 
-				// Delay to wait for the p2 counter to reset
-				if(sh_delay == 255)
-				begin
+						// 
+						sh_delay <= 0;
 
-					// 
-					sh_delay <= 0;
+						// 
+						sh_state <= 0;
+					end
 
-					// 
-					sh_state <= 0;
+					//
+					else sh_delay <= sh_delay + 1;
 				end
-
-				//
-				else sh_delay <= sh_delay + 1;
-			end
-		endcase // sh_state
+			endcase // sh_state
+		end
 	end
 endmodule // ccd_timing

@@ -65,12 +65,12 @@ module film_scanner(
 		.locked(led[0])
 	);
 
-
 	// CCD timing
 	ccd_timing ccd0(
 
 		// Input clock
 		.clk_80M(clk_80M),
+		.en(1), .cal_mode(1),
 
 		// CCD control
 		.ccd_p1(ccd_p1), 
@@ -82,7 +82,11 @@ module film_scanner(
 		// ADC stuff
 		.adc_cs(adc_cs), 
 		.adc_sclk(adc_sclk), 
-		.adc_sdo(adc_sdo)
+		.adc_sdo(adc_sdo),
+
+		// Data output 
+		.pix_clk(led[1]),
+		.pix_data()
 	);
 
 
