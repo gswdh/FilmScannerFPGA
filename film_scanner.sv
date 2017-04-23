@@ -8,7 +8,7 @@ module film_scanner(
 
 	// ADC IO
 	output reg			adc_cs = 0, 
-						adc_sclk = 0,
+						adc_sclk = 0, 
 
 	input logic 		adc_sdo,
 
@@ -49,27 +49,40 @@ module film_scanner(
 						ft_rd = 1,
 						ft_siwu = 1,
 						ft_pwrsav = 1,
-						ft_nrst = 0,
+						ft_nrst = 1,
+					
 
 	// LEDs
 	output reg 			[3:0] led
 );
 
+	// 80MHz clock
+	reg clk_80M;
+	
+	pll_80	pll_80_inst (
+		.inclk0(clk_100M),
+		.c0(clk_80M),
+		.locked(led[0])
+	);
 
 
-
-
+	// CCD timing
 	ccd_timing ccd0(
 
 		// Input clock
-		.clk_100M(clk_100M),
+		.clk_80M(clk_80M),
 
 		// CCD control
 		.ccd_p1(ccd_p1), 
 		.ccd_p2(ccd_p2), 
 		.ccd_sh(ccd_sh),
 		.ccd_rs(ccd_rs), 
-		.ccd_cp(ccd_cp)
+		.ccd_cp(ccd_cp),
+
+		// ADC stuff
+		.adc_cs(adc_cs), 
+		.adc_sclk(adc_sclk), 
+		.adc_sdo(adc_sdo)
 	);
 
 
