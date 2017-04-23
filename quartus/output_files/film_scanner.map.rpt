@@ -1,5 +1,9 @@
 Analysis & Synthesis report for film_scanner
+<<<<<<< HEAD
 Sun Apr 23 17:39:18 2017
+=======
+Sat Apr 22 19:54:13 2017
+>>>>>>> dac
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
 
 
@@ -13,6 +17,7 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
+<<<<<<< HEAD
   8. Analysis & Synthesis IP Cores Summary
   9. State Machine - |film_scanner|ccd_timing:ccd0|sh_state
  10. Registers Removed During Synthesis
@@ -25,6 +30,18 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edit
  17. Post-Synthesis Netlist Statistics for Top Partition
  18. Elapsed Time Per Partition
  19. Analysis & Synthesis Messages
+=======
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: dac:dac0
+ 14. Port Connectivity Checks: "dac:dac0"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+>>>>>>> dac
 
 
 
@@ -51,20 +68,35 @@ agreement for further details.
 +------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                   ;
 +------------------------------------+-----------------------------------------------------------+
+<<<<<<< HEAD
 ; Analysis & Synthesis Status        ; Successful - Sun Apr 23 17:39:18 2017                     ;
+=======
+; Analysis & Synthesis Status        ; Successful - Sat Apr 22 19:54:13 2017                     ;
+>>>>>>> dac
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition ;
 ; Revision Name                      ; film_scanner                                              ;
 ; Top-level Entity Name              ; film_scanner                                              ;
 ; Family                             ; Cyclone IV E                                              ;
+<<<<<<< HEAD
 ; Total logic elements               ; 83                                                        ;
 ;     Total combinational functions  ; 83                                                        ;
 ;     Dedicated logic registers      ; 41                                                        ;
 ; Total registers                    ; 41                                                        ;
+=======
+; Total logic elements               ; 58                                                        ;
+;     Total combinational functions  ; 57                                                        ;
+;     Dedicated logic registers      ; 22                                                        ;
+; Total registers                    ; 22                                                        ;
+>>>>>>> dac
 ; Total pins                         ; 46                                                        ;
 ; Total virtual pins                 ; 0                                                         ;
 ; Total memory bits                  ; 0                                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                                         ;
+<<<<<<< HEAD
 ; Total PLLs                         ; 1                                                         ;
+=======
+; Total PLLs                         ; 0                                                         ;
+>>>>>>> dac
 +------------------------------------+-----------------------------------------------------------+
 
 
@@ -173,6 +205,7 @@ agreement for further details.
 +----------------------------+-------------+
 
 
+<<<<<<< HEAD
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Source Files Read                                                                                                                         ;
 +----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
@@ -276,6 +309,101 @@ Encoding Type:  One-Hot
 ; ccd_timing:ccd0|sh_state~14           ; Lost fanout        ;
 ; Total Number of Removed Registers = 7 ;                    ;
 +---------------------------------------+--------------------+
+=======
++----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                           ;
++----------------------------------+-----------------+------------------------------+------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path       ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------+---------+
+; ../dac.sv                        ; yes             ; User SystemVerilog HDL File  ; D:/FilmScannerFPGA/dac.sv          ;         ;
+; ../film_scanner.sv               ; yes             ; User SystemVerilog HDL File  ; D:/FilmScannerFPGA/film_scanner.sv ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------+---------+
+
+
++---------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                         ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Estimated Total logic elements              ; 58                    ;
+;                                             ;                       ;
+; Total combinational functions               ; 57                    ;
+; Logic element usage by number of LUT inputs ;                       ;
+;     -- 4 input functions                    ; 32                    ;
+;     -- 3 input functions                    ; 12                    ;
+;     -- <=2 input functions                  ; 13                    ;
+;                                             ;                       ;
+; Logic elements by mode                      ;                       ;
+;     -- normal mode                          ; 49                    ;
+;     -- arithmetic mode                      ; 8                     ;
+;                                             ;                       ;
+; Total registers                             ; 22                    ;
+;     -- Dedicated logic registers            ; 22                    ;
+;     -- I/O registers                        ; 0                     ;
+;                                             ;                       ;
+; I/O pins                                    ; 46                    ;
+;                                             ;                       ;
+; Embedded Multiplier 9-bit elements          ; 0                     ;
+;                                             ;                       ;
+; Maximum fan-out node                        ; dac:dac0|dac_state[2] ;
+; Maximum fan-out                             ; 19                    ;
+; Total fan-out                               ; 298                   ;
+; Average fan-out                             ; 1.66                  ;
++---------------------------------------------+-----------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                            ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name    ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
+; |film_scanner              ; 57 (0)            ; 22 (0)       ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |film_scanner          ; work         ;
+;    |dac:dac0|              ; 57 (57)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|dac:dac0 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++-------------------------------------------+-------------------------------------------+
+; Register name                             ; Reason for Removal                        ;
++-------------------------------------------+-------------------------------------------+
+; dac:dac0|dac_state[4..7]                  ; Stuck at GND due to stuck port data_in    ;
+; dac:dac0|this_gain[1,4,5,8,9,12..15]      ; Stuck at GND due to stuck port data_in    ;
+; dac:dac0|this_offset[15]                  ; Stuck at GND due to stuck port data_in    ;
+; dac:dac0|dac_gain[2,3,6,7,10,11]          ; Merged with dac:dac0|dac_gain[0]          ;
+; dac:dac0|dac_gain[17..19,21..23]          ; Merged with dac:dac0|dac_gain[16]         ;
+; dac:dac0|dac_gain[1,4,5,8,9,13..15]       ; Merged with dac:dac0|dac_gain[12]         ;
+; dac:dac0|dac_offset[1..14]                ; Merged with dac:dac0|dac_offset[0]        ;
+; dac:dac0|dac_offset[17,19,20,22,23]       ; Merged with dac:dac0|dac_offset[16]       ;
+; dac:dac0|dac_offset[21]                   ; Merged with dac:dac0|dac_offset[18]       ;
+; dac:dac0|this_gain[2,3,6,7,10,11]         ; Merged with dac:dac0|this_gain[0]         ;
+; dac:dac0|this_offset[0..14]               ; Merged with dac:dac0|this_gain[0]         ;
+; dac:dac0|this_prev_offset[1..14]          ; Merged with dac:dac0|this_prev_offset[0]  ;
+; dac:dac0|this_prev_gain[1,4,5,8,9,13..15] ; Merged with dac:dac0|this_prev_gain[12]   ;
+; dac:dac0|this_prev_gain[2,3,6,7,10,11]    ; Merged with dac:dac0|this_prev_gain[0]    ;
+; dac:dac0|dac_gain[20]                     ; Merged with dac:dac0|dac_offset[18]       ;
+; dac:dac0|dac_gain[16]                     ; Merged with dac:dac0|dac_offset[16]       ;
+; dac:dac0|dac_offset[15]                   ; Merged with dac:dac0|dac_offset[16]       ;
+; dac:dac0|dac_gain[12]                     ; Merged with dac:dac0|dac_offset[16]       ;
+; dac:dac0|dac_gain[0]                      ; Merged with dac:dac0|dac_offset[0]        ;
+; dac:dac0|this_prev_gain[0]                ; Merged with dac:dac0|this_prev_offset[0]  ;
+; dac:dac0|this_prev_gain[12]               ; Merged with dac:dac0|this_prev_offset[15] ;
+; dac:dac0|dac_offset[16]                   ; Stuck at GND due to stuck port data_in    ;
+; dac:dac0|this_prev_offset[15]             ; Stuck at GND due to stuck port data_in    ;
+; Total Number of Removed Registers = 112   ;                                           ;
++-------------------------------------------+-------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                ;
++-----------------------+---------------------------+----------------------------------------+
+; Register name         ; Reason for Removal        ; Registers Removed due to This Register ;
++-----------------------+---------------------------+----------------------------------------+
+; dac:dac0|this_gain[1] ; Stuck at GND              ; dac:dac0|dac_offset[16]                ;
+;                       ; due to stuck port data_in ;                                        ;
++-----------------------+---------------------------+----------------------------------------+
+>>>>>>> dac
 
 
 +------------------------------------------------------+
@@ -283,16 +411,26 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
+<<<<<<< HEAD
 ; Total registers                              ; 41    ;
 ; Number of registers using Synchronous Clear  ; 16    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 8     ;
+=======
+; Total registers                              ; 22    ;
+; Number of registers using Synchronous Clear  ; 5     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 5     ;
+>>>>>>> dac
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
+<<<<<<< HEAD
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------+
@@ -754,6 +892,57 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; cal_mode ; Input  ; Info     ; Stuck at VCC           ;
 ; pix_data ; Output ; Info     ; Explicitly unconnected ;
 +----------+--------+----------+------------------------+
+=======
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; dac:dac0|dac_state[0]                  ; 16      ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; 17:1               ; 2 bits    ; 22 LEs        ; 2 LEs                ; 20 LEs                 ; Yes        ; |film_scanner|dac:dac0|dac_offset[16] ;
+; 16:1               ; 5 bits    ; 50 LEs        ; 5 LEs                ; 45 LEs                 ; Yes        ; |film_scanner|dac:dac0|bit_cntr[2]    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+
+
++-------------------------------------------------------+
+; Parameter Settings for User Entity Instance: dac:dac0 ;
++----------------+-------+------------------------------+
+; Parameter Name ; Value ; Type                         ;
++----------------+-------+------------------------------+
+; DAC_LOAD_A     ; 16    ; Signed Integer               ;
+; DAC_LOAD_B     ; 36    ; Signed Integer               ;
++----------------+-------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dac:dac0"                                                                                                                                                                                   ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                                                                                                                                                             ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; offset        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; offset[14..0] ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; offset[15]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; gain          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; gain[11..10]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; gain[7..6]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; gain[3..2]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
+; gain[15..12]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; gain[9..8]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; gain[5..4]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; gain[1]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
+; gain[0]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
++---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+>>>>>>> dac
 
 
 +-----------------------------------------------------+
@@ -762,6 +951,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 46                          ;
+<<<<<<< HEAD
 ; cycloneiii_ff         ; 41                          ;
 ;     ENA SCLR          ; 8                           ;
 ;     SCLR              ; 8                           ;
@@ -780,6 +970,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
 ; Average LUT depth     ; 2.88                        ;
+=======
+; cycloneiii_ff         ; 22                          ;
+;     ENA SCLR          ; 5                           ;
+;     plain             ; 17                          ;
+; cycloneiii_io_obuf    ; 8                           ;
+; cycloneiii_lcell_comb ; 59                          ;
+;     arith             ; 8                           ;
+;         2 data inputs ; 8                           ;
+;     normal            ; 51                          ;
+;         0 data inputs ; 2                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 12                          ;
+;         4 data inputs ; 32                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.61                        ;
+>>>>>>> dac
 +-----------------------+-----------------------------+
 
 
@@ -788,7 +996,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
+<<<<<<< HEAD
 ; Top            ; 00:00:01     ;
+=======
+; Top            ; 00:00:00     ;
+>>>>>>> dac
 +----------------+--------------+
 
 
@@ -798,6 +1010,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
+<<<<<<< HEAD
     Info: Processing started: Sun Apr 23 17:39:05 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off film_scanner -c film_scanner
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -814,6 +1027,26 @@ Warning (10034): Output port "led_pwm" at film_scanner.sv(7) has no driver
 Warning (10034): Output port "dac_sclk" at film_scanner.sv(16) has no driver
 Warning (10034): Output port "dac_sdin" at film_scanner.sv(17) has no driver
 Warning (10034): Output port "dac_sync" at film_scanner.sv(18) has no driver
+=======
+    Info: Processing started: Sat Apr 22 19:54:02 2017
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off film_scanner -c film_scanner
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/dac.sv
+    Info (12023): Found entity 1: dac
+Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/film_scanner.sv
+    Info (12023): Found entity 1: film_scanner
+Info (12127): Elaborating entity "film_scanner" for the top level hierarchy
+Warning (10034): Output port "mtr_m" at film_scanner.sv(35) has no driver
+Warning (10034): Output port "led" at film_scanner.sv(56) has no driver
+Warning (10034): Output port "led_pwm" at film_scanner.sv(7) has no driver
+Warning (10034): Output port "adc_cs" at film_scanner.sv(10) has no driver
+Warning (10034): Output port "adc_sclk" at film_scanner.sv(11) has no driver
+Warning (10034): Output port "ccd_p1" at film_scanner.sv(21) has no driver
+Warning (10034): Output port "ccd_p2" at film_scanner.sv(22) has no driver
+Warning (10034): Output port "ccd_sh" at film_scanner.sv(23) has no driver
+Warning (10034): Output port "ccd_rs" at film_scanner.sv(24) has no driver
+Warning (10034): Output port "ccd_cp" at film_scanner.sv(25) has no driver
+>>>>>>> dac
 Warning (10034): Output port "mtr_nen" at film_scanner.sv(28) has no driver
 Warning (10034): Output port "mtr_step" at film_scanner.sv(29) has no driver
 Warning (10034): Output port "mtr_nrst" at film_scanner.sv(30) has no driver
@@ -822,6 +1055,7 @@ Warning (10034): Output port "mtr_decay" at film_scanner.sv(32) has no driver
 Warning (10034): Output port "mtr_dir" at film_scanner.sv(33) has no driver
 Warning (10034): Output port "ft_wr" at film_scanner.sv(48) has no driver
 Warning (10034): Output port "ft_rd" at film_scanner.sv(49) has no driver
+<<<<<<< HEAD
 Warning (10034): Output port "ft_siwu" at film_scanner.sv(50) has no driver
 Warning (10034): Output port "ft_pwrsav" at film_scanner.sv(51) has no driver
 Warning (10034): Output port "ft_nrst" at film_scanner.sv(52) has no driver
@@ -898,6 +1132,21 @@ Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(370): truncated
 Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(391): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(412): truncated value with size 32 to match size of target (8)
 Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(433): truncated value with size 32 to match size of target (8)
+=======
+Info (12128): Elaborating entity "dac" for hierarchy "dac:dac0"
+Warning (10230): Verilog HDL assignment warning at dac.sv(50): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at dac.sv(89): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at dac.sv(107): truncated value with size 48 to match size of target (24)
+Warning (10230): Verilog HDL assignment warning at dac.sv(108): truncated value with size 48 to match size of target (24)
+Warning (10230): Verilog HDL assignment warning at dac.sv(120): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at dac.sv(133): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at dac.sv(177): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at dac.sv(188): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at dac.sv(198): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at dac.sv(211): truncated value with size 32 to match size of target (5)
+Warning (10230): Verilog HDL assignment warning at dac.sv(255): truncated value with size 32 to match size of target (8)
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+>>>>>>> dac
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "ft_bus[0]" has no driver
     Warning (13040): bidirectional pin "ft_bus[1]" has no driver
@@ -909,9 +1158,19 @@ Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "ft_bus[7]" has no driver
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "led_pwm" is stuck at GND
+<<<<<<< HEAD
     Warning (13410): Pin "dac_sclk" is stuck at GND
     Warning (13410): Pin "dac_sdin" is stuck at GND
     Warning (13410): Pin "dac_sync" is stuck at GND
+=======
+    Warning (13410): Pin "adc_cs" is stuck at GND
+    Warning (13410): Pin "adc_sclk" is stuck at GND
+    Warning (13410): Pin "ccd_p1" is stuck at GND
+    Warning (13410): Pin "ccd_p2" is stuck at GND
+    Warning (13410): Pin "ccd_sh" is stuck at GND
+    Warning (13410): Pin "ccd_rs" is stuck at GND
+    Warning (13410): Pin "ccd_cp" is stuck at GND
+>>>>>>> dac
     Warning (13410): Pin "mtr_nen" is stuck at GND
     Warning (13410): Pin "mtr_step" is stuck at GND
     Warning (13410): Pin "mtr_nrst" is stuck at GND
@@ -923,6 +1182,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "mtr_m[2]" is stuck at GND
     Warning (13410): Pin "ft_wr" is stuck at GND
     Warning (13410): Pin "ft_rd" is stuck at GND
+<<<<<<< HEAD
     Warning (13410): Pin "ft_siwu" is stuck at GND
     Warning (13410): Pin "ft_pwrsav" is stuck at GND
     Warning (13410): Pin "ft_nrst" is stuck at GND
@@ -932,6 +1192,18 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 7 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+=======
+    Warning (13410): Pin "ft_siwu" is stuck at VCC
+    Warning (13410): Pin "ft_pwrsav" is stuck at VCC
+    Warning (13410): Pin "ft_nrst" is stuck at VCC
+    Warning (13410): Pin "led[0]" is stuck at GND
+    Warning (13410): Pin "led[1]" is stuck at GND
+    Warning (13410): Pin "led[2]" is stuck at GND
+    Warning (13410): Pin "led[3]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+>>>>>>> dac
 Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "adc_sdo"
     Warning (15610): No output dependent on input pin "mtr_nhome"
@@ -941,6 +1213,7 @@ Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ft_rxf"
     Warning (15610): No output dependent on input pin "ft_ac8"
     Warning (15610): No output dependent on input pin "ft_ac9"
+<<<<<<< HEAD
 Info (21057): Implemented 130 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 29 output pins
@@ -951,6 +1224,17 @@ Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 66 warnin
     Info: Peak virtual memory: 703 megabytes
     Info: Processing ended: Sun Apr 23 17:39:18 2017
     Info: Elapsed time: 00:00:13
+=======
+Info (21057): Implemented 104 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 29 output pins
+    Info (21060): Implemented 8 bidirectional pins
+    Info (21061): Implemented 58 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 75 warnings
+    Info: Peak virtual memory: 697 megabytes
+    Info: Processing ended: Sat Apr 22 19:54:13 2017
+    Info: Elapsed time: 00:00:11
+>>>>>>> dac
     Info: Total CPU time (on all processors): 00:00:24
 
 

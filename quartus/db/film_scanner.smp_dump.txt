@@ -1,8 +1,0 @@
-
-State Machine - |film_scanner|ccd_timing:ccd0|sh_state
-Name sh_state.00000011 sh_state.00000010 sh_state.00000001 sh_state.00000000 sh_state.00000100 
-sh_state.00000000 0 0 0 0 0 
-sh_state.00000001 0 0 1 1 0 
-sh_state.00000010 0 1 0 1 0 
-sh_state.00000011 1 0 0 1 0 
-sh_state.00000100 0 0 0 1 1 
