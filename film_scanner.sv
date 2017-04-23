@@ -18,11 +18,11 @@ module film_scanner(
 						dac_sync = 1,
 
 	// CCD control
-	output reg 			ccd_p1 = 0, 
-						ccd_p2 = 0, 
-						ccd_sh = 0,
-						ccd_rs = 0, 
-						ccd_cp = 0,
+	output reg 			ccd_p1, 
+						ccd_p2, 
+						ccd_sh,
+						ccd_rs, 
+						ccd_cp,
 
 	// Motor IO
 	output reg 			mtr_nen = 1,
@@ -59,7 +59,18 @@ module film_scanner(
 
 
 
+	ccd_timing ccd0(
 
+		// Input clock
+		.clk_100M(clk_100M),
+
+		// CCD control
+		.ccd_p1(ccd_p1), 
+		.ccd_p2(ccd_p2), 
+		.ccd_sh(ccd_sh),
+		.ccd_rs(ccd_rs), 
+		.ccd_cp(ccd_cp)
+	);
 
 
 

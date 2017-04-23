@@ -1,5 +1,5 @@
 Analysis & Synthesis report for film_scanner
-Sat Apr 22 19:37:37 2017
+Sun Apr 23 11:28:43 2017
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
 
 
@@ -14,9 +14,10 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Parameter Settings for User Entity Instance: ccd_timing:ccd0
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -43,15 +44,15 @@ agreement for further details.
 +------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                                   ;
 +------------------------------------+-----------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Apr 22 19:37:37 2017                     ;
+; Analysis & Synthesis Status        ; Successful - Sun Apr 23 11:28:43 2017                     ;
 ; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition ;
 ; Revision Name                      ; film_scanner                                              ;
 ; Top-level Entity Name              ; film_scanner                                              ;
 ; Family                             ; Cyclone IV E                                              ;
-; Total logic elements               ; 0                                                         ;
-;     Total combinational functions  ; 0                                                         ;
-;     Dedicated logic registers      ; 0                                                         ;
-; Total registers                    ; 0                                                         ;
+; Total logic elements               ; 22                                                        ;
+;     Total combinational functions  ; 22                                                        ;
+;     Dedicated logic registers      ; 11                                                        ;
+; Total registers                    ; 11                                                        ;
 ; Total pins                         ; 46                                                        ;
 ; Total virtual pins                 ; 0                                                         ;
 ; Total memory bits                  ; 0                                                         ;
@@ -169,48 +170,51 @@ agreement for further details.
 +----------------------------------+-----------------+------------------------------+------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path       ; Library ;
 +----------------------------------+-----------------+------------------------------+------------------------------------+---------+
+; ../ccd_timing.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/FilmScannerFPGA/ccd_timing.sv   ;         ;
 ; ../film_scanner.sv               ; yes             ; User SystemVerilog HDL File  ; D:/FilmScannerFPGA/film_scanner.sv ;         ;
 +----------------------------------+-----------------+------------------------------+------------------------------------+---------+
 
 
-+----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                    ;
-+---------------------------------------------+------------------+
-; Resource                                    ; Usage            ;
-+---------------------------------------------+------------------+
-;                                             ;                  ;
-; Total combinational functions               ; 0                ;
-; Logic element usage by number of LUT inputs ;                  ;
-;     -- 4 input functions                    ; 0                ;
-;     -- 3 input functions                    ; 0                ;
-;     -- <=2 input functions                  ; 0                ;
-;                                             ;                  ;
-; Logic elements by mode                      ;                  ;
-;     -- normal mode                          ; 0                ;
-;     -- arithmetic mode                      ; 0                ;
-;                                             ;                  ;
-; Total registers                             ; 0                ;
-;     -- Dedicated logic registers            ; 0                ;
-;     -- I/O registers                        ; 0                ;
-;                                             ;                  ;
-; I/O pins                                    ; 46               ;
-;                                             ;                  ;
-; Embedded Multiplier 9-bit elements          ; 0                ;
-;                                             ;                  ;
-; Maximum fan-out node                        ; ft_bus[0]~output ;
-; Maximum fan-out                             ; 1                ;
-; Total fan-out                               ; 54               ;
-; Average fan-out                             ; 0.54             ;
-+---------------------------------------------+------------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 22             ;
+;                                             ;                ;
+; Total combinational functions               ; 22             ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 9              ;
+;     -- 3 input functions                    ; 1              ;
+;     -- <=2 input functions                  ; 12             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 15             ;
+;     -- arithmetic mode                      ; 7              ;
+;                                             ;                ;
+; Total registers                             ; 11             ;
+;     -- Dedicated logic registers            ; 11             ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 46             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; clk_100M~input ;
+; Maximum fan-out                             ; 11             ;
+; Total fan-out                               ; 142            ;
+; Average fan-out                             ; 1.07           ;
++---------------------------------------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |film_scanner              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |film_scanner       ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                   ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
+; |film_scanner              ; 22 (0)            ; 11 (0)       ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |film_scanner                 ; work         ;
+;    |ccd_timing:ccd0|       ; 22 (22)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ccd_timing:ccd0 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -219,7 +223,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 11    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -229,19 +233,45 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ccd_timing:ccd0 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; SH_HIGH        ; 0     ; Signed Integer                      ;
+; SH_LOW         ; 5     ; Signed Integer                      ;
+; P1_HIGH        ; 24    ; Signed Integer                      ;
+; P1_LOW         ; 0     ; Signed Integer                      ;
+; RS_HIGH        ; 16    ; Signed Integer                      ;
+; RS_LOW         ; 21    ; Signed Integer                      ;
+; CP_HIGH        ; 26    ; Signed Integer                      ;
+; CP_LOW         ; 31    ; Signed Integer                      ;
+; stop           ; 0     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 46                          ;
+; cycloneiii_ff         ; 11                          ;
+;     plain             ; 11                          ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
+; cycloneiii_lcell_comb ; 24                          ;
+;     arith             ; 7                           ;
+;         2 data inputs ; 7                           ;
+;     normal            ; 17                          ;
 ;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 4                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 9                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 1.97                        ;
 +-----------------------+-----------------------------+
 
 
@@ -260,9 +290,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
-    Info: Processing started: Sat Apr 22 19:37:26 2017
+    Info: Processing started: Sun Apr 23 11:28:31 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off film_scanner -c film_scanner
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/ccd_timing.sv
+    Info (12023): Found entity 1: ccd_timing
 Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/film_scanner.sv
     Info (12023): Found entity 1: film_scanner
 Info (12127): Elaborating entity "film_scanner" for the top level hierarchy
@@ -274,11 +306,6 @@ Warning (10034): Output port "adc_sclk" at film_scanner.sv(11) has no driver
 Warning (10034): Output port "dac_sclk" at film_scanner.sv(16) has no driver
 Warning (10034): Output port "dac_sdin" at film_scanner.sv(17) has no driver
 Warning (10034): Output port "dac_sync" at film_scanner.sv(18) has no driver
-Warning (10034): Output port "ccd_p1" at film_scanner.sv(21) has no driver
-Warning (10034): Output port "ccd_p2" at film_scanner.sv(22) has no driver
-Warning (10034): Output port "ccd_sh" at film_scanner.sv(23) has no driver
-Warning (10034): Output port "ccd_rs" at film_scanner.sv(24) has no driver
-Warning (10034): Output port "ccd_cp" at film_scanner.sv(25) has no driver
 Warning (10034): Output port "mtr_nen" at film_scanner.sv(28) has no driver
 Warning (10034): Output port "mtr_step" at film_scanner.sv(29) has no driver
 Warning (10034): Output port "mtr_nrst" at film_scanner.sv(30) has no driver
@@ -290,6 +317,9 @@ Warning (10034): Output port "ft_rd" at film_scanner.sv(49) has no driver
 Warning (10034): Output port "ft_siwu" at film_scanner.sv(50) has no driver
 Warning (10034): Output port "ft_pwrsav" at film_scanner.sv(51) has no driver
 Warning (10034): Output port "ft_nrst" at film_scanner.sv(52) has no driver
+Info (12128): Elaborating entity "ccd_timing" for hierarchy "ccd_timing:ccd0"
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(59): truncated value with size 32 to match size of target (8)
+Warning (10034): Output port "ccd_sh" at ccd_timing.sv(11) has no driver
 Warning (13039): The following bidirectional pins have no drivers
     Warning (13040): bidirectional pin "ft_bus[0]" has no driver
     Warning (13040): bidirectional pin "ft_bus[1]" has no driver
@@ -306,11 +336,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "dac_sclk" is stuck at GND
     Warning (13410): Pin "dac_sdin" is stuck at GND
     Warning (13410): Pin "dac_sync" is stuck at GND
-    Warning (13410): Pin "ccd_p1" is stuck at GND
-    Warning (13410): Pin "ccd_p2" is stuck at GND
     Warning (13410): Pin "ccd_sh" is stuck at GND
-    Warning (13410): Pin "ccd_rs" is stuck at GND
-    Warning (13410): Pin "ccd_cp" is stuck at GND
     Warning (13410): Pin "mtr_nen" is stuck at GND
     Warning (13410): Pin "mtr_step" is stuck at GND
     Warning (13410): Pin "mtr_nrst" is stuck at GND
@@ -329,10 +355,10 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "led[1]" is stuck at GND
     Warning (13410): Pin "led[2]" is stuck at GND
     Warning (13410): Pin "led[3]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 9 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk_100M"
+Warning (21074): Design contains 8 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "adc_sdo"
     Warning (15610): No output dependent on input pin "mtr_nhome"
     Warning (15610): No output dependent on input pin "mtr_nflt"
@@ -341,14 +367,15 @@ Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ft_rxf"
     Warning (15610): No output dependent on input pin "ft_ac8"
     Warning (15610): No output dependent on input pin "ft_ac9"
-Info (21057): Implemented 46 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 68 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 29 output pins
     Info (21060): Implemented 8 bidirectional pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 73 warnings
-    Info: Peak virtual memory: 660 megabytes
-    Info: Processing ended: Sat Apr 22 19:37:38 2017
+    Info (21061): Implemented 22 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Peak virtual memory: 697 megabytes
+    Info: Processing ended: Sun Apr 23 11:28:43 2017
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:23
+    Info: Total CPU time (on all processors): 00:00:24
 
 

@@ -1,5 +1,5 @@
 |film_scanner
-clk_100M => ~NO_FANOUT~
+clk_100M => clk_100M.IN1
 led_pwm << <GND>
 adc_cs << <GND>
 adc_sclk << <GND>
@@ -7,11 +7,11 @@ adc_sdo => ~NO_FANOUT~
 dac_sclk << <GND>
 dac_sdin << <GND>
 dac_sync << <GND>
-ccd_p1 << <GND>
-ccd_p2 << <GND>
-ccd_sh << <GND>
-ccd_rs << <GND>
-ccd_cp << <GND>
+ccd_p1 << ccd_timing:ccd0.ccd_p1
+ccd_p2 << ccd_timing:ccd0.ccd_p2
+ccd_sh << ccd_timing:ccd0.ccd_sh
+ccd_rs << ccd_timing:ccd0.ccd_rs
+ccd_cp << ccd_timing:ccd0.ccd_cp
 mtr_nen << <GND>
 mtr_step << <GND>
 mtr_nrst << <GND>
@@ -45,5 +45,24 @@ led[0] << <GND>
 led[1] << <GND>
 led[2] << <GND>
 led[3] << <GND>
+
+
+|film_scanner|ccd_timing:ccd0
+clk_100M => ccd_rs~reg0.CLK
+clk_100M => ccd_p1~reg0.CLK
+clk_100M => ccd_cp~reg0.CLK
+clk_100M => timings_cntr[0].CLK
+clk_100M => timings_cntr[1].CLK
+clk_100M => timings_cntr[2].CLK
+clk_100M => timings_cntr[3].CLK
+clk_100M => timings_cntr[4].CLK
+clk_100M => timings_cntr[5].CLK
+clk_100M => timings_cntr[6].CLK
+clk_100M => timings_cntr[7].CLK
+ccd_p1 <= ccd_p1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ccd_p2 <= ccd_p1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ccd_sh <= <GND>
+ccd_rs <= ccd_rs~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ccd_cp <= ccd_cp~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
