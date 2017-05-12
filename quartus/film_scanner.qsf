@@ -148,6 +148,7 @@ set_location_assignment PIN_59 -to mtr_slp
 set_location_assignment PIN_50 -to mtr_step
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name SYSTEMVERILOG_FILE ../usb_ft232h.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../dac.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../ccd_timing.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../film_scanner.sv

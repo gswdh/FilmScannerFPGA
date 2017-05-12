@@ -19,7 +19,7 @@ module ccd_timing(
 	input logic 		adc_sdo,
 
 	// Output data
-	output reg			pix_clk,
+	output reg			pix_clk, pix_out_valid,
 	output reg [15:0]	pix_data = 0
 
 	);
@@ -80,7 +80,8 @@ module ccd_timing(
 	assign pix_n_valid = cal_mode ? 2080 : 2088; // Cal mode clocks out all pixels
 
 	// Create the pix_clk
-	assign pix_clk = pix_valid_flag ? ~adc_cs : 0;
+	assign pix_clk = ~adc_cs;
+	assign pix_out_valid = pix_valid_flag;
 
 	// ADC data variable
 	reg [15:0]	adc_data = 0;

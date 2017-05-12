@@ -1,5 +1,5 @@
 EDA Netlist Writer report for film_scanner
-Sun Apr 23 18:06:27 2017
+Fri May 12 18:13:07 2017
 Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun Apr 23 18:06:27 2017 ;
+; EDA Netlist Writer Status ; Successful - Fri May 12 18:13:07 2017 ;
 ; Revision Name             ; film_scanner                          ;
 ; Top-level Entity Name     ; film_scanner                          ;
 ; Family                    ; Cyclone IV E                          ;
@@ -89,7 +89,7 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
-    Info: Processing started: Sun Apr 23 18:06:26 2017
+    Info: Processing started: Fri May 12 18:13:06 2017
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off film_scanner -c film_scanner
 Info (204019): Generated file film_scanner_6_1200mv_85c_slow.svo in folder "D:/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file film_scanner_6_1200mv_0c_slow.svo in folder "D:/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
@@ -100,8 +100,8 @@ Info (204019): Generated file film_scanner_6_1200mv_0c_v_slow.sdo in folder "D:/
 Info (204019): Generated file film_scanner_min_1200mv_0c_v_fast.sdo in folder "D:/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file film_scanner_v.sdo in folder "D:/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 583 megabytes
-    Info: Processing ended: Sun Apr 23 18:06:27 2017
+    Info: Peak virtual memory: 584 megabytes
+    Info: Processing ended: Fri May 12 18:13:07 2017
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

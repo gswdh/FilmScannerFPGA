@@ -47,15 +47,17 @@ module film_scanner(
 
 	output reg 			ft_wr = 1,
 						ft_rd = 1,
-
-						ft_siwu = 1,
-						ft_pwrsav = 1,
-						ft_nrst = 1,
+						ft_siwu,
+						ft_pwrsav,
+						ft_nrst,
 
 	// LEDs
 	output reg 			[3:0] led
 );
 
+	// Pix signals
+	reg pix_clk, pix_valid;
+	reg [15:0] pix_data;
 
 	// 80MHz clock
 	reg clk_80M;
@@ -86,8 +88,9 @@ module film_scanner(
 		.adc_sdo(adc_sdo),
 
 		// Data output 
-		.pix_clk(led[1]),
-		.pix_data()
+		.pix_clk(pix_clk),
+		.pix_out_valid(pix_valid),
+		.pix_data(pix_data)
 	);
 
 
@@ -97,7 +100,7 @@ module film_scanner(
 		.clk_100M(clk_100M),
 
 		// Input data
-		.offset(32767), .gain(3277),
+		.offset(41351), .gain(40097),
 
 		// DAC output signals
 		.sclk(dac_sclk),
@@ -105,5 +108,36 @@ module film_scanner(
 		.sync(dac_sync)
 	);
 
+
+	// Set the ft signals
+	always_comb
+	begin
+
+		ft_siwu = 1;
+		ft_pwrsav = 1;
+		ft_nrst = 1;
+	end
+
+
+	usb_ft232h usb0(
+
+		//Avalon-MM Slave
+		.clk_i(pix_clk),
+		.reset_i(0),
+		.address_i(0),
+		.read_i(0),
+		.readdata_o(),
+		.write_i(pix_valid),
+		.writedata_i(pix_data[15:8]),
+
+		//FT232H
+		.usb_clk_i(ft_clk),
+		.usb_data_io(ft_bus),
+		.usb_rxf_n_i(ft_rxf),
+		.usb_txe_n_i(ft_txe),
+		.usb_rd_n_o(ft_rd),
+		.usb_wr_n_o(ft_wr),
+		.usb_oe_n_o(ft_oe)
+	);
 
 endmodule
