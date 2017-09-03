@@ -70,7 +70,7 @@ module film_scanner(
 
 
 	// CCD timing
-	ccd_timings_new ccd0(
+	ccd_timing ccd0(
 
 		// Input clock
 		.clk_160M(clk_160M), .nrst(1),
