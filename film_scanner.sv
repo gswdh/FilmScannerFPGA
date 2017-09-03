@@ -56,24 +56,28 @@ module film_scanner(
 );
 
 	// Pix signals
-	reg pix_clk, pix_valid;
+	reg pix_clk = 0, pix_valid;
 	reg [15:0] pix_data;
 
 	// 80MHz clock
-	reg clk_80M;
+	reg clk_160M;
 	
 	pll_80	pll_80_inst (
 		.inclk0(clk_100M),
-		.c0(clk_80M),
+		.c0(clk_160M),
 		.locked(led[0])
 	);
 
+
 	// CCD timing
-	ccd_timing ccd0(
+	ccd_timings_new ccd0(
 
 		// Input clock
-		.clk_80M(clk_80M),
+		.clk_160M(clk_160M), .nrst(1),
 		.en(1), .cal_mode(1),
+
+		// Clock divisor 0 = divide by 2
+		.div(0),
 
 		// CCD control
 		.ccd_p1(ccd_p1), 
@@ -85,12 +89,11 @@ module film_scanner(
 		// ADC stuff
 		.adc_cs(adc_cs), 
 		.adc_sclk(adc_sclk), 
-		.adc_sdo(adc_sdo),
+		.adc_sdo(1),
 
 		// Data output 
-		.pix_clk(pix_clk),
-		.pix_out_valid(pix_valid),
-		.pix_data(pix_data)
+		.pix_clk(), .pix_out_valid(),
+		.pix_data()
 	);
 
 

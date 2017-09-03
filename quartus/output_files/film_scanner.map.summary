@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Fri May 12 18:12:46 2017
+Analysis & Synthesis Status : Successful - Sun Sep 03 14:37:44 2017
 Quartus II 64-Bit Version : 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
 Revision Name : film_scanner
 Top-level Entity Name : film_scanner
 Family : Cyclone IV E
-Total logic elements : 480
-    Total combinational functions : 266
-    Dedicated logic registers : 343
-Total registers : 343
+Total logic elements : 221
+    Total combinational functions : 202
+    Dedicated logic registers : 111
+Total registers : 111
 Total pins : 46
 Total virtual pins : 0
 Total memory bits : 4,096
