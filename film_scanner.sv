@@ -89,11 +89,11 @@ module film_scanner(
 		// ADC stuff
 		.adc_cs(adc_cs), 
 		.adc_sclk(adc_sclk), 
-		.adc_sdo(1),
+		.adc_sdo(adc_sdo),
 
 		// Data output 
-		.pix_clk(), .pix_out_valid(),
-		.pix_data()
+		.pix_clk(pix_clk), .pix_out_valid(pix_valid),
+		.pix_data(pix_data)
 	);
 
 

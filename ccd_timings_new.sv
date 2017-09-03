@@ -128,11 +128,12 @@ module ccd_timings_new
 	parameter D1_LOW = D1_HIGH + 1;
 	parameter D0_HIGH = D1_LOW + 1;
 	
-	
-
 	// Timings definitions
 	parameter LINE_WAIT = 0;
 	parameter LINE_RUN = 1;
+
+	// Create the output pixel data clock
+	assign pix_clk = adc_cs;
 
 	// Create a counter to manage the timings from
 	reg [7:0] timings_cntr = 4, start_cntr = 0;
@@ -341,6 +342,42 @@ module ccd_timings_new
 					adc_sclk <= 0;
 				end
 			endcase // timings_cntr
+		end
+	end
+
+	// Clock the ADC data out of the module
+	always_ff @ (negedge adc_cs or negedge nrst)
+	begin
+
+		// Reset
+		if(nrst == 0)
+		begin
+
+			pix_data <= 0;
+		end
+
+		// Run
+		else
+		begin
+
+			// Output the data
+			pix_data <= adc_data;
+
+			// Create the valid output signal
+			if(cal_mode == 1)
+			begin
+
+				if(pixel_cntr == 1) pix_out_valid <= 1;
+				if(pixel_cntr == 2088) pix_out_valid <= 0;
+			end
+
+			// Else normal mode
+			else
+			begin
+
+				if(pixel_cntr == 32) pix_out_valid <= 1;
+				if(pixel_cntr == 2080) pix_out_valid <= 0;
+			end
 		end
 	end
 endmodule // ccd_timings_new
