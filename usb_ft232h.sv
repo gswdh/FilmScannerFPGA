@@ -14,6 +14,9 @@ module usb_ft232h (
 	write_i,
 	writedata_i,
 
+	// Amount of data recieved 
+	rx_n_bytes_o,
+
 	//FT232H
 	usb_clk_i,
 	usb_data_io,
@@ -21,8 +24,17 @@ module usb_ft232h (
 	usb_txe_n_i,
 	usb_rd_n_o,
 	usb_wr_n_o,
-	usb_oe_n_o
+	usb_oe_n_o,
+
+	// Read hack
+	rxf_rdclk,		// Read clock
+	rxf_rdreq,		// Read request
+
+	rxf_rddata,		// Data read
+	rxf_rdusedw		// Number of bytes in the FIFO
 );
+
+
 
 parameter TX_FIFO_DEPTH  = 512;
 parameter TX_FIFO_WIDTHU = 9;
@@ -45,6 +57,8 @@ output logic [7:0] readdata_o;
 input  logic       write_i;
 input  logic [7:0] writedata_i;
 
+output logic [RX_FIFO_WIDTHU-1:0] rx_n_bytes_o;
+
 input  logic       usb_clk_i;
 inout  logic [7:0] usb_data_io;
 input  logic       usb_rxf_n_i;
@@ -52,6 +66,13 @@ input  logic       usb_txe_n_i;
 output logic       usb_rd_n_o;
 output logic       usb_wr_n_o;
 output logic       usb_oe_n_o;
+
+// Read hack
+input logic 		rxf_rdclk;		// Read clock
+input logic			rxf_rdreq;		// Read request
+
+output reg [7:0] 	rxf_rddata;		// Data read
+output reg [8:0]	rxf_rdusedw;	// Number of bytes in the FIFO
 
 
 
@@ -85,10 +106,10 @@ logic [7:0]                rxf_wrdata;
 logic                      rxf_wrclk;
 logic                      rxf_wrreq;
 logic                      rxf_wrfull;
-logic [RX_FIFO_WIDTHU-1:0] rxf_rdusedw;
-logic                      rxf_rdclk;
-logic                      rxf_rdreq;
-logic [7:0]                rxf_rddata;
+//logic [RX_FIFO_WIDTHU-1:0] rxf_rdusedw;
+//logic                      rxf_rdclk;
+//logic                      rxf_rdreq;
+//logic [7:0]                rxf_rddata;
 logic                      rxf_rdempty;
 logic                      rxf_rdfull;
 
@@ -97,7 +118,7 @@ assign usb_data_io = ( usb_oe_n_o ) ? ( txf_rddata ) : ( {8{1'bZ}} );
 
 assign rxf_wrclk   = ~usb_clk_i;
 assign txf_rdclk   = usb_clk_i;
-assign rxf_rdclk   = clk_i;
+//assign rxf_rdclk   = clk_i;
 assign txf_wrclk   = ~clk_i;
 
 assign txstatus[15]                  = ~txf_wrfull; //can write
@@ -145,17 +166,17 @@ dcfifo	txfifo (
 dcfifo	rxfifo (
 				.aclr      ( reset_i ),
 				.data      ( rxf_wrdata ),
-				.rdclk     ( rxf_rdclk ),
-				.rdreq     ( rxf_rdreq ),
+				.rdclk     ( rxf_rdclk ),	//
+				.rdreq     ( rxf_rdreq ),	//	
 				.wrclk     ( rxf_wrclk ),
-				.wrreq     ( rxf_wrreq ),
-				.q         ( rxf_rddata ),
-				.rdempty   ( rxf_rdempty ),
+				.wrreq     ( rxf_wrreq ),	
+				.q         ( rxf_rddata ),	//
+				.rdempty   ( rxf_rdempty ),	//
 				.wrfull    ( rxf_wrfull ),
 				.wrusedw   (),
 				.eccstatus (),
 				.rdfull    ( rxf_rdfull ),
-				.rdusedw   ( rxf_rdusedw ),
+				.rdusedw   ( rxf_rdusedw ),	//
 				.wrempty   ());
 	defparam
 		rxfifo.intended_device_family = "Cyclone IV E",
@@ -173,6 +194,7 @@ dcfifo	rxfifo (
 		rxfifo.wrsync_delaypipe = 11;
 		
 
+assign rx_n_bytes_o = rxf_rdusedw;
 
 /* read usb data to rx fifo */
 always_ff @( negedge rxf_wrclk or posedge reset_i )
@@ -361,6 +383,7 @@ begin
 	 end
 end
 
+/*
 always_ff @( negedge rxf_rdclk or posedge reset_i )
 begin
   if( reset_i )
@@ -375,6 +398,7 @@ begin
 		  rxf_rdreq <= 1'b0;
 	 end
 end
+*/
 
 always_ff @( posedge clk_i or posedge reset_i )
 begin
