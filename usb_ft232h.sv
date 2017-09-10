@@ -5,98 +5,45 @@
 
 
 module usb_ft232h (
-	//Avalon-MM Slave
-	clk_i,
-	reset_i,
-	address_i,
-	read_i,
-	readdata_o,
-	write_i,
-	writedata_i,
 
-	// Amount of data recieved 
-	rx_n_bytes_o,
+	// Reset
+	input logic 		nrst, 
 
 	//FT232H
-	usb_clk_i,
-	usb_data_io,
-	usb_rxf_n_i,
-	usb_txe_n_i,
-	usb_rd_n_o,
-	usb_wr_n_o,
-	usb_oe_n_o,
+	input  logic       	usb_clk_i;
+	inout  logic [7:0] 	usb_data_io;
+	input  logic       	usb_rxf_n_i;
+	input  logic       	usb_txe_n_i;
+	output logic       	usb_rd_n_o;
+	output logic       	usb_wr_n_o;
+	output logic       	usb_oe_n_o;
 
-	// Read hack
-	rxf_rdclk,		// Read clock
-	rxf_rdreq,		// Read request
+	// Read port
+	input logic 		rxf_rdclk_i,		// Read clock
+						rxf_rdreq_i,		// Read request
+	output logic [7:0]	rxf_rddata_o,		// Data read
+	output logic [8:0]	rxf_rdusedw_o,		// Number of bytes in the FIFO
 
-	rxf_rddata,		// Data read
-	rxf_rdusedw		// Number of bytes in the FIFO
+	// Write port
+	input logic 		txe_wrclk_i,		// Write clock
+						txe_wrreq_i,		// Write request
+	input logic [7:0]	txe_wrdata_i,		// Data to write
+	output logic [8:0]	txe_wrusedw_o,		// FIFO status
+	output logic 		txe_wrfull_o
 );
 
 
-
+// TODO Make the rxf_rdusedw_o signal parameterised
 parameter TX_FIFO_DEPTH  = 512;
 parameter TX_FIFO_WIDTHU = 9;
 parameter RX_FIFO_DEPTH  = 512;
 parameter RX_FIFO_WIDTHU = 9;
 
-localparam WRDATA_ADDR	  = 4'd0;
-localparam RDDATA_ADDR	  = 4'd1;
-localparam TXSTATUSL_ADDR = 4'd2;
-localparam TXSTATUSH_ADDR = 4'd3;
-localparam RXSTATUSL_ADDR = 4'd4;
-localparam RXSTATUSH_ADDR = 4'd5;
-
-
-input  logic       clk_i;
-input  logic       reset_i;
-input  logic [3:0] address_i;
-input  logic       read_i;
-output logic [7:0] readdata_o;
-input  logic       write_i;
-input  logic [7:0] writedata_i;
-
-output logic [RX_FIFO_WIDTHU-1:0] rx_n_bytes_o;
-
-input  logic       usb_clk_i;
-inout  logic [7:0] usb_data_io;
-input  logic       usb_rxf_n_i;
-input  logic       usb_txe_n_i;
-output logic       usb_rd_n_o;
-output logic       usb_wr_n_o;
-output logic       usb_oe_n_o;
-
-// Read hack
-input logic 		rxf_rdclk;		// Read clock
-input logic			rxf_rdreq;		// Read request
-
-output reg [7:0] 	rxf_rddata;		// Data read
-output reg [8:0]	rxf_rdusedw;	// Number of bytes in the FIFO
-
-
-
-reg                        error;
+reg                        txerror;
 reg                        rxerror;
 reg   [7:0]                rxerrdata;
-logic [15:0]               txstatus;
-logic [15:0]               rxstatus;
 
-reg                        read_pipe;
-reg                        read_pipe2;
-
-reg                        adr_data;
-reg                        adr_txsl;
-reg                        adr_txsh;
-reg                        adr_rxsl;
-reg                        adr_rxsh;
-
-
-logic [7:0]                txf_wrdata;
-logic                      txf_wrclk;
-logic                      txf_wrreq;
 logic                      txf_wrfull;
-logic [TX_FIFO_WIDTHU-1:0] txf_wrusedw;
 logic                      txf_rdclk;
 logic                      txf_rdreq;
 logic [7:0]                txf_rddata;
@@ -106,47 +53,37 @@ logic [7:0]                rxf_wrdata;
 logic                      rxf_wrclk;
 logic                      rxf_wrreq;
 logic                      rxf_wrfull;
-//logic [RX_FIFO_WIDTHU-1:0] rxf_rdusedw;
-//logic                      rxf_rdclk;
-//logic                      rxf_rdreq;
-//logic [7:0]                rxf_rddata;
 logic                      rxf_rdempty;
 logic                      rxf_rdfull;
 
-
+// Set the FT232H port to input or the write data
 assign usb_data_io = ( usb_oe_n_o ) ? ( txf_rddata ) : ( {8{1'bZ}} );
 
+// Create the clocks
 assign rxf_wrclk   = ~usb_clk_i;
 assign txf_rdclk   = usb_clk_i;
-//assign rxf_rdclk   = clk_i;
-assign txf_wrclk   = ~clk_i;
 
-assign txstatus[15]                  = ~txf_wrfull; //can write
-assign txstatus[14:TX_FIFO_WIDTHU+1] = 0;
-assign txstatus[TX_FIFO_WIDTHU]      = txf_wrfull;
-assign txstatus[TX_FIFO_WIDTHU-1:0]  = ( txf_wrfull ? {TX_FIFO_WIDTHU{1'b0}} : txf_wrusedw );
+// Full signal
+assign txe_wrfull_o = txf_wrfull;
 
-assign rxstatus[15]                  = ~rxf_rdempty; //can read
-assign rxstatus[14:RX_FIFO_WIDTHU+1] = 0;
-assign rxstatus[RX_FIFO_WIDTHU]      = rxf_rdfull;
-assign rxstatus[RX_FIFO_WIDTHU-1:0]  = ( rxf_rdempty ? {RX_FIFO_WIDTHU{1'b0}} : rxf_rdusedw );
-
-
-dcfifo	txfifo (
-				.aclr      ( reset_i ),
-				.data      ( txf_wrdata ),
-				.rdclk     ( txf_rdclk ),
-				.rdreq     ( txf_rdreq ),
-				.wrclk     ( txf_wrclk ),
-				.wrreq     ( txf_wrreq ),
-				.q         ( txf_rddata ),
-				.rdempty   ( txf_rdempty ),
-				.wrfull    ( txf_wrfull ),
-				.wrusedw   ( txf_wrusedw ),
-				.eccstatus (),
-				.rdfull    (),
-				.rdusedw   (),
-				.wrempty   ());
+	// FIFO for sending data instatiation
+	dcfifo	txfifo (
+		.aclr      ( ~nrst ),
+		.data      ( txe_wrdata_i ),
+		.rdclk     ( txf_rdclk ),
+		.rdreq     ( txf_rdreq ),
+		.wrclk     ( txe_wrclk_i ),
+		.wrreq     ( txe_wrreq_i ),
+		.q         ( txf_rddata ),
+		.rdempty   ( txf_rdempty ),
+		.wrfull    ( txf_wrfull ),
+		.wrusedw   ( txe_wrusedw_o ),
+		.eccstatus (),
+		.rdfull    (),
+		.rdusedw   (),
+		.wrempty   ()
+	);
+	
 	defparam
 		txfifo.intended_device_family = "Cyclone IV E",
 		txfifo.lpm_numwords = TX_FIFO_DEPTH,
@@ -162,22 +99,24 @@ dcfifo	txfifo (
 		txfifo.write_aclr_synch = "ON",
 		txfifo.wrsync_delaypipe = 11;
 
-		
-dcfifo	rxfifo (
-				.aclr      ( reset_i ),
-				.data      ( rxf_wrdata ),
-				.rdclk     ( rxf_rdclk ),	//
-				.rdreq     ( rxf_rdreq ),	//	
-				.wrclk     ( rxf_wrclk ),
-				.wrreq     ( rxf_wrreq ),	
-				.q         ( rxf_rddata ),	//
-				.rdempty   ( rxf_rdempty ),	//
-				.wrfull    ( rxf_wrfull ),
-				.wrusedw   (),
-				.eccstatus (),
-				.rdfull    ( rxf_rdfull ),
-				.rdusedw   ( rxf_rdusedw ),	//
-				.wrempty   ());
+	// FIFO for recieving data instatiation
+	dcfifo	rxfifo (
+		.aclr      ( ~nrst ),
+		.data      ( rxf_wrdata ),
+		.rdclk     ( rxf_rdclk_i ),	//
+		.rdreq     ( rxf_rdreq_i ),	//	
+		.wrclk     ( rxf_wrclk ),
+		.wrreq     ( rxf_wrreq ),	
+		.q         ( rxf_rddata_o ),	//
+		.rdempty   ( rxf_rdempty ),	//
+		.wrfull    ( rxf_wrfull ),
+		.wrusedw   (),
+		.eccstatus (),
+		.rdfull    ( rxf_rdfull ),
+		.rdusedw   ( rxf_rdusedw_o ),	//
+		.wrempty   ()
+	);
+	
 	defparam
 		rxfifo.intended_device_family = "Cyclone IV E",
 		rxfifo.lpm_numwords = RX_FIFO_DEPTH,
@@ -193,254 +132,167 @@ dcfifo	rxfifo (
 		rxfifo.write_aclr_synch = "ON",
 		rxfifo.wrsync_delaypipe = 11;
 		
+	// Read USB data to RX FIFO
+	always_ff @ (negedge rxf_wrclk or negedge nrst)
+	begin
 
-assign rx_n_bytes_o = rxf_rdusedw;
+		// Reset
+	  	if(nrst == 0)
+	    begin
 
-/* read usb data to rx fifo */
-always_ff @( negedge rxf_wrclk or posedge reset_i )
-begin
-  if( reset_i )
-    begin
-	   rxf_wrreq <= 1'b0;
-		rxf_wrdata <= 8'b0;
-		rxerror <= 1'b0;
-		rxerrdata <= 8'b0;
-	 end
-  else
-    begin
-	   if( ~usb_rd_n_o & rxf_wrfull )
-		  begin
-		    rxerror <= 1'b1;
-			 rxerrdata <= usb_data_io;
-		  end
-	 
-	   if( ~rxf_wrfull & ((~usb_rd_n_o & ~usb_rxf_n_i) | rxerror) )
-		  begin
-		    rxf_wrreq <= 1'b1;
-			 if( rxerror )
-			   begin
-			     rxerror <= 1'b0;
-				  rxf_wrdata <= rxerrdata;
+			rxf_wrreq <= 0;
+			rxf_wrdata <= 0;
+			rxerror <= 0;
+			rxerrdata <= 0;
+		end
+
+		// Run
+	  	else
+	    begin
+
+	    	// If we are attempting to read data from the FT232H but the RX FIFO is full
+		   	if(~usb_rd_n_o & rxf_wrfull)
+	 	 	begin
+
+	 	 		// If the RD signal is set low to read data from the USB but the RX FIFO is full
+			    rxerror <= 1;
+
+			    // Save the incoming byte into an intermediate variable
+				rxerrdata <= usb_data_io;
+			end
+		 
+		 	// If the (RX FIFO is not full and ((we are reading and there is data to read) or there's an error))
+		   	if(~rxf_wrfull & ((~usb_rd_n_o & ~usb_rxf_n_i) | rxerror))
+			begin
+
+				// Start writing into the RX FIFO
+			    rxf_wrreq <= 1;
+			 	
+			 	// If there's an error set the input data into the FIFO to be something?
+			 	if(rxerror)
+			   	begin
+
+			   		// Reset the error signal
+			     	rxerror <= 0;
+
+			     	// Input the saved byte from when there was an error
+				  	rxf_wrdata <= rxerrdata;
 				end
-			 else
-			   rxf_wrdata <= usb_data_io;
-		  end
-		else
-		  begin
-		    rxf_wrreq <= 1'b0;
-		  end
-	 end
-end
-always_ff @( posedge usb_clk_i or posedge reset_i )
-begin
-  if( reset_i )
-    begin
-	   usb_oe_n_o <= 1'b1;
-		usb_rd_n_o <= 1'b1;
-	 end
-  else
-    begin
-	   if( ~usb_rxf_n_i & ~rxf_wrfull & ( usb_txe_n_i | ( ~txf_rdreq & ~error )) & ~rxerror )
-		  begin
-		    usb_oe_n_o <= 1'b0;
-			 if( ~usb_oe_n_o )
-		      usb_rd_n_o <= 1'b0;
-		  end
-		else
-		  begin
-		    usb_oe_n_o <= 1'b1;
-			 usb_rd_n_o <= 1'b1;
-		  end
-	 end
-end
-
-/*---------------------------------*/
-
-/* write tx fifo data to usb */
-always_ff @( negedge txf_rdclk or posedge reset_i )
-begin
-  if( reset_i )
-    begin
-	   txf_rdreq <= 1'b0;
-	 end
-  else
-    begin
-	   if( ~usb_txe_n_i & ~txf_rdempty & ~error & usb_oe_n_o )
-		  begin
-		    txf_rdreq <= 1'b1;
-		  end
-		else
-		  txf_rdreq <= 1'b0;
-	 end
-end
-always_ff @( posedge usb_clk_i or posedge reset_i )
-begin
-  if( reset_i )
-    begin
-		usb_wr_n_o <= 1'b1;
-		error      <= 1'b0;
-	 end
-  else
-    begin
-	   if( usb_txe_n_i & ~usb_wr_n_o )
-		  begin
-		    error <= 1'b1;
-		  end
-	 
-	   if( ~usb_txe_n_i & ( txf_rdreq | error ) & usb_oe_n_o )
-		  begin
-		    usb_wr_n_o <= 1'b0;
-			 if( error )
-			   error <= 1'b0;
-		  end
-		else
-		  begin
-		    usb_wr_n_o <= 1'b1;
-		  end
-    end
-end
-/*-----------------------------*/
-
-
-/* avalon data to tx fifo*/
-always_ff @( negedge txf_wrclk or posedge reset_i )
-begin
-  if( reset_i )
-    begin
-	   txf_wrreq  <= 1'b0;
-		txf_wrdata <= 8'b0;
-	 end
-  else
-    begin
-	   if( write_i & ( address_i == WRDATA_ADDR ) & ~txf_wrfull )
-		  begin
-		    txf_wrreq  <= 1'b1;
-			 txf_wrdata <= writedata_i;
-		  end
-		else
-		  begin
-		    txf_wrreq  <= 1'b0;
-		  end
-	 end
-end
-/*------------------------------------*/
-
-/* rx fifo data to avalon */
-always_ff @( posedge clk_i or posedge reset_i )
-begin
-  if( reset_i )
-    begin
-	   adr_data <= 1'b0;
-		adr_txsl <= 1'b0;
-		adr_txsh <= 1'b0;
-		adr_rxsl <= 1'b0;
-		adr_rxsh <= 1'b0;
-	 end
-  else
-    begin
-	   if( read_i )
-		  begin
-		    if( address_i == RDDATA_ADDR )
-			   adr_data <= 1'b1;
-			 else
-			   adr_data <= 1'b0;
 				
-			 if( address_i == TXSTATUSL_ADDR )
-			   adr_txsl <= 1'b1;
-			 else
-			   adr_txsl <= 1'b0;
+				// If everything is fine, write some USB data into the FIFO
+				else rxf_wrdata <= usb_data_io;
+			end
+
+			else
+			begin
+
+				// Else stop writing data into the FIFO
+				rxf_wrreq <= 0;
+			end
+		end
+	end
+
+	// Set the FT232H port direction
+	always_ff @ (posedge usb_clk_i or negedge nrst)
+	begin
+
+		// Reset
+		if(nrst == 0)
+		begin
+
+			usb_oe_n_o <= 1;
+			usb_rd_n_o <= 1;
+		end
+
+		// Run
+		else
+		begin
 			
-			 if( address_i == TXSTATUSH_ADDR )
-			   adr_txsh <= 1'b1;
-			 else
-			   adr_txsh <= 1'b0;
-			
-			 if( address_i == RXSTATUSL_ADDR )
-			   adr_rxsl <= 1'b1;
-			 else
-			   adr_rxsl <= 1'b0;
+			// If there's data to be read, the RX FIFO is not full and there is no TX happening and there are no errors
+			if(~usb_rxf_n_i & ~rxf_wrfull & (usb_txe_n_i | (~txf_rdreq & ~error)) & ~rxerror)
+			begin
+
+				// Set the the port direction to output (so we can read data from it)
+				usb_oe_n_o <= 0;
 				
-			 if( address_i == RXSTATUSH_ADDR )
-			   adr_rxsh <= 1'b1;
-			 else
-			   adr_rxsh <= 1'b0;
-		  end
-	 end
-end
+				// If the direction has been set assert the read request
+				if( ~usb_oe_n_o ) usb_rd_n_o <= 0;
+			end
+			
+			else
+			begin
+			
+				// Else set for writing to the FT232H
+				usb_oe_n_o <= 1;
+				usb_rd_n_o <= 1;
+			end
+		end
+	end
 
-always_ff @( posedge clk_i or posedge reset_i )
-begin
-  if( reset_i )
-    begin
-	   read_pipe <= 1'b0;
-    end
-  else
-    begin
-	   if( read_i )
-		  read_pipe <= 1'b1;
+	// Write data from the TX FIFO to the USB
+	always_ff @ (negedge txf_rdclk or negedge nrst)
+	begin
+
+		// Reset
+		if(nrst == 0)
+		begin
+
+			// 
+			txf_rdreq <= 0;
+		end
+
+		// Run
 		else
-		  read_pipe <= 1'b0;
-	 end
-end
+		begin
 
-/*
-always_ff @( negedge rxf_rdclk or posedge reset_i )
-begin
-  if( reset_i )
-    begin
-	   rxf_rdreq <= 1'b0;
-	 end
-  else
-    begin
-	   if( read_pipe & adr_data & ~rxf_rdempty )
-		  rxf_rdreq <= 1'b1;
+			// 
+			if( ~usb_txe_n_i & ~txf_rdempty & ~error & usb_oe_n_o )
+			begin
+			
+				txf_rdreq <= 1;
+			end
+
+			// 
+			else txf_rdreq <= 0;
+		end
+	end
+		
+	// 
+	always_ff @ (posedge usb_clk_i or negedge nrst)
+	begin
+
+		// Reset
+		if(nrst)
+		begin
+
+			usb_wr_n_o <= 1;
+			error <= 0;
+		end
+
+		// Run
 		else
-		  rxf_rdreq <= 1'b0;
-	 end
-end
-*/
+		begin
 
-always_ff @( posedge clk_i or posedge reset_i )
-begin
-  if( reset_i )
-    begin
-	   read_pipe2 <= 1'b0;
-    end
-  else
-    begin
-	   if( read_pipe )
-		  read_pipe2 <= 1'b1;
-		else
-		  read_pipe2 <= 1'b0;
-	 end
-end
+			// 
+			if( usb_txe_n_i & ~usb_wr_n_o )
+			begin
+				
+				error <= 1;
+			end
 
-always_ff @( posedge clk_i or posedge reset_i )
-begin
-  if( reset_i )
-    begin
-	   readdata_o <= 8'b0;
-	 end
-  else
-    begin
-	   if( read_pipe2 )
-		  begin
-		    if( adr_data )
-			   readdata_o <= rxf_rddata;
-			 else if( adr_txsl )
-			   readdata_o <= txstatus[7:0];
-			 else if( adr_txsh )
-			   readdata_o <= txstatus[15:8];
-			 else if( adr_rxsl )
-			   readdata_o <= rxstatus[7:0];
-			 else if( adr_rxsh )
-			   readdata_o <= rxstatus[15:8];
-			 else
-			   readdata_o <= 8'b0;
-		  end
-	 end
-end
-/*------------------------------------*/
-
-
+			//
+			if( ~usb_txe_n_i & ( txf_rdreq | error ) & usb_oe_n_o )
+			begin
+				
+				// 
+				usb_wr_n_o <= 0;
+		
+				// 
+				if(error) error <= 0;
+			end
+			
+			// 
+			else usb_wr_n_o <= 1;
+		end
+	end
 endmodule
