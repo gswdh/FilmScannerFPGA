@@ -55,16 +55,6 @@ module film_scanner(
 	output reg 			[3:0] led
 );
 
-	// en reg (won't be here for long)
-	reg en;
-
-	// Assign the LEDs
-	//assign led[0] = 1;	// Just an on LED
-	//assign led[1] = en;	// On while scanning
-	//assign led[2] = 0;	// Undecided
-	//assign led[3] = 0;	// Undecided
-
-
 	// Pix signals
 	reg pix_clk = 0, pix_valid;
 	reg [15:0] pix_data;
@@ -84,7 +74,7 @@ module film_scanner(
 
 		// Input clock
 		.clk_160M(clk_160M), .nrst(1),
-		.en(en), .cal_mode(1),
+		.en(1), .cal_mode(1),
 
 		// Clock divisor 0 = divide by 2
 		.div(0),
@@ -106,7 +96,7 @@ module film_scanner(
 		.pix_data(pix_data)
 	);
 
-
+	// DAC control
 	dac dac0(
 
 		// Input control
@@ -121,115 +111,28 @@ module film_scanner(
 		.sync(dac_sync)
 	);
 
-
-	// Set the ft signals
-	always_comb
-	begin
-
-		ft_siwu = 1;
-		ft_pwrsav = 1;
-		ft_nrst = 1;
-	end
-
-	/*
-
-	// USB interface signals
-	logic 		usb_clk, usb_reset;
-	logic [3:0]	usb_address;
-	logic	 	usb_read_valid;
-	logic [7:0] usb_readdata;
-	logic		usb_write_valid;
-	logic [7:0] usb_writedata;
-	logic [8:0]	usb_rxbytes;
-
-	usb_ft232h usb0(
-
-		//Avalon-MM Slave
-		.clk_i(0),
-		.reset_i(0),
-		.address_i(0),
-		.read_i(0),
-		.readdata_o(),
-		.write_i(0),
-		.writedata_i(),
-
-		//.rx_n_bytes_o(usb_rxbytes),
-
-		//FT232H
-		.usb_clk_i(ft_clk),
-		.usb_data_io(ft_bus),
-		.usb_rxf_n_i(ft_rxf),
-		.usb_txe_n_i(ft_txe),
-		.usb_rd_n_o(ft_rd),
-		.usb_wr_n_o(ft_wr),
-		.usb_oe_n_o(ft_oe),
-
-		.rxf_rdclk(usb_clk),
-		.rxf_rdreq(usb_read_valid),		// Read request
-		.rxf_rddata(usb_readdata),		// Data read
-		.rxf_rdusedw(usb_rxbytes)		// Number of bytes in the FIFO
-	);
-
-
-	//assign led[2] = usb_read_valid;	// Undecided
-	
-	control cont0(
-
-		// Clock and reset
-		.clk_100M(clk_100M), .nrst(1),
-
-		// Interface to the formatter
-		.data_valid(),
-		.data(),
-		.data_clk(),
-
-		
-		// Interface to the FT232H
-		.usb_clk(usb_clk), .usb_reset(usb_reset),
-		.usb_address(usb_address),
-		.usb_read_valid(usb_read_valid),
-		.usb_readdata(usb_readdata),
-		.usb_write_valid(usb_write_valid),
-		.usb_writedata(usb_writedata),
-		.usb_rxbytes(usb_rxbytes),
-		
-
-		.usb_rd_clk(usb_clk), .usb_reset(),
-		.usb_rd_valid(usb_read_valid),
-		.usb_readdata(usb_readdata),
-		.usb_rxbytes(usb_rxbytes),
-
-
-		// Output of the control information
-		.cont_en(en),				// Enable to start scanning
-		.cont_gain(), .cont_off(),		// The analogue gain and offset for the front end
-
-		.leds(led)
-	);
-*/
-
-
+	// Stepper control
 	stepper step0(
 
-	// Inputs
-	.clk_100M(clk_100M), .nrst(1),
+		// Inputs
+		.clk_100M(clk_100M), .nrst(1),
 
-	// Control logic
-	.en(1), .dir(0),
+		// Control logic
+		.en(0), .dir(0),
 
-	.speed(),
+		.speed(),
 
-	// Motor outputs
-	.mtr_nen(mtr_nen),
-	.mtr_step(mtr_step), 
-	.mtr_nrst(mtr_nrst), 
-	.mtr_slp(mtr_slp), 
-	.mtr_decay(mtr_decay), 
-	.mtr_dir(mtr_dir), 
+		// Motor outputs
+		.mtr_nen(mtr_nen),
+		.mtr_step(mtr_step), 
+		.mtr_nrst(mtr_nrst), 
+		.mtr_slp(mtr_slp), 
+		.mtr_decay(mtr_decay), 
+		.mtr_dir(mtr_dir), 
 
-	.mtr_m(mtr_m),
+		.mtr_m(mtr_m),
 
-	.mtr_nhome(), .mtr_nflt()
+		.mtr_nhome(), .mtr_nflt()
 
 	);
 
