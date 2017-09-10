@@ -1,22 +1,16 @@
-/*
- *	Если error срабатывает на последнем байте пакета, то он не будет отправлен, пока
- * не придет следующий пакет
- */
-
-
 module usb_ft232h (
 
 	// Reset
 	input logic 		nrst, 
 
 	//FT232H
-	input  logic       	usb_clk_i;
-	inout  logic [7:0] 	usb_data_io;
-	input  logic       	usb_rxf_n_i;
-	input  logic       	usb_txe_n_i;
-	output logic       	usb_rd_n_o;
-	output logic       	usb_wr_n_o;
-	output logic       	usb_oe_n_o;
+	input  logic       	usb_clk_i,
+	inout  logic [7:0] 	usb_data_io,
+	input  logic       	usb_rxf_n_i,
+	input  logic       	usb_txe_n_i,
+	output logic       	usb_rd_n_o,
+	output logic       	usb_wr_n_o,
+	output logic       	usb_oe_n_o,
 
 	// Read port
 	input logic 		rxf_rdclk_i,		// Read clock
@@ -39,7 +33,7 @@ parameter TX_FIFO_WIDTHU = 9;
 parameter RX_FIFO_DEPTH  = 512;
 parameter RX_FIFO_WIDTHU = 9;
 
-reg                        txerror;
+reg                        error;
 reg                        rxerror;
 reg   [7:0]                rxerrdata;
 

@@ -1,1 +1,9 @@
 # Loading project filmscanner_sandbox
+# Compile of usb_ft232h.sv failed with 1 errors.
+# Compile of usb_ft232h.sv failed with 5 errors.
+# Compile of usb_ft232h.sv was successful.
+# Compile of usb_ft232h.sv was successful.
+# Compile of usb_ft232h_tb.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+# Compile of usb_ft232h_tb.sv failed with 1 errors.
+# Compile of usb_ft232h_tb.sv was successful.
