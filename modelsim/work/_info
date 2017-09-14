@@ -181,49 +181,47 @@ w1492884890
 FD:/FilmScannerFPGA/dac_tb.sv
 vusb_ft232h
 Z10 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-!s110 1505072925
+Z11 !s110 1505329012
 !i10b 1
 !s100 9K9CFCm[_KX2<K1?C7ZBn2
-ILKcQ?]=7z0cO<[A?gVUXY3
-Z11 VDg1SIo80bB@j0V0VzS_@n1
+IPjJ^MCEBgHOmJQ<RKg2b33
+Z12 VDg1SIo80bB@j0V0VzS_@n1
 !s105 usb_ft232h_sv_unit
 S1
-Z12 d/home/george/FilmScannerFPGA/modelsim
+Z13 d/home/george/FilmScannerFPGA/modelsim
 w1505072030
-8/home/george/FilmScannerFPGA/usb_ft232h.sv
-F/home/george/FilmScannerFPGA/usb_ft232h.sv
+8../usb_ft232h.sv
+F../usb_ft232h.sv
 L0 1
-Z13 OV;L;10.5b;63
+Z14 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1505072925.000000
-!s107 /home/george/FilmScannerFPGA/usb_ft232h.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/george/FilmScannerFPGA/usb_ft232h.sv|
+Z15 !s108 1505329012.000000
+!s107 ../usb_ft232h.sv|
+!s90 -reportprogress|300|../usb_ft232h.sv|
 !i113 1
-R4
-Z14 tCvgOpt 0
+Z16 tCvgOpt 0
 vusb_ft232h_tb
 R10
-!s110 1505072963
-!i10b 1
-!s100 nz4bgllfF3JEcmzTJ:]I?0
-I?E^Qo_<]ekHMDARo2P?2d3
 R11
+!i10b 1
+!s100 UbmB>`d]IgHEh4n@VTILR3
+IVlMZ3HG]MX75FXO2OXK?L2
+R12
 !s105 usb_ft232h_tb_sv_unit
 S1
-R12
-w1505072958
-8/home/george/FilmScannerFPGA/usb_ft232h_tb.sv
-F/home/george/FilmScannerFPGA/usb_ft232h_tb.sv
-L0 5
 R13
+w1505328911
+8../usb_ft232h_tb.sv
+F../usb_ft232h_tb.sv
+L0 3
+R14
 r1
 !s85 0
 31
-!s108 1505072963.000000
-!s107 /home/george/FilmScannerFPGA/usb_ft232h_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/george/FilmScannerFPGA/usb_ft232h_tb.sv|
+R15
+!s107 ../usb_ft232h_tb.sv|
+!s90 -reportprogress|300|../usb_ft232h_tb.sv|
 !i113 1
-R4
-R14
+R16
