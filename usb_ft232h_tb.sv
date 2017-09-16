@@ -43,7 +43,7 @@ module usb_ft232h_tb();
 	*/
 
 
-	reg [7:0]	wr_state = 0, wr_cntr = 0;
+	reg [7:0]	wr_state = 0, wr_cntr = 10;
 
 	always_ff @ (negedge wr_clk)	// WHICH TRANSISTION
 	begin
@@ -52,8 +52,10 @@ module usb_ft232h_tb();
 
 			// Wait one clock cycle
 			0: begin
-
 				wr_state <= wr_state + 1;
+
+				// Set the txe signal low so we can send data over the USB
+				usb_txe_n <= 0;
 			end
 
 			// Start clocking data into the FIFO

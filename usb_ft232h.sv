@@ -72,7 +72,7 @@ assign txe_wrfull_o = txf_wrfull;
 		.rdempty   ( txf_rdempty ),
 		.wrfull    ( txf_wrfull ),
 		.wrusedw   ( txe_wrusedw_o ),
-		.eccstatus (),
+		//.eccstatus (),
 		.rdfull    (),
 		.rdusedw   (),
 		.wrempty   ()
@@ -105,7 +105,7 @@ assign txe_wrfull_o = txf_wrfull;
 		.rdempty   ( rxf_rdempty ),	//
 		.wrfull    ( rxf_wrfull ),
 		.wrusedw   (),
-		.eccstatus (),
+		//.eccstatus (),
 		.rdfull    ( rxf_rdfull ),
 		.rdusedw   ( rxf_rdusedw_o ),	//
 		.wrempty   ()
@@ -240,7 +240,7 @@ assign txe_wrfull_o = txf_wrfull;
 		begin
 
 			// 
-			if( ~usb_txe_n_i & ~txf_rdempty & ~error & usb_oe_n_o )
+			if((usb_txe_n_i == 0) && (txf_rdempty == 0) && (error == 0) && (usb_oe_n_o == 1))
 			begin
 			
 				txf_rdreq <= 1;
@@ -268,21 +268,21 @@ assign txe_wrfull_o = txf_wrfull;
 		begin
 
 			// 
-			if( usb_txe_n_i & ~usb_wr_n_o )
+			if((usb_txe_n_i == 1) && (usb_wr_n_o == 0))
 			begin
 				
 				error <= 1;
 			end
 
 			//
-			if( ~usb_txe_n_i & ( txf_rdreq | error ) & usb_oe_n_o )
+			if((usb_txe_n_i == 0) && ((txf_rdreq == 1) /*|| (error == 1)*/) && (usb_oe_n_o == 1))
 			begin
 				
 				// 
 				usb_wr_n_o <= 0;
 		
 				// 
-				if(error) error <= 0;
+				if(error == 1) error <= 0;
 			end
 			
 			// 
