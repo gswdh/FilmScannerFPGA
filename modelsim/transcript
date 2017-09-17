@@ -1,219 +1,264 @@
 # Loading project filmscanner_sandbox
-# Compile of usb_ft232h.sv was successful.
-# Compile of usb_ft232h_tb.sv failed with 2 errors.
-# 2 compiles, 1 failed with 2 errors.
+do scanner.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:49:23 on Sep 17,2017
+# vlog -reportprogress 300 ../usb_ft232h.sv 
+# -- Compiling module usb_ft232h
+# 
+# Top level modules:
+# 	usb_ft232h
+# End time: 19:49:23 on Sep 17,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:49:23 on Sep 17,2017
+# vlog -reportprogress 300 ../usb_ft232h_tb.sv 
+# -- Compiling module usb_ft232h_tb
+# 
+# Top level modules:
+# 	usb_ft232h_tb
+# End time: 19:49:24 on Sep 17,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim usb_ft232h_tb -L altera_mf_ver 
+# Start time: 19:49:24 on Sep 17,2017
+# Loading sv_std.std
+# Loading work.usb_ft232h_tb
+# Loading work.usb_ft232h
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+# ** Warning: (vsim-3015) ../usb_ft232h_tb.sv(84): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: ../usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
+# ** Warning: (vsim-3017) ../usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) ../usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) ../usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) ../usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Note: $stop    : ../usb_ft232h_tb.sv(69)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at ../usb_ft232h_tb.sv line 69
+add wave -position end  sim:/usb_ft232h_tb/usb0/usb_txe_n_i
+add wave -position end  sim:/usb_ft232h_tb/usb0/txf_rdreq
+add wave -position end  sim:/usb_ft232h_tb/usb0/usb_oe_n_o
+restart -f
+# ** Warning: (vsim-3015) ../usb_ft232h_tb.sv(84): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: ../usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
+# ** Warning: (vsim-3017) ../usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) ../usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) ../usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) ../usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+run
+# ** Note: $stop    : ../usb_ft232h_tb.sv(69)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at ../usb_ft232h_tb.sv line 69
+add wave -position end  sim:/usb_ft232h_tb/usb0/usb_clk_i
+add wave -position end  sim:/usb_ft232h_tb/usb0/usb_wr_n_o
+restart -f
+# ** Warning: (vsim-3015) ../usb_ft232h_tb.sv(84): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: ../usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
+# ** Warning: (vsim-3017) ../usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) ../usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) ../usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) ../usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+run
+# ** Note: $stop    : ../usb_ft232h_tb.sv(69)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at ../usb_ft232h_tb.sv line 69
+do scanner.do
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:56:05 on Sep 17,2017
+# vlog -reportprogress 300 ../usb_ft232h.sv 
+# -- Compiling module usb_ft232h
+# 
+# Top level modules:
+# 	usb_ft232h
+# End time: 19:56:06 on Sep 17,2017, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 19:56:06 on Sep 17,2017
+# vlog -reportprogress 300 ../usb_ft232h_tb.sv 
+# -- Compiling module usb_ft232h_tb
+# 
+# Top level modules:
+# 	usb_ft232h_tb
+# End time: 19:56:06 on Sep 17,2017, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# End time: 19:56:06 on Sep 17,2017, Elapsed time: 0:06:42
+# Errors: 0, Warnings: 27
+# vsim usb_ft232h_tb -L altera_mf_ver 
+# Start time: 19:56:06 on Sep 17,2017
+# Loading sv_std.std
+# Loading work.usb_ft232h_tb
+# Loading work.usb_ft232h
+# Loading altera_mf_ver.dcfifo
+# Loading altera_mf_ver.dcfifo_mixed_widths
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.dcfifo_low_latency
+# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
+# Loading altera_mf_ver.dcfifo_dffpipe
+# Loading altera_mf_ver.dcfifo_async
+# Loading altera_mf_ver.dcfifo_fefifo
+# ** Warning: (vsim-3015) ../usb_ft232h_tb.sv(84): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: ../usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
+# ** Warning: (vsim-3017) ../usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) ../usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) ../usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) ../usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# .main_pane.wave.interior.cs.body.pw.wf
+# ** Note: $stop    : ../usb_ft232h_tb.sv(69)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at ../usb_ft232h_tb.sv line 69
 # Compile of usb_ft232h.sv was successful.
 # Compile of usb_ft232h_tb.sv was successful.
 # 2 compiles, 0 failed with no errors.
-scanner.do
-# invalid command name "scanner.do"
-./scanner.do
-# invalid command name "./scanner.do"
-do scanner.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# ** Error: invalid command name "=</home/george/intelFPGA/16.1/modelsim_ase/altera/verilog/altera_mf>"
-# Error in macro ./scanner.do line 11
-# invalid command name "=</home/george/intelFPGA/16.1/modelsim_ase/altera/verilog/altera_mf>"
-#     while executing
-# "=</home/george/intelFPGA/16.1/modelsim_ase/altera/verilog/altera_mf>"
-#     invoked from within
-# "vlog -compile_uselibs[=</home/george/intelFPGA/16.1/modelsim_ase/altera/verilog/altera_mf>] usb_ft232h.sv"
-do scanner.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:19:27 on Sep 13,2017
-# vlog -reportprogress 300 usb_ft232h.sv 
-# ** Error: (vlog-7) Failed to open design unit file "usb_ft232h.sv" in read mode.
-# No such file or directory. (errno = ENOENT)
-# End time: 19:19:27 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 0
-# ** Error: /home/george/intelFPGA/16.1/modelsim_ase/linuxaloem/vlog failed.
-# Error in macro ./scanner.do line 12
-# /home/george/intelFPGA/16.1/modelsim_ase/linuxaloem/vlog failed.
-#     while executing
-# "vlog usb_ft232h.sv"
-do scanner.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:19:47 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h.sv 
-# -- Compiling module usb_ft232h
-# 
-# Top level modules:
-# 	usb_ft232h
-# End time: 19:19:47 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim HalfAdder 
-# Start time: 19:19:47 on Sep 13,2017
-# ** Error: (vsim-3170) Could not find 'HalfAdder'.
-#         Searched libraries:
-#             /home/george/FilmScannerFPGA/modelsim/work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./scanner.do PAUSED at line 16
-./scanner.do
-# invalid command name "./scanner.do"
-do scanner.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:20:21 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h.sv 
-# -- Compiling module usb_ft232h
-# 
-# Top level modules:
-# 	usb_ft232h
-# End time: 19:20:21 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:20:21 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h_tb.sv 
-# -- Compiling module usb_ft232h_tb
-# 
-# Top level modules:
-# 	usb_ft232h_tb
-# End time: 19:20:21 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim usb_ft232h_tb 
-# Start time: 19:19:47 on Sep 13,2017
-# Loading sv_std.std
+restart -f
 # Loading work.usb_ft232h_tb
 # Loading work.usb_ft232h
-# ** Error: (vsim-3033) ../usb_ft232h.sv(64): Instantiation of 'dcfifo' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
-#         Searched libraries:
-#             /home/george/FilmScannerFPGA/modelsim/work
-# ** Error: (vsim-3033) ../usb_ft232h.sv(97): Instantiation of 'dcfifo' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
-#         Searched libraries:
-#             /home/george/FilmScannerFPGA/modelsim/work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./scanner.do PAUSED at line 16
-./scanner.do
-# invalid command name "./scanner.do"
-quit
-restart
-# No Design Loaded!
-quit -sim
-# End time: 19:21:00 on Sep 13,2017, Elapsed time: 0:01:13
-# Errors: 3, Warnings: 0
-quit -vsim
-# unknown switch: -vsim
-
-
-
-
-
-
-
-
-do scanner.do
-# ** Warning: (vlib-34) Library already exists at "work".
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:21:28 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h.sv 
-# -- Compiling module usb_ft232h
-# 
-# Top level modules:
-# 	usb_ft232h
-# End time: 19:21:28 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:21:28 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h_tb.sv 
-# -- Compiling module usb_ft232h_tb
-# 
-# Top level modules:
-# 	usb_ft232h_tb
-# End time: 19:21:28 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim usb_ft232h_tb 
-# Start time: 19:21:28 on Sep 13,2017
-# Loading sv_std.std
-# Loading work.usb_ft232h_tb
+# ** Warning: (vsim-3015) /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(84): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: /home/george/FilmScannerFPGA/usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: /home/george/FilmScannerFPGA/usb_ft232h.sv
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+run
+# ** Note: $stop    : /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(69)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at /home/george/FilmScannerFPGA/usb_ft232h_tb.sv line 69
+add wave -position end  sim:/usb_ft232h_tb/usb0/usb_txe_n_i
+add wave -position end  sim:/usb_ft232h_tb/usb0/txf_rdreq
+add wave -position end  sim:/usb_ft232h_tb/usb0/usb_oe_n_o
+restart -f
+# ** Warning: (vsim-3015) /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(84): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: /home/george/FilmScannerFPGA/usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: /home/george/FilmScannerFPGA/usb_ft232h.sv
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+run
+# ** Note: $stop    : /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(69)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at /home/george/FilmScannerFPGA/usb_ft232h_tb.sv line 69
+add wave -position end  sim:/usb_ft232h_tb/usb0/txf_rdempty
+add wave -position end  sim:/usb_ft232h_tb/usb0/error
+restart -f
+# ** Warning: (vsim-3015) /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(84): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: /home/george/FilmScannerFPGA/usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: /home/george/FilmScannerFPGA/usb_ft232h.sv
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+run
+# ** Note: $stop    : /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(69)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at /home/george/FilmScannerFPGA/usb_ft232h_tb.sv line 69
+# Compile of usb_ft232h.sv was successful.
+restart -f
 # Loading work.usb_ft232h
-# ** Error: (vsim-3033) ../usb_ft232h.sv(64): Instantiation of 'dcfifo' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
-#         Searched libraries:
-#             /home/george/FilmScannerFPGA/modelsim/work
-# ** Error: (vsim-3033) ../usb_ft232h.sv(97): Instantiation of 'dcfifo' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
-#         Searched libraries:
-#             /home/george/FilmScannerFPGA/modelsim/work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./scanner.do PAUSED at line 16
-./scanner.do
-# invalid command name "./scanner.do"
+# ** Warning: (vsim-3015) /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(84): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: /home/george/FilmScannerFPGA/usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: /home/george/FilmScannerFPGA/usb_ft232h.sv
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+run
+# ** Note: $stop    : /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(69)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at /home/george/FilmScannerFPGA/usb_ft232h_tb.sv line 69
 do scanner.do
-# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:21:38 on Sep 13,2017
+# Start time: 20:16:27 on Sep 17,2017
 # vlog -reportprogress 300 ../usb_ft232h.sv 
 # -- Compiling module usb_ft232h
 # 
 # Top level modules:
 # 	usb_ft232h
-# End time: 19:21:38 on Sep 13,2017, Elapsed time: 0:00:00
+# End time: 20:16:27 on Sep 17,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:21:38 on Sep 13,2017
+# Start time: 20:16:27 on Sep 17,2017
 # vlog -reportprogress 300 ../usb_ft232h_tb.sv 
 # -- Compiling module usb_ft232h_tb
 # 
 # Top level modules:
 # 	usb_ft232h_tb
-# End time: 19:21:38 on Sep 13,2017, Elapsed time: 0:00:00
+# End time: 20:16:27 on Sep 17,2017, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim usb_ft232h_tb 
-# Start time: 19:21:28 on Sep 13,2017
-# Loading sv_std.std
-# Loading work.usb_ft232h_tb
-# Loading work.usb_ft232h
-# ** Error: (vsim-3033) ../usb_ft232h.sv(64): Instantiation of 'dcfifo' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
-#         Searched libraries:
-#             /home/george/FilmScannerFPGA/modelsim/work
-# ** Error: (vsim-3033) ../usb_ft232h.sv(97): Instantiation of 'dcfifo' failed. The design unit was not found.
-#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
-#         Searched libraries:
-#             /home/george/FilmScannerFPGA/modelsim/work
-# Error loading design
-# Error: Error loading design
-#        Pausing macro execution
-# MACRO ./scanner.do PAUSED at line 16
-exit
-do scanner.do
-# ** Error: can't read "PATH": no such variable
-# Error in macro ./scanner.do line 5
-# can't read "PATH": no such variable
-#     while executing
-# "PATH=$PATH:/home/george/intelFPGA/16.1/modelsim_ase/altera/verilog/altera_mf"
-# Load canceled
-do scanner.do
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:48:09 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h.sv 
-# -- Compiling module usb_ft232h
-# 
-# Top level modules:
-# 	usb_ft232h
-# End time: 19:48:09 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:48:09 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h_tb.sv 
-# -- Compiling module usb_ft232h_tb
-# 
-# Top level modules:
-# 	usb_ft232h_tb
-# End time: 19:48:09 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# End time: 20:16:28 on Sep 17,2017, Elapsed time: 0:20:22
+# Errors: 0, Warnings: 45
 # vsim usb_ft232h_tb -L altera_mf_ver 
-# Start time: 19:21:28 on Sep 13,2017
+# Start time: 20:16:28 on Sep 17,2017
 # Loading sv_std.std
 # Loading work.usb_ft232h_tb
 # Loading work.usb_ft232h
@@ -227,156 +272,128 @@ do scanner.do
 # Loading altera_mf_ver.dcfifo_fefifo
 # ** Warning: (vsim-3015) ../usb_ft232h_tb.sv(84): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: ../usb_ft232h.sv(4).
 #    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
+# ** Warning: (vsim-3017) ../usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) ../usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
 # ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
 #    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
 # ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) ../usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) ../usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
 # ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
 #    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
 # ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
 # .main_pane.structure.interior.cs.body.struct
 # .main_pane.objects.interior.cs.body.tree
 # .main_pane.wave.interior.cs.body.pw.wf
-quit -sim
-# End time: 19:48:24 on Sep 13,2017, Elapsed time: 0:26:56
-# Errors: 4, Warnings: 5
-do scanner.do
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:53:15 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h.sv 
-# -- Compiling module usb_ft232h
-# 
-# Top level modules:
-# 	usb_ft232h
-# End time: 19:53:16 on Sep 13,2017, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:53:16 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h_tb.sv 
-# -- Compiling module usb_ft232h_tb
-# 
-# Top level modules:
-# 	usb_ft232h_tb
-# End time: 19:53:16 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vsim usb_ft232h_tb -L altera_mf_ver 
-# Start time: 19:53:16 on Sep 13,2017
-# Loading sv_std.std
+# ** Note: $stop    : ../usb_ft232h_tb.sv(69)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at ../usb_ft232h_tb.sv line 69
+# Compile of usb_ft232h.sv was successful.
+# Compile of usb_ft232h_tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+restart -f
 # Loading work.usb_ft232h_tb
 # Loading work.usb_ft232h
-# Loading altera_mf_ver.dcfifo
-# Loading altera_mf_ver.dcfifo_mixed_widths
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.dcfifo_low_latency
-# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
-# Loading altera_mf_ver.dcfifo_dffpipe
-# Loading altera_mf_ver.dcfifo_async
-# Loading altera_mf_ver.dcfifo_fefifo
-# ** Warning: (vsim-3015) ../usb_ft232h_tb.sv(84): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: ../usb_ft232h.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
+# ** Warning: (vsim-3015) /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(85): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: /home/george/FilmScannerFPGA/usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: /home/george/FilmScannerFPGA/usb_ft232h.sv
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
 # ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
 #    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
 # ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
 # ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
 #    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
 # ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# .main_pane.wave.interior.cs.body.pw.wf
-# ** Error: (vish-4014) No objects found matching 'Signals>'.
-# Error in macro ./scanner.do line 24
-# (vish-4014) No objects found matching 'Signals>'.
-#     while executing
-# "add wave -divider <USB Signals>"
-do scanner.do
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:54:34 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h.sv 
-# -- Compiling module usb_ft232h
-# 
-# Top level modules:
-# 	usb_ft232h
-# End time: 19:54:34 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:54:34 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h_tb.sv 
-# -- Compiling module usb_ft232h_tb
-# 
-# Top level modules:
-# 	usb_ft232h_tb
-# End time: 19:54:34 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 19:54:35 on Sep 13,2017, Elapsed time: 0:01:19
-# Errors: 3, Warnings: 5
-# vsim usb_ft232h_tb -L altera_mf_ver 
-# Start time: 19:54:35 on Sep 13,2017
-# Loading sv_std.std
+run
+# ** Note: $stop    : /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(70)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at /home/george/FilmScannerFPGA/usb_ft232h_tb.sv line 70
+# Compile of usb_ft232h_tb.sv was successful.
+restart -f
 # Loading work.usb_ft232h_tb
-# Loading work.usb_ft232h
-# Loading altera_mf_ver.dcfifo
-# Loading altera_mf_ver.dcfifo_mixed_widths
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.dcfifo_low_latency
-# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
-# Loading altera_mf_ver.dcfifo_dffpipe
-# Loading altera_mf_ver.dcfifo_async
-# Loading altera_mf_ver.dcfifo_fefifo
-# ** Warning: (vsim-3015) ../usb_ft232h_tb.sv(84): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: ../usb_ft232h.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
+# ** Warning: (vsim-3015) /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(85): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: /home/george/FilmScannerFPGA/usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: /home/george/FilmScannerFPGA/usb_ft232h.sv
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
 # ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
 #    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
 # ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
 # ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
 #    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
 # ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# .main_pane.wave.interior.cs.body.pw.wf
-do scanner.do
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:56:52 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h.sv 
-# -- Compiling module usb_ft232h
-# 
-# Top level modules:
-# 	usb_ft232h
-# End time: 19:56:52 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 19:56:52 on Sep 13,2017
-# vlog -reportprogress 300 ../usb_ft232h_tb.sv 
-# -- Compiling module usb_ft232h_tb
-# 
-# Top level modules:
-# 	usb_ft232h_tb
-# End time: 19:56:52 on Sep 13,2017, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# End time: 19:56:53 on Sep 13,2017, Elapsed time: 0:02:18
-# Errors: 0, Warnings: 5
-# vsim usb_ft232h_tb -L altera_mf_ver 
-# Start time: 19:56:53 on Sep 13,2017
-# Loading sv_std.std
+run
+# ** Note: $stop    : /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(70)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at /home/george/FilmScannerFPGA/usb_ft232h_tb.sv line 70
+# Compile of usb_ft232h_tb.sv was successful.
+restart -f
 # Loading work.usb_ft232h_tb
-# Loading work.usb_ft232h
-# Loading altera_mf_ver.dcfifo
-# Loading altera_mf_ver.dcfifo_mixed_widths
-# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
-# Loading altera_mf_ver.dcfifo_low_latency
-# Loading altera_mf_ver.ALTERA_MF_HINT_EVALUATION
-# Loading altera_mf_ver.dcfifo_dffpipe
-# Loading altera_mf_ver.dcfifo_async
-# Loading altera_mf_ver.dcfifo_fefifo
-# ** Warning: (vsim-3015) ../usb_ft232h_tb.sv(82): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: ../usb_ft232h.sv(4).
-#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: ../usb_ft232h.sv
+# ** Warning: (vsim-3015) /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(90): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: /home/george/FilmScannerFPGA/usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: /home/george/FilmScannerFPGA/usb_ft232h.sv
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
 # ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
 #    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
 # ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
 # ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
 #    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
 # ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
-# .main_pane.structure.interior.cs.body.struct
-# .main_pane.objects.interior.cs.body.tree
-# .main_pane.wave.interior.cs.body.pw.wf
-# ** Note: $stop    : ../usb_ft232h_tb.sv(67)
-#    Time: 256 us  Iteration: 1  Instance: /usb_ft232h_tb
-# Break in Module usb_ft232h_tb at ../usb_ft232h_tb.sv line 67
+run
+# ** Note: $stop    : /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(75)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at /home/george/FilmScannerFPGA/usb_ft232h_tb.sv line 75
+add wave -position end  sim:/usb_ft232h_tb/usb0/txf_rddata
+restart -f
+# ** Warning: (vsim-3015) /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(90): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: /home/george/FilmScannerFPGA/usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: /home/george/FilmScannerFPGA/usb_ft232h.sv
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+run
+# ** Note: $stop    : /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(75)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at /home/george/FilmScannerFPGA/usb_ft232h_tb.sv line 75
+add wave -position 19  sim:/usb_ft232h_tb/usb0/txf_rdclk
+add wave -position 21  sim:/usb_ft232h_tb/usb0/txf_rdreq
+restart -f
+# ** Warning: (vsim-3015) /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(90): [PCDPC] - Port size (1) does not match connection size (32) for port 'nrst'. The port definition is at: /home/george/FilmScannerFPGA/usb_ft232h.sv(4).
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0 File: /home/george/FilmScannerFPGA/usb_ft232h.sv
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(64): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/txfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /home/george/FilmScannerFPGA/usb_ft232h.sv(97): [TFMPC] - Missing connection for port 'eccstatus'.
+# ** Warning: (vsim-3017) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Too few port connections. Expected 14, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /usb_ft232h_tb/usb0/rxfifo/DCFIFO_MW File: /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v
+# ** Warning: (vsim-3722) /build/swbuild/SJ/nightly/16.1/196/l64/work/modelsim/eda/sim_lib/altera_mf.v(31690): [TFMPC] - Missing connection for port 'eccstatus'.
+run
+# ** Note: $stop    : /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(75)
+#    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
+# Break in Module usb_ft232h_tb at /home/george/FilmScannerFPGA/usb_ft232h_tb.sv line 75

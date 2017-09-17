@@ -33,8 +33,8 @@ parameter TX_FIFO_WIDTHU = 9;
 parameter RX_FIFO_DEPTH  = 512;
 parameter RX_FIFO_WIDTHU = 9;
 
-reg                        error;
-reg                        rxerror;
+reg                        error = 0;
+reg                        rxerror = 0;
 reg   [7:0]                rxerrdata;
 
 logic                      txf_wrfull;
@@ -55,7 +55,7 @@ assign usb_data_io = ( usb_oe_n_o ) ? ( txf_rddata ) : ( {8{1'bZ}} );
 
 // Create the clocks
 assign rxf_wrclk   = ~usb_clk_i;
-assign txf_rdclk   = usb_clk_i;
+assign txf_rdclk   = ~usb_clk_i;
 
 // Full signal
 assign txe_wrfull_o = txf_wrfull;
@@ -252,11 +252,11 @@ assign txe_wrfull_o = txf_wrfull;
 	end
 		
 	// 
-	always_ff @ (posedge usb_clk_i or negedge nrst)
+	always_ff @ (negedge usb_clk_i or negedge nrst)
 	begin
 
 		// Reset
-		if(nrst)
+		if(nrst == 0)
 		begin
 
 			usb_wr_n_o <= 1;

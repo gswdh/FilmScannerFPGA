@@ -45,7 +45,7 @@ module usb_ft232h_tb();
 
 	reg [7:0]	wr_state = 0, wr_cntr = 10;
 
-	always_ff @ (negedge wr_clk)	// WHICH TRANSISTION
+	always_ff @ (negedge wr_clk)
 	begin
 
 		case(wr_state)
@@ -55,7 +55,7 @@ module usb_ft232h_tb();
 				wr_state <= wr_state + 1;
 
 				// Set the txe signal low so we can send data over the USB
-				usb_txe_n <= 0;
+				//usb_txe_n <= 0;
 			end
 
 			// Start clocking data into the FIFO
@@ -63,7 +63,13 @@ module usb_ft232h_tb();
 
 				wr_data <= wr_cntr;
 
-				wr_req <= 1;
+				if(wr_cntr == 10) wr_req <= 1;
+				if(wr_cntr == 15) wr_req <= 0;
+
+				// Set the txe singal low when all the data is in the FIFO
+				if(wr_cntr == 20) usb_txe_n <= 0;
+
+
 
 				// End sim
 				if(wr_cntr == 255) $stop;
