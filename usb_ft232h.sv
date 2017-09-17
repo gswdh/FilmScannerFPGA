@@ -35,7 +35,7 @@ parameter RX_FIFO_WIDTHU = 9;
 
 reg                        error = 0;
 reg                        rxerror = 0;
-reg   [7:0]                rxerrdata;
+reg   [7:0]                rxerrdata, rxf_data;
 
 logic                      txf_wrfull;
 logic                      txf_rdclk;
@@ -125,7 +125,30 @@ assign txe_wrfull_o = txf_wrfull;
 		rxfifo.use_eab = "ON",
 		rxfifo.write_aclr_synch = "ON",
 		rxfifo.wrsync_delaypipe = 11;
-		
+
+
+
+
+	// Create another stage for the RX data flow
+	always_ff @ (negedge usb_clk_i or negedge nrst)
+	begin
+
+		// Reset
+		if(nrst == 0)
+		begin
+
+			rxf_data <= 0;
+		end
+
+		// Run
+		else
+		begin
+
+			// Assign the data through the pipe
+			rxf_data <= usb_data_io;
+		end
+	end
+
 	// Read USB data to RX FIFO
 	always_ff @ (negedge rxf_wrclk or negedge nrst)
 	begin
@@ -134,6 +157,7 @@ assign txe_wrfull_o = txf_wrfull;
 	  	if(nrst == 0)
 	    begin
 
+	    	// Reset strobes
 			rxf_wrreq <= 0;
 			rxf_wrdata <= 0;
 			rxerror <= 0;
@@ -145,25 +169,25 @@ assign txe_wrfull_o = txf_wrfull;
 	    begin
 
 	    	// If we are attempting to read data from the FT232H but the RX FIFO is full
-		   	if(~usb_rd_n_o & rxf_wrfull)
+		   	if((usb_rd_n_o == 0) && (rxf_wrfull == 1))
 	 	 	begin
 
 	 	 		// If the RD signal is set low to read data from the USB but the RX FIFO is full
 			    rxerror <= 1;
 
 			    // Save the incoming byte into an intermediate variable
-				rxerrdata <= usb_data_io;
+				rxerrdata <= rxf_data;
 			end
 		 
 		 	// If the (RX FIFO is not full and ((we are reading and there is data to read) or there's an error))
-		   	if(~rxf_wrfull & ((~usb_rd_n_o & ~usb_rxf_n_i) | rxerror))
+		   	if((rxf_wrfull == 0) && (((usb_rd_n_o == 0) && (usb_rxf_n_i == 0)) || (rxerror == 1)))
 			begin
 
 				// Start writing into the RX FIFO
 			    rxf_wrreq <= 1;
 			 	
 			 	// If there's an error set the input data into the FIFO to be something?
-			 	if(rxerror)
+			 	if(rxerror == 1)
 			   	begin
 
 			   		// Reset the error signal
@@ -174,7 +198,7 @@ assign txe_wrfull_o = txf_wrfull;
 				end
 				
 				// If everything is fine, write some USB data into the FIFO
-				else rxf_wrdata <= usb_data_io;
+				else rxf_wrdata <= rxf_data;
 			end
 
 			else
@@ -187,13 +211,14 @@ assign txe_wrfull_o = txf_wrfull;
 	end
 
 	// Set the FT232H port direction
-	always_ff @ (posedge usb_clk_i or negedge nrst)
+	always_ff @ (negedge usb_clk_i or negedge nrst)
 	begin
 
 		// Reset
 		if(nrst == 0)
 		begin
 
+			// Reset strobes
 			usb_oe_n_o <= 1;
 			usb_rd_n_o <= 1;
 		end
@@ -203,14 +228,14 @@ assign txe_wrfull_o = txf_wrfull;
 		begin
 			
 			// If there's data to be read, the RX FIFO is not full and there is no TX happening and there are no errors
-			if(~usb_rxf_n_i & ~rxf_wrfull & (usb_txe_n_i | (~txf_rdreq & ~error)) & ~rxerror)
+			if((usb_rxf_n_i == 0) && (rxf_wrfull == 0) && ((usb_txe_n_i == 1) || ((txf_rdreq == 0) && (error == 0))) && (rxerror == 0))
 			begin
 
 				// Set the the port direction to output (so we can read data from it)
 				usb_oe_n_o <= 0;
 				
 				// If the direction has been set assert the read request
-				if( ~usb_oe_n_o ) usb_rd_n_o <= 0;
+				if(usb_oe_n_o == 0) usb_rd_n_o <= 0;
 			end
 			
 			else
