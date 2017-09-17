@@ -28,56 +28,98 @@ module usb_ft232h_tb();
 
 	// Read IO
 	logic [7:0]	rd_data;
-	logic		rd_clk = 0,
+	logic		rd_clk,
 				rd_req = 0;
 	logic [8:0]	rd_used;
 
 	// Signal assignment
 	assign usb_clk = clk_60M;
 	assign wr_clk = clk_1M;
+	assign rd_clk = clk_1M;
 
 
 
 	/*
-		BEGIN: Write to USB simulation
+		Operate the bidrectional port
 	*/
 
+	logic [7:0]	usb_data;
 
-	reg [7:0]	wr_state = 0, wr_cntr = 10;
+	assign usb_data_io = usb_oe_n ? 8'bZ : usb_data;
 
-	always_ff @ (negedge wr_clk)
+
+	/*
+		BEGIN: Read from the USB simulation
+	*/
+
+	reg [7:0]	usb_state = 0, usb_cntr = 0;
+
+	// First off we need to write data into the USB controller
+	always_ff @ (posedge usb_clk)
 	begin
 
-		case(wr_state)
+		// End sim
+		if(usb_state == 255) $stop;
+
+		// Else continue
+		else usb_state <= usb_state + 1;
+
+
+		// Clock some data out if the rd signal is pulled low
+		if(usb_rd_n == 0)
+		begin
+
+			usb_data <= $urandom_range(0, 255);
+		end
+
+		// State machine
+		case(usb_state)
+
+			// WAssert the rxf signal
+			3: begin
+			
+				usb_rxf_n <= 0;
+			end
+
+			// Dissasert the rxf signal
+			20: begin
+
+				usb_rxf_n <= 1;
+			end
+		endcase // usb_state
+	end
+
+
+
+
+
+
+
+	reg [7:0]	rd_state = 0, rd_cntr = 10;
+
+	always_ff @ (negedge rd_clk)
+	begin
+
+		case(rd_state)
 
 			// Wait one clock cycle
 			0: begin
-				wr_state <= wr_state + 1;
 
-				// Set the txe signal low so we can send data over the USB
-				//usb_txe_n <= 0;
+				//rd_state <= rd_state + 1;
 			end
 
 			// Start clocking data into the FIFO
 			1: begin
 
-				wr_data <= wr_cntr;
-
-				if(wr_cntr == 10) wr_req <= 1;
-				if(wr_cntr == 15) wr_req <= 0;
+				//if(rd_cntr == 10) rd_req <= 1;
+				//if(rd_cntr == 15) rd_req <= 0;
 
 				// Set the txe singal low when all the data is in the FIFO
-				if(wr_cntr == 20) usb_txe_n <= 0;
+				//if(rd_cntr == 20) usb_txe_n <= 0;
 
-
-
-				// End sim
-				if(wr_cntr == 255) $stop;
-
-				// Else continue
-				else wr_cntr <= wr_cntr + 1;
+				
 			end
-		endcase // wr_state
+		endcase // rd_state
 	end
 
 

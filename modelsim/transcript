@@ -397,3 +397,5 @@ run
 # ** Note: $stop    : /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(75)
 #    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
 # Break in Module usb_ft232h_tb at /home/george/FilmScannerFPGA/usb_ft232h_tb.sv line 75
+# Compile of usb_ft232h_tb.sv failed with 1 errors.
+# Compile of usb_ft232h_tb.sv was successful.
