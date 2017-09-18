@@ -14,14 +14,6 @@ module control(
 	output reg [15:0]	cont_gain, cont_off		// The analogue gain and offset for the front end
 );
 
-	// Parameters for the USB interface
-	localparam WRDATA_ADDR	  = 4'd0;
-	localparam RDDATA_ADDR	  = 4'd1;
-	localparam TXSTATUSL_ADDR = 4'd2;
-	localparam TXSTATUSH_ADDR = 4'd3;
-	localparam RXSTATUSL_ADDR = 4'd4;
-	localparam RXSTATUSH_ADDR = 4'd5;
-
 	// Assign the clocks
 	assign usb_rd_clk = clk_100M;
 	assign data_clk = clk_100M;
@@ -32,8 +24,8 @@ module control(
 
 	// Assign the output data
 	assign cont_en = control_reg[0];		// Enable flag
-	assign cont_gain = control_reg[24:8];	// Analogue front end gain setting
-	assign cont_off = control_reg[40:25];	// Analogue front end offset setting
+	assign cont_gain = control_reg[23:8];	// Analogue front end gain setting
+	assign cont_off = control_reg[39:24];	// Analogue front end offset setting
 
 	// State machine variable
 	reg [7:0]	state = 0;

@@ -1,1 +1,8 @@
+D:/FilmScannerFPGA/control_tb.sv {1 {vlog -work work -sv -stats=none D:/FilmScannerFPGA/control_tb.sv
+Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+-- Compiling module control_tb
 
+Top level modules:
+	control_tb
+
+} {} {}}
