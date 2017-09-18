@@ -1,0 +1,6 @@
+
+State Machine - |film_scanner|control:cont0|state
+Name state.00000000 state.00000010 state.00000001 
+state.00000000 0 0 0 
+state.00000001 1 0 1 
+state.00000010 1 1 0 

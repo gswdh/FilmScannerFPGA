@@ -1,0 +1,91 @@
+--dffpipe DELAY=8 WIDTH=10 clock clrn d q ALTERA_INTERNAL_OPTIONS=AUTO_SHIFT_REGISTER_RECOGNITION=OFF
+--VERSION_BEGIN 15.0 cbx_mgl 2015:04:22:18:06:50:SJ cbx_stratixii 2015:04:22:18:04:08:SJ cbx_util_mgl 2015:04:22:18:04:08:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, the Altera Quartus II License Agreement,
+--  the Altera MegaCore Function License Agreement, or other 
+--  applicable license agreement, including, without limitation, 
+--  that your use is for the sole purpose of programming logic 
+--  devices manufactured by Altera and sold by Altera or its 
+--  authorized distributors.  Please refer to the applicable 
+--  agreement for further details.
+
+
+
+--synthesis_resources = reg 80 
+OPTIONS ALTERA_INTERNAL_OPTION = "AUTO_SHIFT_REGISTER_RECOGNITION=OFF";
+
+SUBDESIGN dffpipe_0f9
+( 
+	clock	:	input;
+	clrn	:	input;
+	d[9..0]	:	input;
+	q[9..0]	:	output;
+) 
+VARIABLE 
+	dffe25a[9..0] : dffe;
+	dffe26a[9..0] : dffe;
+	dffe27a[9..0] : dffe;
+	dffe28a[9..0] : dffe;
+	dffe29a[9..0] : dffe;
+	dffe30a[9..0] : dffe;
+	dffe31a[9..0] : dffe;
+	dffe32a[9..0] : dffe;
+	ena	: NODE;
+	prn	: NODE;
+	sclr	: NODE;
+
+BEGIN 
+	dffe25a[].clk = clock;
+	dffe25a[].clrn = clrn;
+	dffe25a[].d = (d[] & (! sclr));
+	dffe25a[].ena = ena;
+	dffe25a[].prn = prn;
+	dffe26a[].clk = clock;
+	dffe26a[].clrn = clrn;
+	dffe26a[].d = (dffe25a[].q & (! sclr));
+	dffe26a[].ena = ena;
+	dffe26a[].prn = prn;
+	dffe27a[].clk = clock;
+	dffe27a[].clrn = clrn;
+	dffe27a[].d = (dffe26a[].q & (! sclr));
+	dffe27a[].ena = ena;
+	dffe27a[].prn = prn;
+	dffe28a[].clk = clock;
+	dffe28a[].clrn = clrn;
+	dffe28a[].d = (dffe27a[].q & (! sclr));
+	dffe28a[].ena = ena;
+	dffe28a[].prn = prn;
+	dffe29a[].clk = clock;
+	dffe29a[].clrn = clrn;
+	dffe29a[].d = (dffe28a[].q & (! sclr));
+	dffe29a[].ena = ena;
+	dffe29a[].prn = prn;
+	dffe30a[].clk = clock;
+	dffe30a[].clrn = clrn;
+	dffe30a[].d = (dffe29a[].q & (! sclr));
+	dffe30a[].ena = ena;
+	dffe30a[].prn = prn;
+	dffe31a[].clk = clock;
+	dffe31a[].clrn = clrn;
+	dffe31a[].d = (dffe30a[].q & (! sclr));
+	dffe31a[].ena = ena;
+	dffe31a[].prn = prn;
+	dffe32a[].clk = clock;
+	dffe32a[].clrn = clrn;
+	dffe32a[].d = (dffe31a[].q & (! sclr));
+	dffe32a[].ena = ena;
+	dffe32a[].prn = prn;
+	ena = VCC;
+	prn = VCC;
+	q[] = dffe32a[].q;
+	sclr = GND;
+END;
+--VALID FILE
