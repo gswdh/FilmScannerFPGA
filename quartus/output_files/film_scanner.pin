@@ -136,7 +136,7 @@ ft_nrst                      : 64        : output : 3.3-V LVCMOS      :         
 ft_ac9                       : 65        : input  : 3.3-V LVCMOS      :         : 4         : Y              
 ft_ac8                       : 66        : input  : 3.3-V LVCMOS      :         : 4         : Y              
 ft_pwrsav                    : 67        : output : 3.3-V LVCMOS      :         : 4         : Y              
-RESERVED_INPUT_WITH_WEAK_PULLUP : 68        :        :                   :         : 4         :                
+ft_oe                        : 68        : output : 3.3-V LVCMOS      :         : 4         : Y              
 ft_siwu                      : 69        : output : 3.3-V LVCMOS      :         : 4         : Y              
 ft_wr                        : 70        : output : 3.3-V LVCMOS      :         : 4         : Y              
 ft_rd                        : 71        : output : 3.3-V LVCMOS      :         : 4         : Y              

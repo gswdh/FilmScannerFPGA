@@ -7,8 +7,8 @@ module usb_ft232h_tb();
 	reg clk_60M = 0;
 	always #8333ps clk_60M = ~clk_60M;
 	
-	reg clk_1M = 0;
-	always #500ns clk_1M = ~clk_1M;
+	reg clk_10M = 0;
+	always #50ns clk_10M = ~clk_10M;
 
 	// USB IO
 	wire [7:0]	usb_data_io;
@@ -34,8 +34,8 @@ module usb_ft232h_tb();
 
 	// Signal assignment
 	assign usb_clk = clk_60M;
-	assign wr_clk = clk_1M;
-	assign rd_clk = clk_1M;
+	assign wr_clk = clk_10M;
+	assign rd_clk = clk_10M;
 
 
 
@@ -89,6 +89,11 @@ module usb_ft232h_tb();
 		endcase // usb_state
 	end
 
+	always_ff @ (negedge rd_clk)
+	begin
+
+		if(usb_state > 80) rd_req <= 1;
+	end
 
 
 

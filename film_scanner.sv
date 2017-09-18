@@ -45,8 +45,9 @@ module film_scanner(
 						ft_ac8,
 						ft_ac9,
 
-	output reg 			ft_wr = 1,
-						ft_rd = 1,
+	output reg 			ft_wr,
+						ft_rd,
+						ft_oe,
 						ft_siwu,
 						ft_pwrsav,
 						ft_nrst,
@@ -131,29 +132,25 @@ module film_scanner(
 		ft_nrst = 1;
 	end
 
-	/*
+	
+	// Write IO
+	logic [7:0]	wr_data = 0;
+	logic		wr_clk = 0,
+				wr_req = 0,
+				wr_full;
+	logic [8:0]	wr_used;
 
-	// USB interface signals
-	logic 		usb_clk, usb_reset;
-	logic [3:0]	usb_address;
-	logic	 	usb_read_valid;
-	logic [7:0] usb_readdata;
-	logic		usb_write_valid;
-	logic [7:0] usb_writedata;
-	logic [8:0]	usb_rxbytes;
+	// Read IO
+	logic [7:0]	rd_data;
+	logic		rd_clk = 0,
+				rd_req = 0;
+	logic [8:0]	rd_used;
 
+	// FT232H module
 	usb_ft232h usb0(
 
-		//Avalon-MM Slave
-		.clk_i(0),
-		.reset_i(0),
-		.address_i(0),
-		.read_i(0),
-		.readdata_o(),
-		.write_i(0),
-		.writedata_i(),
-
-		//.rx_n_bytes_o(usb_rxbytes),
+		// Reset
+		.nrst(1), 
 
 		//FT232H
 		.usb_clk_i(ft_clk),
@@ -164,13 +161,22 @@ module film_scanner(
 		.usb_wr_n_o(ft_wr),
 		.usb_oe_n_o(ft_oe),
 
-		.rxf_rdclk(usb_clk),
-		.rxf_rdreq(usb_read_valid),		// Read request
-		.rxf_rddata(usb_readdata),		// Data read
-		.rxf_rdusedw(usb_rxbytes)		// Number of bytes in the FIFO
+		// Read port
+		.rxf_rdclk_i(rd_clk),		// Read clock
+		.rxf_rdreq_i(rd_req),		// Read request
+		.rxf_rddata_o(rd_data),		// Data read
+		.rxf_rdusedw_o(rd_used),	// Number of bytes in the FIFO
+
+		// Write port
+		.txe_wrclk_i(wr_clk),		// Write clock
+		.txe_wrreq_i(wr_req),		// Write request
+		.txe_wrdata_i(wr_data),		// Data to write
+		.txe_wrusedw_o(wr_used),	// FIFO status
+		.txe_wrfull_o(wr_full)		// FIFO full signal
 	);
 
 
+/*
 	//assign led[2] = usb_read_valid;	// Undecided
 	
 	control cont0(
@@ -208,6 +214,8 @@ module film_scanner(
 	);
 */
 
+/*
+
 
 	stepper step0(
 
@@ -232,5 +240,5 @@ module film_scanner(
 	.mtr_nhome(), .mtr_nflt()
 
 	);
-
+	*/
 endmodule

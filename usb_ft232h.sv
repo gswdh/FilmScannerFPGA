@@ -1,64 +1,91 @@
 module usb_ft232h (
 
 	// Reset
-	input logic 		nrst, 
+	nrst, 
 
 	//FT232H
-	input  logic       	usb_clk_i,
-	inout  logic [7:0] 	usb_data_io,
-	input  logic       	usb_rxf_n_i,
-	input  logic       	usb_txe_n_i,
-	output logic       	usb_rd_n_o,
-	output logic       	usb_wr_n_o,
-	output logic       	usb_oe_n_o,
+	usb_clk_i,
+	usb_data_io,
+	usb_rxf_n_i,
+	usb_txe_n_i,
+	usb_rd_n_o,
+	usb_wr_n_o,
+	usb_oe_n_o,
 
 	// Read port
-	input logic 		rxf_rdclk_i,		// Read clock
-						rxf_rdreq_i,		// Read request
-	output logic [7:0]	rxf_rddata_o,		// Data read
-	output logic [8:0]	rxf_rdusedw_o,		// Number of bytes in the FIFO
+	rxf_rdclk_i,		// Read clock
+	rxf_rdreq_i,		// Read request
+	rxf_rddata_o,		// Data read
+	rxf_rdusedw_o,		// Number of bytes in the FIFO
 
 	// Write port
-	input logic 		txe_wrclk_i,		// Write clock
-						txe_wrreq_i,		// Write request
-	input logic [7:0]	txe_wrdata_i,		// Data to write
-	output logic [8:0]	txe_wrusedw_o,		// FIFO status
-	output logic 		txe_wrfull_o
+	txe_wrclk_i,		// Write clock
+	txe_wrreq_i,		// Write request
+	txe_wrdata_i,		// Data to write
+	txe_wrusedw_o,		// FIFO status
+	txe_wrfull_o
 );
 
+	// Paramters dictate FIFO lengths (FIFO_L = 2 ^ TX_FIFO_L_BITS)
+	parameter TX_FIFO_L_BITS = 9;
+	parameter RX_FIFO_L_BITS = 9;
 
-// TODO Make the rxf_rdusedw_o signal parameterised
-parameter TX_FIFO_DEPTH  = 512;
-parameter TX_FIFO_WIDTHU = 9;
-parameter RX_FIFO_DEPTH  = 512;
-parameter RX_FIFO_WIDTHU = 9;
+	// Inferred FIFO lengths from parameters
+	parameter TX_FIFO_DEPTH  = (2 << (TX_FIFO_L_BITS - 1));
+	parameter RX_FIFO_DEPTH  = (2 << (RX_FIFO_L_BITS - 1));
 
-reg                        error = 0;
-reg                        rxerror = 0;
-reg   [7:0]                rxerrdata, rxf_data;
+	// Definition of the ports
+	input logic 							nrst;
 
-logic                      txf_wrfull;
-logic                      txf_rdclk;
-logic                      txf_rdreq;
-logic [7:0]                txf_rddata;
-logic                      txf_rdempty;
+	//FT232H
+	input  logic       						usb_clk_i;
+	inout  logic [7:0] 						usb_data_io;
+	input  logic       						usb_rxf_n_i;
+	input  logic       						usb_txe_n_i;
+	output logic       						usb_rd_n_o;
+	output logic       						usb_wr_n_o;
+	output logic       						usb_oe_n_o;
 
-logic [7:0]                rxf_wrdata;
-logic                      rxf_wrclk;
-logic                      rxf_wrreq;
-logic                      rxf_wrfull;
-logic                      rxf_rdempty;
-logic                      rxf_rdfull;
+	// Read port
+	input logic 							rxf_rdclk_i,		// Read clock
+											rxf_rdreq_i;		// Read request
+	output logic [7:0]						rxf_rddata_o;		// Data read
+	output logic [(RX_FIFO_L_BITS - 1):0]	rxf_rdusedw_o;		// Number of bytes in the FIFO
 
-// Set the FT232H port to input or the write data
-assign usb_data_io = ( usb_oe_n_o ) ? ( txf_rddata ) : ( {8{1'bZ}} );
+	// Write port
+	input logic 							txe_wrclk_i,		// Write clock
+											txe_wrreq_i;		// Write request
+	input logic [7:0]						txe_wrdata_i;		// Data to write
+	output logic [(TX_FIFO_L_BITS - 1):0]	txe_wrusedw_o;		// FIFO status
+	output logic 							txe_wrfull_o;
 
-// Create the clocks
-assign rxf_wrclk   = ~usb_clk_i;
-assign txf_rdclk   = ~usb_clk_i;
+	// Module variables
+	reg                        error = 0;
+	reg                        rxerror = 0;
+	reg   [7:0]                rxerrdata, rxf_data;
 
-// Full signal
-assign txe_wrfull_o = txf_wrfull;
+	logic                      txf_wrfull;
+	logic                      txf_rdclk;
+	logic                      txf_rdreq;
+	logic [7:0]                txf_rddata;
+	logic                      txf_rdempty;
+
+	logic [7:0]                rxf_wrdata;
+	logic                      rxf_wrclk;
+	logic                      rxf_wrreq;
+	logic                      rxf_wrfull;
+	logic                      rxf_rdempty;
+	logic                      rxf_rdfull;
+
+	// Set the FT232H port to input or the write data
+	assign usb_data_io = usb_oe_n_o ? txf_rddata : 8'bZ;
+
+	// Create the clocks
+	assign rxf_wrclk = ~usb_clk_i;
+	assign txf_rdclk = ~usb_clk_i;
+
+	// Full signal
+	assign txe_wrfull_o = txf_wrfull;
 
 	// FIFO for sending data instatiation
 	dcfifo	txfifo (
@@ -84,7 +111,7 @@ assign txe_wrfull_o = txf_wrfull;
 		txfifo.lpm_showahead = "OFF",
 		txfifo.lpm_type = "dcfifo",
 		txfifo.lpm_width = 8,
-		txfifo.lpm_widthu = TX_FIFO_WIDTHU,
+		txfifo.lpm_widthu = TX_FIFO_L_BITS,
 		txfifo.overflow_checking = "ON",
 		txfifo.rdsync_delaypipe = 11,
 		txfifo.read_aclr_synch = "ON",
@@ -117,7 +144,7 @@ assign txe_wrfull_o = txf_wrfull;
 		rxfifo.lpm_showahead = "OFF",
 		rxfifo.lpm_type = "dcfifo",
 		rxfifo.lpm_width = 8,
-		rxfifo.lpm_widthu = RX_FIFO_WIDTHU,
+		rxfifo.lpm_widthu = RX_FIFO_L_BITS,
 		rxfifo.overflow_checking = "ON",
 		rxfifo.rdsync_delaypipe = 11,
 		rxfifo.read_aclr_synch = "ON",
@@ -125,9 +152,6 @@ assign txe_wrfull_o = txf_wrfull;
 		rxfifo.use_eab = "ON",
 		rxfifo.write_aclr_synch = "ON",
 		rxfifo.wrsync_delaypipe = 11;
-
-
-
 
 	// Create another stage for the RX data flow
 	always_ff @ (negedge usb_clk_i or negedge nrst)
@@ -201,10 +225,10 @@ assign txe_wrfull_o = txf_wrfull;
 				else rxf_wrdata <= rxf_data;
 			end
 
+			// Else stop writing data into the FIFO
 			else
 			begin
 
-				// Else stop writing data into the FIFO
 				rxf_wrreq <= 0;
 			end
 		end
@@ -238,10 +262,10 @@ assign txe_wrfull_o = txf_wrfull;
 				if(usb_oe_n_o == 0) usb_rd_n_o <= 0;
 			end
 			
+			// Else set for writing to the FT232H
 			else
 			begin
-			
-				// Else set for writing to the FT232H
+				
 				usb_oe_n_o <= 1;
 				usb_rd_n_o <= 1;
 			end
@@ -256,7 +280,6 @@ assign txe_wrfull_o = txf_wrfull;
 		if(nrst == 0)
 		begin
 
-			// 
 			txf_rdreq <= 0;
 		end
 
@@ -264,19 +287,19 @@ assign txe_wrfull_o = txf_wrfull;
 		else
 		begin
 
-			// 
+			// If a write to the FT232H has been started, read from the FIFO
 			if((usb_txe_n_i == 0) && (txf_rdempty == 0) && (error == 0) && (usb_oe_n_o == 1))
 			begin
 			
 				txf_rdreq <= 1;
 			end
 
-			// 
+			// Otherwise stop
 			else txf_rdreq <= 0;
 		end
 	end
 		
-	// 
+	// Control over the WR strobe
 	always_ff @ (negedge usb_clk_i or negedge nrst)
 	begin
 
@@ -292,25 +315,26 @@ assign txe_wrfull_o = txf_wrfull;
 		else
 		begin
 
-			// 
+			// If we're still trying to read when there is no more data
 			if((usb_txe_n_i == 1) && (usb_wr_n_o == 0))
 			begin
 				
+				// Create an error condition
 				error <= 1;
 			end
 
-			//
-			if((usb_txe_n_i == 0) && ((txf_rdreq == 1) /*|| (error == 1)*/) && (usb_oe_n_o == 1))
+			// If it's okay to read from the FT232H
+			if((usb_txe_n_i == 0) && ((txf_rdreq == 1) || (error == 1)) && (usb_oe_n_o == 1))
 			begin
 				
-				// 
+				// Read from it
 				usb_wr_n_o <= 0;
 		
-				// 
+				// Reset the error bit
 				if(error == 1) error <= 0;
 			end
 			
-			// 
+			// Otherwise don't read!
 			else usb_wr_n_o <= 1;
 		end
 	end
