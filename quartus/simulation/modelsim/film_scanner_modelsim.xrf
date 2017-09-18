@@ -1,6 +1,11 @@
 vendor_name = ModelSim
+<<<<<<< HEAD
 source_file = 1, ../stepper.sv
 source_file = 1, ../control.sv
+=======
+source_file = 1, D:/FilmScannerFPGA/stepper.sv
+source_file = 1, D:/FilmScannerFPGA/control.sv
+>>>>>>> control
 source_file = 1, ../ccd_timings_new.sv
 source_file = 1, D:/FilmScannerFPGA/usb_ft232h.sv
 source_file = 1, D:/FilmScannerFPGA/dac.sv
@@ -19,6 +24,7 @@ source_file = 1, c:/altera/15.0/quartus/libraries/megafunctions/stratixii_pll.in
 source_file = 1, c:/altera/15.0/quartus/libraries/megafunctions/cycloneii_pll.inc
 source_file = 1, c:/altera/15.0/quartus/libraries/megafunctions/cbx.lst
 source_file = 1, D:/FilmScannerFPGA/quartus/db/pll_80_altpll.v
+<<<<<<< HEAD
 source_file = 1, c:/altera/15.0/quartus/libraries/megafunctions/dcfifo.tdf
 source_file = 1, c:/altera/15.0/quartus/libraries/megafunctions/lpm_counter.inc
 source_file = 1, c:/altera/15.0/quartus/libraries/megafunctions/lpm_add_sub.inc
@@ -49,6 +55,8 @@ source_file = 1, D:/FilmScannerFPGA/quartus/db/dffpipe_1f9.tdf
 source_file = 1, D:/FilmScannerFPGA/quartus/db/alt_synch_pipe_3md.tdf
 source_file = 1, D:/FilmScannerFPGA/quartus/db/dffpipe_2f9.tdf
 source_file = 1, D:/FilmScannerFPGA/quartus/db/cmpr_n76.tdf
+=======
+>>>>>>> control
 design_name = film_scanner
 instance = comp, \ft_bus[0]~output , ft_bus[0]~output, film_scanner, 1
 instance = comp, \ft_bus[1]~output , ft_bus[1]~output, film_scanner, 1
@@ -80,7 +88,10 @@ instance = comp, \mtr_m[1]~output , mtr_m[1]~output, film_scanner, 1
 instance = comp, \mtr_m[2]~output , mtr_m[2]~output, film_scanner, 1
 instance = comp, \ft_wr~output , ft_wr~output, film_scanner, 1
 instance = comp, \ft_rd~output , ft_rd~output, film_scanner, 1
+<<<<<<< HEAD
 instance = comp, \ft_oe~output , ft_oe~output, film_scanner, 1
+=======
+>>>>>>> control
 instance = comp, \ft_siwu~output , ft_siwu~output, film_scanner, 1
 instance = comp, \ft_pwrsav~output , ft_pwrsav~output, film_scanner, 1
 instance = comp, \ft_nrst~output , ft_nrst~output, film_scanner, 1
@@ -88,6 +99,7 @@ instance = comp, \led[0]~output , led[0]~output, film_scanner, 1
 instance = comp, \led[1]~output , led[1]~output, film_scanner, 1
 instance = comp, \led[2]~output , led[2]~output, film_scanner, 1
 instance = comp, \led[3]~output , led[3]~output, film_scanner, 1
+<<<<<<< HEAD
 instance = comp, \ft_clk~input , ft_clk~input, film_scanner, 1
 instance = comp, \ft_clk~inputclkctrl , ft_clk~inputclkctrl, film_scanner, 1
 instance = comp, \usb0|txfifo|auto_generated|rdemp_eq_comp_lsb_mux|result_node[0]~4 , usb0|txfifo|auto_generated|rdemp_eq_comp_lsb_mux|result_node[0]~4, film_scanner, 1
@@ -233,6 +245,8 @@ instance = comp, \usb0|txfifo|auto_generated|valid_rdreq~0 , usb0|txfifo|auto_ge
 instance = comp, \~GND , ~GND, film_scanner, 1
 instance = comp, \usb0|txfifo|auto_generated|rdptr_g1p|counter5a0~_wirecell , usb0|txfifo|auto_generated|rdptr_g1p|counter5a0~_wirecell, film_scanner, 1
 instance = comp, \usb0|txfifo|auto_generated|fifo_ram|ram_block11a0 , usb0|txfifo|auto_generated|fifo_ram|ram_block11a0, film_scanner, 1
+=======
+>>>>>>> control
 instance = comp, \clk_100M~input , clk_100M~input, film_scanner, 1
 instance = comp, \clk_100M~inputclkctrl , clk_100M~inputclkctrl, film_scanner, 1
 instance = comp, \dac0|Add0~0 , dac0|Add0~0, film_scanner, 1
@@ -255,6 +269,7 @@ instance = comp, \dac0|clk_2MHz , dac0|clk_2MHz, film_scanner, 1
 instance = comp, \dac0|clk_2MHz~clkctrl , dac0|clk_2MHz~clkctrl, film_scanner, 1
 instance = comp, \dac0|this_gain[0]~feeder , dac0|this_gain[0]~feeder, film_scanner, 1
 instance = comp, \dac0|this_gain[0] , dac0|this_gain[0], film_scanner, 1
+<<<<<<< HEAD
 instance = comp, \dac0|Equal1~0 , dac0|Equal1~0, film_scanner, 1
 instance = comp, \dac0|Selector2~0 , dac0|Selector2~0, film_scanner, 1
 instance = comp, \dac0|dac_state[3] , dac0|dac_state[3], film_scanner, 1
@@ -276,15 +291,31 @@ instance = comp, \dac0|bit_cntr[1]~7 , dac0|bit_cntr[1]~7, film_scanner, 1
 instance = comp, \dac0|bit_cntr[1] , dac0|bit_cntr[1], film_scanner, 1
 instance = comp, \dac0|bit_cntr[2]~9 , dac0|bit_cntr[2]~9, film_scanner, 1
 instance = comp, \dac0|bit_cntr[2] , dac0|bit_cntr[2], film_scanner, 1
+=======
+instance = comp, \dac0|Selector2~0 , dac0|Selector2~0, film_scanner, 1
+instance = comp, \dac0|dac_state[3] , dac0|dac_state[3], film_scanner, 1
+instance = comp, \dac0|sdata~5 , dac0|sdata~5, film_scanner, 1
+instance = comp, \dac0|bit_cntr[0]~5 , dac0|bit_cntr[0]~5, film_scanner, 1
+instance = comp, \dac0|bit_cntr[1]~7 , dac0|bit_cntr[1]~7, film_scanner, 1
+instance = comp, \dac0|bit_cntr[1]~14 , dac0|bit_cntr[1]~14, film_scanner, 1
+instance = comp, \dac0|bit_cntr[1] , dac0|bit_cntr[1], film_scanner, 1
+instance = comp, \dac0|bit_cntr[2]~9 , dac0|bit_cntr[2]~9, film_scanner, 1
+instance = comp, \dac0|bit_cntr[2] , dac0|bit_cntr[2], film_scanner, 1
+instance = comp, \dac0|bit_cntr[1]~13 , dac0|bit_cntr[1]~13, film_scanner, 1
+instance = comp, \dac0|bit_cntr[0] , dac0|bit_cntr[0], film_scanner, 1
+>>>>>>> control
 instance = comp, \dac0|bit_cntr[3]~11 , dac0|bit_cntr[3]~11, film_scanner, 1
 instance = comp, \dac0|bit_cntr[3] , dac0|bit_cntr[3], film_scanner, 1
 instance = comp, \dac0|bit_cntr[4]~15 , dac0|bit_cntr[4]~15, film_scanner, 1
 instance = comp, \dac0|bit_cntr[4] , dac0|bit_cntr[4], film_scanner, 1
 instance = comp, \dac0|Equal3~0 , dac0|Equal3~0, film_scanner, 1
+<<<<<<< HEAD
 instance = comp, \dac0|sdata~5 , dac0|sdata~5, film_scanner, 1
 instance = comp, \dac0|Selector5~1 , dac0|Selector5~1, film_scanner, 1
 instance = comp, \dac0|Selector5~4 , dac0|Selector5~4, film_scanner, 1
 instance = comp, \dac0|dac_state[0] , dac0|dac_state[0], film_scanner, 1
+=======
+>>>>>>> control
 instance = comp, \dac0|Equal3~1 , dac0|Equal3~1, film_scanner, 1
 instance = comp, \dac0|Selector3~0 , dac0|Selector3~0, film_scanner, 1
 instance = comp, \dac0|Selector3~1 , dac0|Selector3~1, film_scanner, 1
@@ -292,13 +323,33 @@ instance = comp, \dac0|dac_state[2] , dac0|dac_state[2], film_scanner, 1
 instance = comp, \dac0|Selector4~0 , dac0|Selector4~0, film_scanner, 1
 instance = comp, \dac0|Selector4~1 , dac0|Selector4~1, film_scanner, 1
 instance = comp, \dac0|dac_state[1] , dac0|dac_state[1], film_scanner, 1
+<<<<<<< HEAD
 instance = comp, \dac0|Selector1~0 , dac0|Selector1~0, film_scanner, 1
 instance = comp, \dac0|Selector1~1 , dac0|Selector1~1, film_scanner, 1
+=======
+instance = comp, \dac0|dac_offset[0]~0 , dac0|dac_offset[0]~0, film_scanner, 1
+instance = comp, \dac0|Equal1~0 , dac0|Equal1~0, film_scanner, 1
+instance = comp, \dac0|dac_offset[0]~1 , dac0|dac_offset[0]~1, film_scanner, 1
+instance = comp, \dac0|dac_offset[0]~2 , dac0|dac_offset[0]~2, film_scanner, 1
+instance = comp, \dac0|dac_offset[0] , dac0|dac_offset[0], film_scanner, 1
+instance = comp, \dac0|Selector0~0 , dac0|Selector0~0, film_scanner, 1
+instance = comp, \dac0|this_prev_offset[0]~0 , dac0|this_prev_offset[0]~0, film_scanner, 1
+instance = comp, \dac0|this_prev_offset[0] , dac0|this_prev_offset[0], film_scanner, 1
+instance = comp, \dac0|Selector5~0 , dac0|Selector5~0, film_scanner, 1
+instance = comp, \dac0|Selector5~2 , dac0|Selector5~2, film_scanner, 1
+instance = comp, \dac0|Selector5~3 , dac0|Selector5~3, film_scanner, 1
+instance = comp, \dac0|Selector5~1 , dac0|Selector5~1, film_scanner, 1
+instance = comp, \dac0|Selector5~4 , dac0|Selector5~4, film_scanner, 1
+instance = comp, \dac0|dac_state[0] , dac0|dac_state[0], film_scanner, 1
+instance = comp, \dac0|Selector1~1 , dac0|Selector1~1, film_scanner, 1
+instance = comp, \dac0|Selector1~0 , dac0|Selector1~0, film_scanner, 1
+>>>>>>> control
 instance = comp, \dac0|sclk~0 , dac0|sclk~0, film_scanner, 1
 instance = comp, \dac0|sclk , dac0|sclk, film_scanner, 1
 instance = comp, \dac0|Selector6~0 , dac0|Selector6~0, film_scanner, 1
 instance = comp, \dac0|sdata~4 , dac0|sdata~4, film_scanner, 1
 instance = comp, \dac0|sdata~6 , dac0|sdata~6, film_scanner, 1
+<<<<<<< HEAD
 instance = comp, \dac0|sdata~9 , dac0|sdata~9, film_scanner, 1
 instance = comp, \dac0|sdata~7 , dac0|sdata~7, film_scanner, 1
 instance = comp, \dac0|dac_offset[18]~3 , dac0|dac_offset[18]~3, film_scanner, 1
@@ -320,6 +371,85 @@ instance = comp, \dac0|sync , dac0|sync, film_scanner, 1
 instance = comp, \adc_sdo~input , adc_sdo~input, film_scanner, 1
 instance = comp, \mtr_nhome~input , mtr_nhome~input, film_scanner, 1
 instance = comp, \mtr_nflt~input , mtr_nflt~input, film_scanner, 1
+=======
+instance = comp, \dac0|sdata~7 , dac0|sdata~7, film_scanner, 1
+instance = comp, \dac0|sdata~9 , dac0|sdata~9, film_scanner, 1
+instance = comp, \dac0|dac_offset[18]~3 , dac0|dac_offset[18]~3, film_scanner, 1
+instance = comp, \dac0|dac_offset[18] , dac0|dac_offset[18], film_scanner, 1
+instance = comp, \dac0|Selector6~6 , dac0|Selector6~6, film_scanner, 1
+instance = comp, \dac0|Selector6~1 , dac0|Selector6~1, film_scanner, 1
+instance = comp, \dac0|Selector6~2 , dac0|Selector6~2, film_scanner, 1
+instance = comp, \dac0|Selector6~5 , dac0|Selector6~5, film_scanner, 1
+instance = comp, \dac0|Selector6~3 , dac0|Selector6~3, film_scanner, 1
+instance = comp, \dac0|Selector6~4 , dac0|Selector6~4, film_scanner, 1
+instance = comp, \dac0|Selector6~7 , dac0|Selector6~7, film_scanner, 1
+instance = comp, \dac0|sdata~8 , dac0|sdata~8, film_scanner, 1
+instance = comp, \dac0|sdata , dac0|sdata, film_scanner, 1
+instance = comp, \dac0|sync~2 , dac0|sync~2, film_scanner, 1
+instance = comp, \dac0|sync~3 , dac0|sync~3, film_scanner, 1
+instance = comp, \dac0|sync~5 , dac0|sync~5, film_scanner, 1
+instance = comp, \dac0|sync~4 , dac0|sync~4, film_scanner, 1
+instance = comp, \dac0|sync , dac0|sync, film_scanner, 1
+instance = comp, \step0|Add0~0 , step0|Add0~0, film_scanner, 1
+instance = comp, \step0|mtr_cntr~0 , step0|mtr_cntr~0, film_scanner, 1
+instance = comp, \step0|mtr_cntr[0] , step0|mtr_cntr[0], film_scanner, 1
+instance = comp, \step0|Add0~2 , step0|Add0~2, film_scanner, 1
+instance = comp, \step0|mtr_cntr[1] , step0|mtr_cntr[1], film_scanner, 1
+instance = comp, \step0|Add0~4 , step0|Add0~4, film_scanner, 1
+instance = comp, \step0|mtr_cntr[2] , step0|mtr_cntr[2], film_scanner, 1
+instance = comp, \step0|Add0~6 , step0|Add0~6, film_scanner, 1
+instance = comp, \step0|mtr_cntr[3] , step0|mtr_cntr[3], film_scanner, 1
+instance = comp, \step0|Add0~8 , step0|Add0~8, film_scanner, 1
+instance = comp, \step0|mtr_cntr~6 , step0|mtr_cntr~6, film_scanner, 1
+instance = comp, \step0|mtr_cntr[4] , step0|mtr_cntr[4], film_scanner, 1
+instance = comp, \step0|Add0~10 , step0|Add0~10, film_scanner, 1
+instance = comp, \step0|mtr_cntr[5] , step0|mtr_cntr[5], film_scanner, 1
+instance = comp, \step0|Add0~12 , step0|Add0~12, film_scanner, 1
+instance = comp, \step0|mtr_cntr~5 , step0|mtr_cntr~5, film_scanner, 1
+instance = comp, \step0|mtr_cntr[6] , step0|mtr_cntr[6], film_scanner, 1
+instance = comp, \step0|Add0~14 , step0|Add0~14, film_scanner, 1
+instance = comp, \step0|mtr_cntr~4 , step0|mtr_cntr~4, film_scanner, 1
+instance = comp, \step0|mtr_cntr[7] , step0|mtr_cntr[7], film_scanner, 1
+instance = comp, \step0|Add0~16 , step0|Add0~16, film_scanner, 1
+instance = comp, \step0|mtr_cntr~3 , step0|mtr_cntr~3, film_scanner, 1
+instance = comp, \step0|mtr_cntr[8] , step0|mtr_cntr[8], film_scanner, 1
+instance = comp, \step0|Add0~18 , step0|Add0~18, film_scanner, 1
+instance = comp, \step0|mtr_cntr~2 , step0|mtr_cntr~2, film_scanner, 1
+instance = comp, \step0|mtr_cntr[9] , step0|mtr_cntr[9], film_scanner, 1
+instance = comp, \step0|Add0~20 , step0|Add0~20, film_scanner, 1
+instance = comp, \step0|mtr_cntr~1 , step0|mtr_cntr~1, film_scanner, 1
+instance = comp, \step0|mtr_cntr[10] , step0|mtr_cntr[10], film_scanner, 1
+instance = comp, \step0|Add0~22 , step0|Add0~22, film_scanner, 1
+instance = comp, \step0|mtr_cntr[11] , step0|mtr_cntr[11], film_scanner, 1
+instance = comp, \step0|Add0~24 , step0|Add0~24, film_scanner, 1
+instance = comp, \step0|mtr_cntr[12] , step0|mtr_cntr[12], film_scanner, 1
+instance = comp, \step0|Add0~26 , step0|Add0~26, film_scanner, 1
+instance = comp, \step0|mtr_cntr[13] , step0|mtr_cntr[13], film_scanner, 1
+instance = comp, \step0|Add0~28 , step0|Add0~28, film_scanner, 1
+instance = comp, \step0|mtr_cntr[14] , step0|mtr_cntr[14], film_scanner, 1
+instance = comp, \step0|Add0~30 , step0|Add0~30, film_scanner, 1
+instance = comp, \step0|mtr_cntr[15] , step0|mtr_cntr[15], film_scanner, 1
+instance = comp, \step0|Equal0~1 , step0|Equal0~1, film_scanner, 1
+instance = comp, \step0|Equal0~3 , step0|Equal0~3, film_scanner, 1
+instance = comp, \step0|Add0~32 , step0|Add0~32, film_scanner, 1
+instance = comp, \step0|mtr_cntr[16] , step0|mtr_cntr[16], film_scanner, 1
+instance = comp, \step0|Add0~34 , step0|Add0~34, film_scanner, 1
+instance = comp, \step0|mtr_cntr[17] , step0|mtr_cntr[17], film_scanner, 1
+instance = comp, \step0|Add0~36 , step0|Add0~36, film_scanner, 1
+instance = comp, \step0|mtr_cntr[18] , step0|mtr_cntr[18], film_scanner, 1
+instance = comp, \step0|Equal0~0 , step0|Equal0~0, film_scanner, 1
+instance = comp, \step0|Equal0~2 , step0|Equal0~2, film_scanner, 1
+instance = comp, \step0|Equal0~4 , step0|Equal0~4, film_scanner, 1
+instance = comp, \step0|Equal0~5 , step0|Equal0~5, film_scanner, 1
+instance = comp, \step0|mtr_step~0 , step0|mtr_step~0, film_scanner, 1
+instance = comp, \step0|mtr_step , step0|mtr_step, film_scanner, 1
+instance = comp, \adc_sdo~input , adc_sdo~input, film_scanner, 1
+instance = comp, \mtr_nhome~input , mtr_nhome~input, film_scanner, 1
+instance = comp, \mtr_nflt~input , mtr_nflt~input, film_scanner, 1
+instance = comp, \ft_clk~input , ft_clk~input, film_scanner, 1
+instance = comp, \ft_txe~input , ft_txe~input, film_scanner, 1
+instance = comp, \ft_rxf~input , ft_rxf~input, film_scanner, 1
+>>>>>>> control
 instance = comp, \ft_ac8~input , ft_ac8~input, film_scanner, 1
 instance = comp, \ft_ac9~input , ft_ac9~input, film_scanner, 1
 instance = comp, \ft_bus[0]~input , ft_bus[0]~input, film_scanner, 1

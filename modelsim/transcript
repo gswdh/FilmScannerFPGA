@@ -1,4 +1,5 @@
 # Loading project filmscanner_sandbox
+<<<<<<< HEAD
 do scanner.do
 # Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 # Start time: 19:49:23 on Sep 17,2017
@@ -397,5 +398,13 @@ run
 # ** Note: $stop    : /home/george/FilmScannerFPGA/usb_ft232h_tb.sv(75)
 #    Time: 246 us  Iteration: 1  Instance: /usb_ft232h_tb
 # Break in Module usb_ft232h_tb at /home/george/FilmScannerFPGA/usb_ft232h_tb.sv line 75
+=======
+# Compile of usb_ft232h.sv failed with 1 errors.
+# Compile of usb_ft232h.sv failed with 5 errors.
+# Compile of usb_ft232h.sv was successful.
+# Compile of usb_ft232h.sv was successful.
+# Compile of usb_ft232h_tb.sv failed with 1 errors.
+# 2 compiles, 1 failed with 1 error.
+>>>>>>> control
 # Compile of usb_ft232h_tb.sv failed with 1 errors.
 # Compile of usb_ft232h_tb.sv was successful.

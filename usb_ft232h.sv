@@ -31,8 +31,8 @@ module usb_ft232h (
 	parameter RX_FIFO_L_BITS = 9;
 
 	// Inferred FIFO lengths from parameters
-	parameter TX_FIFO_DEPTH  = (2 << (TX_FIFO_L_BITS - 1));
-	parameter RX_FIFO_DEPTH  = (2 << (RX_FIFO_L_BITS - 1));
+	localparam TX_FIFO_DEPTH  = (2 << (TX_FIFO_L_BITS - 1));
+	localparam RX_FIFO_DEPTH  = (2 << (RX_FIFO_L_BITS - 1));
 
 	// Definition of the ports
 	input logic 							nrst;

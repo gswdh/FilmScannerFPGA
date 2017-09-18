@@ -1,5 +1,9 @@
 |film_scanner
+<<<<<<< HEAD
 clk_100M => clk_100M.IN2
+=======
+clk_100M => clk_100M.IN3
+>>>>>>> control
 led_pwm << <GND>
 adc_cs << ccd_timing:ccd0.adc_cs
 adc_sclk << ccd_timing:ccd0.adc_sclk
@@ -12,6 +16,7 @@ ccd_p2 << ccd_timing:ccd0.ccd_p2
 ccd_sh << ccd_timing:ccd0.ccd_sh
 ccd_rs << ccd_timing:ccd0.ccd_rs
 ccd_cp << ccd_timing:ccd0.ccd_cp
+<<<<<<< HEAD
 mtr_nen << <GND>
 mtr_step << <GND>
 mtr_nrst << <GND>
@@ -39,6 +44,34 @@ ft_ac9 => ~NO_FANOUT~
 ft_wr << usb_ft232h:usb0.usb_wr_n_o
 ft_rd << usb_ft232h:usb0.usb_rd_n_o
 ft_oe << usb_ft232h:usb0.usb_oe_n_o
+=======
+mtr_nen << stepper:step0.mtr_nen
+mtr_step << stepper:step0.mtr_step
+mtr_nrst << stepper:step0.mtr_nrst
+mtr_slp << stepper:step0.mtr_slp
+mtr_decay << stepper:step0.mtr_decay
+mtr_dir << stepper:step0.mtr_dir
+mtr_m[0] << stepper:step0.mtr_m
+mtr_m[1] << stepper:step0.mtr_m
+mtr_m[2] << stepper:step0.mtr_m
+mtr_nhome => ~NO_FANOUT~
+mtr_nflt => ~NO_FANOUT~
+ft_bus[0] <> <UNC>
+ft_bus[1] <> <UNC>
+ft_bus[2] <> <UNC>
+ft_bus[3] <> <UNC>
+ft_bus[4] <> <UNC>
+ft_bus[5] <> <UNC>
+ft_bus[6] <> <UNC>
+ft_bus[7] <> <UNC>
+ft_clk => ~NO_FANOUT~
+ft_txe => ~NO_FANOUT~
+ft_rxf => ~NO_FANOUT~
+ft_ac8 => ~NO_FANOUT~
+ft_ac9 => ~NO_FANOUT~
+ft_wr << <GND>
+ft_rd << <GND>
+>>>>>>> control
 ft_siwu << <VCC>
 ft_pwrsav << <VCC>
 ft_nrst << <VCC>
@@ -289,6 +322,7 @@ sdata <= sdata~reg0.DB_MAX_OUTPUT_PORT_TYPE
 sync <= sync~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
+<<<<<<< HEAD
 |film_scanner|usb_ft232h:usb0
 nrst => _.IN1
 nrst => _.IN1
@@ -2767,5 +2801,71 @@ data[1] => result_node[0].IN1
 result[0] <= result_node[0].DB_MAX_OUTPUT_PORT_TYPE
 sel[0] => result_node[0].IN0
 sel[0] => _.IN0
+=======
+|film_scanner|stepper:step0
+clk_100M => mtr_cntr[0].CLK
+clk_100M => mtr_cntr[1].CLK
+clk_100M => mtr_cntr[2].CLK
+clk_100M => mtr_cntr[3].CLK
+clk_100M => mtr_cntr[4].CLK
+clk_100M => mtr_cntr[5].CLK
+clk_100M => mtr_cntr[6].CLK
+clk_100M => mtr_cntr[7].CLK
+clk_100M => mtr_cntr[8].CLK
+clk_100M => mtr_cntr[9].CLK
+clk_100M => mtr_cntr[10].CLK
+clk_100M => mtr_cntr[11].CLK
+clk_100M => mtr_cntr[12].CLK
+clk_100M => mtr_cntr[13].CLK
+clk_100M => mtr_cntr[14].CLK
+clk_100M => mtr_cntr[15].CLK
+clk_100M => mtr_cntr[16].CLK
+clk_100M => mtr_cntr[17].CLK
+clk_100M => mtr_cntr[18].CLK
+clk_100M => mtr_step~reg0.CLK
+nrst => mtr_nrst.DATAIN
+nrst => mtr_cntr[0].ACLR
+nrst => mtr_cntr[1].ACLR
+nrst => mtr_cntr[2].ACLR
+nrst => mtr_cntr[3].ACLR
+nrst => mtr_cntr[4].ACLR
+nrst => mtr_cntr[5].ACLR
+nrst => mtr_cntr[6].ACLR
+nrst => mtr_cntr[7].ACLR
+nrst => mtr_cntr[8].ACLR
+nrst => mtr_cntr[9].ACLR
+nrst => mtr_cntr[10].ACLR
+nrst => mtr_cntr[11].ACLR
+nrst => mtr_cntr[12].ACLR
+nrst => mtr_cntr[13].ACLR
+nrst => mtr_cntr[14].ACLR
+nrst => mtr_cntr[15].ACLR
+nrst => mtr_cntr[16].ACLR
+nrst => mtr_cntr[17].ACLR
+nrst => mtr_cntr[18].ACLR
+nrst => mtr_step~reg0.ACLR
+en => mtr_slp.DATAIN
+en => mtr_nen.DATAIN
+dir => mtr_dir.DATAIN
+speed[0] => ~NO_FANOUT~
+speed[1] => ~NO_FANOUT~
+speed[2] => ~NO_FANOUT~
+speed[3] => ~NO_FANOUT~
+speed[4] => ~NO_FANOUT~
+speed[5] => ~NO_FANOUT~
+speed[6] => ~NO_FANOUT~
+speed[7] => ~NO_FANOUT~
+mtr_nen <= en.DB_MAX_OUTPUT_PORT_TYPE
+mtr_step <= mtr_step~reg0.DB_MAX_OUTPUT_PORT_TYPE
+mtr_nrst <= nrst.DB_MAX_OUTPUT_PORT_TYPE
+mtr_slp <= en.DB_MAX_OUTPUT_PORT_TYPE
+mtr_decay <= <VCC>
+mtr_dir <= dir.DB_MAX_OUTPUT_PORT_TYPE
+mtr_m[0] <= <VCC>
+mtr_m[1] <= <VCC>
+mtr_m[2] <= <VCC>
+mtr_nhome => ~NO_FANOUT~
+mtr_nflt => ~NO_FANOUT~
+>>>>>>> control
 
 

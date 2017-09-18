@@ -48,37 +48,49 @@ module film_scanner(
 	output reg 			ft_wr,
 						ft_rd,
 						ft_oe,
+
 						ft_siwu,
 						ft_pwrsav,
 						ft_nrst,
 
 	// LEDs
 	output reg 			[3:0] led
-);
+);	
 
-	// en reg (won't be here for long)
+	// Set the ft signals
+	always_comb
+	begin
+
+		ft_siwu = 1;
+		ft_pwrsav = 1;
+		ft_nrst = 1;
+	end
+
+	// USB FIFO IO
+	logic [7:0]	wr_data = 0;
+	logic		wr_clk = 0,
+				wr_req = 0,
+				wr_full;
+	logic [8:0]	wr_used;
+
+	// Read IO
+	logic [7:0]	rd_data;
+	logic		rd_clk,
+				rd_req = 0;
+	logic [8:0]	rd_used;
+
+	// Control IO
 	reg en;
 
-	// Assign the LEDs
-	//assign led[0] = 1;	// Just an on LED
-	//assign led[1] = en;	// On while scanning
-	//assign led[2] = 0;	// Undecided
-	//assign led[3] = 0;	// Undecided
-
-
-	// Pix signals
-	reg pix_clk = 0, pix_valid;
-	reg [15:0] pix_data;
-
-	// 80MHz clock
+	// 160MHz clock
 	reg clk_160M;
 	
+	// Generate the 160MHz clock
 	pll_80	pll_80_inst (
 		.inclk0(clk_100M),
 		.c0(clk_160M),
 		.locked()
 	);
-
 
 	// CCD timing
 	ccd_timing ccd0(
@@ -103,11 +115,11 @@ module film_scanner(
 		.adc_sdo(adc_sdo),
 
 		// Data output 
-		.pix_clk(pix_clk), .pix_out_valid(pix_valid),
-		.pix_data(pix_data)
+		.pix_clk(), .pix_out_valid(),
+		.pix_data()
 	);
 
-
+	// Analogue front end control
 	dac dac0(
 
 		// Input control
@@ -121,30 +133,6 @@ module film_scanner(
 		.sdata(dac_sdin),
 		.sync(dac_sync)
 	);
-
-
-	// Set the ft signals
-	always_comb
-	begin
-
-		ft_siwu = 1;
-		ft_pwrsav = 1;
-		ft_nrst = 1;
-	end
-
-	
-	// Write IO
-	logic [7:0]	wr_data = 0;
-	logic		wr_clk = 0,
-				wr_req = 0,
-				wr_full;
-	logic [8:0]	wr_used;
-
-	// Read IO
-	logic [7:0]	rd_data;
-	logic		rd_clk = 0,
-				rd_req = 0;
-	logic [8:0]	rd_used;
 
 	// FT232H module
 	usb_ft232h usb0(
@@ -168,77 +156,32 @@ module film_scanner(
 		.rxf_rdusedw_o(rd_used),	// Number of bytes in the FIFO
 
 		// Write port
-		.txe_wrclk_i(wr_clk),		// Write clock
-		.txe_wrreq_i(wr_req),		// Write request
-		.txe_wrdata_i(wr_data),		// Data to write
-		.txe_wrusedw_o(wr_used),	// FIFO status
-		.txe_wrfull_o(wr_full)		// FIFO full signal
+		.txe_wrclk_i(0),		// Write clock
+		.txe_wrreq_i(0),		// Write request
+		.txe_wrdata_i(0),		// Data to write
+		.txe_wrusedw_o(),	// FIFO status
+		.txe_wrfull_o()		// FIFO full signal
 	);
 
+	defparam
+		usb0.TX_FIFO_L_BITS = 9,
+		usb0.RX_FIFO_L_BITS = 8;
 
-/*
-	//assign led[2] = usb_read_valid;	// Undecided
-	
+
 	control cont0(
 
 		// Clock and reset
 		.clk_100M(clk_100M), .nrst(1),
 
-		// Interface to the formatter
-		.data_valid(),
-		.data(),
-		.data_clk(),
-
-		
-		// Interface to the FT232H
-		.usb_clk(usb_clk), .usb_reset(usb_reset),
-		.usb_address(usb_address),
-		.usb_read_valid(usb_read_valid),
-		.usb_readdata(usb_readdata),
-		.usb_write_valid(usb_write_valid),
-		.usb_writedata(usb_writedata),
-		.usb_rxbytes(usb_rxbytes),
-		
-
-		.usb_rd_clk(usb_clk), .usb_reset(),
-		.usb_rd_valid(usb_read_valid),
-		.usb_readdata(usb_readdata),
-		.usb_rxbytes(usb_rxbytes),
-
+		// Read interface to the USB module
+		.usb_rd_clk(rd_clk),
+		.usb_rd_valid(rd_req),
+		.usb_readdata(rd_data),
+		.usb_rxbytes(rd_used),
 
 		// Output of the control information
 		.cont_en(en),				// Enable to start scanning
-		.cont_gain(), .cont_off(),		// The analogue gain and offset for the front end
-
-		.leds(led)
+		.cont_gain(), .cont_off()		// The analogue gain and offset for the front end
 	);
-*/
 
-/*
-
-
-	stepper step0(
-
-	// Inputs
-	.clk_100M(clk_100M), .nrst(1),
-
-	// Control logic
-	.en(1), .dir(0),
-
-	.speed(),
-
-	// Motor outputs
-	.mtr_nen(mtr_nen),
-	.mtr_step(mtr_step), 
-	.mtr_nrst(mtr_nrst), 
-	.mtr_slp(mtr_slp), 
-	.mtr_decay(mtr_decay), 
-	.mtr_dir(mtr_dir), 
-
-	.mtr_m(mtr_m),
-
-	.mtr_nhome(), .mtr_nflt()
-
-	);
-	*/
 endmodule
