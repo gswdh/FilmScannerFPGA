@@ -154,6 +154,8 @@ module film_scanner(
 		.cont_gain(), .cont_off()		// The analogue gain and offset for the front end
 	);
 
+	assign led[0] = en;
+
 	// FT232H
 	ft_232h ft0(
 

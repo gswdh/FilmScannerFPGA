@@ -1,5 +1,5 @@
 |film_scanner
-clk_100M => clk_100M.IN3
+clk_100M => clk_100M.IN2
 led_pwm <= <GND>
 adc_cs <= ccd_timing:ccd0.adc_cs
 adc_sclk <= ccd_timing:ccd0.adc_sclk
@@ -12,7 +12,7 @@ ccd_p2 <= ccd_timing:ccd0.ccd_p2
 ccd_sh <= ccd_timing:ccd0.ccd_sh
 ccd_rs <= ccd_timing:ccd0.ccd_rs
 ccd_cp <= ccd_timing:ccd0.ccd_cp
-mtr_nen <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+mtr_nen <= <GND>
 mtr_step <= <GND>
 mtr_nrst <= <GND>
 mtr_slp <= <GND>
@@ -21,19 +21,19 @@ mtr_dir <= <GND>
 mtr_m[0] <= <GND>
 mtr_m[1] <= <GND>
 mtr_m[2] <= <GND>
-mtr_nhome => mtr_nhome.IN1
+mtr_nhome => ~NO_FANOUT~
 mtr_nflt => ~NO_FANOUT~
-ft_bus[0] <> ft_232h:ft0.ft_bus
-ft_bus[1] <> ft_232h:ft0.ft_bus
-ft_bus[2] <> ft_232h:ft0.ft_bus
-ft_bus[3] <> ft_232h:ft0.ft_bus
-ft_bus[4] <> ft_232h:ft0.ft_bus
-ft_bus[5] <> ft_232h:ft0.ft_bus
-ft_bus[6] <> ft_232h:ft0.ft_bus
-ft_bus[7] <> ft_232h:ft0.ft_bus
-ft_clk => ft_clk.IN1
-ft_txe => ft_txe.IN1
-ft_rxf => ft_rxf.IN1
+ft_bus[0] <> ft_232h:ft0.ft_bus[0]
+ft_bus[1] <> ft_232h:ft0.ft_bus[1]
+ft_bus[2] <> ft_232h:ft0.ft_bus[2]
+ft_bus[3] <> ft_232h:ft0.ft_bus[3]
+ft_bus[4] <> ft_232h:ft0.ft_bus[4]
+ft_bus[5] <> ft_232h:ft0.ft_bus[5]
+ft_bus[6] <> ft_232h:ft0.ft_bus[6]
+ft_bus[7] <> ft_232h:ft0.ft_bus[7]
+ft_clk => ft_232h:ft0.ft_clk
+ft_txe => ft_232h:ft0.ft_txe
+ft_rxf => ft_232h:ft0.ft_rxf
 ft_ac8 => ~NO_FANOUT~
 ft_ac9 => ~NO_FANOUT~
 ft_wr <= ft_232h:ft0.ft_wr
@@ -42,10 +42,10 @@ ft_oe <= ft_232h:ft0.ft_oe
 ft_siwu <= <VCC>
 ft_pwrsav <= <VCC>
 ft_nrst <= <VCC>
-led[0] <= ft_232h:ft0.rx_nbytes
-led[1] <= ft_232h:ft0.rx_nbytes
-led[2] <= ft_232h:ft0.rx_nbytes
-led[3] <= ft_232h:ft0.rx_nbytes
+led[0] <= control:cont0.cont_en
+led[1] <= <GND>
+led[2] <= <GND>
+led[3] <= <GND>
 
 
 |film_scanner|pll_80:pll_80_inst
@@ -482,21 +482,13 @@ usb_readdata[7] => c_temp.DATAB
 usb_readdata[7] => c_temp.DATAB
 usb_readdata[7] => c_temp.DATAB
 usb_rxbytes[0] => LessThan0.IN16
-usb_rxbytes[0] => Equal1.IN31
 usb_rxbytes[1] => LessThan0.IN15
-usb_rxbytes[1] => Equal1.IN30
 usb_rxbytes[2] => LessThan0.IN14
-usb_rxbytes[2] => Equal1.IN29
 usb_rxbytes[3] => LessThan0.IN13
-usb_rxbytes[3] => Equal1.IN28
 usb_rxbytes[4] => LessThan0.IN12
-usb_rxbytes[4] => Equal1.IN27
 usb_rxbytes[5] => LessThan0.IN11
-usb_rxbytes[5] => Equal1.IN26
 usb_rxbytes[6] => LessThan0.IN10
-usb_rxbytes[6] => Equal1.IN25
 usb_rxbytes[7] => LessThan0.IN9
-usb_rxbytes[7] => Equal1.IN24
 cont_en <= control_reg[0].DB_MAX_OUTPUT_PORT_TYPE
 cont_gain[0] <= control_reg[8].DB_MAX_OUTPUT_PORT_TYPE
 cont_gain[1] <= control_reg[9].DB_MAX_OUTPUT_PORT_TYPE

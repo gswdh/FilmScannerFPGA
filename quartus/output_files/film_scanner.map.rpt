@@ -1,5 +1,5 @@
 Analysis & Synthesis report for film_scanner
-Sat Sep 30 10:10:06 2017
+Sat Sep 30 10:18:50 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -81,20 +81,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 30 10:10:06 2017       ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep 30 10:18:50 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; film_scanner                                ;
 ; Top-level Entity Name              ; film_scanner                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 202                                         ;
-;     Total combinational functions  ; 154                                         ;
-;     Dedicated logic registers      ; 114                                         ;
-; Total registers                    ; 114                                         ;
+; Total logic elements               ; 296                                         ;
+;     Total combinational functions  ; 254                                         ;
+;     Dedicated logic registers      ; 158                                         ;
+; Total registers                    ; 158                                         ;
 ; Total pins                         ; 47                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 2,048                                       ;
+; Total memory bits                  ; 256                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
+; Total PLLs                         ; 1                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -197,7 +197,8 @@ agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -250,37 +251,40 @@ agreement for further details.
 +----------------------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                ;
-+---------------------------------------------+--------------+
-; Resource                                    ; Usage        ;
-+---------------------------------------------+--------------+
-; Estimated Total logic elements              ; 202          ;
-;                                             ;              ;
-; Total combinational functions               ; 154          ;
-; Logic element usage by number of LUT inputs ;              ;
-;     -- 4 input functions                    ; 93           ;
-;     -- 3 input functions                    ; 27           ;
-;     -- <=2 input functions                  ; 34           ;
-;                                             ;              ;
-; Logic elements by mode                      ;              ;
-;     -- normal mode                          ; 143          ;
-;     -- arithmetic mode                      ; 11           ;
-;                                             ;              ;
-; Total registers                             ; 114          ;
-;     -- Dedicated logic registers            ; 114          ;
-;     -- I/O registers                        ; 0            ;
-;                                             ;              ;
-; I/O pins                                    ; 47           ;
-; Total memory bits                           ; 2048         ;
-;                                             ;              ;
-; Embedded Multiplier 9-bit elements          ; 0            ;
-;                                             ;              ;
-; Maximum fan-out node                        ; ft_clk~input ;
-; Maximum fan-out                             ; 59           ;
-; Total fan-out                               ; 1034         ;
-; Average fan-out                             ; 2.74         ;
-+---------------------------------------------+--------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 296            ;
+;                                             ;                ;
+; Total combinational functions               ; 254            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 138            ;
+;     -- 3 input functions                    ; 44             ;
+;     -- <=2 input functions                  ; 72             ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 214            ;
+;     -- arithmetic mode                      ; 40             ;
+;                                             ;                ;
+; Total registers                             ; 158            ;
+;     -- Dedicated logic registers            ; 158            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 47             ;
+; Total memory bits                           ; 256            ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Total PLLs                                  ; 1              ;
+;     -- PLLs                                 ; 1              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; clk_100M~input ;
+; Maximum fan-out                             ; 70             ;
+; Total fan-out                               ; 1308           ;
+; Average fan-out                             ; 2.53           ;
++---------------------------------------------+----------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -288,32 +292,37 @@ agreement for further details.
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                           ; Entity Name            ; Library Name ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |film_scanner                                               ; 154 (3)             ; 114 (0)                   ; 2048        ; 0            ; 0       ; 0         ; 47   ; 0            ; |film_scanner                                                                                                                                                 ; film_scanner           ; work         ;
+; |film_scanner                                               ; 254 (0)             ; 158 (0)                   ; 256         ; 0            ; 0       ; 0         ; 47   ; 0            ; |film_scanner                                                                                                                                                 ; film_scanner           ; work         ;
+;    |ccd_timing:ccd0|                                        ; 72 (72)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ccd_timing:ccd0                                                                                                                                 ; ccd_timing             ; work         ;
+;    |control:cont0|                                          ; 20 (20)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|control:cont0                                                                                                                                   ; control                ; work         ;
 ;    |dac:dac0|                                               ; 57 (57)             ; 22 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|dac:dac0                                                                                                                                        ; dac                    ; work         ;
-;    |ft_232h:ft0|                                            ; 94 (0)              ; 92 (0)                    ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0                                                                                                                                     ; ft_232h                ; work         ;
-;       |ft232h_fifos_interface:usb_ft232h_fifo_int|          ; 11 (5)              ; 18 (2)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int                                                                                          ; ft232h_fifos_interface ; work         ;
-;          |ft232h_receiver:rx_inst|                          ; 4 (4)               ; 12 (3)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst                                                                  ; ft232h_receiver        ; work         ;
-;             |pipeline:pipe_inst|                            ; 0 (0)               ; 9 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst                                               ; pipeline               ; work         ;
-;                |pipeline_step:pipeline_generate[1].pl_step| ; 0 (0)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step    ; pipeline_step          ; work         ;
+;    |ft_232h:ft0|                                            ; 105 (0)             ; 93 (0)                    ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0                                                                                                                                     ; ft_232h                ; work         ;
+;       |ft232h_fifos_interface:usb_ft232h_fifo_int|          ; 11 (5)              ; 11 (2)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int                                                                                          ; ft232h_fifos_interface ; work         ;
+;          |ft232h_receiver:rx_inst|                          ; 4 (4)               ; 5 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst                                                                  ; ft232h_receiver        ; work         ;
+;             |pipeline:pipe_inst|                            ; 0 (0)               ; 2 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst                                               ; pipeline               ; work         ;
+;                |pipeline_step:pipeline_generate[1].pl_step| ; 0 (0)               ; 2 (2)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step    ; pipeline_step          ; work         ;
 ;          |ft232h_transmitter:tx_inst|                       ; 2 (2)               ; 4 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst                                                               ; ft232h_transmitter     ; work         ;
 ;             |pipeline:pipe_inst|                            ; 0 (0)               ; 1 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst|pipeline:pipe_inst                                            ; pipeline               ; work         ;
 ;                |pipeline_step:pipeline_generate[1].pl_step| ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step ; pipeline_step          ; work         ;
-;       |ft_rxfifo:ft_rxfifo_inst|                            ; 83 (0)              ; 74 (0)                    ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst                                                                                                            ; ft_rxfifo              ; work         ;
-;          |dcfifo:dcfifo_component|                          ; 83 (0)              ; 74 (0)                    ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component                                                                                    ; dcfifo                 ; work         ;
-;             |dcfifo_olh1:auto_generated|                    ; 83 (11)             ; 74 (31)                   ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated                                                         ; dcfifo_olh1            ; work         ;
-;                |a_gray2bin_ugb:rdptr_g_gray2bin|            ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_gray2bin_ugb:rdptr_g_gray2bin                         ; a_gray2bin_ugb         ; work         ;
-;                |a_gray2bin_ugb:rs_dgwp_gray2bin|            ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_gray2bin_ugb:rs_dgwp_gray2bin                         ; a_gray2bin_ugb         ; work         ;
+;       |ft_rxfifo:ft_rxfifo_inst|                            ; 94 (0)              ; 82 (0)                    ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst                                                                                                            ; ft_rxfifo              ; work         ;
+;          |dcfifo:dcfifo_component|                          ; 94 (0)              ; 82 (0)                    ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component                                                                                    ; dcfifo                 ; work         ;
+;             |dcfifo_olh1:auto_generated|                    ; 94 (15)             ; 82 (31)                   ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated                                                         ; dcfifo_olh1            ; work         ;
+;                |a_gray2bin_ugb:rdptr_g_gray2bin|            ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_gray2bin_ugb:rdptr_g_gray2bin                         ; a_gray2bin_ugb         ; work         ;
+;                |a_gray2bin_ugb:rs_dgwp_gray2bin|            ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_gray2bin_ugb:rs_dgwp_gray2bin                         ; a_gray2bin_ugb         ; work         ;
 ;                |a_graycounter_n5c:wrptr_g1p|                ; 16 (16)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_graycounter_n5c:wrptr_g1p                             ; a_graycounter_n5c      ; work         ;
-;                |a_graycounter_rn6:rdptr_g1p|                ; 20 (20)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_graycounter_rn6:rdptr_g1p                             ; a_graycounter_rn6      ; work         ;
+;                |a_graycounter_rn6:rdptr_g1p|                ; 21 (21)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_graycounter_rn6:rdptr_g1p                             ; a_graycounter_rn6      ; work         ;
 ;                |alt_synch_pipe_7u7:rs_dgwp|                 ; 0 (0)               ; 9 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|alt_synch_pipe_7u7:rs_dgwp                              ; alt_synch_pipe_7u7     ; work         ;
 ;                   |dffpipe_2v8:dffpipe12|                   ; 0 (0)               ; 9 (9)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|alt_synch_pipe_7u7:rs_dgwp|dffpipe_2v8:dffpipe12        ; dffpipe_2v8            ; work         ;
-;                |altsyncram_4941:fifo_ram|                   ; 0 (0)               ; 0 (0)                     ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|altsyncram_4941:fifo_ram                                ; altsyncram_4941        ; work         ;
-;                |dffpipe_1v8:rs_brp|                         ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|dffpipe_1v8:rs_brp                                      ; dffpipe_1v8            ; work         ;
-;                |dffpipe_1v8:rs_bwp|                         ; 0 (0)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|dffpipe_1v8:rs_bwp                                      ; dffpipe_1v8            ; work         ;
+;                |altsyncram_4941:fifo_ram|                   ; 0 (0)               ; 0 (0)                     ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|altsyncram_4941:fifo_ram                                ; altsyncram_4941        ; work         ;
+;                |dffpipe_1v8:rs_brp|                         ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|dffpipe_1v8:rs_brp                                      ; dffpipe_1v8            ; work         ;
+;                |dffpipe_1v8:rs_bwp|                         ; 0 (0)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|dffpipe_1v8:rs_bwp                                      ; dffpipe_1v8            ; work         ;
 ;                |mux_j28:rdemp_eq_comp_lsb_mux|              ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|mux_j28:rdemp_eq_comp_lsb_mux                           ; mux_j28                ; work         ;
 ;                |mux_j28:rdemp_eq_comp_msb_mux|              ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|mux_j28:rdemp_eq_comp_msb_mux                           ; mux_j28                ; work         ;
 ;                |mux_j28:wrfull_eq_comp_lsb_mux|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|mux_j28:wrfull_eq_comp_lsb_mux                          ; mux_j28                ; work         ;
 ;                |mux_j28:wrfull_eq_comp_msb_mux|             ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|mux_j28:wrfull_eq_comp_msb_mux                          ; mux_j28                ; work         ;
+;    |pll_80:pll_80_inst|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|pll_80:pll_80_inst                                                                                                                              ; pll_80                 ; work         ;
+;       |altpll:altpll_component|                             ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|pll_80:pll_80_inst|altpll:altpll_component                                                                                                      ; altpll                 ; work         ;
+;          |pll_80_altpll:auto_generated|                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|pll_80:pll_80_inst|altpll:altpll_component|pll_80_altpll:auto_generated                                                                         ; pll_80_altpll          ; work         ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -351,107 +360,71 @@ Encoding Type:  One-Hot
 +----------------+----------------+----------------+----------------+----------------+----------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                         ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
-; Register name                                                                                                                                                ; Reason for Removal                          ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
-; ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step|data_o[0..7] ; Stuck at GND due to stuck port data_in      ;
-; dac:dac0|dac_state[4..7]                                                                                                                                     ; Stuck at GND due to stuck port data_in      ;
-; dac:dac0|this_gain[1..4,6,8,9,13,14]                                                                                                                         ; Stuck at GND due to stuck port data_in      ;
-; dac:dac0|this_offset[3..6,9..12,14]                                                                                                                          ; Stuck at GND due to stuck port data_in      ;
-; control:cont0|c_temp[0][0]                                                                                                                                   ; Stuck at GND due to stuck port data_in      ;
-; control:cont0|control_reg[0]                                                                                                                                 ; Stuck at GND due to stuck port data_in      ;
-; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|dffpipe_1v8:rs_bwp|dffe11a[4..8]                                     ; Lost fanout                                 ;
-; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|dffpipe_1v8:rs_brp|dffe11a[4..8]                                     ; Lost fanout                                 ;
-; dac:dac0|this_offset[15]                                                                                                                                     ; Merged with dac:dac0|this_offset[13]        ;
-; dac:dac0|this_offset[13]                                                                                                                                     ; Merged with dac:dac0|this_offset[8]         ;
-; dac:dac0|this_offset[8]                                                                                                                                      ; Merged with dac:dac0|this_offset[7]         ;
-; dac:dac0|this_offset[7]                                                                                                                                      ; Merged with dac:dac0|this_offset[2]         ;
-; dac:dac0|this_offset[2]                                                                                                                                      ; Merged with dac:dac0|this_offset[1]         ;
-; dac:dac0|this_offset[1]                                                                                                                                      ; Merged with dac:dac0|this_offset[0]         ;
-; dac:dac0|this_offset[0]                                                                                                                                      ; Merged with dac:dac0|this_gain[15]          ;
-; dac:dac0|this_gain[15]                                                                                                                                       ; Merged with dac:dac0|this_gain[12]          ;
-; dac:dac0|this_gain[12]                                                                                                                                       ; Merged with dac:dac0|this_gain[11]          ;
-; dac:dac0|this_gain[11]                                                                                                                                       ; Merged with dac:dac0|this_gain[10]          ;
-; dac:dac0|this_gain[10]                                                                                                                                       ; Merged with dac:dac0|this_gain[7]           ;
-; dac:dac0|this_gain[7]                                                                                                                                        ; Merged with dac:dac0|this_gain[5]           ;
-; dac:dac0|this_gain[5]                                                                                                                                        ; Merged with dac:dac0|this_gain[0]           ;
-; dac:dac0|dac_gain[5,7,10..12,15]                                                                                                                             ; Merged with dac:dac0|dac_gain[0]            ;
-; dac:dac0|dac_gain[17..19,21..23]                                                                                                                             ; Merged with dac:dac0|dac_gain[16]           ;
-; dac:dac0|dac_gain[1..4,6,8,9,14]                                                                                                                             ; Merged with dac:dac0|dac_gain[13]           ;
-; dac:dac0|dac_offset[1,2,7,8,13,15]                                                                                                                           ; Merged with dac:dac0|dac_offset[0]          ;
-; dac:dac0|dac_offset[17,19,20,22,23]                                                                                                                          ; Merged with dac:dac0|dac_offset[16]         ;
-; dac:dac0|dac_offset[21]                                                                                                                                      ; Merged with dac:dac0|dac_offset[18]         ;
-; dac:dac0|dac_offset[3..6,9,11,12,14]                                                                                                                         ; Merged with dac:dac0|dac_offset[10]         ;
-; dac:dac0|this_prev_offset[1,2,7,8,13,15]                                                                                                                     ; Merged with dac:dac0|this_prev_offset[0]    ;
-; dac:dac0|this_prev_offset[3..6,9,11,12,14]                                                                                                                   ; Merged with dac:dac0|this_prev_offset[10]   ;
-; dac:dac0|this_prev_gain[5,7,10..12,15]                                                                                                                       ; Merged with dac:dac0|this_prev_gain[0]      ;
-; dac:dac0|this_prev_gain[1..4,6,8,9,14]                                                                                                                       ; Merged with dac:dac0|this_prev_gain[13]     ;
-; ccd_timing:ccd0|state                                                                                                                                        ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|timings_cntr[3..7]                                                                                                                           ; Stuck at GND due to stuck port clock_enable ;
-; ccd_timing:ccd0|timings_cntr[2]                                                                                                                              ; Stuck at VCC due to stuck port clock_enable ;
-; ccd_timing:ccd0|timings_cntr[0,1]                                                                                                                            ; Stuck at GND due to stuck port clock_enable ;
-; ccd_timing:ccd0|pixel_cntr[0..13]                                                                                                                            ; Stuck at GND due to stuck port clock_enable ;
-; ccd_timing:ccd0|ccd_p1                                                                                                                                       ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|ccd_rs                                                                                                                                       ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|ccd_cp                                                                                                                                       ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|ccd_sh                                                                                                                                       ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|adc_sclk                                                                                                                                     ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|adc_cs                                                                                                                                       ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|clk_timings_cntr                                                                                                                             ; Stuck at GND due to stuck port data_in      ;
-; dac:dac0|dac_gain[20]                                                                                                                                        ; Merged with dac:dac0|dac_offset[18]         ;
-; dac:dac0|dac_offset[10]                                                                                                                                      ; Merged with dac:dac0|dac_offset[16]         ;
-; dac:dac0|dac_gain[13,16]                                                                                                                                     ; Merged with dac:dac0|dac_offset[16]         ;
-; dac:dac0|dac_gain[0]                                                                                                                                         ; Merged with dac:dac0|dac_offset[0]          ;
-; dac:dac0|this_prev_gain[0]                                                                                                                                   ; Merged with dac:dac0|this_prev_offset[0]    ;
-; dac:dac0|this_prev_gain[13]                                                                                                                                  ; Merged with dac:dac0|this_prev_offset[10]   ;
-; ccd_timing:ccd0|clk_timings                                                                                                                                  ; Lost fanout                                 ;
-; dac:dac0|dac_offset[16]                                                                                                                                      ; Stuck at GND due to stuck port data_in      ;
-; dac:dac0|this_prev_offset[10]                                                                                                                                ; Stuck at GND due to stuck port data_in      ;
-; control:cont0|state.00000011                                                                                                                                 ; Lost fanout                                 ;
-; control:cont0|state~7                                                                                                                                        ; Lost fanout                                 ;
-; control:cont0|state~8                                                                                                                                        ; Lost fanout                                 ;
-; control:cont0|state~10                                                                                                                                       ; Lost fanout                                 ;
-; control:cont0|state~11                                                                                                                                       ; Lost fanout                                 ;
-; control:cont0|state~12                                                                                                                                       ; Lost fanout                                 ;
-; control:cont0|state~13                                                                                                                                       ; Lost fanout                                 ;
-; control:cont0|state~14                                                                                                                                       ; Lost fanout                                 ;
-; control:cont0|byte_cntr[0..5]                                                                                                                                ; Lost fanout                                 ;
-; control:cont0|state.00000100                                                                                                                                 ; Lost fanout                                 ;
-; control:cont0|state.00000000                                                                                                                                 ; Lost fanout                                 ;
-; control:cont0|state.00000001                                                                                                                                 ; Lost fanout                                 ;
-; control:cont0|state.00000010                                                                                                                                 ; Lost fanout                                 ;
-; Total Number of Removed Registers = 181                                                                                                                      ;                                             ;
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                       ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+; Register name                                                                                                                                                ; Reason for Removal                        ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
+; ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step|data_o[0..7] ; Stuck at GND due to stuck port data_in    ;
+; ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step|data_o[1..7]    ; Lost fanout                               ;
+; dac:dac0|dac_state[4..7]                                                                                                                                     ; Stuck at GND due to stuck port data_in    ;
+; dac:dac0|this_gain[1..4,6,8,9,13,14]                                                                                                                         ; Stuck at GND due to stuck port data_in    ;
+; dac:dac0|this_offset[3..6,9..12,14]                                                                                                                          ; Stuck at GND due to stuck port data_in    ;
+; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|dffpipe_1v8:rs_bwp|dffe11a[8]                                        ; Lost fanout                               ;
+; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|dffpipe_1v8:rs_brp|dffe11a[8]                                        ; Lost fanout                               ;
+; dac:dac0|this_offset[15]                                                                                                                                     ; Merged with dac:dac0|this_offset[13]      ;
+; dac:dac0|this_offset[13]                                                                                                                                     ; Merged with dac:dac0|this_offset[8]       ;
+; dac:dac0|this_offset[8]                                                                                                                                      ; Merged with dac:dac0|this_offset[7]       ;
+; dac:dac0|this_offset[7]                                                                                                                                      ; Merged with dac:dac0|this_offset[2]       ;
+; dac:dac0|this_offset[2]                                                                                                                                      ; Merged with dac:dac0|this_offset[1]       ;
+; dac:dac0|this_offset[1]                                                                                                                                      ; Merged with dac:dac0|this_offset[0]       ;
+; dac:dac0|this_offset[0]                                                                                                                                      ; Merged with dac:dac0|this_gain[15]        ;
+; dac:dac0|this_gain[15]                                                                                                                                       ; Merged with dac:dac0|this_gain[12]        ;
+; dac:dac0|this_gain[12]                                                                                                                                       ; Merged with dac:dac0|this_gain[11]        ;
+; dac:dac0|this_gain[11]                                                                                                                                       ; Merged with dac:dac0|this_gain[10]        ;
+; dac:dac0|this_gain[10]                                                                                                                                       ; Merged with dac:dac0|this_gain[7]         ;
+; dac:dac0|this_gain[7]                                                                                                                                        ; Merged with dac:dac0|this_gain[5]         ;
+; dac:dac0|this_gain[5]                                                                                                                                        ; Merged with dac:dac0|this_gain[0]         ;
+; dac:dac0|dac_gain[5,7,10..12,15]                                                                                                                             ; Merged with dac:dac0|dac_gain[0]          ;
+; dac:dac0|dac_gain[17..19,21..23]                                                                                                                             ; Merged with dac:dac0|dac_gain[16]         ;
+; dac:dac0|dac_gain[1..4,6,8,9,14]                                                                                                                             ; Merged with dac:dac0|dac_gain[13]         ;
+; dac:dac0|dac_offset[1,2,7,8,13,15]                                                                                                                           ; Merged with dac:dac0|dac_offset[0]        ;
+; dac:dac0|dac_offset[17,19,20,22,23]                                                                                                                          ; Merged with dac:dac0|dac_offset[16]       ;
+; dac:dac0|dac_offset[21]                                                                                                                                      ; Merged with dac:dac0|dac_offset[18]       ;
+; dac:dac0|dac_offset[3..6,9,11,12,14]                                                                                                                         ; Merged with dac:dac0|dac_offset[10]       ;
+; dac:dac0|this_prev_offset[1,2,7,8,13,15]                                                                                                                     ; Merged with dac:dac0|this_prev_offset[0]  ;
+; dac:dac0|this_prev_offset[3..6,9,11,12,14]                                                                                                                   ; Merged with dac:dac0|this_prev_offset[10] ;
+; dac:dac0|this_prev_gain[5,7,10..12,15]                                                                                                                       ; Merged with dac:dac0|this_prev_gain[0]    ;
+; dac:dac0|this_prev_gain[1..4,6,8,9,14]                                                                                                                       ; Merged with dac:dac0|this_prev_gain[13]   ;
+; ccd_timing:ccd0|clk_timings_cntr                                                                                                                             ; Stuck at GND due to stuck port data_in    ;
+; dac:dac0|dac_gain[20]                                                                                                                                        ; Merged with dac:dac0|dac_offset[18]       ;
+; dac:dac0|dac_offset[10]                                                                                                                                      ; Merged with dac:dac0|dac_offset[16]       ;
+; dac:dac0|dac_gain[13,16]                                                                                                                                     ; Merged with dac:dac0|dac_offset[16]       ;
+; dac:dac0|dac_gain[0]                                                                                                                                         ; Merged with dac:dac0|dac_offset[0]        ;
+; dac:dac0|this_prev_gain[0]                                                                                                                                   ; Merged with dac:dac0|this_prev_offset[0]  ;
+; dac:dac0|this_prev_gain[13]                                                                                                                                  ; Merged with dac:dac0|this_prev_offset[10] ;
+; dac:dac0|dac_offset[16]                                                                                                                                      ; Stuck at GND due to stuck port data_in    ;
+; dac:dac0|this_prev_offset[10]                                                                                                                                ; Stuck at GND due to stuck port data_in    ;
+; control:cont0|state.00000011                                                                                                                                 ; Lost fanout                               ;
+; control:cont0|state~7                                                                                                                                        ; Lost fanout                               ;
+; control:cont0|state~8                                                                                                                                        ; Lost fanout                               ;
+; control:cont0|state~10                                                                                                                                       ; Lost fanout                               ;
+; control:cont0|state~11                                                                                                                                       ; Lost fanout                               ;
+; control:cont0|state~12                                                                                                                                       ; Lost fanout                               ;
+; control:cont0|state~13                                                                                                                                       ; Lost fanout                               ;
+; control:cont0|state~14                                                                                                                                       ; Lost fanout                               ;
+; Total Number of Removed Registers = 138                                                                                                                      ;                                           ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                      ;
-+------------------------------+---------------------------+---------------------------------------------------------------------------------------+
-; Register name                ; Reason for Removal        ; Registers Removed due to This Register                                                ;
-+------------------------------+---------------------------+---------------------------------------------------------------------------------------+
-; control:cont0|c_temp[0][0]   ; Stuck at GND              ; control:cont0|control_reg[0], ccd_timing:ccd0|state, ccd_timing:ccd0|timings_cntr[7], ;
-;                              ; due to stuck port data_in ; ccd_timing:ccd0|timings_cntr[6], ccd_timing:ccd0|timings_cntr[5],                     ;
-;                              ;                           ; ccd_timing:ccd0|timings_cntr[4], ccd_timing:ccd0|timings_cntr[3],                     ;
-;                              ;                           ; ccd_timing:ccd0|timings_cntr[2], ccd_timing:ccd0|timings_cntr[1],                     ;
-;                              ;                           ; ccd_timing:ccd0|timings_cntr[0], ccd_timing:ccd0|pixel_cntr[13],                      ;
-;                              ;                           ; ccd_timing:ccd0|pixel_cntr[12], ccd_timing:ccd0|pixel_cntr[11],                       ;
-;                              ;                           ; ccd_timing:ccd0|pixel_cntr[10], ccd_timing:ccd0|pixel_cntr[9],                        ;
-;                              ;                           ; ccd_timing:ccd0|pixel_cntr[8], ccd_timing:ccd0|pixel_cntr[7],                         ;
-;                              ;                           ; ccd_timing:ccd0|pixel_cntr[6], ccd_timing:ccd0|pixel_cntr[5],                         ;
-;                              ;                           ; ccd_timing:ccd0|pixel_cntr[4], ccd_timing:ccd0|pixel_cntr[3],                         ;
-;                              ;                           ; ccd_timing:ccd0|pixel_cntr[2], ccd_timing:ccd0|pixel_cntr[1],                         ;
-;                              ;                           ; ccd_timing:ccd0|pixel_cntr[0], ccd_timing:ccd0|ccd_p1, ccd_timing:ccd0|ccd_rs,        ;
-;                              ;                           ; ccd_timing:ccd0|ccd_cp, ccd_timing:ccd0|ccd_sh, ccd_timing:ccd0|adc_sclk,             ;
-;                              ;                           ; ccd_timing:ccd0|adc_cs, ccd_timing:ccd0|clk_timings, control:cont0|byte_cntr[5],      ;
-;                              ;                           ; control:cont0|byte_cntr[4], control:cont0|byte_cntr[3], control:cont0|byte_cntr[2],   ;
-;                              ;                           ; control:cont0|byte_cntr[1], control:cont0|byte_cntr[0]                                ;
-; dac:dac0|this_gain[1]        ; Stuck at GND              ; dac:dac0|dac_offset[16]                                                               ;
-;                              ; due to stuck port data_in ;                                                                                       ;
-; control:cont0|state~7        ; Lost Fanouts              ; control:cont0|state.00000001                                                          ;
-; control:cont0|state.00000100 ; Lost Fanouts              ; control:cont0|state.00000010                                                          ;
-+------------------------------+---------------------------+---------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                ;
++-----------------------+---------------------------+----------------------------------------+
+; Register name         ; Reason for Removal        ; Registers Removed due to This Register ;
++-----------------------+---------------------------+----------------------------------------+
+; dac:dac0|this_gain[1] ; Stuck at GND              ; dac:dac0|dac_offset[16]                ;
+;                       ; due to stuck port data_in ;                                        ;
++-----------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -459,12 +432,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 114   ;
-; Number of registers using Synchronous Clear  ; 5     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 158   ;
+; Number of registers using Synchronous Clear  ; 11    ;
+; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 44    ;
+; Number of registers using Clock Enable       ; 61    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -474,14 +447,15 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                              ; Fan out ;
 +--------------------------------------------------------------------------------------------------------------------------------+---------+
+; ccd_timing:ccd0|timings_cntr[2]                                                                                                ; 9       ;
 ; dac:dac0|dac_state[0]                                                                                                          ; 17      ;
+; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_graycounter_n5c:wrptr_g1p|counter6a0 ; 7       ;
 ; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|rdemp_eq_comp_lsb_aeb                  ; 1       ;
 ; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|rdemp_eq_comp_msb_aeb                  ; 1       ;
-; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_graycounter_rn6:rdptr_g1p|counter3a0 ; 9       ;
-; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_graycounter_n5c:wrptr_g1p|counter6a0 ; 7       ;
-; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_graycounter_rn6:rdptr_g1p|parity4    ; 5       ;
 ; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_graycounter_n5c:wrptr_g1p|parity7    ; 4       ;
-; Total number of inverted registers = 7                                                                                         ;         ;
+; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_graycounter_rn6:rdptr_g1p|counter3a0 ; 10      ;
+; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_graycounter_rn6:rdptr_g1p|parity4    ; 6       ;
+; Total number of inverted registers = 8                                                                                         ;         ;
 +--------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -490,10 +464,13 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 0 LEs                ; 12 LEs                 ; Yes        ; |film_scanner|control:cont0|byte_cntr[5]                                  ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |film_scanner|ccd_timing:ccd0|pixel_cntr[12]                              ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |film_scanner|ccd_timing:ccd0|timings_cntr[0]                             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|send ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 2 LEs                ; 20 LEs                 ; Yes        ; |film_scanner|dac:dac0|dac_offset[16]                                     ;
-; 16:1               ; 5 bits    ; 50 LEs        ; 5 LEs                ; 45 LEs                 ; Yes        ; |film_scanner|dac:dac0|bit_cntr[1]                                        ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |film_scanner|control:cont0|byte_cntr[1]                                  ;
+; 17:1               ; 2 bits    ; 22 LEs        ; 2 LEs                ; 20 LEs                 ; Yes        ; |film_scanner|dac:dac0|dac_offset[18]                                     ;
+; 16:1               ; 5 bits    ; 50 LEs        ; 5 LEs                ; 45 LEs                 ; Yes        ; |film_scanner|dac:dac0|bit_cntr[2]                                        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |film_scanner|control:cont0|Selector0                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
 
 
@@ -1212,19 +1189,18 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------+--------+----------+------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ft_232h:ft0"                                                                                                                                                                                  ;
-+-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port            ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; nrst            ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; nrst[-1]        ; Input  ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; rx_nbytes[8..4] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; tx_clk          ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-; tx_rdreq        ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-; tx_full         ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-; tx_data         ; Input  ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-+-----------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ft_232h:ft0"                                                                                ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; nrst         ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rx_nbytes[8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; tx_clk       ; Input  ; Info     ; Explicitly unconnected                                                              ;
+; tx_rdreq     ; Input  ; Info     ; Explicitly unconnected                                                              ;
+; tx_full      ; Input  ; Info     ; Explicitly unconnected                                                              ;
+; tx_data      ; Input  ; Info     ; Explicitly unconnected                                                              ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------+
@@ -1233,11 +1209,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Port         ; Type   ; Severity ; Details                                                                             ;
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
 ; nrst         ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; usb_rd_clk   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; usb_rd_valid ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; usb_rd_reset ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; usb_readdata ; Input  ; Info     ; Stuck at GND                                                                        ;
-; usb_rxbytes  ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; cont_gain    ; Output ; Info     ; Explicitly unconnected                                                              ;
 ; cont_off     ; Output ; Info     ; Explicitly unconnected                                                              ;
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1298,25 +1270,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 47                          ;
-; cycloneiii_ff         ; 114                         ;
-;     ENA               ; 39                          ;
-;     ENA SCLR          ; 5                           ;
-;     plain             ; 70                          ;
+; cycloneiii_ff         ; 158                         ;
+;     ENA               ; 50                          ;
+;     ENA SCLR          ; 11                          ;
+;     SLD               ; 1                           ;
+;     plain             ; 96                          ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 157                         ;
-;     arith             ; 11                          ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 3                           ;
-;     normal            ; 146                         ;
+; cycloneiii_lcell_comb ; 258                         ;
+;     arith             ; 40                          ;
+;         2 data inputs ; 33                          ;
+;         3 data inputs ; 7                           ;
+;     normal            ; 218                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 21                          ;
-;         3 data inputs ; 24                          ;
-;         4 data inputs ; 93                          ;
-; cycloneiii_ram_block  ; 8                           ;
+;         1 data inputs ; 11                          ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 37                          ;
+;         4 data inputs ; 138                         ;
+; cycloneiii_pll        ; 1                           ;
+; cycloneiii_ram_block  ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.31                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.71                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1335,7 +1309,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Sep 30 10:09:52 2017
+    Info: Processing started: Sat Sep 30 10:18:35 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off film_scanner -c film_scanner
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1371,11 +1345,10 @@ Info (12127): Elaborating entity "film_scanner" for the top level hierarchy
 Warning (10036): Verilog HDL or VHDL warning at film_scanner.sv(70): object "wr_data" assigned a value but never read File: D:/FilmScannerFPGA/film_scanner.sv Line: 70
 Warning (10036): Verilog HDL or VHDL warning at film_scanner.sv(71): object "wr_clk" assigned a value but never read File: D:/FilmScannerFPGA/film_scanner.sv Line: 71
 Warning (10036): Verilog HDL or VHDL warning at film_scanner.sv(72): object "wr_req" assigned a value but never read File: D:/FilmScannerFPGA/film_scanner.sv Line: 72
-Warning (10036): Verilog HDL or VHDL warning at film_scanner.sv(79): object "rd_req" assigned a value but never read File: D:/FilmScannerFPGA/film_scanner.sv Line: 79
-Warning (10030): Net "rd_data" at film_scanner.sv(77) has no driver or initial value, using a default initial value '0' File: D:/FilmScannerFPGA/film_scanner.sv Line: 77
-Warning (10030): Net "rd_used" at film_scanner.sv(81) has no driver or initial value, using a default initial value '0' File: D:/FilmScannerFPGA/film_scanner.sv Line: 81
 Warning (10034): Output port "mtr_m" at film_scanner.sv(35) has no driver File: D:/FilmScannerFPGA/film_scanner.sv Line: 35
+Warning (10034): Output port "led[3..1]" at film_scanner.sv(58) has no driver File: D:/FilmScannerFPGA/film_scanner.sv Line: 58
 Warning (10034): Output port "led_pwm" at film_scanner.sv(7) has no driver File: D:/FilmScannerFPGA/film_scanner.sv Line: 7
+Warning (10034): Output port "mtr_nen" at film_scanner.sv(28) has no driver File: D:/FilmScannerFPGA/film_scanner.sv Line: 28
 Warning (10034): Output port "mtr_step" at film_scanner.sv(29) has no driver File: D:/FilmScannerFPGA/film_scanner.sv Line: 29
 Warning (10034): Output port "mtr_nrst" at film_scanner.sv(30) has no driver File: D:/FilmScannerFPGA/film_scanner.sv Line: 30
 Warning (10034): Output port "mtr_slp" at film_scanner.sv(31) has no driver File: D:/FilmScannerFPGA/film_scanner.sv Line: 31
@@ -1465,8 +1438,8 @@ Warning (10230): Verilog HDL assignment warning at dac.sv(211): truncated value 
 Warning (10230): Verilog HDL assignment warning at dac.sv(255): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/dac.sv Line: 255
 Info (12128): Elaborating entity "control" for hierarchy "control:cont0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 155
 Warning (10036): Verilog HDL or VHDL warning at control.sv(20): object "data_clk" assigned a value but never read File: D:/FilmScannerFPGA/control.sv Line: 20
-Warning (10230): Verilog HDL assignment warning at control.sv(95): truncated value with size 32 to match size of target (6) File: D:/FilmScannerFPGA/control.sv Line: 95
-Info (12128): Elaborating entity "ft_232h" for hierarchy "ft_232h:ft0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 197
+Warning (10230): Verilog HDL assignment warning at control.sv(96): truncated value with size 32 to match size of target (6) File: D:/FilmScannerFPGA/control.sv Line: 96
+Info (12128): Elaborating entity "ft_232h" for hierarchy "ft_232h:ft0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 187
 Info (12128): Elaborating entity "ft_rxfifo" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst" File: D:/FilmScannerFPGA/ft232h.sv Line: 51
 Info (12128): Elaborating entity "dcfifo" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component" File: D:/FilmScannerFPGA/quartus/ft_rxfifo.v Line: 80
 Info (12130): Elaborated megafunction instantiation "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component" File: D:/FilmScannerFPGA/quartus/ft_rxfifo.v Line: 80
@@ -1529,18 +1502,18 @@ Info (12128): Elaborating entity "pipeline" for hierarchy "ft_232h:ft0|ft232h_fi
 Info (12128): Elaborating entity "pipeline_step" for hierarchy "ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step" File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/pipeline.sv Line: 129
 Info (12128): Elaborating entity "ft232h_transmitter" for hierarchy "ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst" File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/ft232h_fifos_interface.sv Line: 108
 Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following PLL node(s):
-        Warning (14320): Synthesized away node "pll_80:pll_80_inst|altpll:altpll_component|pll_80_altpll:auto_generated|wire_pll1_clk[0]" File: D:/FilmScannerFPGA/quartus/db/pll_80_altpll.v Line: 81
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|altsyncram_4941:fifo_ram|q_b[1]" File: D:/FilmScannerFPGA/quartus/db/altsyncram_4941.tdf Line: 73
+        Warning (14320): Synthesized away node "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|altsyncram_4941:fifo_ram|q_b[2]" File: D:/FilmScannerFPGA/quartus/db/altsyncram_4941.tdf Line: 105
+        Warning (14320): Synthesized away node "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|altsyncram_4941:fifo_ram|q_b[3]" File: D:/FilmScannerFPGA/quartus/db/altsyncram_4941.tdf Line: 137
+        Warning (14320): Synthesized away node "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|altsyncram_4941:fifo_ram|q_b[4]" File: D:/FilmScannerFPGA/quartus/db/altsyncram_4941.tdf Line: 169
+        Warning (14320): Synthesized away node "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|altsyncram_4941:fifo_ram|q_b[5]" File: D:/FilmScannerFPGA/quartus/db/altsyncram_4941.tdf Line: 201
+        Warning (14320): Synthesized away node "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|altsyncram_4941:fifo_ram|q_b[6]" File: D:/FilmScannerFPGA/quartus/db/altsyncram_4941.tdf Line: 233
+        Warning (14320): Synthesized away node "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|altsyncram_4941:fifo_ram|q_b[7]" File: D:/FilmScannerFPGA/quartus/db/altsyncram_4941.tdf Line: 265
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "led_pwm" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 7
-    Warning (13410): Pin "adc_cs" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 10
-    Warning (13410): Pin "adc_sclk" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 11
-    Warning (13410): Pin "ccd_p1" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 21
-    Warning (13410): Pin "ccd_p2" is stuck at VCC File: D:/FilmScannerFPGA/film_scanner.sv Line: 22
-    Warning (13410): Pin "ccd_sh" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 23
-    Warning (13410): Pin "ccd_rs" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 24
-    Warning (13410): Pin "ccd_cp" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 25
+    Warning (13410): Pin "mtr_nen" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 28
     Warning (13410): Pin "mtr_step" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 29
     Warning (13410): Pin "mtr_nrst" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 30
     Warning (13410): Pin "mtr_slp" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 31
@@ -1552,25 +1525,30 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ft_siwu" is stuck at VCC File: D:/FilmScannerFPGA/film_scanner.sv Line: 52
     Warning (13410): Pin "ft_pwrsav" is stuck at VCC File: D:/FilmScannerFPGA/film_scanner.sv Line: 53
     Warning (13410): Pin "ft_nrst" is stuck at VCC File: D:/FilmScannerFPGA/film_scanner.sv Line: 54
+    Warning (13410): Pin "led[1]" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 58
+    Warning (13410): Pin "led[2]" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 58
+    Warning (13410): Pin "led[3]" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 58
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 29 registers lost all their fanouts during netlist optimizations.
+Info (17049): 17 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "adc_sdo" File: D:/FilmScannerFPGA/film_scanner.sv Line: 13
+    Warning (15610): No output dependent on input pin "mtr_nhome" File: D:/FilmScannerFPGA/film_scanner.sv Line: 37
     Warning (15610): No output dependent on input pin "mtr_nflt" File: D:/FilmScannerFPGA/film_scanner.sv Line: 37
     Warning (15610): No output dependent on input pin "ft_ac8" File: D:/FilmScannerFPGA/film_scanner.sv Line: 45
     Warning (15610): No output dependent on input pin "ft_ac9" File: D:/FilmScannerFPGA/film_scanner.sv Line: 46
-Info (21057): Implemented 261 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 353 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 30 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 206 logic cells
-    Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 64 warnings
-    Info: Peak virtual memory: 632 megabytes
-    Info: Processing ended: Sat Sep 30 10:10:06 2017
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:25
+    Info (21061): Implemented 304 logic cells
+    Info (21064): Implemented 1 RAM segments
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 67 warnings
+    Info: Peak virtual memory: 631 megabytes
+    Info: Processing ended: Sat Sep 30 10:18:50 2017
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:28
 
 

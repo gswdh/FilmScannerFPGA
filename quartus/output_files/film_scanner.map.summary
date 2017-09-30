@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Sat Sep 30 10:10:06 2017
+Analysis & Synthesis Status : Successful - Sat Sep 30 10:18:50 2017
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : film_scanner
 Top-level Entity Name : film_scanner
 Family : Cyclone IV E
-Total logic elements : 202
-    Total combinational functions : 154
-    Dedicated logic registers : 114
-Total registers : 114
+Total logic elements : 296
+    Total combinational functions : 254
+    Dedicated logic registers : 158
+Total registers : 158
 Total pins : 47
 Total virtual pins : 0
-Total memory bits : 2,048
+Total memory bits : 256
 Embedded Multiplier 9-bit elements : 0
-Total PLLs : 0
+Total PLLs : 1

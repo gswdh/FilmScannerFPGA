@@ -84,6 +84,7 @@ module control(
 
 						// Progress
 						state <= 2;
+						
 					end
 
 					// Just wait otherwise
@@ -94,11 +95,13 @@ module control(
 						c_temp[byte_cntr] <= usb_readdata;
 						byte_cntr <= byte_cntr + 1;
 					end
+
 				end 
 
 				// Choose whether to use the data (if there's data still in the RX FIFO this is most likely invalid)
 				2: begin
 
+/*
 					// Error condition
 					if(usb_rxbytes != 0)
 					begin
@@ -112,6 +115,9 @@ module control(
 
 					// All good!
 					else state <= 4;
+					*/
+
+					state <= 4;
 
 				end
 

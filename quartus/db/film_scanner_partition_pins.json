@@ -4,6 +4,14 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "adc_cs",
+					"strict" : false
+				},
+				{
+					"name" : "adc_sclk",
+					"strict" : false
+				},
+				{
 					"name" : "dac_sclk",
 					"strict" : false
 				},
@@ -16,7 +24,23 @@
 					"strict" : false
 				},
 				{
-					"name" : "mtr_nen",
+					"name" : "ccd_p1",
+					"strict" : false
+				},
+				{
+					"name" : "ccd_p2",
+					"strict" : false
+				},
+				{
+					"name" : "ccd_sh",
+					"strict" : false
+				},
+				{
+					"name" : "ccd_rs",
+					"strict" : false
+				},
+				{
+					"name" : "ccd_cp",
 					"strict" : false
 				},
 				{
@@ -33,18 +57,6 @@
 				},
 				{
 					"name" : "led[0]",
-					"strict" : false
-				},
-				{
-					"name" : "led[1]",
-					"strict" : false
-				},
-				{
-					"name" : "led[2]",
-					"strict" : false
-				},
-				{
-					"name" : "led[3]",
 					"strict" : false
 				},
 				{
@@ -84,19 +96,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "mtr_nhome",
-					"strict" : false
-				},
-				{
 					"name" : "ft_clk",
 					"strict" : false
 				},
 				{
-					"name" : "clk_100M",
+					"name" : "ft_rxf",
 					"strict" : false
 				},
 				{
-					"name" : "ft_rxf",
+					"name" : "clk_100M",
 					"strict" : false
 				}
 			]
