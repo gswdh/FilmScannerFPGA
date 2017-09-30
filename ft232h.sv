@@ -17,14 +17,16 @@ module ft_232h(
 	// RX FIFO interface (From the PC)
 	input logic 		rx_clk,
 						rx_rdreq,
+						rx_aclr,
 	output reg	[7:0]	rx_data,
 	output reg  [8:0]	rx_nbytes,
 
 	// TX FIFO interface (To go to the PC)
 	input logic 		tx_clk,
-						tx_rdreq,
+						tx_wrreq,
 						tx_full,
-	input logic	[7:0]	tx_data
+	input logic	[7:0]	tx_data,
+	output reg	[14:0]	tx_nbytes
 
 	);
 
@@ -36,6 +38,9 @@ module ft_232h(
 
 	// RX FIFO
 	ft_rxfifo	ft_rxfifo_inst (
+
+		// Reset
+		.aclr(rx_aclr || ~nrst),
 
 		// Write
 		.wrclk(rxf_wrclk),
@@ -50,9 +55,31 @@ module ft_232h(
 		.q(rx_data)
 	);
 
+	// TX FIFO Signals
+	logic 			txe_rdclk,
+					txe_rdempty,
+					txe_rdreq;
+	logic [7:0]		txe_rddata;
 
+	// TX FIFO
+	ft_txfifo ft_txfifo_inst(
 
+		// Reset
+		.aclr(~nrst),
 
+		// Write
+		.wrclk(tx_clk),
+		.wrreq(tx_wrreq),
+		.data(tx_data),
+		.wrfull(tx_full),
+		.wrusedw(tx_nbytes),
+
+		// Read
+		.rdclk(txe_rdclk),
+		.rdreq(txe_rdreq),
+		.q(txe_rddata),
+		.rdempty(txe_rdempty)
+	);
 
 	// FT232H module
 	ft232h_fifos_interface usb_ft232h_fifo_int (
@@ -76,10 +103,10 @@ module ft_232h(
 		.rxf_wrdata_o(rxf_wrdata),
 
 		// TX FIFO (Send data to the PC)
-		.txf_rdclk_o(),
-		.txf_rdempty_i(),
-		.txf_rdreq_o(),
-		.txf_rddata_i()
+		.txf_rdclk_o(txe_rdclk),
+		.txf_rdempty_i(txe_rdempty),
+		.txf_rdreq_o(txe_rdreq),
+		.txf_rddata_i(txe_rddata)
 	);
 
 endmodule // ft_232h

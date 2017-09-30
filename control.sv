@@ -101,7 +101,6 @@ module control(
 				// Choose whether to use the data (if there's data still in the RX FIFO this is most likely invalid)
 				2: begin
 
-/*
 					// Error condition
 					if(usb_rxbytes != 0)
 					begin
@@ -115,7 +114,7 @@ module control(
 
 					// All good!
 					else state <= 4;
-					*/
+					
 
 					state <= 4;
 

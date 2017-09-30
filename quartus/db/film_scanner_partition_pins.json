@@ -44,6 +44,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "mtr_nen",
+					"strict" : false
+				},
+				{
+					"name" : "mtr_step",
+					"strict" : false
+				},
+				{
+					"name" : "mtr_slp",
+					"strict" : false
+				},
+				{
 					"name" : "ft_wr",
 					"strict" : false
 				},
@@ -96,15 +108,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "clk_100M",
+					"strict" : false
+				},
+				{
 					"name" : "ft_clk",
 					"strict" : false
 				},
 				{
 					"name" : "ft_rxf",
-					"strict" : false
-				},
-				{
-					"name" : "clk_100M",
 					"strict" : false
 				}
 			]

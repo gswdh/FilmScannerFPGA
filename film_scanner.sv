@@ -81,7 +81,8 @@ module film_scanner(
 	logic [8:0]	rd_used;
 
 	// Control IO
-	reg en = 0;
+	reg cont_en = 0;
+	wire [15:0]	cont_gain, cont_off;
 
 	// 160MHz clock
 	reg clk_160M;
@@ -98,7 +99,7 @@ module film_scanner(
 
 		// Input clock
 		.clk_160M(clk_160M), .nrst(1),
-		.en(1), .cal_mode(1),
+		.en(cont_en), .cal_mode(1),
 
 		// Clock divisor 0 = divide by 2
 		.div(0),
@@ -127,7 +128,7 @@ module film_scanner(
 		.clk_100M(clk_100M),
 
 		// Input data
-		.offset(41351), .gain(40097),
+		.offset(cont_off), .gain(cont_gain),
 
 		// DAC output signals
 		.sclk(dac_sclk),
@@ -142,7 +143,7 @@ module film_scanner(
 		.clk_100M(clk_100M), .nrst(1),
 
 		// Control logic
-		.en(0), .dir(0),
+		.en(cont_en), .dir(0),
 
 		.speed(),
 
@@ -173,11 +174,11 @@ module film_scanner(
 		.usb_rxbytes(rd_used),
 
 		// Output of the control information
-		.cont_en(en),				// Enable to start scanning
-		.cont_gain(), .cont_off()		// The analogue gain and offset for the front end
+		.cont_en(cont_en),				
+		.cont_gain(cont_gain), .cont_off(cont_off)
 	);
 
-	assign led[0] = en;
+	assign led[0] = cont_en;
 
 	// FT232H
 	ft_232h ft0(
@@ -199,14 +200,16 @@ module film_scanner(
 		// RX FIFO interface (From the PC)
 		.rx_clk(rd_clk),
 		.rx_rdreq(rd_req),
+		.rx_aclr(rx_aclr),
 		.rx_data(rd_data),
 		.rx_nbytes(rd_used),
 
 		// TX FIFO interface (To go to the PC)
 		.tx_clk(),
-		.tx_rdreq(),
+		.tx_wrreq(),
 		.tx_full(),
-		.tx_data()
+		.tx_data(),
+		.tx_nbytes()
 	);
 	
 
