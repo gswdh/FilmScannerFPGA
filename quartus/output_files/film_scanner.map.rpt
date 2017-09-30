@@ -1,5 +1,5 @@
 Analysis & Synthesis report for film_scanner
-Sat Sep 30 12:30:09 2017
+Sat Sep 30 14:19:54 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -17,48 +17,48 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   9. Analysis & Synthesis IP Cores Summary
  10. State Machine - |film_scanner|control:cont0|state
  11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component
- 17. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated
- 18. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|a_graycounter_t57:rdptr_g1p
- 19. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|a_graycounter_pjc:wrptr_g1p
- 20. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|altsyncram_os61:fifo_ram
- 21. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|dffpipe_8d9:rdfull_reg
- 22. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|dffpipe_gd9:rs_brp
- 23. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|dffpipe_gd9:rs_bwp
- 24. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|alt_synch_pipe_mc8:rs_dgwp
- 25. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|alt_synch_pipe_mc8:rs_dgwp|dffpipe_hd9:dffpipe12
- 26. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|alt_synch_pipe_mc8:ws_dgrp
- 27. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|alt_synch_pipe_mc8:ws_dgrp|dffpipe_hd9:dffpipe12
- 28. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component
- 29. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated
- 30. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_a77:rdptr_g1p
- 31. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p
- 32. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram
- 33. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|alt_synch_pipe_i98:rs_dgwp
- 34. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|alt_synch_pipe_i98:rs_dgwp|dffpipe_te9:dffpipe12
- 35. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|dffpipe_8d9:wrfull_reg
- 36. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|dffpipe_te9:ws_brp
- 37. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|dffpipe_te9:ws_bwp
- 38. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|alt_synch_pipe_3e8:ws_dgrp
- 39. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|alt_synch_pipe_3e8:ws_dgrp|dffpipe_ue9:dffpipe14
- 40. Parameter Settings for User Entity Instance: pll_80:pll_80_inst|altpll:altpll_component
- 41. Parameter Settings for User Entity Instance: ccd_timing:ccd0
- 42. Parameter Settings for User Entity Instance: dac:dac0
- 43. Parameter Settings for User Entity Instance: ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component
- 44. Parameter Settings for User Entity Instance: ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component
- 45. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int
- 46. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst
- 47. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst
- 48. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step
- 49. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst
- 50. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst|pipeline:pipe_inst
- 51. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step
- 52. altpll Parameter Settings by Entity Instance
- 53. dcfifo Parameter Settings by Entity Instance
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component
+ 16. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated
+ 17. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|a_graycounter_t57:rdptr_g1p
+ 18. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|a_graycounter_pjc:wrptr_g1p
+ 19. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|altsyncram_os61:fifo_ram
+ 20. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|dffpipe_8d9:rdfull_reg
+ 21. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|dffpipe_gd9:rs_brp
+ 22. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|dffpipe_gd9:rs_bwp
+ 23. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|alt_synch_pipe_mc8:rs_dgwp
+ 24. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|alt_synch_pipe_mc8:rs_dgwp|dffpipe_hd9:dffpipe12
+ 25. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|alt_synch_pipe_mc8:ws_dgrp
+ 26. Source assignments for ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|alt_synch_pipe_mc8:ws_dgrp|dffpipe_hd9:dffpipe12
+ 27. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component
+ 28. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated
+ 29. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_a77:rdptr_g1p
+ 30. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p
+ 31. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram
+ 32. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|alt_synch_pipe_i98:rs_dgwp
+ 33. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|alt_synch_pipe_i98:rs_dgwp|dffpipe_te9:dffpipe12
+ 34. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|dffpipe_8d9:wrfull_reg
+ 35. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|dffpipe_te9:ws_brp
+ 36. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|dffpipe_te9:ws_bwp
+ 37. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|alt_synch_pipe_3e8:ws_dgrp
+ 38. Source assignments for ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|alt_synch_pipe_3e8:ws_dgrp|dffpipe_ue9:dffpipe14
+ 39. Parameter Settings for User Entity Instance: pll_80:pll_80_inst|altpll:altpll_component
+ 40. Parameter Settings for User Entity Instance: ccd_timing:ccd0
+ 41. Parameter Settings for User Entity Instance: dac:dac0
+ 42. Parameter Settings for User Entity Instance: ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component
+ 43. Parameter Settings for User Entity Instance: ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component
+ 44. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int
+ 45. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst
+ 46. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst
+ 47. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step
+ 48. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst
+ 49. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst|pipeline:pipe_inst
+ 50. Parameter Settings for User Entity Instance: ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step
+ 51. altpll Parameter Settings by Entity Instance
+ 52. dcfifo Parameter Settings by Entity Instance
+ 53. Port Connectivity Checks: "data_formater:form0"
  54. Port Connectivity Checks: "ft_232h:ft0|ft_txfifo:ft_txfifo_inst"
  55. Port Connectivity Checks: "ft_232h:ft0"
  56. Port Connectivity Checks: "control:cont0"
@@ -94,15 +94,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Sep 30 12:30:09 2017       ;
+; Analysis & Synthesis Status        ; Successful - Sat Sep 30 14:19:54 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; film_scanner                                ;
 ; Top-level Entity Name              ; film_scanner                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 604                                         ;
-;     Total combinational functions  ; 412                                         ;
-;     Dedicated logic registers      ; 390                                         ;
-; Total registers                    ; 390                                         ;
+; Total logic elements               ; 772                                         ;
+;     Total combinational functions  ; 524                                         ;
+;     Dedicated logic registers      ; 496                                         ;
+; Total registers                    ; 496                                         ;
 ; Total pins                         ; 47                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 133,120                                     ;
@@ -220,6 +220,7 @@ agreement for further details.
 +----------------------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path                                     ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                         ; Library ;
 +----------------------------------------------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
+; ../data_formatter.sv                                                 ; yes             ; User SystemVerilog HDL File  ; D:/FilmScannerFPGA/data_formatter.sv                                                 ;         ;
 ; ../stepper.sv                                                        ; yes             ; User SystemVerilog HDL File  ; D:/FilmScannerFPGA/stepper.sv                                                        ;         ;
 ; ../ft232h.sv                                                         ; yes             ; User SystemVerilog HDL File  ; D:/FilmScannerFPGA/ft232h.sv                                                         ;         ;
 ; ../usb_ft232h_avalon-mm_interface/trunk/hw/pipeline.sv               ; yes             ; User SystemVerilog HDL File  ; D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/pipeline.sv               ;         ;
@@ -284,20 +285,20 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 604            ;
+; Estimated Total logic elements              ; 772            ;
 ;                                             ;                ;
-; Total combinational functions               ; 412            ;
+; Total combinational functions               ; 524            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 186            ;
-;     -- 3 input functions                    ; 85             ;
-;     -- <=2 input functions                  ; 141            ;
+;     -- 4 input functions                    ; 267            ;
+;     -- 3 input functions                    ; 104            ;
+;     -- <=2 input functions                  ; 153            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 354            ;
+;     -- normal mode                          ; 466            ;
 ;     -- arithmetic mode                      ; 58             ;
 ;                                             ;                ;
-; Total registers                             ; 390            ;
-;     -- Dedicated logic registers            ; 390            ;
+; Total registers                             ; 496            ;
+;     -- Dedicated logic registers            ; 496            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 47             ;
@@ -310,8 +311,8 @@ agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; clk_100M~input ;
 ; Maximum fan-out                             ; 161            ;
-; Total fan-out                               ; 2802           ;
-; Average fan-out                             ; 3.02           ;
+; Total fan-out                               ; 3684           ;
+; Average fan-out                             ; 3.21           ;
 +---------------------------------------------+----------------+
 
 
@@ -320,11 +321,12 @@ agreement for further details.
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                           ; Entity Name            ; Library Name ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |film_scanner                                               ; 412 (1)             ; 390 (0)                   ; 133120      ; 0            ; 0       ; 0         ; 47   ; 0            ; |film_scanner                                                                                                                                                 ; film_scanner           ; work         ;
-;    |ccd_timing:ccd0|                                        ; 72 (72)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ccd_timing:ccd0                                                                                                                                 ; ccd_timing             ; work         ;
+; |film_scanner                                               ; 524 (0)             ; 496 (0)                   ; 133120      ; 0            ; 0       ; 0         ; 47   ; 0            ; |film_scanner                                                                                                                                                 ; film_scanner           ; work         ;
+;    |ccd_timing:ccd0|                                        ; 104 (104)           ; 63 (63)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ccd_timing:ccd0                                                                                                                                 ; ccd_timing             ; work         ;
 ;    |control:cont0|                                          ; 22 (22)             ; 77 (77)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|control:cont0                                                                                                                                   ; control                ; work         ;
-;    |dac:dac0|                                               ; 127 (127)           ; 115 (115)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|dac:dac0                                                                                                                                        ; dac                    ; work         ;
-;    |ft_232h:ft0|                                            ; 157 (0)             ; 148 (0)                   ; 133120      ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0                                                                                                                                     ; ft_232h                ; work         ;
+;    |dac:dac0|                                               ; 126 (126)           ; 115 (115)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|dac:dac0                                                                                                                                        ; dac                    ; work         ;
+;    |data_formater:form0|                                    ; 15 (15)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|data_formater:form0                                                                                                                             ; data_formater          ; work         ;
+;    |ft_232h:ft0|                                            ; 220 (0)             ; 200 (0)                   ; 133120      ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0                                                                                                                                     ; ft_232h                ; work         ;
 ;       |ft232h_fifos_interface:usb_ft232h_fifo_int|          ; 12 (6)              ; 26 (2)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int                                                                                          ; ft232h_fifos_interface ; work         ;
 ;          |ft232h_receiver:rx_inst|                          ; 3 (3)               ; 12 (3)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst                                                                  ; ft232h_receiver        ; work         ;
 ;             |pipeline:pipe_inst|                            ; 0 (0)               ; 9 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst                                               ; pipeline               ; work         ;
@@ -348,18 +350,22 @@ agreement for further details.
 ;                |mux_j28:rdemp_eq_comp_msb_mux|              ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|mux_j28:rdemp_eq_comp_msb_mux                           ; mux_j28                ; work         ;
 ;                |mux_j28:wrfull_eq_comp_lsb_mux|             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|mux_j28:wrfull_eq_comp_lsb_mux                          ; mux_j28                ; work         ;
 ;                |mux_j28:wrfull_eq_comp_msb_mux|             ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|mux_j28:wrfull_eq_comp_msb_mux                          ; mux_j28                ; work         ;
-;       |ft_txfifo:ft_txfifo_inst|                            ; 52 (0)              ; 40 (0)                    ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst                                                                                                            ; ft_txfifo              ; work         ;
-;          |dcfifo:dcfifo_component|                          ; 52 (0)              ; 40 (0)                    ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component                                                                                    ; dcfifo                 ; work         ;
-;             |dcfifo_u7n1:auto_generated|                    ; 52 (2)              ; 40 (17)                   ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated                                                         ; dcfifo_u7n1            ; work         ;
-;                |a_graycounter_a77:rdptr_g1p|                ; 30 (30)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_a77:rdptr_g1p                             ; a_graycounter_a77      ; work         ;
-;                |altsyncram_iv61:fifo_ram|                   ; 9 (1)               ; 3 (3)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram                                ; altsyncram_iv61        ; work         ;
+;       |ft_txfifo:ft_txfifo_inst|                            ; 115 (0)             ; 92 (0)                    ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst                                                                                                            ; ft_txfifo              ; work         ;
+;          |dcfifo:dcfifo_component|                          ; 115 (0)             ; 92 (0)                    ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component                                                                                    ; dcfifo                 ; work         ;
+;             |dcfifo_u7n1:auto_generated|                    ; 115 (5)             ; 92 (49)                   ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated                                                         ; dcfifo_u7n1            ; work         ;
+;                |a_graycounter_6lc:wrptr_g1p|                ; 28 (28)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p                             ; a_graycounter_6lc      ; work         ;
+;                |a_graycounter_a77:rdptr_g1p|                ; 29 (29)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_a77:rdptr_g1p                             ; a_graycounter_a77      ; work         ;
+;                |altsyncram_iv61:fifo_ram|                   ; 11 (1)              ; 3 (3)                     ; 131072      ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram                                ; altsyncram_iv61        ; work         ;
+;                   |decode_a87:wren_decode_a|                ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|decode_a87:wren_decode_a       ; decode_a87             ; work         ;
 ;                   |mux_q28:mux11|                           ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|mux_q28:mux11                  ; mux_q28                ; work         ;
-;                |mux_j28:rdemp_eq_comp_lsb_mux|              ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|mux_j28:rdemp_eq_comp_lsb_mux                           ; mux_j28                ; work         ;
-;                |mux_j28:rdemp_eq_comp_msb_mux|              ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|mux_j28:rdemp_eq_comp_msb_mux                           ; mux_j28                ; work         ;
+;                |mux_j28:rdemp_eq_comp_lsb_mux|              ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|mux_j28:rdemp_eq_comp_lsb_mux                           ; mux_j28                ; work         ;
+;                |mux_j28:rdemp_eq_comp_msb_mux|              ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|mux_j28:rdemp_eq_comp_msb_mux                           ; mux_j28                ; work         ;
+;                |mux_j28:wrfull_eq_comp_lsb_mux|             ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|mux_j28:wrfull_eq_comp_lsb_mux                          ; mux_j28                ; work         ;
+;                |mux_j28:wrfull_eq_comp_msb_mux|             ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|mux_j28:wrfull_eq_comp_msb_mux                          ; mux_j28                ; work         ;
 ;    |pll_80:pll_80_inst|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|pll_80:pll_80_inst                                                                                                                              ; pll_80                 ; work         ;
 ;       |altpll:altpll_component|                             ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|pll_80:pll_80_inst|altpll:altpll_component                                                                                                      ; altpll                 ; work         ;
 ;          |pll_80_altpll:auto_generated|                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|pll_80:pll_80_inst|altpll:altpll_component|pll_80_altpll:auto_generated                                                                         ; pll_80_altpll          ; work         ;
-;    |stepper:step0|                                          ; 33 (33)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|stepper:step0                                                                                                                                   ; stepper                ; work         ;
+;    |stepper:step0|                                          ; 37 (37)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|stepper:step0                                                                                                                                   ; stepper                ; work         ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -399,74 +405,31 @@ Encoding Type:  One-Hot
 +----------------+----------------+----------------+----------------+----------------+----------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                              ;
-+----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
-; Register name                                                                                                                          ; Reason for Removal                     ;
-+----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|wrfull_eq_comp_lsb_mux_reg                     ; Lost fanout                            ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|wrfull_eq_comp_msb_mux_reg                     ; Lost fanout                            ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|delayed_wrptr_g[0..14]                         ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|wrptr_g[0..14]                                 ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a0         ; Stuck at VCC due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a1         ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a2         ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a3         ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a4         ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a5         ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a6         ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a7         ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a8         ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a9         ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a10        ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a11        ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a12        ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a13        ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a14        ; Stuck at GND due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|parity7            ; Stuck at VCC due to stuck port clock   ;
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|sub_parity8a[0..3] ; Stuck at GND due to stuck port clock   ;
-; dac:dac0|dac_state[4..7]                                                                                                               ; Stuck at GND due to stuck port data_in ;
-; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|dffpipe_gd9:rs_bwp|dffe11a[8]                  ; Lost fanout                            ;
-; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|dffpipe_gd9:rs_brp|dffe11a[8]                  ; Lost fanout                            ;
-; dac:dac0|dac_gain[17..19,21..23]                                                                                                       ; Merged with dac:dac0|dac_gain[16]      ;
-; dac:dac0|dac_offset[17,19,20,22,23]                                                                                                    ; Merged with dac:dac0|dac_offset[16]    ;
-; dac:dac0|dac_offset[21]                                                                                                                ; Merged with dac:dac0|dac_offset[18]    ;
-; ccd_timing:ccd0|clk_timings_cntr                                                                                                       ; Stuck at GND due to stuck port data_in ;
-; dac:dac0|dac_gain[20]                                                                                                                  ; Merged with dac:dac0|dac_offset[18]    ;
-; dac:dac0|dac_gain[16]                                                                                                                  ; Merged with dac:dac0|dac_offset[16]    ;
-; dac:dac0|dac_offset[16]                                                                                                                ; Stuck at GND due to stuck port data_in ;
-; control:cont0|state.00000011                                                                                                           ; Lost fanout                            ;
-; control:cont0|state~7                                                                                                                  ; Lost fanout                            ;
-; control:cont0|state~8                                                                                                                  ; Lost fanout                            ;
-; control:cont0|state~10                                                                                                                 ; Lost fanout                            ;
-; control:cont0|state~11                                                                                                                 ; Lost fanout                            ;
-; control:cont0|state~12                                                                                                                 ; Lost fanout                            ;
-; control:cont0|state~13                                                                                                                 ; Lost fanout                            ;
-; control:cont0|state~14                                                                                                                 ; Lost fanout                            ;
-; Total Number of Removed Registers = 82                                                                                                 ;                                        ;
-+----------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                                                                                 ;
-+--------------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                                                  ; Reason for Removal      ; Registers Removed due to This Register                                                                                           ;
-+--------------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------------------------------------------------------------------------------------------------------------+
-; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a0 ; Stuck at VCC            ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a1,  ;
-;                                                                                                                                ; due to stuck port clock ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a2,  ;
-;                                                                                                                                ;                         ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a3,  ;
-;                                                                                                                                ;                         ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a4,  ;
-;                                                                                                                                ;                         ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a5,  ;
-;                                                                                                                                ;                         ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a6,  ;
-;                                                                                                                                ;                         ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a7,  ;
-;                                                                                                                                ;                         ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a8,  ;
-;                                                                                                                                ;                         ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a9,  ;
-;                                                                                                                                ;                         ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a10, ;
-;                                                                                                                                ;                         ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a11, ;
-;                                                                                                                                ;                         ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a12, ;
-;                                                                                                                                ;                         ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a13, ;
-;                                                                                                                                ;                         ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a14  ;
-+--------------------------------------------------------------------------------------------------------------------------------+-------------------------+----------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                             ;
++-----------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                                         ; Reason for Removal                     ;
++-----------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; dac:dac0|dac_state[4..7]                                                                                              ; Stuck at GND due to stuck port data_in ;
+; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|dffpipe_gd9:rs_bwp|dffe11a[8] ; Lost fanout                            ;
+; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|dffpipe_gd9:rs_brp|dffe11a[8] ; Lost fanout                            ;
+; dac:dac0|dac_gain[17..19,21..23]                                                                                      ; Merged with dac:dac0|dac_gain[16]      ;
+; dac:dac0|dac_offset[17,19,20,22,23]                                                                                   ; Merged with dac:dac0|dac_offset[16]    ;
+; dac:dac0|dac_offset[21]                                                                                               ; Merged with dac:dac0|dac_offset[18]    ;
+; ccd_timing:ccd0|clk_timings_cntr                                                                                      ; Stuck at GND due to stuck port data_in ;
+; dac:dac0|dac_gain[20]                                                                                                 ; Merged with dac:dac0|dac_offset[18]    ;
+; dac:dac0|dac_gain[16]                                                                                                 ; Merged with dac:dac0|dac_offset[16]    ;
+; dac:dac0|dac_offset[16]                                                                                               ; Stuck at GND due to stuck port data_in ;
+; control:cont0|state.00000011                                                                                          ; Lost fanout                            ;
+; control:cont0|state~7                                                                                                 ; Lost fanout                            ;
+; control:cont0|state~8                                                                                                 ; Lost fanout                            ;
+; control:cont0|state~10                                                                                                ; Lost fanout                            ;
+; control:cont0|state~11                                                                                                ; Lost fanout                            ;
+; control:cont0|state~12                                                                                                ; Lost fanout                            ;
+; control:cont0|state~13                                                                                                ; Lost fanout                            ;
+; control:cont0|state~14                                                                                                ; Lost fanout                            ;
+; Total Number of Removed Registers = 30                                                                                ;                                        ;
++-----------------------------------------------------------------------------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -474,12 +437,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 390   ;
+; Total registers                              ; 496   ;
 ; Number of registers using Synchronous Clear  ; 11    ;
 ; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 229   ;
+; Number of registers using Clock Enable       ; 252   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -489,19 +452,21 @@ Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                              ; Fan out ;
 +--------------------------------------------------------------------------------------------------------------------------------+---------+
-; ccd_timing:ccd0|timings_cntr[2]                                                                                                ; 9       ;
+; ccd_timing:ccd0|timings_cntr[2]                                                                                                ; 17      ;
 ; dac:dac0|dac_state[0]                                                                                                          ; 45      ;
 ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|rdemp_eq_comp_lsb_aeb                  ; 3       ;
 ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|rdemp_eq_comp_msb_aeb                  ; 3       ;
 ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_a77:rdptr_g1p|counter3a0 ; 8       ;
 ; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|a_graycounter_pjc:wrptr_g1p|counter6a0 ; 7       ;
-; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|rdemp_eq_comp_lsb_aeb                  ; 1       ;
-; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|rdemp_eq_comp_msb_aeb                  ; 1       ;
+; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|rdemp_eq_comp_lsb_aeb                  ; 2       ;
+; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|rdemp_eq_comp_msb_aeb                  ; 2       ;
 ; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|a_graycounter_t57:rdptr_g1p|counter3a0 ; 9       ;
 ; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_a77:rdptr_g1p|parity4    ; 4       ;
 ; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|a_graycounter_pjc:wrptr_g1p|parity7    ; 4       ;
 ; ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_38m1:auto_generated|a_graycounter_t57:rdptr_g1p|parity4    ; 5       ;
-; Total number of inverted registers = 12                                                                                        ;         ;
+; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|counter6a0 ; 7       ;
+; ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|a_graycounter_6lc:wrptr_g1p|parity7    ; 4       ;
+; Total number of inverted registers = 14                                                                                        ;         ;
 +--------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
@@ -510,14 +475,15 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |film_scanner|ccd_timing:ccd0|pixel_cntr[0]                               ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |film_scanner|ccd_timing:ccd0|timings_cntr[5]                             ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |film_scanner|ccd_timing:ccd0|pixel_cntr[13]                              ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |film_scanner|ccd_timing:ccd0|timings_cntr[0]                             ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |film_scanner|data_formater:form0|tx_data_int[4]                          ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|send ;
-; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |film_scanner|control:cont0|byte_cntr[5]                                  ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; Yes        ; |film_scanner|control:cont0|byte_cntr[4]                                  ;
 ; 17:1               ; 2 bits    ; 22 LEs        ; 2 LEs                ; 20 LEs                 ; Yes        ; |film_scanner|dac:dac0|dac_offset[18]                                     ;
-; 17:1               ; 32 bits   ; 352 LEs       ; 32 LEs               ; 320 LEs                ; Yes        ; |film_scanner|dac:dac0|dac_offset[4]                                      ;
-; 16:1               ; 5 bits    ; 50 LEs        ; 5 LEs                ; 45 LEs                 ; Yes        ; |film_scanner|dac:dac0|bit_cntr[4]                                        ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |film_scanner|control:cont0|Selector0                                     ;
+; 17:1               ; 32 bits   ; 352 LEs       ; 32 LEs               ; 320 LEs                ; Yes        ; |film_scanner|dac:dac0|dac_gain[15]                                       ;
+; 16:1               ; 5 bits    ; 50 LEs        ; 5 LEs                ; 45 LEs                 ; Yes        ; |film_scanner|dac:dac0|bit_cntr[2]                                        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |film_scanner|control:cont0|Selector4                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------------------+
 
 
@@ -1380,6 +1346,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------------------+--------------------------------------------------------------+
 
 
++-------------------------------------------------+
+; Port Connectivity Checks: "data_formater:form0" ;
++------+-------+----------+-----------------------+
+; Port ; Type  ; Severity ; Details               ;
++------+-------+----------+-----------------------+
+; nrst ; Input ; Info     ; Stuck at VCC          ;
++------+-------+----------+-----------------------+
+
+
 +------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "ft_232h:ft0|ft_txfifo:ft_txfifo_inst"                                                 ;
 +--------+--------+----------+-------------------------------------------------------------------------------------+
@@ -1397,10 +1372,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; nrst         ; Input  ; Info     ; Stuck at VCC                                                                        ;
 ; rx_aclr      ; Input  ; Info     ; Stuck at GND                                                                        ;
 ; rx_nbytes[8] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; tx_clk       ; Input  ; Info     ; Explicitly unconnected                                                              ;
-; tx_wrreq     ; Input  ; Info     ; Explicitly unconnected                                                              ;
 ; tx_full      ; Input  ; Info     ; Explicitly unconnected                                                              ;
-; tx_data      ; Input  ; Info     ; Explicitly unconnected                                                              ;
 ; tx_nbytes    ; Output ; Info     ; Explicitly unconnected                                                              ;
 +--------------+--------+----------+-------------------------------------------------------------------------------------+
 
@@ -1428,18 +1400,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+-------+----------+------------------------+
 
 
-+------------------------------------------------------------+
-; Port Connectivity Checks: "ccd_timing:ccd0"                ;
-+---------------+--------+----------+------------------------+
-; Port          ; Type   ; Severity ; Details                ;
-+---------------+--------+----------+------------------------+
-; nrst          ; Input  ; Info     ; Stuck at VCC           ;
-; cal_mode      ; Input  ; Info     ; Stuck at VCC           ;
-; div           ; Input  ; Info     ; Stuck at GND           ;
-; pix_clk       ; Output ; Info     ; Explicitly unconnected ;
-; pix_out_valid ; Output ; Info     ; Explicitly unconnected ;
-; pix_data      ; Output ; Info     ; Explicitly unconnected ;
-+---------------+--------+----------+------------------------+
++---------------------------------------------+
+; Port Connectivity Checks: "ccd_timing:ccd0" ;
++----------+-------+----------+---------------+
+; Port     ; Type  ; Severity ; Details       ;
++----------+-------+----------+---------------+
+; nrst     ; Input ; Info     ; Stuck at VCC  ;
+; cal_mode ; Input ; Info     ; Stuck at GND  ;
+; div      ; Input ; Info     ; Stuck at GND  ;
++----------+-------+----------+---------------+
 
 
 +-----------------------------------------------------+
@@ -1457,27 +1426,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 47                          ;
-; cycloneiii_ff         ; 390                         ;
-;     ENA               ; 218                         ;
+; cycloneiii_ff         ; 496                         ;
+;     ENA               ; 241                         ;
 ;     ENA SCLR          ; 11                          ;
 ;     SLD               ; 1                           ;
-;     plain             ; 160                         ;
+;     plain             ; 243                         ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 416                         ;
+; cycloneiii_lcell_comb ; 529                         ;
 ;     arith             ; 58                          ;
 ;         2 data inputs ; 51                          ;
 ;         3 data inputs ; 7                           ;
-;     normal            ; 358                         ;
+;     normal            ; 471                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 16                          ;
-;         2 data inputs ; 76                          ;
-;         3 data inputs ; 78                          ;
-;         4 data inputs ; 186                         ;
+;         1 data inputs ; 17                          ;
+;         2 data inputs ; 88                          ;
+;         3 data inputs ; 97                          ;
+;         4 data inputs ; 267                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 24                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.02                        ;
+; Average LUT depth     ; 2.97                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1496,10 +1465,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Sep 30 12:29:53 2017
+    Info: Processing started: Sat Sep 30 14:19:39 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off film_scanner -c film_scanner
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/data_formatter.sv
+    Info (12023): Found entity 1: data_formater File: D:/FilmScannerFPGA/data_formatter.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/stepper.sv
     Info (12023): Found entity 1: stepper File: D:/FilmScannerFPGA/stepper.sv Line: 2
 Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/ft232h.sv
@@ -1528,15 +1499,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file ft_rxfi
 Info (12021): Found 1 design units, including 1 entities, in source file ft_txfifo.v
     Info (12023): Found entity 1: ft_txfifo File: D:/FilmScannerFPGA/quartus/ft_txfifo.v Line: 40
 Warning (10236): Verilog HDL Implicit Net warning at control.sv(20): created implicit net for "data_clk" File: D:/FilmScannerFPGA/control.sv Line: 20
-Warning (10236): Verilog HDL Implicit Net warning at film_scanner.sv(203): created implicit net for "rx_aclr" File: D:/FilmScannerFPGA/film_scanner.sv Line: 203
+Warning (10236): Verilog HDL Implicit Net warning at film_scanner.sv(208): created implicit net for "rx_aclr" File: D:/FilmScannerFPGA/film_scanner.sv Line: 208
 Info (12127): Elaborating entity "film_scanner" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at film_scanner.sv(70): object "wr_data" assigned a value but never read File: D:/FilmScannerFPGA/film_scanner.sv Line: 70
-Warning (10036): Verilog HDL or VHDL warning at film_scanner.sv(71): object "wr_clk" assigned a value but never read File: D:/FilmScannerFPGA/film_scanner.sv Line: 71
-Warning (10036): Verilog HDL or VHDL warning at film_scanner.sv(72): object "wr_req" assigned a value but never read File: D:/FilmScannerFPGA/film_scanner.sv Line: 72
-Warning (10030): Net "rx_aclr" at film_scanner.sv(203) has no driver or initial value, using a default initial value '0' File: D:/FilmScannerFPGA/film_scanner.sv Line: 203
-Warning (10034): Output port "led[3..1]" at film_scanner.sv(58) has no driver File: D:/FilmScannerFPGA/film_scanner.sv Line: 58
+Warning (10030): Net "rx_aclr" at film_scanner.sv(208) has no driver or initial value, using a default initial value '0' File: D:/FilmScannerFPGA/film_scanner.sv Line: 208
+Warning (10034): Output port "led[2..1]" at film_scanner.sv(58) has no driver File: D:/FilmScannerFPGA/film_scanner.sv Line: 58
 Warning (10034): Output port "led_pwm" at film_scanner.sv(7) has no driver File: D:/FilmScannerFPGA/film_scanner.sv Line: 7
-Info (12128): Elaborating entity "pll_80" for hierarchy "pll_80:pll_80_inst" File: D:/FilmScannerFPGA/film_scanner.sv Line: 95
+Info (12128): Elaborating entity "pll_80" for hierarchy "pll_80:pll_80_inst" File: D:/FilmScannerFPGA/film_scanner.sv Line: 99
 Info (12128): Elaborating entity "altpll" for hierarchy "pll_80:pll_80_inst|altpll:altpll_component" File: D:/FilmScannerFPGA/quartus/pll_80.v Line: 95
 Info (12130): Elaborated megafunction instantiation "pll_80:pll_80_inst|altpll:altpll_component" File: D:/FilmScannerFPGA/quartus/pll_80.v Line: 95
 Info (12133): Instantiated megafunction "pll_80:pll_80_inst|altpll:altpll_component" with the following parameter: File: D:/FilmScannerFPGA/quartus/pll_80.v Line: 95
@@ -1598,7 +1566,7 @@ Info (12133): Instantiated megafunction "pll_80:pll_80_inst|altpll:altpll_compon
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_80_altpll.v
     Info (12023): Found entity 1: pll_80_altpll File: D:/FilmScannerFPGA/quartus/db/pll_80_altpll.v Line: 30
 Info (12128): Elaborating entity "pll_80_altpll" for hierarchy "pll_80:pll_80_inst|altpll:altpll_component|pll_80_altpll:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altpll.tdf Line: 898
-Info (12128): Elaborating entity "ccd_timing" for hierarchy "ccd_timing:ccd0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 122
+Info (12128): Elaborating entity "ccd_timing" for hierarchy "ccd_timing:ccd0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 126
 Warning (10036): Verilog HDL or VHDL warning at ccd_timing.sv(139): object "start_cntr" assigned a value but never read File: D:/FilmScannerFPGA/ccd_timing.sv Line: 139
 Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(66): truncated value with size 32 to match size of target (1) File: D:/FilmScannerFPGA/ccd_timing.sv Line: 66
 Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(171): truncated value with size 32 to match size of target (1) File: D:/FilmScannerFPGA/ccd_timing.sv Line: 171
@@ -1606,7 +1574,7 @@ Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(172): truncated
 Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(186): truncated value with size 32 to match size of target (1) File: D:/FilmScannerFPGA/ccd_timing.sv Line: 186
 Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(202): truncated value with size 32 to match size of target (14) File: D:/FilmScannerFPGA/ccd_timing.sv Line: 202
 Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(205): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/ccd_timing.sv Line: 205
-Info (12128): Elaborating entity "dac" for hierarchy "dac:dac0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 137
+Info (12128): Elaborating entity "dac" for hierarchy "dac:dac0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 141
 Warning (10230): Verilog HDL assignment warning at dac.sv(50): truncated value with size 32 to match size of target (5) File: D:/FilmScannerFPGA/dac.sv Line: 50
 Warning (10230): Verilog HDL assignment warning at dac.sv(89): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/dac.sv Line: 89
 Warning (10230): Verilog HDL assignment warning at dac.sv(107): truncated value with size 48 to match size of target (24) File: D:/FilmScannerFPGA/dac.sv Line: 107
@@ -1618,12 +1586,12 @@ Warning (10230): Verilog HDL assignment warning at dac.sv(188): truncated value 
 Warning (10230): Verilog HDL assignment warning at dac.sv(198): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/dac.sv Line: 198
 Warning (10230): Verilog HDL assignment warning at dac.sv(211): truncated value with size 32 to match size of target (5) File: D:/FilmScannerFPGA/dac.sv Line: 211
 Warning (10230): Verilog HDL assignment warning at dac.sv(255): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/dac.sv Line: 255
-Info (12128): Elaborating entity "stepper" for hierarchy "stepper:step0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 161
+Info (12128): Elaborating entity "stepper" for hierarchy "stepper:step0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 165
 Warning (10230): Verilog HDL assignment warning at stepper.sv(72): truncated value with size 32 to match size of target (19) File: D:/FilmScannerFPGA/stepper.sv Line: 72
-Info (12128): Elaborating entity "control" for hierarchy "control:cont0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 179
+Info (12128): Elaborating entity "control" for hierarchy "control:cont0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 183
 Warning (10036): Verilog HDL or VHDL warning at control.sv(20): object "data_clk" assigned a value but never read File: D:/FilmScannerFPGA/control.sv Line: 20
 Warning (10230): Verilog HDL assignment warning at control.sv(96): truncated value with size 32 to match size of target (6) File: D:/FilmScannerFPGA/control.sv Line: 96
-Info (12128): Elaborating entity "ft_232h" for hierarchy "ft_232h:ft0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 213
+Info (12128): Elaborating entity "ft_232h" for hierarchy "ft_232h:ft0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 218
 Info (12128): Elaborating entity "ft_rxfifo" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst" File: D:/FilmScannerFPGA/ft232h.sv Line: 56
 Info (12128): Elaborating entity "dcfifo" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component" File: D:/FilmScannerFPGA/quartus/ft_rxfifo.v Line: 89
 Info (12130): Elaborated megafunction instantiation "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component" File: D:/FilmScannerFPGA/quartus/ft_rxfifo.v Line: 89
@@ -1744,6 +1712,8 @@ Info (12128): Elaborating entity "ft232h_receiver" for hierarchy "ft_232h:ft0|ft
 Info (12128): Elaborating entity "pipeline" for hierarchy "ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst" File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/ft232h_receiver.sv Line: 70
 Info (12128): Elaborating entity "pipeline_step" for hierarchy "ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step" File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/pipeline.sv Line: 129
 Info (12128): Elaborating entity "ft232h_transmitter" for hierarchy "ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst" File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/ft232h_fifos_interface.sv Line: 108
+Info (12128): Elaborating entity "data_formater" for hierarchy "data_formater:form0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 232
+Warning (10230): Verilog HDL assignment warning at data_formatter.sv(24): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/data_formatter.sv Line: 24
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "led_pwm" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 7
     Warning (13410): Pin "mtr_nrst" is stuck at VCC File: D:/FilmScannerFPGA/film_scanner.sv Line: 30
@@ -1757,44 +1727,26 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ft_nrst" is stuck at VCC File: D:/FilmScannerFPGA/film_scanner.sv Line: 54
     Warning (13410): Pin "led[1]" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 58
     Warning (13410): Pin "led[2]" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 58
-    Warning (13410): Pin "led[3]" is stuck at GND File: D:/FilmScannerFPGA/film_scanner.sv Line: 58
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 12 registers lost all their fanouts during netlist optimizations.
+Info (17049): 10 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a8" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 308
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a0" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 52
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a9" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 340
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a1" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 84
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a10" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 372
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a2" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 116
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a11" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 404
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a3" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 148
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a12" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 436
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a4" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 180
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a13" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 468
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a5" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 212
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a14" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 500
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a6" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 244
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a15" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 532
-Warning (15400): WYSIWYG primitive "ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|altsyncram_iv61:fifo_ram|ram_block9a7" has a port clk0 that is stuck at GND File: D:/FilmScannerFPGA/quartus/db/altsyncram_iv61.tdf Line: 276
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "adc_sdo" File: D:/FilmScannerFPGA/film_scanner.sv Line: 13
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "mtr_nhome" File: D:/FilmScannerFPGA/film_scanner.sv Line: 37
     Warning (15610): No output dependent on input pin "mtr_nflt" File: D:/FilmScannerFPGA/film_scanner.sv Line: 37
     Warning (15610): No output dependent on input pin "ft_ac8" File: D:/FilmScannerFPGA/film_scanner.sv Line: 45
     Warning (15610): No output dependent on input pin "ft_ac9" File: D:/FilmScannerFPGA/film_scanner.sv Line: 46
-Info (21057): Implemented 683 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 851 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 30 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 611 logic cells
+    Info (21061): Implemented 779 logic cells
     Info (21064): Implemented 24 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 66 warnings
-    Info: Peak virtual memory: 641 megabytes
-    Info: Processing ended: Sat Sep 30 12:30:09 2017
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+    Info: Peak virtual memory: 644 megabytes
+    Info: Processing ended: Sat Sep 30 14:19:55 2017
     Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Total CPU time (on all processors): 00:00:28
 
 

@@ -72,6 +72,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "led[3]",
+					"strict" : false
+				},
+				{
 					"name" : "ft_bus[0]",
 					"strict" : false
 				},
@@ -117,6 +121,10 @@
 				},
 				{
 					"name" : "ft_rxf",
+					"strict" : false
+				},
+				{
+					"name" : "adc_sdo",
 					"strict" : false
 				}
 			]

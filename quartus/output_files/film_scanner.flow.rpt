@@ -1,5 +1,5 @@
 Flow report for film_scanner
-Sat Sep 30 12:30:23 2017
+Sat Sep 30 14:20:09 2017
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -41,17 +41,17 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat Sep 30 12:30:23 2017       ;
+; Flow Status                        ; Successful - Sat Sep 30 14:20:09 2017       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; film_scanner                                ;
 ; Top-level Entity Name              ; film_scanner                                ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE6E22C6                                 ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 564 / 6,272 ( 9 % )                         ;
-;     Total combinational functions  ; 412 / 6,272 ( 7 % )                         ;
-;     Dedicated logic registers      ; 390 / 6,272 ( 6 % )                         ;
-; Total registers                    ; 390                                         ;
+; Total logic elements               ; 720 / 6,272 ( 11 % )                        ;
+;     Total combinational functions  ; 524 / 6,272 ( 8 % )                         ;
+;     Dedicated logic registers      ; 496 / 6,272 ( 8 % )                         ;
+; Total registers                    ; 496                                         ;
 ; Total pins                         ; 47 / 92 ( 51 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 133,120 / 276,480 ( 48 % )                  ;
@@ -65,7 +65,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/30/2017 12:29:54 ;
+; Start date & time ; 09/30/2017 14:19:39 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; film_scanner        ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 22866944378455.150677099411048         ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID               ; 22866944378455.150677757906448         ; --            ; --          ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --             ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
@@ -100,12 +100,12 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 641 MB              ; 00:00:29                           ;
-; Fitter                    ; 00:00:05     ; 1.0                     ; 1283 MB             ; 00:00:06                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 541 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.1                     ; 626 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 515 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:25     ; --                      ; --                  ; 00:00:39                           ;
+; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 644 MB              ; 00:00:28                           ;
+; Fitter                    ; 00:00:06     ; 1.0                     ; 1281 MB             ; 00:00:07                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 539 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.1                     ; 630 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 517 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:26     ; --                      ; --                  ; 00:00:40                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

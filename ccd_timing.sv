@@ -346,7 +346,7 @@ module ccd_timing
 	end
 
 	// Clock the ADC data out of the module
-	always_ff @ (negedge adc_cs or negedge nrst)
+	always_ff @ (negedge pix_clk or negedge nrst)
 	begin
 
 		// Reset
@@ -354,6 +354,7 @@ module ccd_timing
 		begin
 
 			pix_data <= 0;
+			pix_out_valid <= 0;
 		end
 
 		// Run

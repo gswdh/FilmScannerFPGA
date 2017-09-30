@@ -80,6 +80,10 @@ module film_scanner(
 				rxf_aclr;
 	logic [8:0]	rd_used;
 
+	// Pixel data IO
+	logic		 pix_clk, pix_out_valid;
+	logic [15:0] pix_data;
+
 	// Control IO
 	reg cont_en = 0;
 	wire [15:0]	cont_gain, cont_off;
@@ -99,7 +103,7 @@ module film_scanner(
 
 		// Input clock
 		.clk_160M(clk_160M), .nrst(1),
-		.en(cont_en), .cal_mode(1),
+		.en(cont_en), .cal_mode(0),
 
 		// Clock divisor 0 = divide by 2
 		.div(0),
@@ -117,8 +121,8 @@ module film_scanner(
 		.adc_sdo(adc_sdo),
 
 		// Data output 
-		.pix_clk(), .pix_out_valid(),
-		.pix_data()
+		.pix_clk(pix_clk), .pix_out_valid(pix_out_valid),
+		.pix_data(pix_data)
 	);
 
 	// Analogue front end control
@@ -179,6 +183,7 @@ module film_scanner(
 	);
 
 	assign led[0] = cont_en;
+	assign led[3] = wr_req;
 
 	// FT232H
 	ft_232h ft0(
@@ -205,11 +210,25 @@ module film_scanner(
 		.rx_nbytes(rd_used),
 
 		// TX FIFO interface (To go to the PC)
-		.tx_clk(),
-		.tx_wrreq(),
+		.tx_clk(wr_clk),
+		.tx_wrreq(wr_req),
 		.tx_full(),
-		.tx_data(),
+		.tx_data(wr_data),
 		.tx_nbytes()
+	);
+
+	data_formater form0(
+
+		// Reset
+		.nrst(1),
+
+		// Input data
+		.rx_clk(pix_clk), .rx_valid(pix_out_valid),
+		.rx_data(pix_data),
+
+		// Output data
+		.tx_clk(wr_clk), .tx_valid(wr_req),
+		.tx_data(wr_data)
 	);
 	
 
