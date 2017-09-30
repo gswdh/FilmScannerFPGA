@@ -1,6 +1,6 @@
 Analysis & Synthesis report for film_scanner
-Thu Sep 07 22:04:53 2017
-Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
+Sat Sep 30 10:40:08 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
 ---------------------
@@ -10,67 +10,49 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: pll_80:pll_80_inst|altpll:altpll_component
- 15. Parameter Settings for User Entity Instance: ccd_timing:ccd0
- 16. Parameter Settings for User Entity Instance: dac:dac0
- 17. altpll Parameter Settings by Entity Instance
- 18. Port Connectivity Checks: "stepper:step0"
- 19. Port Connectivity Checks: "dac:dac0"
- 20. Port Connectivity Checks: "ccd_timing:ccd0"
- 21. Port Connectivity Checks: "pll_80:pll_80_inst"
- 22. Post-Synthesis Netlist Statistics for Top Partition
- 23. Elapsed Time Per Partition
- 24. Analysis & Synthesis Messages
+  5. Analysis & Synthesis IP Cores Summary
+  6. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus II License Agreement,
-the Altera MegaCore Function License Agreement, or other 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
 applicable license agreement, including, without limitation, 
 that your use is for the sole purpose of programming logic 
-devices manufactured by Altera and sold by Altera or its 
+devices manufactured by Intel and sold by Intel or its 
 authorized distributors.  Please refer to the applicable 
 agreement for further details.
 
 
 
-+------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                                   ;
-+------------------------------------+-----------------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 07 22:04:53 2017                     ;
-; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition ;
-; Revision Name                      ; film_scanner                                              ;
-; Top-level Entity Name              ; film_scanner                                              ;
-; Family                             ; Cyclone IV E                                              ;
-; Total logic elements               ; 91                                                        ;
-;     Total combinational functions  ; 90                                                        ;
-;     Dedicated logic registers      ; 42                                                        ;
-; Total registers                    ; 42                                                        ;
-; Total pins                         ; 46                                                        ;
-; Total virtual pins                 ; 0                                                         ;
-; Total memory bits                  ; 0                                                         ;
-; Embedded Multiplier 9-bit elements ; 0                                                         ;
-; Total PLLs                         ; 0                                                         ;
-+------------------------------------+-----------------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Failed - Sat Sep 30 10:40:08 2017           ;
+; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                      ; film_scanner                                ;
+; Top-level Entity Name              ; film_scanner                                ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
++------------------------------------+---------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -87,7 +69,7 @@ agreement for further details.
 ; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
 ; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
 ; Preserve fewer node names                                                  ; On                 ; On                 ;
-; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; OpenCore Plus hardware evaluation                                          ; Enable             ; Enable             ;
 ; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
 ; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                   ; Auto               ; Auto               ;
@@ -156,800 +138,83 @@ agreement for further details.
 ; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
 ; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
 ; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
-; Synthesis Seed                                                             ; 1                  ; 1                  ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 4      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                     ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
-; ../stepper.sv                    ; yes             ; User SystemVerilog HDL File  ; D:/FilmScannerFPGA/stepper.sv                                    ;         ;
-; ../dac.sv                        ; yes             ; User SystemVerilog HDL File  ; D:/FilmScannerFPGA/dac.sv                                        ;         ;
-; ../ccd_timing.sv                 ; yes             ; User SystemVerilog HDL File  ; D:/FilmScannerFPGA/ccd_timing.sv                                 ;         ;
-; ../film_scanner.sv               ; yes             ; User SystemVerilog HDL File  ; D:/FilmScannerFPGA/film_scanner.sv                               ;         ;
-; pll_80.v                         ; yes             ; User Wizard-Generated File   ; D:/FilmScannerFPGA/quartus/pll_80.v                              ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/altpll.tdf        ;         ;
-; aglobal150.inc                   ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/aglobal150.inc    ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/stratix_pll.inc   ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/stratixii_pll.inc ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                 ; c:/altera/15.0/quartus/libraries/megafunctions/cycloneii_pll.inc ;         ;
-; db/pll_80_altpll.v               ; yes             ; Auto-Generated Megafunction  ; D:/FilmScannerFPGA/quartus/db/pll_80_altpll.v                    ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
-
-
-+--------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                  ;
-+---------------------------------------------+----------------+
-; Resource                                    ; Usage          ;
-+---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 91             ;
-;                                             ;                ;
-; Total combinational functions               ; 90             ;
-; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 40             ;
-;     -- 3 input functions                    ; 8              ;
-;     -- <=2 input functions                  ; 42             ;
-;                                             ;                ;
-; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 64             ;
-;     -- arithmetic mode                      ; 26             ;
-;                                             ;                ;
-; Total registers                             ; 42             ;
-;     -- Dedicated logic registers            ; 42             ;
-;     -- I/O registers                        ; 0              ;
-;                                             ;                ;
-; I/O pins                                    ; 46             ;
-;                                             ;                ;
-; Embedded Multiplier 9-bit elements          ; 0              ;
-;                                             ;                ;
-; Maximum fan-out node                        ; clk_100M~input ;
-; Maximum fan-out                             ; 26             ;
-; Total fan-out                               ; 416            ;
-; Average fan-out                             ; 1.79           ;
-+---------------------------------------------+----------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                 ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
-; |film_scanner              ; 90 (0)            ; 42 (0)       ; 0           ; 0            ; 0       ; 0         ; 46   ; 0            ; |film_scanner               ; work         ;
-;    |dac:dac0|              ; 57 (57)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|dac:dac0      ; work         ;
-;    |stepper:step0|         ; 33 (33)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|stepper:step0 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                              ;
-+--------+--------------+---------+--------------+--------------+----------------------------------+-----------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                  ; IP Include File ;
-+--------+--------------+---------+--------------+--------------+----------------------------------+-----------------+
-; Altera ; ALTPLL       ; 15.0    ; N/A          ; N/A          ; |film_scanner|pll_80:pll_80_inst ; pll_80.v        ;
-+--------+--------------+---------+--------------+--------------+----------------------------------+-----------------+
-
-
-+------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                       ;
-+--------------------------------------------+---------------------------------------------+
-; Register name                              ; Reason for Removal                          ;
-+--------------------------------------------+---------------------------------------------+
-; dac:dac0|dac_state[4..7]                   ; Stuck at GND due to stuck port data_in      ;
-; dac:dac0|this_gain[1..4,6,8,9,13,14]       ; Stuck at GND due to stuck port data_in      ;
-; dac:dac0|this_offset[3..6,9..12,14]        ; Stuck at GND due to stuck port data_in      ;
-; dac:dac0|dac_gain[5,7,10..12,15]           ; Merged with dac:dac0|dac_gain[0]            ;
-; dac:dac0|dac_gain[17..19,21..23]           ; Merged with dac:dac0|dac_gain[16]           ;
-; dac:dac0|dac_gain[1..4,6,8,9,14]           ; Merged with dac:dac0|dac_gain[13]           ;
-; dac:dac0|dac_offset[1,2,7,8,13,15]         ; Merged with dac:dac0|dac_offset[0]          ;
-; dac:dac0|dac_offset[17,19,20,22,23]        ; Merged with dac:dac0|dac_offset[16]         ;
-; dac:dac0|dac_offset[21]                    ; Merged with dac:dac0|dac_offset[18]         ;
-; dac:dac0|dac_offset[3..6,9,11,12,14]       ; Merged with dac:dac0|dac_offset[10]         ;
-; dac:dac0|this_gain[5,7,10..12,15]          ; Merged with dac:dac0|this_gain[0]           ;
-; dac:dac0|this_offset[0..2,7,8,13,15]       ; Merged with dac:dac0|this_gain[0]           ;
-; dac:dac0|this_prev_offset[1,2,7,8,13,15]   ; Merged with dac:dac0|this_prev_offset[0]    ;
-; dac:dac0|this_prev_offset[3..6,9,11,12,14] ; Merged with dac:dac0|this_prev_offset[10]   ;
-; dac:dac0|this_prev_gain[5,7,10..12,15]     ; Merged with dac:dac0|this_prev_gain[0]      ;
-; dac:dac0|this_prev_gain[1..4,6,8,9,14]     ; Merged with dac:dac0|this_prev_gain[13]     ;
-; ccd_timing:ccd0|state                      ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|timings_cntr[3..7]         ; Stuck at GND due to stuck port clock_enable ;
-; ccd_timing:ccd0|timings_cntr[2]            ; Stuck at VCC due to stuck port clock_enable ;
-; ccd_timing:ccd0|timings_cntr[0,1]          ; Stuck at GND due to stuck port clock_enable ;
-; ccd_timing:ccd0|pixel_cntr[0..13]          ; Stuck at GND due to stuck port clock_enable ;
-; ccd_timing:ccd0|ccd_p1                     ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|ccd_rs                     ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|ccd_cp                     ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|ccd_sh                     ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|adc_sclk                   ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|adc_cs                     ; Stuck at GND due to stuck port data_in      ;
-; ccd_timing:ccd0|clk_timings_cntr           ; Stuck at GND due to stuck port data_in      ;
-; dac:dac0|dac_gain[20]                      ; Merged with dac:dac0|dac_offset[18]         ;
-; dac:dac0|dac_offset[10]                    ; Merged with dac:dac0|dac_offset[16]         ;
-; dac:dac0|dac_gain[13,16]                   ; Merged with dac:dac0|dac_offset[16]         ;
-; dac:dac0|dac_gain[0]                       ; Merged with dac:dac0|dac_offset[0]          ;
-; dac:dac0|this_prev_gain[0]                 ; Merged with dac:dac0|this_prev_offset[0]    ;
-; dac:dac0|this_prev_gain[13]                ; Merged with dac:dac0|this_prev_offset[10]   ;
-; ccd_timing:ccd0|clk_timings                ; Lost fanout                                 ;
-; dac:dac0|dac_offset[16]                    ; Stuck at GND due to stuck port data_in      ;
-; dac:dac0|this_prev_offset[10]              ; Stuck at GND due to stuck port data_in      ;
-; Total Number of Removed Registers = 143    ;                                             ;
-+--------------------------------------------+---------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                               ;
-+-----------------------+---------------------------+---------------------------------------------------------------------------------------+
-; Register name         ; Reason for Removal        ; Registers Removed due to This Register                                                ;
-+-----------------------+---------------------------+---------------------------------------------------------------------------------------+
-; ccd_timing:ccd0|state ; Stuck at GND              ; ccd_timing:ccd0|timings_cntr[7], ccd_timing:ccd0|timings_cntr[6],                     ;
-;                       ; due to stuck port data_in ; ccd_timing:ccd0|timings_cntr[5], ccd_timing:ccd0|timings_cntr[4],                     ;
-;                       ;                           ; ccd_timing:ccd0|timings_cntr[3], ccd_timing:ccd0|timings_cntr[2],                     ;
-;                       ;                           ; ccd_timing:ccd0|timings_cntr[1], ccd_timing:ccd0|timings_cntr[0],                     ;
-;                       ;                           ; ccd_timing:ccd0|pixel_cntr[13], ccd_timing:ccd0|pixel_cntr[12],                       ;
-;                       ;                           ; ccd_timing:ccd0|pixel_cntr[11], ccd_timing:ccd0|pixel_cntr[10],                       ;
-;                       ;                           ; ccd_timing:ccd0|pixel_cntr[9], ccd_timing:ccd0|pixel_cntr[8],                         ;
-;                       ;                           ; ccd_timing:ccd0|pixel_cntr[7], ccd_timing:ccd0|pixel_cntr[6],                         ;
-;                       ;                           ; ccd_timing:ccd0|pixel_cntr[5], ccd_timing:ccd0|pixel_cntr[4],                         ;
-;                       ;                           ; ccd_timing:ccd0|pixel_cntr[3], ccd_timing:ccd0|pixel_cntr[2],                         ;
-;                       ;                           ; ccd_timing:ccd0|pixel_cntr[1], ccd_timing:ccd0|pixel_cntr[0], ccd_timing:ccd0|ccd_p1, ;
-;                       ;                           ; ccd_timing:ccd0|ccd_rs, ccd_timing:ccd0|ccd_cp, ccd_timing:ccd0|ccd_sh,               ;
-;                       ;                           ; ccd_timing:ccd0|adc_sclk, ccd_timing:ccd0|adc_cs, ccd_timing:ccd0|clk_timings         ;
-; dac:dac0|this_gain[1] ; Stuck at GND              ; dac:dac0|dac_offset[16]                                                               ;
-;                       ; due to stuck port data_in ;                                                                                       ;
-+-----------------------+---------------------------+---------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 42    ;
-; Number of registers using Synchronous Clear  ; 5     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 5     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; dac:dac0|dac_state[0]                  ; 17      ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-; 17:1               ; 2 bits    ; 22 LEs        ; 2 LEs                ; 20 LEs                 ; Yes        ; |film_scanner|dac:dac0|dac_offset[18] ;
-; 16:1               ; 5 bits    ; 50 LEs        ; 5 LEs                ; 45 LEs                 ; Yes        ; |film_scanner|dac:dac0|bit_cntr[1]    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: pll_80:pll_80_inst|altpll:altpll_component ;
-+-------------------------------+--------------------------+------------------------------+
-; Parameter Name                ; Value                    ; Type                         ;
-+-------------------------------+--------------------------+------------------------------+
-; OPERATION_MODE                ; NORMAL                   ; Untyped                      ;
-; PLL_TYPE                      ; AUTO                     ; Untyped                      ;
-; LPM_HINT                      ; CBX_MODULE_PREFIX=pll_80 ; Untyped                      ;
-; QUALIFY_CONF_DONE             ; OFF                      ; Untyped                      ;
-; COMPENSATE_CLOCK              ; CLK0                     ; Untyped                      ;
-; SCAN_CHAIN                    ; LONG                     ; Untyped                      ;
-; PRIMARY_CLOCK                 ; INCLK0                   ; Untyped                      ;
-; INCLK0_INPUT_FREQUENCY        ; 10000                    ; Signed Integer               ;
-; INCLK1_INPUT_FREQUENCY        ; 0                        ; Untyped                      ;
-; GATE_LOCK_SIGNAL              ; NO                       ; Untyped                      ;
-; GATE_LOCK_COUNTER             ; 0                        ; Untyped                      ;
-; LOCK_HIGH                     ; 1                        ; Untyped                      ;
-; LOCK_LOW                      ; 1                        ; Untyped                      ;
-; VALID_LOCK_MULTIPLIER         ; 1                        ; Untyped                      ;
-; INVALID_LOCK_MULTIPLIER       ; 5                        ; Untyped                      ;
-; SWITCH_OVER_ON_LOSSCLK        ; OFF                      ; Untyped                      ;
-; SWITCH_OVER_ON_GATED_LOCK     ; OFF                      ; Untyped                      ;
-; ENABLE_SWITCH_OVER_COUNTER    ; OFF                      ; Untyped                      ;
-; SKIP_VCO                      ; OFF                      ; Untyped                      ;
-; SWITCH_OVER_COUNTER           ; 0                        ; Untyped                      ;
-; SWITCH_OVER_TYPE              ; AUTO                     ; Untyped                      ;
-; FEEDBACK_SOURCE               ; EXTCLK0                  ; Untyped                      ;
-; BANDWIDTH                     ; 0                        ; Untyped                      ;
-; BANDWIDTH_TYPE                ; AUTO                     ; Untyped                      ;
-; SPREAD_FREQUENCY              ; 0                        ; Untyped                      ;
-; DOWN_SPREAD                   ; 0                        ; Untyped                      ;
-; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF                      ; Untyped                      ;
-; SELF_RESET_ON_LOSS_LOCK       ; OFF                      ; Untyped                      ;
-; CLK9_MULTIPLY_BY              ; 0                        ; Untyped                      ;
-; CLK8_MULTIPLY_BY              ; 0                        ; Untyped                      ;
-; CLK7_MULTIPLY_BY              ; 0                        ; Untyped                      ;
-; CLK6_MULTIPLY_BY              ; 0                        ; Untyped                      ;
-; CLK5_MULTIPLY_BY              ; 1                        ; Untyped                      ;
-; CLK4_MULTIPLY_BY              ; 1                        ; Untyped                      ;
-; CLK3_MULTIPLY_BY              ; 1                        ; Untyped                      ;
-; CLK2_MULTIPLY_BY              ; 1                        ; Untyped                      ;
-; CLK1_MULTIPLY_BY              ; 1                        ; Untyped                      ;
-; CLK0_MULTIPLY_BY              ; 8                        ; Signed Integer               ;
-; CLK9_DIVIDE_BY                ; 0                        ; Untyped                      ;
-; CLK8_DIVIDE_BY                ; 0                        ; Untyped                      ;
-; CLK7_DIVIDE_BY                ; 0                        ; Untyped                      ;
-; CLK6_DIVIDE_BY                ; 0                        ; Untyped                      ;
-; CLK5_DIVIDE_BY                ; 1                        ; Untyped                      ;
-; CLK4_DIVIDE_BY                ; 1                        ; Untyped                      ;
-; CLK3_DIVIDE_BY                ; 1                        ; Untyped                      ;
-; CLK2_DIVIDE_BY                ; 1                        ; Untyped                      ;
-; CLK1_DIVIDE_BY                ; 1                        ; Untyped                      ;
-; CLK0_DIVIDE_BY                ; 5                        ; Signed Integer               ;
-; CLK9_PHASE_SHIFT              ; 0                        ; Untyped                      ;
-; CLK8_PHASE_SHIFT              ; 0                        ; Untyped                      ;
-; CLK7_PHASE_SHIFT              ; 0                        ; Untyped                      ;
-; CLK6_PHASE_SHIFT              ; 0                        ; Untyped                      ;
-; CLK5_PHASE_SHIFT              ; 0                        ; Untyped                      ;
-; CLK4_PHASE_SHIFT              ; 0                        ; Untyped                      ;
-; CLK3_PHASE_SHIFT              ; 0                        ; Untyped                      ;
-; CLK2_PHASE_SHIFT              ; 0                        ; Untyped                      ;
-; CLK1_PHASE_SHIFT              ; 0                        ; Untyped                      ;
-; CLK0_PHASE_SHIFT              ; 0                        ; Untyped                      ;
-; CLK5_TIME_DELAY               ; 0                        ; Untyped                      ;
-; CLK4_TIME_DELAY               ; 0                        ; Untyped                      ;
-; CLK3_TIME_DELAY               ; 0                        ; Untyped                      ;
-; CLK2_TIME_DELAY               ; 0                        ; Untyped                      ;
-; CLK1_TIME_DELAY               ; 0                        ; Untyped                      ;
-; CLK0_TIME_DELAY               ; 0                        ; Untyped                      ;
-; CLK9_DUTY_CYCLE               ; 50                       ; Untyped                      ;
-; CLK8_DUTY_CYCLE               ; 50                       ; Untyped                      ;
-; CLK7_DUTY_CYCLE               ; 50                       ; Untyped                      ;
-; CLK6_DUTY_CYCLE               ; 50                       ; Untyped                      ;
-; CLK5_DUTY_CYCLE               ; 50                       ; Untyped                      ;
-; CLK4_DUTY_CYCLE               ; 50                       ; Untyped                      ;
-; CLK3_DUTY_CYCLE               ; 50                       ; Untyped                      ;
-; CLK2_DUTY_CYCLE               ; 50                       ; Untyped                      ;
-; CLK1_DUTY_CYCLE               ; 50                       ; Untyped                      ;
-; CLK0_DUTY_CYCLE               ; 50                       ; Signed Integer               ;
-; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
-; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
-; CLK7_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
-; CLK6_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
-; CLK5_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
-; CLK4_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
-; CLK3_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
-; CLK2_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
-; CLK1_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
-; CLK0_USE_EVEN_COUNTER_MODE    ; OFF                      ; Untyped                      ;
-; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF                      ; Untyped                      ;
-; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF                      ; Untyped                      ;
-; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF                      ; Untyped                      ;
-; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF                      ; Untyped                      ;
-; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF                      ; Untyped                      ;
-; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF                      ; Untyped                      ;
-; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF                      ; Untyped                      ;
-; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF                      ; Untyped                      ;
-; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF                      ; Untyped                      ;
-; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF                      ; Untyped                      ;
-; LOCK_WINDOW_UI                ;  0.05                    ; Untyped                      ;
-; LOCK_WINDOW_UI_BITS           ; UNUSED                   ; Untyped                      ;
-; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED                   ; Untyped                      ;
-; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED                   ; Untyped                      ;
-; DPA_MULTIPLY_BY               ; 0                        ; Untyped                      ;
-; DPA_DIVIDE_BY                 ; 1                        ; Untyped                      ;
-; DPA_DIVIDER                   ; 0                        ; Untyped                      ;
-; EXTCLK3_MULTIPLY_BY           ; 1                        ; Untyped                      ;
-; EXTCLK2_MULTIPLY_BY           ; 1                        ; Untyped                      ;
-; EXTCLK1_MULTIPLY_BY           ; 1                        ; Untyped                      ;
-; EXTCLK0_MULTIPLY_BY           ; 1                        ; Untyped                      ;
-; EXTCLK3_DIVIDE_BY             ; 1                        ; Untyped                      ;
-; EXTCLK2_DIVIDE_BY             ; 1                        ; Untyped                      ;
-; EXTCLK1_DIVIDE_BY             ; 1                        ; Untyped                      ;
-; EXTCLK0_DIVIDE_BY             ; 1                        ; Untyped                      ;
-; EXTCLK3_PHASE_SHIFT           ; 0                        ; Untyped                      ;
-; EXTCLK2_PHASE_SHIFT           ; 0                        ; Untyped                      ;
-; EXTCLK1_PHASE_SHIFT           ; 0                        ; Untyped                      ;
-; EXTCLK0_PHASE_SHIFT           ; 0                        ; Untyped                      ;
-; EXTCLK3_TIME_DELAY            ; 0                        ; Untyped                      ;
-; EXTCLK2_TIME_DELAY            ; 0                        ; Untyped                      ;
-; EXTCLK1_TIME_DELAY            ; 0                        ; Untyped                      ;
-; EXTCLK0_TIME_DELAY            ; 0                        ; Untyped                      ;
-; EXTCLK3_DUTY_CYCLE            ; 50                       ; Untyped                      ;
-; EXTCLK2_DUTY_CYCLE            ; 50                       ; Untyped                      ;
-; EXTCLK1_DUTY_CYCLE            ; 50                       ; Untyped                      ;
-; EXTCLK0_DUTY_CYCLE            ; 50                       ; Untyped                      ;
-; VCO_MULTIPLY_BY               ; 0                        ; Untyped                      ;
-; VCO_DIVIDE_BY                 ; 0                        ; Untyped                      ;
-; SCLKOUT0_PHASE_SHIFT          ; 0                        ; Untyped                      ;
-; SCLKOUT1_PHASE_SHIFT          ; 0                        ; Untyped                      ;
-; VCO_MIN                       ; 0                        ; Untyped                      ;
-; VCO_MAX                       ; 0                        ; Untyped                      ;
-; VCO_CENTER                    ; 0                        ; Untyped                      ;
-; PFD_MIN                       ; 0                        ; Untyped                      ;
-; PFD_MAX                       ; 0                        ; Untyped                      ;
-; M_INITIAL                     ; 0                        ; Untyped                      ;
-; M                             ; 0                        ; Untyped                      ;
-; N                             ; 1                        ; Untyped                      ;
-; M2                            ; 1                        ; Untyped                      ;
-; N2                            ; 1                        ; Untyped                      ;
-; SS                            ; 1                        ; Untyped                      ;
-; C0_HIGH                       ; 0                        ; Untyped                      ;
-; C1_HIGH                       ; 0                        ; Untyped                      ;
-; C2_HIGH                       ; 0                        ; Untyped                      ;
-; C3_HIGH                       ; 0                        ; Untyped                      ;
-; C4_HIGH                       ; 0                        ; Untyped                      ;
-; C5_HIGH                       ; 0                        ; Untyped                      ;
-; C6_HIGH                       ; 0                        ; Untyped                      ;
-; C7_HIGH                       ; 0                        ; Untyped                      ;
-; C8_HIGH                       ; 0                        ; Untyped                      ;
-; C9_HIGH                       ; 0                        ; Untyped                      ;
-; C0_LOW                        ; 0                        ; Untyped                      ;
-; C1_LOW                        ; 0                        ; Untyped                      ;
-; C2_LOW                        ; 0                        ; Untyped                      ;
-; C3_LOW                        ; 0                        ; Untyped                      ;
-; C4_LOW                        ; 0                        ; Untyped                      ;
-; C5_LOW                        ; 0                        ; Untyped                      ;
-; C6_LOW                        ; 0                        ; Untyped                      ;
-; C7_LOW                        ; 0                        ; Untyped                      ;
-; C8_LOW                        ; 0                        ; Untyped                      ;
-; C9_LOW                        ; 0                        ; Untyped                      ;
-; C0_INITIAL                    ; 0                        ; Untyped                      ;
-; C1_INITIAL                    ; 0                        ; Untyped                      ;
-; C2_INITIAL                    ; 0                        ; Untyped                      ;
-; C3_INITIAL                    ; 0                        ; Untyped                      ;
-; C4_INITIAL                    ; 0                        ; Untyped                      ;
-; C5_INITIAL                    ; 0                        ; Untyped                      ;
-; C6_INITIAL                    ; 0                        ; Untyped                      ;
-; C7_INITIAL                    ; 0                        ; Untyped                      ;
-; C8_INITIAL                    ; 0                        ; Untyped                      ;
-; C9_INITIAL                    ; 0                        ; Untyped                      ;
-; C0_MODE                       ; BYPASS                   ; Untyped                      ;
-; C1_MODE                       ; BYPASS                   ; Untyped                      ;
-; C2_MODE                       ; BYPASS                   ; Untyped                      ;
-; C3_MODE                       ; BYPASS                   ; Untyped                      ;
-; C4_MODE                       ; BYPASS                   ; Untyped                      ;
-; C5_MODE                       ; BYPASS                   ; Untyped                      ;
-; C6_MODE                       ; BYPASS                   ; Untyped                      ;
-; C7_MODE                       ; BYPASS                   ; Untyped                      ;
-; C8_MODE                       ; BYPASS                   ; Untyped                      ;
-; C9_MODE                       ; BYPASS                   ; Untyped                      ;
-; C0_PH                         ; 0                        ; Untyped                      ;
-; C1_PH                         ; 0                        ; Untyped                      ;
-; C2_PH                         ; 0                        ; Untyped                      ;
-; C3_PH                         ; 0                        ; Untyped                      ;
-; C4_PH                         ; 0                        ; Untyped                      ;
-; C5_PH                         ; 0                        ; Untyped                      ;
-; C6_PH                         ; 0                        ; Untyped                      ;
-; C7_PH                         ; 0                        ; Untyped                      ;
-; C8_PH                         ; 0                        ; Untyped                      ;
-; C9_PH                         ; 0                        ; Untyped                      ;
-; L0_HIGH                       ; 1                        ; Untyped                      ;
-; L1_HIGH                       ; 1                        ; Untyped                      ;
-; G0_HIGH                       ; 1                        ; Untyped                      ;
-; G1_HIGH                       ; 1                        ; Untyped                      ;
-; G2_HIGH                       ; 1                        ; Untyped                      ;
-; G3_HIGH                       ; 1                        ; Untyped                      ;
-; E0_HIGH                       ; 1                        ; Untyped                      ;
-; E1_HIGH                       ; 1                        ; Untyped                      ;
-; E2_HIGH                       ; 1                        ; Untyped                      ;
-; E3_HIGH                       ; 1                        ; Untyped                      ;
-; L0_LOW                        ; 1                        ; Untyped                      ;
-; L1_LOW                        ; 1                        ; Untyped                      ;
-; G0_LOW                        ; 1                        ; Untyped                      ;
-; G1_LOW                        ; 1                        ; Untyped                      ;
-; G2_LOW                        ; 1                        ; Untyped                      ;
-; G3_LOW                        ; 1                        ; Untyped                      ;
-; E0_LOW                        ; 1                        ; Untyped                      ;
-; E1_LOW                        ; 1                        ; Untyped                      ;
-; E2_LOW                        ; 1                        ; Untyped                      ;
-; E3_LOW                        ; 1                        ; Untyped                      ;
-; L0_INITIAL                    ; 1                        ; Untyped                      ;
-; L1_INITIAL                    ; 1                        ; Untyped                      ;
-; G0_INITIAL                    ; 1                        ; Untyped                      ;
-; G1_INITIAL                    ; 1                        ; Untyped                      ;
-; G2_INITIAL                    ; 1                        ; Untyped                      ;
-; G3_INITIAL                    ; 1                        ; Untyped                      ;
-; E0_INITIAL                    ; 1                        ; Untyped                      ;
-; E1_INITIAL                    ; 1                        ; Untyped                      ;
-; E2_INITIAL                    ; 1                        ; Untyped                      ;
-; E3_INITIAL                    ; 1                        ; Untyped                      ;
-; L0_MODE                       ; BYPASS                   ; Untyped                      ;
-; L1_MODE                       ; BYPASS                   ; Untyped                      ;
-; G0_MODE                       ; BYPASS                   ; Untyped                      ;
-; G1_MODE                       ; BYPASS                   ; Untyped                      ;
-; G2_MODE                       ; BYPASS                   ; Untyped                      ;
-; G3_MODE                       ; BYPASS                   ; Untyped                      ;
-; E0_MODE                       ; BYPASS                   ; Untyped                      ;
-; E1_MODE                       ; BYPASS                   ; Untyped                      ;
-; E2_MODE                       ; BYPASS                   ; Untyped                      ;
-; E3_MODE                       ; BYPASS                   ; Untyped                      ;
-; L0_PH                         ; 0                        ; Untyped                      ;
-; L1_PH                         ; 0                        ; Untyped                      ;
-; G0_PH                         ; 0                        ; Untyped                      ;
-; G1_PH                         ; 0                        ; Untyped                      ;
-; G2_PH                         ; 0                        ; Untyped                      ;
-; G3_PH                         ; 0                        ; Untyped                      ;
-; E0_PH                         ; 0                        ; Untyped                      ;
-; E1_PH                         ; 0                        ; Untyped                      ;
-; E2_PH                         ; 0                        ; Untyped                      ;
-; E3_PH                         ; 0                        ; Untyped                      ;
-; M_PH                          ; 0                        ; Untyped                      ;
-; C1_USE_CASC_IN                ; OFF                      ; Untyped                      ;
-; C2_USE_CASC_IN                ; OFF                      ; Untyped                      ;
-; C3_USE_CASC_IN                ; OFF                      ; Untyped                      ;
-; C4_USE_CASC_IN                ; OFF                      ; Untyped                      ;
-; C5_USE_CASC_IN                ; OFF                      ; Untyped                      ;
-; C6_USE_CASC_IN                ; OFF                      ; Untyped                      ;
-; C7_USE_CASC_IN                ; OFF                      ; Untyped                      ;
-; C8_USE_CASC_IN                ; OFF                      ; Untyped                      ;
-; C9_USE_CASC_IN                ; OFF                      ; Untyped                      ;
-; CLK0_COUNTER                  ; G0                       ; Untyped                      ;
-; CLK1_COUNTER                  ; G0                       ; Untyped                      ;
-; CLK2_COUNTER                  ; G0                       ; Untyped                      ;
-; CLK3_COUNTER                  ; G0                       ; Untyped                      ;
-; CLK4_COUNTER                  ; G0                       ; Untyped                      ;
-; CLK5_COUNTER                  ; G0                       ; Untyped                      ;
-; CLK6_COUNTER                  ; E0                       ; Untyped                      ;
-; CLK7_COUNTER                  ; E1                       ; Untyped                      ;
-; CLK8_COUNTER                  ; E2                       ; Untyped                      ;
-; CLK9_COUNTER                  ; E3                       ; Untyped                      ;
-; L0_TIME_DELAY                 ; 0                        ; Untyped                      ;
-; L1_TIME_DELAY                 ; 0                        ; Untyped                      ;
-; G0_TIME_DELAY                 ; 0                        ; Untyped                      ;
-; G1_TIME_DELAY                 ; 0                        ; Untyped                      ;
-; G2_TIME_DELAY                 ; 0                        ; Untyped                      ;
-; G3_TIME_DELAY                 ; 0                        ; Untyped                      ;
-; E0_TIME_DELAY                 ; 0                        ; Untyped                      ;
-; E1_TIME_DELAY                 ; 0                        ; Untyped                      ;
-; E2_TIME_DELAY                 ; 0                        ; Untyped                      ;
-; E3_TIME_DELAY                 ; 0                        ; Untyped                      ;
-; M_TIME_DELAY                  ; 0                        ; Untyped                      ;
-; N_TIME_DELAY                  ; 0                        ; Untyped                      ;
-; EXTCLK3_COUNTER               ; E3                       ; Untyped                      ;
-; EXTCLK2_COUNTER               ; E2                       ; Untyped                      ;
-; EXTCLK1_COUNTER               ; E1                       ; Untyped                      ;
-; EXTCLK0_COUNTER               ; E0                       ; Untyped                      ;
-; ENABLE0_COUNTER               ; L0                       ; Untyped                      ;
-; ENABLE1_COUNTER               ; L0                       ; Untyped                      ;
-; CHARGE_PUMP_CURRENT           ; 2                        ; Untyped                      ;
-; LOOP_FILTER_R                 ;  1.000000                ; Untyped                      ;
-; LOOP_FILTER_C                 ; 5                        ; Untyped                      ;
-; CHARGE_PUMP_CURRENT_BITS      ; 9999                     ; Untyped                      ;
-; LOOP_FILTER_R_BITS            ; 9999                     ; Untyped                      ;
-; LOOP_FILTER_C_BITS            ; 9999                     ; Untyped                      ;
-; VCO_POST_SCALE                ; 0                        ; Untyped                      ;
-; CLK2_OUTPUT_FREQUENCY         ; 0                        ; Untyped                      ;
-; CLK1_OUTPUT_FREQUENCY         ; 0                        ; Untyped                      ;
-; CLK0_OUTPUT_FREQUENCY         ; 0                        ; Untyped                      ;
-; INTENDED_DEVICE_FAMILY        ; Cyclone IV E             ; Untyped                      ;
-; PORT_CLKENA0                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLKENA1                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLKENA2                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLKENA3                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLKENA4                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLKENA5                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY        ; Untyped                      ;
-; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY        ; Untyped                      ;
-; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY        ; Untyped                      ;
-; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY        ; Untyped                      ;
-; PORT_EXTCLK0                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_EXTCLK1                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_EXTCLK2                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_EXTCLK3                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLKBAD0                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLKBAD1                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLK0                     ; PORT_USED                ; Untyped                      ;
-; PORT_CLK1                     ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLK2                     ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLK3                     ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLK4                     ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLK5                     ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLK6                     ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLK7                     ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLK8                     ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLK9                     ; PORT_UNUSED              ; Untyped                      ;
-; PORT_SCANDATA                 ; PORT_UNUSED              ; Untyped                      ;
-; PORT_SCANDATAOUT              ; PORT_UNUSED              ; Untyped                      ;
-; PORT_SCANDONE                 ; PORT_UNUSED              ; Untyped                      ;
-; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY        ; Untyped                      ;
-; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY        ; Untyped                      ;
-; PORT_ACTIVECLOCK              ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLKLOSS                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_INCLK1                   ; PORT_UNUSED              ; Untyped                      ;
-; PORT_INCLK0                   ; PORT_USED                ; Untyped                      ;
-; PORT_FBIN                     ; PORT_UNUSED              ; Untyped                      ;
-; PORT_PLLENA                   ; PORT_UNUSED              ; Untyped                      ;
-; PORT_CLKSWITCH                ; PORT_UNUSED              ; Untyped                      ;
-; PORT_ARESET                   ; PORT_UNUSED              ; Untyped                      ;
-; PORT_PFDENA                   ; PORT_UNUSED              ; Untyped                      ;
-; PORT_SCANCLK                  ; PORT_UNUSED              ; Untyped                      ;
-; PORT_SCANACLR                 ; PORT_UNUSED              ; Untyped                      ;
-; PORT_SCANREAD                 ; PORT_UNUSED              ; Untyped                      ;
-; PORT_SCANWRITE                ; PORT_UNUSED              ; Untyped                      ;
-; PORT_ENABLE0                  ; PORT_CONNECTIVITY        ; Untyped                      ;
-; PORT_ENABLE1                  ; PORT_CONNECTIVITY        ; Untyped                      ;
-; PORT_LOCKED                   ; PORT_USED                ; Untyped                      ;
-; PORT_CONFIGUPDATE             ; PORT_UNUSED              ; Untyped                      ;
-; PORT_FBOUT                    ; PORT_CONNECTIVITY        ; Untyped                      ;
-; PORT_PHASEDONE                ; PORT_UNUSED              ; Untyped                      ;
-; PORT_PHASESTEP                ; PORT_UNUSED              ; Untyped                      ;
-; PORT_PHASEUPDOWN              ; PORT_UNUSED              ; Untyped                      ;
-; PORT_SCANCLKENA               ; PORT_UNUSED              ; Untyped                      ;
-; PORT_PHASECOUNTERSELECT       ; PORT_UNUSED              ; Untyped                      ;
-; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY        ; Untyped                      ;
-; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY        ; Untyped                      ;
-; M_TEST_SOURCE                 ; 5                        ; Untyped                      ;
-; C0_TEST_SOURCE                ; 5                        ; Untyped                      ;
-; C1_TEST_SOURCE                ; 5                        ; Untyped                      ;
-; C2_TEST_SOURCE                ; 5                        ; Untyped                      ;
-; C3_TEST_SOURCE                ; 5                        ; Untyped                      ;
-; C4_TEST_SOURCE                ; 5                        ; Untyped                      ;
-; C5_TEST_SOURCE                ; 5                        ; Untyped                      ;
-; C6_TEST_SOURCE                ; 5                        ; Untyped                      ;
-; C7_TEST_SOURCE                ; 5                        ; Untyped                      ;
-; C8_TEST_SOURCE                ; 5                        ; Untyped                      ;
-; C9_TEST_SOURCE                ; 5                        ; Untyped                      ;
-; CBXI_PARAMETER                ; pll_80_altpll            ; Untyped                      ;
-; VCO_FREQUENCY_CONTROL         ; AUTO                     ; Untyped                      ;
-; VCO_PHASE_SHIFT_STEP          ; 0                        ; Untyped                      ;
-; WIDTH_CLOCK                   ; 5                        ; Signed Integer               ;
-; WIDTH_PHASECOUNTERSELECT      ; 4                        ; Untyped                      ;
-; USING_FBMIMICBIDIR_PORT       ; OFF                      ; Untyped                      ;
-; DEVICE_FAMILY                 ; Cyclone IV E             ; Untyped                      ;
-; SCAN_CHAIN_MIF_FILE           ; UNUSED                   ; Untyped                      ;
-; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF                      ; Untyped                      ;
-; AUTO_CARRY_CHAINS             ; ON                       ; AUTO_CARRY                   ;
-; IGNORE_CARRY_BUFFERS          ; OFF                      ; IGNORE_CARRY                 ;
-; AUTO_CASCADE_CHAINS           ; ON                       ; AUTO_CASCADE                 ;
-; IGNORE_CASCADE_BUFFERS        ; OFF                      ; IGNORE_CASCADE               ;
-+-------------------------------+--------------------------+------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: ccd_timing:ccd0 ;
-+----------------+-------+-------------------------------------+
-; Parameter Name ; Value ; Type                                ;
-+----------------+-------+-------------------------------------+
-; P1_HIGH_SH     ; 0     ; Signed Integer                      ;
-; RS_HIGH_SH     ; 21    ; Signed Integer                      ;
-; RS_LOW_SH      ; 26    ; Signed Integer                      ;
-; CP_HIGH_SH     ; 31    ; Signed Integer                      ;
-; CP_LOW_SH      ; 36    ; Signed Integer                      ;
-; SH_HIGH        ; 41    ; Signed Integer                      ;
-; SH_LOW         ; 61    ; Signed Integer                      ;
-; RS_HIGH_SH2    ; 70    ; Signed Integer                      ;
-; RS_LOW_SH2     ; 74    ; Signed Integer                      ;
-; CP_HIGH_SH2    ; 78    ; Signed Integer                      ;
-; CP_LOW_SH2     ; 81    ; Signed Integer                      ;
-; P1_LOW_SH      ; 80    ; Signed Integer                      ;
-; P1_LOW         ; 120   ; Signed Integer                      ;
-; RS_HIGH        ; 132   ; Signed Integer                      ;
-; RS_LOW         ; 136   ; Signed Integer                      ;
-; CP_HIGH        ; 140   ; Signed Integer                      ;
-; CP_LOW         ; 144   ; Signed Integer                      ;
-; P1_HIGH        ; 139   ; Signed Integer                      ;
-; D0_LOW         ; 159   ; Signed Integer                      ;
-; CS_HIGH        ; 120   ; Signed Integer                      ;
-; CS_LOW         ; 127   ; Signed Integer                      ;
-; D15_HIGH       ; 128   ; Signed Integer                      ;
-; D15_LOW        ; 129   ; Signed Integer                      ;
-; D14_HIGH       ; 130   ; Signed Integer                      ;
-; D14_LOW        ; 131   ; Signed Integer                      ;
-; D13_HIGH       ; 132   ; Signed Integer                      ;
-; D13_LOW        ; 133   ; Signed Integer                      ;
-; D12_HIGH       ; 134   ; Signed Integer                      ;
-; D12_LOW        ; 135   ; Signed Integer                      ;
-; D11_HIGH       ; 136   ; Signed Integer                      ;
-; D11_LOW        ; 137   ; Signed Integer                      ;
-; D10_HIGH       ; 138   ; Signed Integer                      ;
-; D10_LOW        ; 139   ; Signed Integer                      ;
-; D9_HIGH        ; 140   ; Signed Integer                      ;
-; D9_LOW         ; 141   ; Signed Integer                      ;
-; D8_HIGH        ; 142   ; Signed Integer                      ;
-; D8_LOW         ; 143   ; Signed Integer                      ;
-; D7_HIGH        ; 144   ; Signed Integer                      ;
-; D7_LOW         ; 145   ; Signed Integer                      ;
-; D6_HIGH        ; 146   ; Signed Integer                      ;
-; D6_LOW         ; 147   ; Signed Integer                      ;
-; D5_HIGH        ; 148   ; Signed Integer                      ;
-; D5_LOW         ; 149   ; Signed Integer                      ;
-; D4_HIGH        ; 150   ; Signed Integer                      ;
-; D4_LOW         ; 151   ; Signed Integer                      ;
-; D3_HIGH        ; 152   ; Signed Integer                      ;
-; D3_LOW         ; 153   ; Signed Integer                      ;
-; D2_HIGH        ; 154   ; Signed Integer                      ;
-; D2_LOW         ; 155   ; Signed Integer                      ;
-; D1_HIGH        ; 156   ; Signed Integer                      ;
-; D1_LOW         ; 157   ; Signed Integer                      ;
-; D0_HIGH        ; 158   ; Signed Integer                      ;
-; LINE_WAIT      ; 0     ; Signed Integer                      ;
-; LINE_RUN       ; 1     ; Signed Integer                      ;
-+----------------+-------+-------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------+
-; Parameter Settings for User Entity Instance: dac:dac0 ;
-+----------------+-------+------------------------------+
-; Parameter Name ; Value ; Type                         ;
-+----------------+-------+------------------------------+
-; DAC_LOAD_A     ; 16    ; Signed Integer               ;
-; DAC_LOAD_B     ; 36    ; Signed Integer               ;
-+----------------+-------+------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------+
-; altpll Parameter Settings by Entity Instance                               ;
-+-------------------------------+--------------------------------------------+
-; Name                          ; Value                                      ;
-+-------------------------------+--------------------------------------------+
-; Number of entity instances    ; 1                                          ;
-; Entity Instance               ; pll_80:pll_80_inst|altpll:altpll_component ;
-;     -- OPERATION_MODE         ; NORMAL                                     ;
-;     -- PLL_TYPE               ; AUTO                                       ;
-;     -- PRIMARY_CLOCK          ; INCLK0                                     ;
-;     -- INCLK0_INPUT_FREQUENCY ; 10000                                      ;
-;     -- INCLK1_INPUT_FREQUENCY ; 0                                          ;
-;     -- VCO_MULTIPLY_BY        ; 0                                          ;
-;     -- VCO_DIVIDE_BY          ; 0                                          ;
-+-------------------------------+--------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "stepper:step0"                                                                                                                                                                         ;
-+-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type  ; Severity ; Details                                                                                                                                                                            ;
-+-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; nrst      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; nrst[-1]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; en        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; en[-1]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; dir       ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; dir[-1]   ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; speed     ; Input ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-; mtr_nhome ; Input ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-; mtr_nflt  ; Input ; Info     ; Explicitly unconnected                                                                                                                                                             ;
-+-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "dac:dac0"                                                                                                                                                                                   ;
-+---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port          ; Type  ; Severity ; Details                                                                                                                                                                             ;
-+---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; offset        ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; offset[8..7]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; offset[2..0]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; offset[12..9] ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; offset[6..3]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; offset[15]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; offset[14]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; offset[13]    ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; gain          ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (16 bits) it drives.  The 16 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; gain[12..10]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; gain[14..13]  ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; gain[9..8]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; gain[4..1]    ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; gain[15]      ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; gain[7]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; gain[6]       ; Input ; Info     ; Stuck at GND                                                                                                                                                                        ;
-; gain[5]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-; gain[0]       ; Input ; Info     ; Stuck at VCC                                                                                                                                                                        ;
-+---------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ccd_timing:ccd0"                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; nrst          ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; en            ; Input  ; Info     ; Stuck at GND                                                                        ;
-; cal_mode      ; Input  ; Info     ; Stuck at VCC                                                                        ;
-; div           ; Input  ; Info     ; Stuck at GND                                                                        ;
-; pix_clk       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; pix_out_valid ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; pix_data      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Port Connectivity Checks: "pll_80:pll_80_inst"      ;
-+--------+--------+----------+------------------------+
-; Port   ; Type   ; Severity ; Details                ;
-+--------+--------+----------+------------------------+
-; locked ; Output ; Info     ; Explicitly unconnected ;
-+--------+--------+----------+------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 46                          ;
-; cycloneiii_ff         ; 42                          ;
-;     ENA SCLR          ; 5                           ;
-;     plain             ; 37                          ;
-; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 92                          ;
-;     arith             ; 26                          ;
-;         2 data inputs ; 26                          ;
-;     normal            ; 66                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 13                          ;
-;         3 data inputs ; 8                           ;
-;         4 data inputs ; 40                          ;
-;                       ;                             ;
-; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 2.66                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                    ; IP Include File ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------+-----------------+
+; Altera ; FIFO         ; 17.0    ; N/A          ; N/A          ; |film_scanner|ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst ; ft_rxfifo.v     ;
+; Altera ; ALTPLL       ; 17.0    ; N/A          ; N/A          ; |film_scanner|pll_80:pll_80_inst                   ; pll_80.v        ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------+-----------------+
 
 
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
-    Info: Processing started: Thu Sep 07 22:04:42 2017
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
+    Info: Processing started: Sat Sep 30 10:39:56 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off film_scanner -c film_scanner
-Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/stepper.sv
-    Info (12023): Found entity 1: stepper
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/usb_ft232h_avalon-mm_interface/trunk/hw/usb_fifos_avalon_mm_interface.sv
+    Info (12023): Found entity 1: usb_fifos_avalon_mm_interface File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/usb_fifos_avalon_mm_interface.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/usb_ft232h_avalon-mm_interface/trunk/hw/usb_ft232h.sv
+    Info (12023): Found entity 1: usb_ft232h File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/usb_ft232h.sv Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/ft232h.sv
+    Info (12023): Found entity 1: ft_232h File: D:/FilmScannerFPGA/ft232h.sv Line: 1
+Info (12021): Found 2 design units, including 2 entities, in source file /filmscannerfpga/usb_ft232h_avalon-mm_interface/trunk/hw/pipeline.sv
+    Info (12023): Found entity 1: pipeline_step File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/pipeline.sv Line: 1
+    Info (12023): Found entity 2: pipeline File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/pipeline.sv Line: 63
+Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/usb_ft232h_avalon-mm_interface/trunk/hw/ft232h_transmitter.sv
+    Info (12023): Found entity 1: ft232h_transmitter File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/ft232h_transmitter.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/usb_ft232h_avalon-mm_interface/trunk/hw/ft232h_receiver.sv
+    Info (12023): Found entity 1: ft232h_receiver File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/ft232h_receiver.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/usb_ft232h_avalon-mm_interface/trunk/hw/ft232h_fifos_interface.sv
+    Info (12023): Found entity 1: ft232h_fifos_interface File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/ft232h_fifos_interface.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/control.sv
-    Info (12023): Found entity 1: control
-Warning (12019): Can't analyze file -- file ../ccd_timings_new.sv is missing
-Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/usb_ft232h.sv
-    Info (12023): Found entity 1: usb_ft232h
+    Info (12023): Found entity 1: control File: D:/FilmScannerFPGA/control.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/dac.sv
-    Info (12023): Found entity 1: dac
+    Info (12023): Found entity 1: dac File: D:/FilmScannerFPGA/dac.sv Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/ccd_timing.sv
-    Info (12023): Found entity 1: ccd_timing
+    Info (12023): Found entity 1: ccd_timing File: D:/FilmScannerFPGA/ccd_timing.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /filmscannerfpga/film_scanner.sv
-    Info (12023): Found entity 1: film_scanner
+    Info (12023): Found entity 1: film_scanner File: D:/FilmScannerFPGA/film_scanner.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file pll_80.v
-    Info (12023): Found entity 1: pll_80
-Info (12021): Found 1 design units, including 1 entities, in source file pix_data_fifo.v
-    Info (12023): Found entity 1: pix_data_fifo
+    Info (12023): Found entity 1: pll_80 File: D:/FilmScannerFPGA/quartus/pll_80.v Line: 40
+Info (12021): Found 1 design units, including 1 entities, in source file ft_rxfifo.v
+    Info (12023): Found entity 1: ft_rxfifo File: D:/FilmScannerFPGA/quartus/ft_rxfifo.v Line: 40
+Warning (10236): Verilog HDL Implicit Net warning at control.sv(20): created implicit net for "data_clk" File: D:/FilmScannerFPGA/control.sv Line: 20
 Info (12127): Elaborating entity "film_scanner" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at film_scanner.sv(69): object "pix_clk" assigned a value but never read
-Warning (10030): Net "en" at film_scanner.sv(59) has no driver or initial value, using a default initial value '0'
-Warning (10034): Output port "led" at film_scanner.sv(56) has no driver
-Warning (10034): Output port "led_pwm" at film_scanner.sv(7) has no driver
-Warning (10034): Output port "ft_wr" at film_scanner.sv(48) has no driver
-Warning (10034): Output port "ft_rd" at film_scanner.sv(49) has no driver
-Info (12128): Elaborating entity "pll_80" for hierarchy "pll_80:pll_80_inst"
-Info (12128): Elaborating entity "altpll" for hierarchy "pll_80:pll_80_inst|altpll:altpll_component"
-Info (12130): Elaborated megafunction instantiation "pll_80:pll_80_inst|altpll:altpll_component"
-Info (12133): Instantiated megafunction "pll_80:pll_80_inst|altpll:altpll_component" with the following parameter:
+Warning (10036): Verilog HDL or VHDL warning at film_scanner.sv(70): object "wr_data" assigned a value but never read File: D:/FilmScannerFPGA/film_scanner.sv Line: 70
+Warning (10036): Verilog HDL or VHDL warning at film_scanner.sv(71): object "wr_clk" assigned a value but never read File: D:/FilmScannerFPGA/film_scanner.sv Line: 71
+Warning (10036): Verilog HDL or VHDL warning at film_scanner.sv(72): object "wr_req" assigned a value but never read File: D:/FilmScannerFPGA/film_scanner.sv Line: 72
+Warning (10034): Output port "led[3..1]" at film_scanner.sv(58) has no driver File: D:/FilmScannerFPGA/film_scanner.sv Line: 58
+Warning (10034): Output port "led_pwm" at film_scanner.sv(7) has no driver File: D:/FilmScannerFPGA/film_scanner.sv Line: 7
+Info (12128): Elaborating entity "pll_80" for hierarchy "pll_80:pll_80_inst" File: D:/FilmScannerFPGA/film_scanner.sv Line: 94
+Info (12128): Elaborating entity "altpll" for hierarchy "pll_80:pll_80_inst|altpll:altpll_component" File: D:/FilmScannerFPGA/quartus/pll_80.v Line: 95
+Info (12130): Elaborated megafunction instantiation "pll_80:pll_80_inst|altpll:altpll_component" File: D:/FilmScannerFPGA/quartus/pll_80.v Line: 95
+Info (12133): Instantiated megafunction "pll_80:pll_80_inst|altpll:altpll_component" with the following parameter: File: D:/FilmScannerFPGA/quartus/pll_80.v Line: 95
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1006,91 +271,98 @@ Info (12133): Instantiated megafunction "pll_80:pll_80_inst|altpll:altpll_compon
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_80_altpll.v
-    Info (12023): Found entity 1: pll_80_altpll
-Info (12128): Elaborating entity "pll_80_altpll" for hierarchy "pll_80:pll_80_inst|altpll:altpll_component|pll_80_altpll:auto_generated"
-Info (12128): Elaborating entity "ccd_timing" for hierarchy "ccd_timing:ccd0"
-Warning (10036): Verilog HDL or VHDL warning at ccd_timing.sv(139): object "start_cntr" assigned a value but never read
-Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(66): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(171): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(172): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(186): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(202): truncated value with size 32 to match size of target (14)
-Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(205): truncated value with size 32 to match size of target (8)
-Info (12128): Elaborating entity "dac" for hierarchy "dac:dac0"
-Warning (10230): Verilog HDL assignment warning at dac.sv(50): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at dac.sv(89): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at dac.sv(107): truncated value with size 48 to match size of target (24)
-Warning (10230): Verilog HDL assignment warning at dac.sv(108): truncated value with size 48 to match size of target (24)
-Warning (10230): Verilog HDL assignment warning at dac.sv(120): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at dac.sv(133): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at dac.sv(177): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at dac.sv(188): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at dac.sv(198): truncated value with size 32 to match size of target (8)
-Warning (10230): Verilog HDL assignment warning at dac.sv(211): truncated value with size 32 to match size of target (5)
-Warning (10230): Verilog HDL assignment warning at dac.sv(255): truncated value with size 32 to match size of target (8)
-Info (12128): Elaborating entity "stepper" for hierarchy "stepper:step0"
-Warning (10230): Verilog HDL assignment warning at stepper.sv(72): truncated value with size 32 to match size of target (19)
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following PLL node(s):
-        Warning (14320): Synthesized away node "pll_80:pll_80_inst|altpll:altpll_component|pll_80_altpll:auto_generated|wire_pll1_clk[0]"
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "ft_bus[0]" has no driver
-    Warning (13040): bidirectional pin "ft_bus[1]" has no driver
-    Warning (13040): bidirectional pin "ft_bus[2]" has no driver
-    Warning (13040): bidirectional pin "ft_bus[3]" has no driver
-    Warning (13040): bidirectional pin "ft_bus[4]" has no driver
-    Warning (13040): bidirectional pin "ft_bus[5]" has no driver
-    Warning (13040): bidirectional pin "ft_bus[6]" has no driver
-    Warning (13040): bidirectional pin "ft_bus[7]" has no driver
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "led_pwm" is stuck at GND
-    Warning (13410): Pin "adc_cs" is stuck at GND
-    Warning (13410): Pin "adc_sclk" is stuck at GND
-    Warning (13410): Pin "ccd_p1" is stuck at GND
-    Warning (13410): Pin "ccd_p2" is stuck at VCC
-    Warning (13410): Pin "ccd_sh" is stuck at GND
-    Warning (13410): Pin "ccd_rs" is stuck at GND
-    Warning (13410): Pin "ccd_cp" is stuck at GND
-    Warning (13410): Pin "mtr_nen" is stuck at GND
-    Warning (13410): Pin "mtr_nrst" is stuck at VCC
-    Warning (13410): Pin "mtr_slp" is stuck at VCC
-    Warning (13410): Pin "mtr_decay" is stuck at VCC
-    Warning (13410): Pin "mtr_dir" is stuck at GND
-    Warning (13410): Pin "mtr_m[0]" is stuck at VCC
-    Warning (13410): Pin "mtr_m[1]" is stuck at VCC
-    Warning (13410): Pin "mtr_m[2]" is stuck at VCC
-    Warning (13410): Pin "ft_wr" is stuck at GND
-    Warning (13410): Pin "ft_rd" is stuck at GND
-    Warning (13410): Pin "ft_siwu" is stuck at VCC
-    Warning (13410): Pin "ft_pwrsav" is stuck at VCC
-    Warning (13410): Pin "ft_nrst" is stuck at VCC
-    Warning (13410): Pin "led[0]" is stuck at GND
-    Warning (13410): Pin "led[1]" is stuck at GND
-    Warning (13410): Pin "led[2]" is stuck at GND
-    Warning (13410): Pin "led[3]" is stuck at GND
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "adc_sdo"
-    Warning (15610): No output dependent on input pin "mtr_nhome"
-    Warning (15610): No output dependent on input pin "mtr_nflt"
-    Warning (15610): No output dependent on input pin "ft_clk"
-    Warning (15610): No output dependent on input pin "ft_txe"
-    Warning (15610): No output dependent on input pin "ft_rxf"
-    Warning (15610): No output dependent on input pin "ft_ac8"
-    Warning (15610): No output dependent on input pin "ft_ac9"
-Info (21057): Implemented 137 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 29 output pins
-    Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 91 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 75 warnings
-    Info: Peak virtual memory: 666 megabytes
-    Info: Processing ended: Thu Sep 07 22:04:53 2017
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:23
+    Info (12023): Found entity 1: pll_80_altpll File: D:/FilmScannerFPGA/quartus/db/pll_80_altpll.v Line: 30
+Info (12128): Elaborating entity "pll_80_altpll" for hierarchy "pll_80:pll_80_inst|altpll:altpll_component|pll_80_altpll:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12128): Elaborating entity "ccd_timing" for hierarchy "ccd_timing:ccd0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 121
+Warning (10036): Verilog HDL or VHDL warning at ccd_timing.sv(139): object "start_cntr" assigned a value but never read File: D:/FilmScannerFPGA/ccd_timing.sv Line: 139
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(66): truncated value with size 32 to match size of target (1) File: D:/FilmScannerFPGA/ccd_timing.sv Line: 66
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(171): truncated value with size 32 to match size of target (1) File: D:/FilmScannerFPGA/ccd_timing.sv Line: 171
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(172): truncated value with size 32 to match size of target (1) File: D:/FilmScannerFPGA/ccd_timing.sv Line: 172
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(186): truncated value with size 32 to match size of target (1) File: D:/FilmScannerFPGA/ccd_timing.sv Line: 186
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(202): truncated value with size 32 to match size of target (14) File: D:/FilmScannerFPGA/ccd_timing.sv Line: 202
+Warning (10230): Verilog HDL assignment warning at ccd_timing.sv(205): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/ccd_timing.sv Line: 205
+Info (12128): Elaborating entity "dac" for hierarchy "dac:dac0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 136
+Warning (10230): Verilog HDL assignment warning at dac.sv(50): truncated value with size 32 to match size of target (5) File: D:/FilmScannerFPGA/dac.sv Line: 50
+Warning (10230): Verilog HDL assignment warning at dac.sv(89): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/dac.sv Line: 89
+Warning (10230): Verilog HDL assignment warning at dac.sv(107): truncated value with size 48 to match size of target (24) File: D:/FilmScannerFPGA/dac.sv Line: 107
+Warning (10230): Verilog HDL assignment warning at dac.sv(108): truncated value with size 48 to match size of target (24) File: D:/FilmScannerFPGA/dac.sv Line: 108
+Warning (10230): Verilog HDL assignment warning at dac.sv(120): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/dac.sv Line: 120
+Warning (10230): Verilog HDL assignment warning at dac.sv(133): truncated value with size 32 to match size of target (5) File: D:/FilmScannerFPGA/dac.sv Line: 133
+Warning (10230): Verilog HDL assignment warning at dac.sv(177): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/dac.sv Line: 177
+Warning (10230): Verilog HDL assignment warning at dac.sv(188): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/dac.sv Line: 188
+Warning (10230): Verilog HDL assignment warning at dac.sv(198): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/dac.sv Line: 198
+Warning (10230): Verilog HDL assignment warning at dac.sv(211): truncated value with size 32 to match size of target (5) File: D:/FilmScannerFPGA/dac.sv Line: 211
+Warning (10230): Verilog HDL assignment warning at dac.sv(255): truncated value with size 32 to match size of target (8) File: D:/FilmScannerFPGA/dac.sv Line: 255
+Info (12128): Elaborating entity "control" for hierarchy "control:cont0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 178
+Warning (10036): Verilog HDL or VHDL warning at control.sv(20): object "data_clk" assigned a value but never read File: D:/FilmScannerFPGA/control.sv Line: 20
+Warning (10230): Verilog HDL assignment warning at control.sv(96): truncated value with size 32 to match size of target (6) File: D:/FilmScannerFPGA/control.sv Line: 96
+Info (12128): Elaborating entity "ft_232h" for hierarchy "ft_232h:ft0" File: D:/FilmScannerFPGA/film_scanner.sv Line: 210
+Info (12128): Elaborating entity "ft_rxfifo" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst" File: D:/FilmScannerFPGA/ft232h.sv Line: 51
+Info (12128): Elaborating entity "dcfifo" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component" File: D:/FilmScannerFPGA/quartus/ft_rxfifo.v Line: 80
+Info (12130): Elaborated megafunction instantiation "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component" File: D:/FilmScannerFPGA/quartus/ft_rxfifo.v Line: 80
+Info (12133): Instantiated megafunction "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component" with the following parameter: File: D:/FilmScannerFPGA/quartus/ft_rxfifo.v Line: 80
+    Info (12134): Parameter "add_usedw_msb_bit" = "ON"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_numwords" = "256"
+    Info (12134): Parameter "lpm_showahead" = "OFF"
+    Info (12134): Parameter "lpm_type" = "dcfifo"
+    Info (12134): Parameter "lpm_width" = "8"
+    Info (12134): Parameter "lpm_widthu" = "9"
+    Info (12134): Parameter "overflow_checking" = "ON"
+    Info (12134): Parameter "rdsync_delaypipe" = "3"
+    Info (12134): Parameter "underflow_checking" = "ON"
+    Info (12134): Parameter "use_eab" = "ON"
+    Info (12134): Parameter "wrsync_delaypipe" = "3"
+Info (12021): Found 1 design units, including 1 entities, in source file db/dcfifo_olh1.tdf
+    Info (12023): Found entity 1: dcfifo_olh1 File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 47
+Info (12128): Elaborating entity "dcfifo_olh1" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated" File: c:/intelfpga_lite/17.0/quartus/libraries/megafunctions/dcfifo.tdf Line: 191
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_gray2bin_ugb.tdf
+    Info (12023): Found entity 1: a_gray2bin_ugb File: D:/FilmScannerFPGA/quartus/db/a_gray2bin_ugb.tdf Line: 23
+Info (12128): Elaborating entity "a_gray2bin_ugb" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_gray2bin_ugb:rdptr_g_gray2bin" File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 60
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_graycounter_rn6.tdf
+    Info (12023): Found entity 1: a_graycounter_rn6 File: D:/FilmScannerFPGA/quartus/db/a_graycounter_rn6.tdf Line: 25
+Info (12128): Elaborating entity "a_graycounter_rn6" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_graycounter_rn6:rdptr_g1p" File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 62
+Info (12021): Found 1 design units, including 1 entities, in source file db/a_graycounter_n5c.tdf
+    Info (12023): Found entity 1: a_graycounter_n5c File: D:/FilmScannerFPGA/quartus/db/a_graycounter_n5c.tdf Line: 25
+Info (12128): Elaborating entity "a_graycounter_n5c" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|a_graycounter_n5c:wrptr_g1p" File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 63
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_4941.tdf
+    Info (12023): Found entity 1: altsyncram_4941 File: D:/FilmScannerFPGA/quartus/db/altsyncram_4941.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_4941" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|altsyncram_4941:fifo_ram" File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 64
+Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_pu8.tdf
+    Info (12023): Found entity 1: dffpipe_pu8 File: D:/FilmScannerFPGA/quartus/db/dffpipe_pu8.tdf Line: 25
+Info (12128): Elaborating entity "dffpipe_pu8" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|dffpipe_pu8:rdfull_reg" File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 81
+Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_1v8.tdf
+    Info (12023): Found entity 1: dffpipe_1v8 File: D:/FilmScannerFPGA/quartus/db/dffpipe_1v8.tdf Line: 25
+Info (12128): Elaborating entity "dffpipe_1v8" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|dffpipe_1v8:rs_brp" File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 82
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_synch_pipe_7u7.tdf
+    Info (12023): Found entity 1: alt_synch_pipe_7u7 File: D:/FilmScannerFPGA/quartus/db/alt_synch_pipe_7u7.tdf Line: 27
+Info (12128): Elaborating entity "alt_synch_pipe_7u7" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|alt_synch_pipe_7u7:rs_dgwp" File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 84
+Info (12021): Found 1 design units, including 1 entities, in source file db/dffpipe_2v8.tdf
+    Info (12023): Found entity 1: dffpipe_2v8 File: D:/FilmScannerFPGA/quartus/db/dffpipe_2v8.tdf Line: 25
+Info (12128): Elaborating entity "dffpipe_2v8" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|alt_synch_pipe_7u7:rs_dgwp|dffpipe_2v8:dffpipe12" File: D:/FilmScannerFPGA/quartus/db/alt_synch_pipe_7u7.tdf Line: 34
+Info (12128): Elaborating entity "alt_synch_pipe_7u7" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|alt_synch_pipe_7u7:ws_dgrp" File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 85
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_b66.tdf
+    Info (12023): Found entity 1: cmpr_b66 File: D:/FilmScannerFPGA/quartus/db/cmpr_b66.tdf Line: 23
+Info (12128): Elaborating entity "cmpr_b66" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|cmpr_b66:rdempty_eq_comp1_lsb" File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 89
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_a66.tdf
+    Info (12023): Found entity 1: cmpr_a66 File: D:/FilmScannerFPGA/quartus/db/cmpr_a66.tdf Line: 23
+Info (12128): Elaborating entity "cmpr_a66" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|cmpr_a66:rdempty_eq_comp1_msb" File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 90
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_f66.tdf
+    Info (12023): Found entity 1: cmpr_f66 File: D:/FilmScannerFPGA/quartus/db/cmpr_f66.tdf Line: 23
+Info (12128): Elaborating entity "cmpr_f66" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|cmpr_f66:rdfull_eq_comp" File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 93
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_j28.tdf
+    Info (12023): Found entity 1: mux_j28 File: D:/FilmScannerFPGA/quartus/db/mux_j28.tdf Line: 23
+Info (12128): Elaborating entity "mux_j28" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component|dcfifo_olh1:auto_generated|mux_j28:rdemp_eq_comp_lsb_mux" File: D:/FilmScannerFPGA/quartus/db/dcfifo_olh1.tdf Line: 98
+Info (12128): Elaborating entity "ft232h_fifos_interface" for hierarchy "ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int" File: D:/FilmScannerFPGA/ft232h.sv Line: 83
+Info (12128): Elaborating entity "ft232h_receiver" for hierarchy "ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst" File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/ft232h_fifos_interface.sv Line: 87
+Info (12128): Elaborating entity "pipeline" for hierarchy "ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst" File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/ft232h_receiver.sv Line: 70
+Info (12128): Elaborating entity "pipeline_step" for hierarchy "ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_receiver:rx_inst|pipeline:pipe_inst|pipeline_step:pipeline_generate[1].pl_step" File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/pipeline.sv Line: 129
+Info (12128): Elaborating entity "ft232h_transmitter" for hierarchy "ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|ft232h_transmitter:tx_inst" File: D:/FilmScannerFPGA/usb_ft232h_avalon-mm_interface/trunk/hw/ft232h_fifos_interface.sv Line: 108
+Error (12006): Node instance "step0" instantiates undefined entity "stepper". Ensure that required library paths are specified correctly, define the specified entity, or change the instantiation. If this entity represents Intel FPGA or third-party IP, generate the synthesis files for the IP. File: D:/FilmScannerFPGA/film_scanner.sv Line: 160
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 27 warnings
+    Error: Peak virtual memory: 585 megabytes
+    Error: Processing ended: Sat Sep 30 10:40:08 2017
+    Error: Elapsed time: 00:00:12
+    Error: Total CPU time (on all processors): 00:00:26
 
 

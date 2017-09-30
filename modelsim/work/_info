@@ -8,65 +8,160 @@ z2
 !i10f 100
 cModel Technology
 <<<<<<< HEAD
+dC:/altera/15.0
+<<<<<<< HEAD
+!s108 1492965001.126000
+Z0 !s107 D:/FilmScannerFPGA/ccd_tb.sv|
+Z1 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/ccd_tb.sv|
+!i113 1
+Z2 o-work work -sv
+<<<<<<< HEAD
 !s108 1492964960.108000
-Z0 !s107 D:/FilmScannerFPGA/ccd_timing.sv|
-Z1 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/ccd_timing.sv|
-=======
+Z3 !s107 D:/FilmScannerFPGA/ccd_timing.sv|
+Z4 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/ccd_timing.sv|
+Z5 =======
 !s108 1492884892.822000
 !s107 D:/FilmScannerFPGA/dac_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/dac_tb.sv|
 <<<<<<< HEAD
-!s108 1492965001.126000
-Z2 !s107 D:/FilmScannerFPGA/ccd_tb.sv|
-Z3 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/ccd_tb.sv|
-!i113 1
-Z4 o-work work -sv
+!s110 1504638940
+!i10b 1
+!s100 nV:MGSNERRM^0]lC3AOBN1
+Ia>g3QG_JAS`R^>LI8_`kf0
+R5
+!s110 1505762737
+!i10b 1
+!s100 ^KmJ=FGe2N7a9G1KPWo]]3
+Ia05MC0<YYj2=H14>n1_RC0
 <<<<<<< HEAD
-dC:/altera/15.0
->>>>>>> dac
+w1504638914
+R5
+w1505762689
+<<<<<<< HEAD
+!s108 1504638940.622000
+R5
+!s108 1505762737.279000
+<<<<<<< HEAD
+!s110 1504638760
+!i10b 1
+!s100 TPDja?4jW@zVo`OJ?kTFW1
+I3ON@=7Bj>3Kf1EWIfQGeH2
+R5
+!s110 1505762446
+!i10b 1
+!s100 HREF3_Z=Z9>3UL9AoHPg`1
+IPg0<<DXl:JTL^6cPaOheO2
+<<<<<<< HEAD
+w1504638758
+R5
+w1505762401
+<<<<<<< HEAD
+!s108 1504638760.276000
+R5
+!s108 1505762446.007000
+<<<<<<< HEAD
+Z6 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
+!s110 1505729280
+!i10b 1
+!s100 V_[8Kj[K[VQhPo=CmD]X;1
+I;Kc07^KC5az8z=KS[ORje2
+Z7 V`JN@9S9cnhjKRR_L]QIcM3
+Z8 !s105 usb_ft232h_sv_unit
+S1
+Z9 dD:/FilmScannerFPGA/modelsim
+w1505724623
+Z10 8../usb_ft232h.sv
+Z11 F../usb_ft232h.sv
+L0 1
+Z12 OV;L;10.3d;59
+r1
+!s85 0
+31
+!s108 1505729280.283000
+Z13 !s107 ../usb_ft232h.sv|
+Z14 !s90 -reportprogress|300|../usb_ft232h.sv|
 !i113 1
-R4
+>>>>>>> control
+R7
+!s105 control_sv_unit
+S1
+R9
+>>>>>>> control
+8D:/FilmScannerFPGA/control.sv
+FD:/FilmScannerFPGA/control.sv
+L0 1
+R12
+r1
+!s85 0
+31
+>>>>>>> control
+!s107 D:/FilmScannerFPGA/control.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/control.sv|
+!i113 1
+R2
+>>>>>>> control
+R7
+!s105 control_tb_sv_unit
+S1
+R9
+>>>>>>> control
+8D:/FilmScannerFPGA/control_tb.sv
+FD:/FilmScannerFPGA/control_tb.sv
+L0 1
+R12
+r1
+!s85 0
+31
+>>>>>>> control
+!s107 D:/FilmScannerFPGA/control_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/control_tb.sv|
+!i113 1
+R2
+>>>>>>> control
+>>>>>>> dac
+R12
+r1
+!s85 0
+31
 >>>>>>> dac
 L0 1
-Z5 OV;L;10.3d;59
+R12
 r1
 !s85 0
 31
 >>>>>>> dac
-R5
-r1
-!s85 0
-31
+!i113 1
+R2
 vccd_tb
-Z6 DXx6 sv_std 3 std 0 22 <EOTafDcUY:cQeO^ICn]m3
-Z7 !s110 1504638444
+R6
+Z15 !s110 1504638444
 !i10b 1
 !s100 m=?g]=3=fHZ4>c@KX6Ldk1
 I7A=`UQ;=UIFblca;d:3=Z2
-Z8 V`JN@9S9cnhjKRR_L]QIcM3
+R7
 !s105 ccd_tb_sv_unit
 S1
-Z9 dD:/FilmScannerFPGA/modelsim
+R9
 w1504442188
 8D:/FilmScannerFPGA/ccd_tb.sv
 FD:/FilmScannerFPGA/ccd_tb.sv
 L0 1
-R5
+R12
 r1
 !s85 0
 31
 !s108 1504638444.233000
-R2
-R3
+R0
+R1
 !i113 1
-R4
+R2
 vccd_timing
 R6
-R7
+R15
 !i10b 1
 !s100 Wj1MQ@;08TRoaA^eSB?gX3
 IF^8mg2KmLkMGlfY2F[Fcl3
-R8
+R7
 !s105 ccd_timing_sv_unit
 S1
 R9
@@ -74,22 +169,22 @@ w1504448839
 8D:/FilmScannerFPGA/ccd_timing.sv
 FD:/FilmScannerFPGA/ccd_timing.sv
 L0 1
-R5
+R12
 r1
 !s85 0
 31
 !s108 1504638444.161000
-R0
-R1
-!i113 1
+R3
 R4
+!i113 1
+R2
 vccd_timings_new
 R6
 !s110 1504442057
 !i10b 1
 !s100 G9alPmdhUIakS:<aBh`N52
 I=5@hlUolLXA8M_0aT?nhU0
-R8
+R7
 !s105 ccd_timings_new_sv_unit
 S1
 R9
@@ -97,7 +192,7 @@ w1504441865
 8D:/FilmScannerFPGA/ccd_timings_new.sv
 FD:/FilmScannerFPGA/ccd_timings_new.sv
 L0 1
-R5
+R12
 r1
 !s85 0
 31
@@ -105,60 +200,18 @@ r1
 !s107 D:/FilmScannerFPGA/ccd_timings_new.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/ccd_timings_new.sv|
 !i113 1
-R4
+R2
 vcontrol
 R6
-!s110 1504638940
-!i10b 1
-!s100 nV:MGSNERRM^0]lC3AOBN1
-Ia>g3QG_JAS`R^>LI8_`kf0
-R8
-!s105 control_sv_unit
-S1
-R9
-w1504638914
-8D:/FilmScannerFPGA/control.sv
-FD:/FilmScannerFPGA/control.sv
-L0 1
-R5
-r1
-!s85 0
-31
-!s108 1504638940.622000
-!s107 D:/FilmScannerFPGA/control.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/control.sv|
-!i113 1
-R4
 vcontrol_tb
 R6
-!s110 1504638760
-!i10b 1
-!s100 TPDja?4jW@zVo`OJ?kTFW1
-I3ON@=7Bj>3Kf1EWIfQGeH2
-R8
-!s105 control_tb_sv_unit
-S1
-R9
-w1504638758
-8D:/FilmScannerFPGA/control_tb.sv
-FD:/FilmScannerFPGA/control_tb.sv
-L0 1
-R5
-r1
-!s85 0
-31
-!s108 1504638760.276000
-!s107 D:/FilmScannerFPGA/control_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/control_tb.sv|
-!i113 1
-R4
 vdac
 R6
 !s110 1492885360
 !i10b 1
 !s100 1mJY9`b9nFTGGoER^lgkB0
 I9h:LU5FWn56^Vl4?`7fUl3
-R8
+R7
 !s105 dac_sv_unit
 S1
 R9
@@ -172,7 +225,7 @@ R6
 !i10b 1
 !s100 SBFm?iN[nAda3B6hSh9Ug1
 I^VEM96EVUCUReTMRQc2]z1
-R8
+R7
 !s105 dac_tb_sv_unit
 S1
 R9
@@ -180,50 +233,69 @@ w1492884890
 8D:/FilmScannerFPGA/dac_tb.sv
 FD:/FilmScannerFPGA/dac_tb.sv
 vusb_ft232h
-Z10 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-!s110 1505072925
+R6
+Z16 !s110 1506162949
 !i10b 1
-!s100 9K9CFCm[_KX2<K1?C7ZBn2
-ILKcQ?]=7z0cO<[A?gVUXY3
-Z11 VDg1SIo80bB@j0V0VzS_@n1
-!s105 usb_ft232h_sv_unit
+!s100 e0169LZWPbh5AjMWIO3<e3
+I7m^IV1K@L]e>HjAn^Jdkj1
+R7
+R8
 S1
-Z12 d/home/george/FilmScannerFPGA/modelsim
-w1505072030
-8/home/george/FilmScannerFPGA/usb_ft232h.sv
-F/home/george/FilmScannerFPGA/usb_ft232h.sv
-L0 1
-Z13 OV;L;10.5b;63
-r1
-!s85 0
-31
-!s108 1505072925.000000
-!s107 /home/george/FilmScannerFPGA/usb_ft232h.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/george/FilmScannerFPGA/usb_ft232h.sv|
-!i113 1
-R4
-Z14 tCvgOpt 0
-vusb_ft232h_tb
+R9
+w1505855555
 R10
-!s110 1505072963
-!i10b 1
-!s100 nz4bgllfF3JEcmzTJ:]I?0
-I?E^Qo_<]ekHMDARo2P?2d3
 R11
-!s105 usb_ft232h_tb_sv_unit
-S1
+L0 1
 R12
-w1505072958
-8/home/george/FilmScannerFPGA/usb_ft232h_tb.sv
-F/home/george/FilmScannerFPGA/usb_ft232h_tb.sv
-L0 5
-R13
 r1
 !s85 0
 31
-!s108 1505072963.000000
-!s107 /home/george/FilmScannerFPGA/usb_ft232h_tb.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|/home/george/FilmScannerFPGA/usb_ft232h_tb.sv|
-!i113 1
-R4
+!s108 1506162949.397000
+R13
 R14
+!i113 1
+vusb_ft232h_tb
+R6
+R16
+!i10b 1
+!s100 ULzZXd^zLRHGd==[;4dhb2
+I5EGl0IQ`Vi?6M8SAmcHn33
+R7
+Z17 !s105 usb_ft232h_tb_sv_unit
+S1
+R9
+w1506162946
+8../usb_ft232h_tb.sv
+F../usb_ft232h_tb.sv
+L0 3
+R12
+r1
+!s85 0
+31
+!s108 1506162949.473000
+!s107 ../usb_ft232h_tb.sv|
+!s90 -reportprogress|300|../usb_ft232h_tb.sv|
+!i113 1
+vusb_ft232h_tb
+R6
+!s110 1506026660
+!i10b 1
+!s100 ;iGD7h`Y1B5n^I>A0Yd1_3
+Ij9FJ6`f7BaJ:Li^:8CK[S0
+R7
+R17
+S1
+R9
+w1506026650
+8D:/FilmScannerFPGA/usb_ft232h_tb.sv
+FD:/FilmScannerFPGA/usb_ft232h_tb.sv
+L0 3
+R12
+r1
+!s85 0
+31
+!s108 1506026660.696000
+!s107 D:/FilmScannerFPGA/usb_ft232h_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/usb_ft232h_tb.sv|
+!i113 1
+R2

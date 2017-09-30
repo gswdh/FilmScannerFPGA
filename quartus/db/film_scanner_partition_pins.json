@@ -1,0 +1,113 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "adc_cs",
+					"strict" : false
+				},
+				{
+					"name" : "adc_sclk",
+					"strict" : false
+				},
+				{
+					"name" : "dac_sclk",
+					"strict" : false
+				},
+				{
+					"name" : "dac_sdin",
+					"strict" : false
+				},
+				{
+					"name" : "dac_sync",
+					"strict" : false
+				},
+				{
+					"name" : "ccd_p1",
+					"strict" : false
+				},
+				{
+					"name" : "ccd_p2",
+					"strict" : false
+				},
+				{
+					"name" : "ccd_sh",
+					"strict" : false
+				},
+				{
+					"name" : "ccd_rs",
+					"strict" : false
+				},
+				{
+					"name" : "ccd_cp",
+					"strict" : false
+				},
+				{
+					"name" : "ft_wr",
+					"strict" : false
+				},
+				{
+					"name" : "ft_rd",
+					"strict" : false
+				},
+				{
+					"name" : "ft_oe",
+					"strict" : false
+				},
+				{
+					"name" : "led[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ft_bus[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ft_bus[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ft_bus[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ft_bus[3]",
+					"strict" : false
+				},
+				{
+					"name" : "ft_bus[4]",
+					"strict" : false
+				},
+				{
+					"name" : "ft_bus[5]",
+					"strict" : false
+				},
+				{
+					"name" : "ft_bus[6]",
+					"strict" : false
+				},
+				{
+					"name" : "ft_bus[7]",
+					"strict" : false
+				},
+				{
+					"name" : "ft_txe",
+					"strict" : false
+				},
+				{
+					"name" : "ft_clk",
+					"strict" : false
+				},
+				{
+					"name" : "ft_rxf",
+					"strict" : false
+				},
+				{
+					"name" : "clk_100M",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
