@@ -76,11 +76,12 @@ module film_scanner(
 	// Read IO
 	logic [7:0]	rd_data;
 	logic		rd_clk,
-				rd_req = 0;
+				rd_req = 0,
+				rxf_aclr;
 	logic [8:0]	rd_used;
 
 	// Control IO
-	reg en;
+	reg en = 0;
 
 	// 160MHz clock
 	reg clk_160M;
@@ -134,40 +135,8 @@ module film_scanner(
 		.sync(dac_sync)
 	);
 
-	// FT232H module
-	usb_ft232h usb0(
 
-		// Reset
-		.nrst(1), 
-
-		//FT232H
-		.usb_clk_i(ft_clk),
-		.usb_data_io(ft_bus),
-		.usb_rxf_n_i(ft_rxf),
-		.usb_txe_n_i(ft_txe),
-		.usb_rd_n_o(ft_rd),
-		.usb_wr_n_o(ft_wr),
-		.usb_oe_n_o(ft_oe),
-
-		// Read port
-		.rxf_rdclk_i(rd_clk),		// Read clock
-		.rxf_rdreq_i(rd_req),		// Read request
-		.rxf_rddata_o(rd_data),		// Data read
-		.rxf_rdusedw_o(rd_used),	// Number of bytes in the FIFO
-
-		// Write port
-		.txe_wrclk_i(0),		// Write clock
-		.txe_wrreq_i(0),		// Write request
-		.txe_wrdata_i(0),		// Data to write
-		.txe_wrusedw_o(),	// FIFO status
-		.txe_wrfull_o()		// FIFO full signal
-	);
-
-	defparam
-		usb0.TX_FIFO_L_BITS = 9,
-		usb0.RX_FIFO_L_BITS = 8;
-
-
+	// Control the scanner
 	control cont0(
 
 		// Clock and reset
@@ -176,6 +145,7 @@ module film_scanner(
 		// Read interface to the USB module
 		.usb_rd_clk(rd_clk),
 		.usb_rd_valid(rd_req),
+		.usb_rd_reset(rxf_aclr),
 		.usb_readdata(rd_data),
 		.usb_rxbytes(rd_used),
 
@@ -183,5 +153,36 @@ module film_scanner(
 		.cont_en(en),				// Enable to start scanning
 		.cont_gain(), .cont_off()		// The analogue gain and offset for the front end
 	);
+
+	// FT232H
+	ft_232h ft0(
+
+		// Reset
+		.nrst(1),
+
+		// FT Bus
+		.ft_bus(ft_bus),
+
+		.ft_clk(ft_clk),
+		.ft_txe(ft_txe),
+		.ft_rxf(ft_rxf),
+
+		.ft_wr(ft_wr),
+		.ft_rd(ft_rd),
+		.ft_oe(ft_oe),
+
+		// RX FIFO interface (From the PC)
+		.rx_clk(rd_clk),
+		.rx_rdreq(rd_req),
+		.rx_data(rd_data),
+		.rx_nbytes(rd_used),
+
+		// TX FIFO interface (To go to the PC)
+		.tx_clk(),
+		.tx_rdreq(),
+		.tx_full(),
+		.tx_data()
+	);
+	
 
 endmodule

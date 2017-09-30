@@ -5,7 +5,8 @@ module control(
 
 	// Read interface to the USb module
 	output reg 			usb_rd_clk,
-	output reg	 		usb_rd_valid = 0,
+				 		usb_rd_valid = 0,
+						usb_rd_reset,
 	input logic [7:0] 	usb_readdata,
 	input logic [7:0]	usb_rxbytes,
 
@@ -95,8 +96,37 @@ module control(
 					end
 				end 
 
-				// Latch the new values into the actualy control register and return to the beginning
+				// Choose whether to use the data (if there's data still in the RX FIFO this is most likely invalid)
 				2: begin
+
+					// Error condition
+					if(usb_rxbytes != 0)
+					begin
+
+						// Clear the FIFO
+						usb_rd_reset <= 1;
+
+						// Continue 
+						state <= 3;
+					end 
+
+					// All good!
+					else state <= 4;
+
+				end
+
+				// Reset the state machine
+				3: begin
+
+					// Reset the clear signal for the FIFO
+					usb_rd_reset <= 0;
+
+					// Reset the state machine
+					state <= 0;
+				end
+
+				// Latch the new values into the actualy control register and return to the beginning
+				4: begin
 
 					// New valeus
 					control_reg <= {c_temp[31], c_temp[30], c_temp[29], c_temp[28], c_temp[27], 

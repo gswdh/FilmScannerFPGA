@@ -1,10 +1,6 @@
 Flow report for film_scanner
-<<<<<<< HEAD
-Mon Sep 18 11:23:12 2017
-=======
-Thu Sep 07 22:05:11 2017
->>>>>>> control
-Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition
+Sat Sep 30 10:10:18 2017
+Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
 ---------------------
@@ -25,57 +21,43 @@ Quartus II 64-Bit Version 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edit
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
-Your use of Altera Corporation's design tools, logic functions 
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
-to the terms and conditions of the Altera Program License 
-Subscription Agreement, the Altera Quartus II License Agreement,
-the Altera MegaCore Function License Agreement, or other 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel MegaCore Function License Agreement, or other 
 applicable license agreement, including, without limitation, 
 that your use is for the sole purpose of programming logic 
-devices manufactured by Altera and sold by Altera or its 
+devices manufactured by Intel and sold by Intel or its 
 authorized distributors.  Please refer to the applicable 
 agreement for further details.
 
 
 
-+------------------------------------------------------------------------------------------------+
-; Flow Summary                                                                                   ;
-+------------------------------------+-----------------------------------------------------------+
-<<<<<<< HEAD
-; Flow Status                        ; Successful - Mon Sep 18 11:23:12 2017                     ;
-=======
-; Flow Status                        ; Successful - Thu Sep 07 22:05:11 2017                     ;
->>>>>>> control
-; Quartus II 64-Bit Version          ; 15.0.0 Build 145 04/22/2015 Patches 0.01we SJ Web Edition ;
-; Revision Name                      ; film_scanner                                              ;
-; Top-level Entity Name              ; film_scanner                                              ;
-; Family                             ; Cyclone IV E                                              ;
-; Device                             ; EP4CE6E22C6                                               ;
-; Timing Models                      ; Final                                                     ;
-<<<<<<< HEAD
-; Total logic elements               ; 141 / 6,272 ( 2 % )                                       ;
-;     Total combinational functions  ; 131 / 6,272 ( 2 % )                                       ;
-;     Dedicated logic registers      ; 81 / 6,272 ( 1 % )                                        ;
-; Total registers                    ; 81                                                        ;
-; Total pins                         ; 47 / 92 ( 51 % )                                          ;
-; Total virtual pins                 ; 0                                                         ;
-; Total memory bits                  ; 4,096 / 276,480 ( 1 % )                                   ;
-=======
-; Total logic elements               ; 92 / 6,272 ( 1 % )                                        ;
-;     Total combinational functions  ; 91 / 6,272 ( 1 % )                                        ;
-;     Dedicated logic registers      ; 42 / 6,272 ( < 1 % )                                      ;
-; Total registers                    ; 42                                                        ;
-; Total pins                         ; 46 / 92 ( 50 % )                                          ;
-; Total virtual pins                 ; 0                                                         ;
-; Total memory bits                  ; 0 / 276,480 ( 0 % )                                       ;
->>>>>>> control
-; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                                            ;
-; Total PLLs                         ; 0 / 2 ( 0 % )                                             ;
-+------------------------------------+-----------------------------------------------------------+
++----------------------------------------------------------------------------------+
+; Flow Summary                                                                     ;
++------------------------------------+---------------------------------------------+
+; Flow Status                        ; Successful - Sat Sep 30 10:10:18 2017       ;
+; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
+; Revision Name                      ; film_scanner                                ;
+; Top-level Entity Name              ; film_scanner                                ;
+; Family                             ; Cyclone IV E                                ;
+; Device                             ; EP4CE6E22C6                                 ;
+; Timing Models                      ; Final                                       ;
+; Total logic elements               ; 183 / 6,272 ( 3 % )                         ;
+;     Total combinational functions  ; 155 / 6,272 ( 2 % )                         ;
+;     Dedicated logic registers      ; 114 / 6,272 ( 2 % )                         ;
+; Total registers                    ; 114                                         ;
+; Total pins                         ; 47 / 92 ( 51 % )                            ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 2,048 / 276,480 ( < 1 % )                   ;
+; Embedded Multiplier 9-bit elements ; 0 / 30 ( 0 % )                              ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                               ;
++------------------------------------+---------------------------------------------+
 
 
 +-----------------------------------------+
@@ -83,42 +65,33 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-<<<<<<< HEAD
-; Start date & time ; 09/18/2017 11:22:42 ;
-=======
-; Start date & time ; 09/07/2017 22:04:42 ;
->>>>>>> control
+; Start date & time ; 09/30/2017 10:09:53 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; film_scanner        ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                           ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-<<<<<<< HEAD
-; COMPILER_SIGNATURE_ID               ; 22866944378455.150573016203176        ; --            ; --          ; --             ;
-=======
-; COMPILER_SIGNATURE_ID               ; 22866944378455.150481828216700        ; --            ; --          ; --             ;
->>>>>>> control
-; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                     ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)       ; <None>        ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
-; MISC_FILE                           ; pll_80_inst.v                         ; --            ; --          ; --             ;
-; MISC_FILE                           ; pll_80.ppf                            ; --            ; --          ; --             ;
-; MISC_FILE                           ; pix_data_fifo_inst.v                  ; --            ; --          ; --             ;
-; MISC_FILE                           ; pix_data_fifo_bb.v                    ; --            ; --          ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                  ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --             ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                            ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 22866944378455.150676259310384         ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --             ;
+; MISC_FILE                           ; pll_80_inst.v                          ; --            ; --          ; --             ;
+; MISC_FILE                           ; pll_80.ppf                             ; --            ; --          ; --             ;
+; MISC_FILE                           ; ft_rxfifo_inst.v                       ; --            ; --          ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                   ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --             ;
++-------------------------------------+----------------------------------------+---------------+-------------+----------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -126,35 +99,26 @@ agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-<<<<<<< HEAD
-; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 671 MB              ; 00:00:25                           ;
-; Fitter                    ; 00:00:05     ; 1.0                     ; 907 MB              ; 00:00:06                           ;
-; Assembler                 ; 00:00:01     ; 1.0                     ; 600 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 667 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 571 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:23     ; --                      ; --                  ; 00:00:35                           ;
-=======
-; Analysis & Synthesis      ; 00:00:11     ; 1.0                     ; 658 MB              ; 00:00:23                           ;
-; Fitter                    ; 00:00:05     ; 1.0                     ; 907 MB              ; 00:00:05                           ;
-; Assembler                 ; 00:00:00     ; 1.0                     ; 602 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 665 MB              ; 00:00:02                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 570 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:21     ; --                      ; --                  ; 00:00:32                           ;
->>>>>>> control
+; Analysis & Synthesis      ; 00:00:13     ; 1.0                     ; 632 MB              ; 00:00:25                           ;
+; Fitter                    ; 00:00:04     ; 1.0                     ; 1277 MB             ; 00:00:05                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 538 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 622 MB              ; 00:00:02                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 509 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:21     ; --                      ; --                  ; 00:00:34                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                        ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
-+---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; George_PC        ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; George_PC        ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; George_PC        ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; George_PC        ; Windows 7 ; 6.2        ; x86_64         ;
-; EDA Netlist Writer        ; George_PC        ; Windows 7 ; 6.2        ; x86_64         ;
-+---------------------------+------------------+-----------+------------+----------------+
++------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                          ;
++---------------------------+------------------+-------------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name     ; OS Version ; Processor type ;
++---------------------------+------------------+-------------+------------+----------------+
+; Analysis & Synthesis      ; George_PC        ; Windows 8.1 ; 6.3        ; x86_64         ;
+; Fitter                    ; George_PC        ; Windows 8.1 ; 6.3        ; x86_64         ;
+; Assembler                 ; George_PC        ; Windows 8.1 ; 6.3        ; x86_64         ;
+; TimeQuest Timing Analyzer ; George_PC        ; Windows 8.1 ; 6.3        ; x86_64         ;
+; EDA Netlist Writer        ; George_PC        ; Windows 8.1 ; 6.3        ; x86_64         ;
++---------------------------+------------------+-------------+------------+----------------+
 
 
 ------------
