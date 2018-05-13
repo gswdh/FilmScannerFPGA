@@ -84,9 +84,11 @@ module film_scanner(
 	logic		 pix_clk, pix_out_valid;
 	logic [15:0] pix_data;
 
-	// Control IO
-	reg cont_en = 0;
-	wire [15:0]	cont_gain, cont_off;
+	// Control signals
+	logic [17:0] mtr_cont;
+	logic [7:0]  led_pwm_val;
+	logic 		 scan_en;
+	logic [31:0] dac_vals;
 
 	// 160MHz clock
 	reg clk_160M;
@@ -103,7 +105,7 @@ module film_scanner(
 
 		// Input clock
 		.clk_160M(clk_160M), .nrst(1),
-		.en(cont_en), .cal_mode(0),
+		.en(scan_en), .cal_mode(0),
 
 		// Clock divisor 0 = divide by 2
 		.div(0),
@@ -132,7 +134,7 @@ module film_scanner(
 		.clk_100M(clk_100M),
 
 		// Input data
-		.offset(cont_off), .gain(cont_gain),
+		.offset(dac_vals[15:0]), .gain(dac_vals[31:16]),
 
 		// DAC output signals
 		.sclk(dac_sclk),
@@ -147,9 +149,9 @@ module film_scanner(
 		.clk_100M(clk_100M), .nrst(1),
 
 		// Control logic
-		.en(cont_en), .dir(0),
+		.en(mtr_cont[16]), .dir(mtr_cont[17]),
 
-		.speed(),
+		.speed(mtr_cont[15:0]),
 
 		// Motor outputs
 		.mtr_nen(mtr_nen),
@@ -163,27 +165,6 @@ module film_scanner(
 
 		.mtr_nhome(), .mtr_nflt()
 	);
-
-	// Control the scanner
-	control cont0(
-
-		// Clock and reset
-		.clk_100M(clk_100M), .nrst(1),
-
-		// Read interface to the USB module
-		.usb_rd_clk(rd_clk),
-		.usb_rd_valid(rd_req),
-		.usb_rd_reset(rxf_aclr),
-		.usb_readdata(rd_data),
-		.usb_rxbytes(rd_used),
-
-		// Output of the control information
-		.cont_en(cont_en),				
-		.cont_gain(cont_gain), .cont_off(cont_off)
-	);
-
-	assign led[0] = cont_en;
-	assign led[3] = wr_req;
 
 	// FT232H
 	ft_232h ft0(
@@ -230,6 +211,54 @@ module film_scanner(
 		.tx_clk(wr_clk), .tx_valid(wr_req),
 		.tx_data(wr_data)
 	);
-	
+
+
+	// Create the empty signal.
+	reg rd_empty;
+	assign rd_empty = (rd_used > 0) ? 1'b0 : 1'b1;
+
+	// Create the bus
+	logic [113:0]	gs_cont_bus;
+
+	gsbus gs_cont(
+
+		// Clock and reset
+		.clk(clk_100M), .nrst(1'b1),
+
+		//  FIFO
+		.fifo_clk(rd_clk), .fifo_rdempty(rd_empty),
+		.fifo_redreq(rd_req),
+		.fifo_data(rd_data),
+
+		// Output bus
+		.bus_clk(gs_cont_bus[113]), .bus_valid(gs_cont_bus[112]),
+		.bus_data(gs_cont_bus[31:0]),
+		.bus_addr(gs_cont_bus[95:32]),
+		.bus_gpreg(gs_cont_bus[111:96])
+	);
+
+	control cont0(
+
+		// Clock and reset
+		.nrst(1'b1),
+
+		// GS bus 
+		.bus_clk(gs_cont_bus[113]), .bus_valid(gs_cont_bus[112]),
+		.bus_data(gs_cont_bus[31:0]),
+		.bus_addr(gs_cont_bus[95:32]),
+		.bus_gpreg(gs_cont_bus[111:96]),
+
+			//  control
+		.mtr_en(mtr_cont[16]), .mtr_dir(mtr_cont[17]),
+		.mtr_speed(mtr_cont[15:0]),
+
+		.led_pwm_val(led_pwm_val),
+
+		.scan_en(scan_en),
+		.scan_sub_smpl(), .scan_fr(),
+
+		.dac_gain(dac_vals[31:16]), .dac_offset(dac_vals[15:0])
+	);
+
 
 endmodule
