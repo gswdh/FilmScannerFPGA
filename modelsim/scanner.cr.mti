@@ -5,11 +5,25 @@ Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  
 Top level modules:
 	data_formater
 
+} {} {}} C:/Users/George/Documents/FilmScannerFPGA/control.sv {1 {vlog -work work -sv -stats=none C:/Users/George/Documents/FilmScannerFPGA/control.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module control
+
+Top level modules:
+	control
+
 } {} {}} D:/FilmScannerFPGA/data_formatter_tb.sv {1 {vlog -work work -sv -stats=none D:/FilmScannerFPGA/data_formatter_tb.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module data_formatter_tb
 
 Top level modules:
 	data_formatter_tb
+
+} {} {}} C:/Users/George/Documents/FilmScannerFPGA/control_tb.sv {1 {vlog -work work -sv -stats=none C:/Users/George/Documents/FilmScannerFPGA/control_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module control_tb
+
+Top level modules:
+	control_tb
 
 } {} {}}

@@ -8,13 +8,61 @@ z2
 !i10f 100
 cModel Technology
 Z0 dD:/FilmScannerFPGA/modelsim
-vdata_formater
+vcontrol
 Z1 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z2 !s110 1506774573
+!s110 1526239564
+!i10b 1
+!s100 ^IjnkTNFU`faF>^E>zHcY2
+Io1XF;3OQ<RET8RgZB:RjW0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 control_sv_unit
+S1
+Z3 dC:/Users/George/Documents/FilmScannerFPGA/modelsim
+w1526239142
+8C:/Users/George/Documents/FilmScannerFPGA/control.sv
+FC:/Users/George/Documents/FilmScannerFPGA/control.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1526239564.000000
+!s107 C:/Users/George/Documents/FilmScannerFPGA/control.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/George/Documents/FilmScannerFPGA/control.sv|
+!i113 1
+Z5 o-work work -sv
+Z6 tCvgOpt 0
+vcontrol_tb
+R1
+!s110 1526240085
+!i10b 1
+!s100 LdM1Q0iTGWB;c0a;;zK3@2
+IRe1cD[:E;44hT6@9JOh?90
+R2
+!s105 control_tb_sv_unit
+S1
+R3
+w1526240072
+8C:/Users/George/Documents/FilmScannerFPGA/control_tb.sv
+FC:/Users/George/Documents/FilmScannerFPGA/control_tb.sv
+L0 1
+R4
+r1
+!s85 0
+31
+!s108 1526240085.000000
+!s107 C:/Users/George/Documents/FilmScannerFPGA/control_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/George/Documents/FilmScannerFPGA/control_tb.sv|
+!i113 1
+R5
+R6
+vdata_formater
+R1
+Z7 !s110 1506774573
 !i10b 1
 !s100 n7:VO5LGQDg3Z@7@IfT4<2
 IC]n>jFQP^ki2_[FGXU@Ai3
-Z3 VDg1SIo80bB@j0V0VzS_@n1
+R2
 !s105 data_formatter_sv_unit
 S1
 R0
@@ -22,23 +70,23 @@ w1506774569
 8D:/FilmScannerFPGA/data_formatter.sv
 FD:/FilmScannerFPGA/data_formatter.sv
 L0 1
-Z4 OV;L;10.5b;63
+R4
 r1
 !s85 0
 31
-Z5 !s108 1506774573.000000
+Z8 !s108 1506774573.000000
 !s107 D:/FilmScannerFPGA/data_formatter.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/data_formatter.sv|
 !i113 1
-Z6 o-work work -sv
-Z7 tCvgOpt 0
+R5
+R6
 vdata_formatter_tb
 R1
-R2
+R7
 !i10b 1
 !s100 So2Ln@bEg23A:^nfIj3lC0
 I6fQcinaU=ecDj;j=4OmUE3
-R3
+R2
 !s105 data_formatter_tb_sv_unit
 S1
 R0
@@ -50,9 +98,9 @@ R4
 r1
 !s85 0
 31
-R5
+R8
 !s107 D:/FilmScannerFPGA/data_formatter_tb.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|D:/FilmScannerFPGA/data_formatter_tb.sv|
 !i113 1
+R5
 R6
-R7

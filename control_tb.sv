@@ -8,54 +8,43 @@ module control_tb();
 	always #5ns clk_100M = ~clk_100M;
 
 	// IO variables
-	logic 			usb_rd_clk, usb_rd_valid;
-	logic [7:0] 	usb_readdata, usb_rxbytes = 32;
-
-	// Control varibles
-	logic 			en;
-	logic [15:0] 	gain, off;
-
-	
-
+	reg valid = 1;
+	reg [63:0]	addr = 0;
+	reg [31:0]	data = 0;
 
 
 	// Output some data onto the bus when the read signal is asserted.
-	always_ff @ (posedge usb_rd_clk)
+	always_ff @ (negedge clk_100M)
 	begin
 
-		if(usb_rd_valid == 1)
-		begin
-
-			// Decrement the words availble
-			usb_rxbytes <= usb_rxbytes - 1;
-
-			// Output some data
-			usb_readdata <= $urandom_range(0, 255);
-		end
+		valid <= 1;
+		addr <= addr + 1;
+		data = $urandom_range(0, 65535);
 	end
-
-
-
-
-
-
 
 
 	
 	control cont0(
 
 		// Clock and reset
-		.clk_100M(clk_100M), .nrst(1),
+		.nrst(1'b1),
 
-		// Read interface to the USB module
-		.usb_rd_clk(usb_rd_clk),
-		.usb_rd_valid(usb_rd_valid),
-		.usb_readdata(usb_readdata),
-		.usb_rxbytes(usb_rxbytes),
+		// GS bus 
+		.bus_clk(clk_100M), .bus_valid(valid),
+		.bus_data(data),
+		.bus_addr(addr),
+		.bus_gpreg(0),
 
-		// Output of the control information
-		.cont_en(en),				// Enable to start scanning
-		.cont_gain(gain), .cont_off(off)		// The analogue gain and offset for the front end
+			//  control
+		.mtr_en(), .mtr_dir(),
+		.mtr_speed(),
+
+		.led_pwm_val(),
+
+		.scan_en(),
+		.scan_sub_smpl(), .scan_fr(),
+
+		.dac_gain(), .dac_offset()
 	);
 
 
