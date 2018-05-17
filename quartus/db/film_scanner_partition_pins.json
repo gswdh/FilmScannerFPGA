@@ -56,6 +56,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "mtr_dir",
+					"strict" : false
+				},
+				{
 					"name" : "ft_wr",
 					"strict" : false
 				},
@@ -69,10 +73,6 @@
 				},
 				{
 					"name" : "led[0]",
-					"strict" : false
-				},
-				{
-					"name" : "led[3]",
 					"strict" : false
 				},
 				{

@@ -77,7 +77,8 @@ module film_scanner(
 	logic [7:0]	rd_data;
 	logic		rd_clk,
 				rd_req = 0,
-				rxf_aclr;
+				rxf_aclr,
+				rd_empty;
 	logic [8:0]	rd_used;
 
 	// Pixel data IO
@@ -189,6 +190,7 @@ module film_scanner(
 		.rx_aclr(rx_aclr),
 		.rx_data(rd_data),
 		.rx_nbytes(rd_used),
+		.rx_empty(rd_empty),
 
 		// TX FIFO interface (To go to the PC)
 		.tx_clk(wr_clk),
@@ -211,11 +213,6 @@ module film_scanner(
 		.tx_clk(wr_clk), .tx_valid(wr_req),
 		.tx_data(wr_data)
 	);
-
-
-	// Create the empty signal.
-	reg rd_empty;
-	assign rd_empty = (rd_used > 0) ? 1'b0 : 1'b1;
 
 	// Create the bus
 	logic [113:0]	gs_cont_bus;
@@ -259,6 +256,8 @@ module film_scanner(
 
 		.dac_gain(dac_vals[31:16]), .dac_offset(dac_vals[15:0])
 	);
+
+	assign led[0] = scan_en;
 
 
 endmodule

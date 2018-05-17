@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE6E22) Path("D:/FilmScannerFPGA/quartus/output_files/") File("film_scanner.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE6E22) Path("C:/Users/George/Documents/FilmScannerFPGA/quartus/output_files/") File("film_scanner.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

@@ -1,5 +1,5 @@
 Assembler report for film_scanner
-Sat Sep 30 14:20:03 2017
+Thu May 17 20:05:32 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -10,7 +10,7 @@ Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: D:/FilmScannerFPGA/quartus/output_files/film_scanner.sof
+  5. Assembler Device Options: C:/Users/George/Documents/FilmScannerFPGA/quartus/output_files/film_scanner.sof
   6. Assembler Messages
 
 
@@ -38,7 +38,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Sep 30 14:20:03 2017 ;
+; Assembler Status      ; Successful - Thu May 17 20:05:32 2018 ;
 ; Revision Name         ; film_scanner                          ;
 ; Top-level Entity Name ; film_scanner                          ;
 ; Family                ; Cyclone IV E                          ;
@@ -53,23 +53,23 @@ agreement for further details.
 +--------+---------+---------------+
 
 
-+----------------------------------------------------------+
-; Assembler Generated Files                                ;
-+----------------------------------------------------------+
-; File Name                                                ;
-+----------------------------------------------------------+
-; D:/FilmScannerFPGA/quartus/output_files/film_scanner.sof ;
-+----------------------------------------------------------+
++---------------------------------------------------------------------------------+
+; Assembler Generated Files                                                       ;
++---------------------------------------------------------------------------------+
+; File Name                                                                       ;
++---------------------------------------------------------------------------------+
+; C:/Users/George/Documents/FilmScannerFPGA/quartus/output_files/film_scanner.sof ;
++---------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Assembler Device Options: D:/FilmScannerFPGA/quartus/output_files/film_scanner.sof ;
-+----------------+-------------------------------------------------------------------+
-; Option         ; Setting                                                           ;
-+----------------+-------------------------------------------------------------------+
-; JTAG usercode  ; 0x0010A1AB                                                        ;
-; Checksum       ; 0x0010A1AB                                                        ;
-+----------------+-------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/George/Documents/FilmScannerFPGA/quartus/output_files/film_scanner.sof ;
++----------------+------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                  ;
++----------------+------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x0013AEED                                                                               ;
+; Checksum       ; 0x0013AEED                                                                               ;
++----------------+------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -78,14 +78,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Sep 30 14:20:02 2017
+    Info: Processing started: Thu May 17 20:05:31 2018
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off film_scanner -c film_scanner
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 539 megabytes
-    Info: Processing ended: Sat Sep 30 14:20:03 2017
+    Info: Peak virtual memory: 540 megabytes
+    Info: Processing ended: Thu May 17 20:05:32 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

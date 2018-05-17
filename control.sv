@@ -4,7 +4,7 @@ module control(
 	input logic 		clk_100M, nrst,
 
 	// GS bus input
-	input logic 		bus_clk, bus_valid = 0,
+	input logic 		bus_clk, bus_valid,
 	input logic [31:0]	bus_data,
 	input logic [63:0]	bus_addr,
 	input logic [15:0]	bus_gpreg,

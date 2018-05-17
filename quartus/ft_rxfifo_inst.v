@@ -6,6 +6,7 @@ ft_rxfifo	ft_rxfifo_inst (
 	.wrclk ( wrclk_sig ),
 	.wrreq ( wrreq_sig ),
 	.q ( q_sig ),
+	.rdempty ( rdempty_sig ),
 	.rdusedw ( rdusedw_sig ),
 	.wrfull ( wrfull_sig )
 	);

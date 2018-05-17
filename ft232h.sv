@@ -20,6 +20,7 @@ module ft_232h(
 						rx_aclr,
 	output reg	[7:0]	rx_data,
 	output reg  [8:0]	rx_nbytes,
+	output reg 			rx_empty,
 
 	// TX FIFO interface (To go to the PC)
 	input logic 		tx_clk,
@@ -52,7 +53,8 @@ module ft_232h(
 		.rdclk(rx_clk),
 		.rdreq(rx_rdreq),
 		.rdusedw(rx_nbytes),
-		.q(rx_data)
+		.q(rx_data),
+		.rdempty(rx_empty)
 	);
 
 	// TX FIFO Signals

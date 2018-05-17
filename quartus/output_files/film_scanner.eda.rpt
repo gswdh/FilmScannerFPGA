@@ -1,5 +1,5 @@
 EDA Netlist Writer report for film_scanner
-Sat Sep 30 14:20:09 2017
+Thu May 17 20:05:39 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sat Sep 30 14:20:09 2017 ;
+; EDA Netlist Writer Status ; Successful - Thu May 17 20:05:39 2018 ;
 ; Revision Name             ; film_scanner                          ;
 ; Top-level Entity Name     ; film_scanner                          ;
 ; Family                    ; Cyclone IV E                          ;
@@ -67,20 +67,20 @@ agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------------+
 
 
-+--------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                           ;
-+--------------------------------------------------------------------------------------+
-; Generated Files                                                                      ;
-+--------------------------------------------------------------------------------------+
-; D:/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_6_1200mv_85c_slow.svo    ;
-; D:/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_6_1200mv_0c_slow.svo     ;
-; D:/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_min_1200mv_0c_fast.svo   ;
-; D:/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner.svo                      ;
-; D:/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_6_1200mv_85c_v_slow.sdo  ;
-; D:/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_6_1200mv_0c_v_slow.sdo   ;
-; D:/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_min_1200mv_0c_v_fast.sdo ;
-; D:/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_v.sdo                    ;
-+--------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+; Simulation Generated Files                                                                                  ;
++-------------------------------------------------------------------------------------------------------------+
+; Generated Files                                                                                             ;
++-------------------------------------------------------------------------------------------------------------+
+; C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_6_1200mv_85c_slow.svo    ;
+; C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_6_1200mv_0c_slow.svo     ;
+; C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_min_1200mv_0c_fast.svo   ;
+; C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner.svo                      ;
+; C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_6_1200mv_85c_v_slow.sdo  ;
+; C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_6_1200mv_0c_v_slow.sdo   ;
+; C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_min_1200mv_0c_v_fast.sdo ;
+; C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/film_scanner_v.sdo                    ;
++-------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -89,21 +89,21 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Sat Sep 30 14:20:08 2017
+    Info: Processing started: Thu May 17 20:05:37 2018
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off film_scanner -c film_scanner
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (204019): Generated file film_scanner_6_1200mv_85c_slow.svo in folder "D:/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file film_scanner_6_1200mv_0c_slow.svo in folder "D:/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file film_scanner_min_1200mv_0c_fast.svo in folder "D:/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file film_scanner.svo in folder "D:/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file film_scanner_6_1200mv_85c_v_slow.sdo in folder "D:/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file film_scanner_6_1200mv_0c_v_slow.sdo in folder "D:/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file film_scanner_min_1200mv_0c_v_fast.sdo in folder "D:/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
-Info (204019): Generated file film_scanner_v.sdo in folder "D:/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file film_scanner_6_1200mv_85c_slow.svo in folder "C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file film_scanner_6_1200mv_0c_slow.svo in folder "C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file film_scanner_min_1200mv_0c_fast.svo in folder "C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file film_scanner.svo in folder "C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file film_scanner_6_1200mv_85c_v_slow.sdo in folder "C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file film_scanner_6_1200mv_0c_v_slow.sdo in folder "C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file film_scanner_min_1200mv_0c_v_fast.sdo in folder "C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file film_scanner_v.sdo in folder "C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 517 megabytes
-    Info: Processing ended: Sat Sep 30 14:20:09 2017
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 520 megabytes
+    Info: Processing ended: Thu May 17 20:05:39 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

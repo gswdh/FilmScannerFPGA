@@ -150,6 +150,7 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_location_assignment PIN_68 -to ft_oe
 set_instance_assignment -name IO_STANDARD "3.3-V LVCMOS" -to ft_oe
+set_global_assignment -name SYSTEMVERILOG_FILE ../gsbus/gsbus.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../data_formatter.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../stepper.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ../ft232h.sv

@@ -45,6 +45,7 @@ module ft_rxfifo (
 	wrclk,
 	wrreq,
 	q,
+	rdempty,
 	rdusedw,
 	wrfull);
 
@@ -55,6 +56,7 @@ module ft_rxfifo (
 	input	  wrclk;
 	input	  wrreq;
 	output	[7:0]  q;
+	output	  rdempty;
 	output	[8:0]  rdusedw;
 	output	  wrfull;
 `ifndef ALTERA_RESERVED_QIS
@@ -66,11 +68,13 @@ module ft_rxfifo (
 `endif
 
 	wire [7:0] sub_wire0;
-	wire [8:0] sub_wire1;
-	wire  sub_wire2;
+	wire  sub_wire1;
+	wire [8:0] sub_wire2;
+	wire  sub_wire3;
 	wire [7:0] q = sub_wire0[7:0];
-	wire [8:0] rdusedw = sub_wire1[8:0];
-	wire  wrfull = sub_wire2;
+	wire  rdempty = sub_wire1;
+	wire [8:0] rdusedw = sub_wire2[8:0];
+	wire  wrfull = sub_wire3;
 
 	dcfifo	dcfifo_component (
 				.aclr (aclr),
@@ -80,10 +84,10 @@ module ft_rxfifo (
 				.wrclk (wrclk),
 				.wrreq (wrreq),
 				.q (sub_wire0),
-				.rdusedw (sub_wire1),
-				.wrfull (sub_wire2),
+				.rdempty (sub_wire1),
+				.rdusedw (sub_wire2),
+				.wrfull (sub_wire3),
 				.eccstatus (),
-				.rdempty (),
 				.rdfull (),
 				.wrempty (),
 				.wrusedw ());
@@ -133,7 +137,7 @@ endmodule
 // Retrieval info: PRIVATE: diff_widths NUMERIC "0"
 // Retrieval info: PRIVATE: msb_usedw NUMERIC "1"
 // Retrieval info: PRIVATE: output_width NUMERIC "8"
-// Retrieval info: PRIVATE: rsEmpty NUMERIC "0"
+// Retrieval info: PRIVATE: rsEmpty NUMERIC "1"
 // Retrieval info: PRIVATE: rsFull NUMERIC "0"
 // Retrieval info: PRIVATE: rsUsedW NUMERIC "1"
 // Retrieval info: PRIVATE: sc_aclr NUMERIC "0"
@@ -160,6 +164,7 @@ endmodule
 // Retrieval info: USED_PORT: data 0 0 8 0 INPUT NODEFVAL "data[7..0]"
 // Retrieval info: USED_PORT: q 0 0 8 0 OUTPUT NODEFVAL "q[7..0]"
 // Retrieval info: USED_PORT: rdclk 0 0 0 0 INPUT NODEFVAL "rdclk"
+// Retrieval info: USED_PORT: rdempty 0 0 0 0 OUTPUT NODEFVAL "rdempty"
 // Retrieval info: USED_PORT: rdreq 0 0 0 0 INPUT NODEFVAL "rdreq"
 // Retrieval info: USED_PORT: rdusedw 0 0 9 0 OUTPUT NODEFVAL "rdusedw[8..0]"
 // Retrieval info: USED_PORT: wrclk 0 0 0 0 INPUT NODEFVAL "wrclk"
@@ -172,6 +177,7 @@ endmodule
 // Retrieval info: CONNECT: @wrclk 0 0 0 0 wrclk 0 0 0 0
 // Retrieval info: CONNECT: @wrreq 0 0 0 0 wrreq 0 0 0 0
 // Retrieval info: CONNECT: q 0 0 8 0 @q 0 0 8 0
+// Retrieval info: CONNECT: rdempty 0 0 0 0 @rdempty 0 0 0 0
 // Retrieval info: CONNECT: rdusedw 0 0 9 0 @rdusedw 0 0 9 0
 // Retrieval info: CONNECT: wrfull 0 0 0 0 @wrfull 0 0 0 0
 // Retrieval info: GEN_FILE: TYPE_NORMAL ft_rxfifo.v TRUE
