@@ -1,5 +1,5 @@
 EDA Netlist Writer report for film_scanner
-Thu May 17 20:05:39 2018
+Fri May 18 12:42:53 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -37,7 +37,7 @@ agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu May 17 20:05:39 2018 ;
+; EDA Netlist Writer Status ; Successful - Fri May 18 12:42:53 2018 ;
 ; Revision Name             ; film_scanner                          ;
 ; Top-level Entity Name     ; film_scanner                          ;
 ; Family                    ; Cyclone IV E                          ;
@@ -89,7 +89,7 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu May 17 20:05:37 2018
+    Info: Processing started: Fri May 18 12:42:50 2018
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off film_scanner -c film_scanner
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file film_scanner_6_1200mv_85c_slow.svo in folder "C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
@@ -101,9 +101,9 @@ Info (204019): Generated file film_scanner_6_1200mv_0c_v_slow.sdo in folder "C:/
 Info (204019): Generated file film_scanner_min_1200mv_0c_v_fast.sdo in folder "C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
 Info (204019): Generated file film_scanner_v.sdo in folder "C:/Users/George/Documents/FilmScannerFPGA/quartus/simulation/modelsim/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 520 megabytes
-    Info: Processing ended: Thu May 17 20:05:39 2018
-    Info: Elapsed time: 00:00:02
+    Info: Peak virtual memory: 517 megabytes
+    Info: Processing ended: Fri May 18 12:42:53 2018
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 

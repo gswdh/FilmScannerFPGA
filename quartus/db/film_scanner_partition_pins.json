@@ -76,6 +76,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "led[1]",
+					"strict" : false
+				},
+				{
 					"name" : "ft_bus[0]",
 					"strict" : false
 				},

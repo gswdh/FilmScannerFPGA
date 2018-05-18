@@ -1,7 +1,7 @@
 module control(
 
-	// Clock and reset
-	input logic 		clk_100M, nrst,
+	// Reset
+	input logic 		nrst,
 
 	// GS bus input
 	input logic 		bus_clk, bus_valid,

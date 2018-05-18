@@ -43,7 +43,7 @@ ft_siwu <= <VCC>
 ft_pwrsav <= <VCC>
 ft_nrst <= <VCC>
 led[0] <= control:cont0.scan_en
-led[1] <= <GND>
+led[1] <= mtr_cont[16].DB_MAX_OUTPUT_PORT_TYPE
 led[2] <= <GND>
 led[3] <= <GND>
 
@@ -3747,7 +3747,6 @@ bus_gpreg[15] <= bus_gpreg[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |film_scanner|control:cont0
-clk_100M => ~NO_FANOUT~
 nrst => bus_addr_r[0].ACLR
 nrst => bus_addr_r[1].ACLR
 nrst => bus_addr_r[2].ACLR

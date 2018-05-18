@@ -258,6 +258,6 @@ module film_scanner(
 	);
 
 	assign led[0] = scan_en;
-
+	assign led[1] = mtr_cont[16];
 
 endmodule
