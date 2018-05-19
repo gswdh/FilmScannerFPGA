@@ -1,5 +1,5 @@
 Analysis & Synthesis report for film_scanner
-Fri May 18 12:42:35 2018
+Sat May 19 11:00:10 2018
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -95,15 +95,15 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 18 12:42:35 2018       ;
+; Analysis & Synthesis Status        ; Successful - Sat May 19 11:00:10 2018       ;
 ; Quartus Prime Version              ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; film_scanner                                ;
 ; Top-level Entity Name              ; film_scanner                                ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 1,153                                       ;
-;     Total combinational functions  ; 778                                         ;
-;     Dedicated logic registers      ; 684                                         ;
-; Total registers                    ; 684                                         ;
+; Total logic elements               ; 1,182                                       ;
+;     Total combinational functions  ; 792                                         ;
+;     Dedicated logic registers      ; 699                                         ;
+; Total registers                    ; 699                                         ;
 ; Total pins                         ; 47                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 133,120                                     ;
@@ -290,20 +290,20 @@ agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 1,153          ;
+; Estimated Total logic elements              ; 1,182          ;
 ;                                             ;                ;
-; Total combinational functions               ; 778            ;
+; Total combinational functions               ; 792            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 519            ;
-;     -- 3 input functions                    ; 114            ;
-;     -- <=2 input functions                  ; 145            ;
+;     -- 4 input functions                    ; 527            ;
+;     -- 3 input functions                    ; 117            ;
+;     -- <=2 input functions                  ; 148            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 732            ;
-;     -- arithmetic mode                      ; 46             ;
+;     -- normal mode                          ; 736            ;
+;     -- arithmetic mode                      ; 56             ;
 ;                                             ;                ;
-; Total registers                             ; 684            ;
-;     -- Dedicated logic registers            ; 684            ;
+; Total registers                             ; 699            ;
+;     -- Dedicated logic registers            ; 699            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 47             ;
@@ -315,9 +315,9 @@ agreement for further details.
 ;     -- PLLs                                 ; 1              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; clk_100M~input ;
-; Maximum fan-out                             ; 349            ;
-; Total fan-out                               ; 5127           ;
-; Average fan-out                             ; 3.23           ;
+; Maximum fan-out                             ; 364            ;
+; Total fan-out                               ; 5237           ;
+; Average fan-out                             ; 3.24           ;
 +---------------------------------------------+----------------+
 
 
@@ -326,9 +326,9 @@ agreement for further details.
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 ; Compilation Hierarchy Node                                  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                           ; Entity Name            ; Library Name ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
-; |film_scanner                                               ; 778 (0)             ; 684 (0)                   ; 133120      ; 0            ; 0       ; 0         ; 47   ; 0            ; |film_scanner                                                                                                                                                 ; film_scanner           ; work         ;
+; |film_scanner                                               ; 792 (0)             ; 699 (0)                   ; 133120      ; 0            ; 0       ; 0         ; 47   ; 0            ; |film_scanner                                                                                                                                                 ; film_scanner           ; work         ;
 ;    |ccd_timing:ccd0|                                        ; 104 (104)           ; 63 (63)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ccd_timing:ccd0                                                                                                                                 ; ccd_timing             ; work         ;
-;    |control:cont0|                                          ; 30 (30)             ; 116 (116)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|control:cont0                                                                                                                                   ; control                ; work         ;
+;    |control:cont0|                                          ; 32 (32)             ; 131 (131)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|control:cont0                                                                                                                                   ; control                ; work         ;
 ;    |dac:dac0|                                               ; 126 (126)           ; 115 (115)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|dac:dac0                                                                                                                                        ; dac                    ; work         ;
 ;    |data_formater:form0|                                    ; 15 (15)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|data_formater:form0                                                                                                                             ; data_formater          ; work         ;
 ;    |ft_232h:ft0|                                            ; 196 (0)             ; 175 (0)                   ; 133120      ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0                                                                                                                                     ; ft_232h                ; work         ;
@@ -361,11 +361,11 @@ agreement for further details.
 ;                |mux_j28:rdemp_eq_comp_msb_mux|              ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|mux_j28:rdemp_eq_comp_msb_mux                           ; mux_j28                ; work         ;
 ;                |mux_j28:wrfull_eq_comp_lsb_mux|             ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|mux_j28:wrfull_eq_comp_lsb_mux                          ; mux_j28                ; work         ;
 ;                |mux_j28:wrfull_eq_comp_msb_mux|             ; 10 (10)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|ft_232h:ft0|ft_txfifo:ft_txfifo_inst|dcfifo:dcfifo_component|dcfifo_u7n1:auto_generated|mux_j28:wrfull_eq_comp_msb_mux                          ; mux_j28                ; work         ;
-;    |gsbus:gs_cont|                                          ; 274 (274)           ; 174 (174)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|gsbus:gs_cont                                                                                                                                   ; gsbus                  ; work         ;
+;    |gsbus:gs_cont|                                          ; 275 (275)           ; 174 (174)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|gsbus:gs_cont                                                                                                                                   ; gsbus                  ; work         ;
 ;    |pll_80:pll_80_inst|                                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|pll_80:pll_80_inst                                                                                                                              ; pll_80                 ; work         ;
 ;       |altpll:altpll_component|                             ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|pll_80:pll_80_inst|altpll:altpll_component                                                                                                      ; altpll                 ; work         ;
 ;          |pll_80_altpll:auto_generated|                     ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|pll_80:pll_80_inst|altpll:altpll_component|pll_80_altpll:auto_generated                                                                         ; pll_80_altpll          ; work         ;
-;    |stepper:step0|                                          ; 33 (33)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|stepper:step0                                                                                                                                   ; stepper                ; work         ;
+;    |stepper:step0|                                          ; 44 (44)             ; 20 (20)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |film_scanner|stepper:step0                                                                                                                                   ; stepper                ; work         ;
 +-------------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -428,12 +428,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 684   ;
-; Number of registers using Synchronous Clear  ; 5     ;
+; Total registers                              ; 699   ;
+; Number of registers using Synchronous Clear  ; 24    ;
 ; Number of registers using Synchronous Load   ; 1     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 301   ;
+; Number of registers using Clock Enable       ; 316   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -466,7 +466,7 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
-; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |film_scanner|ccd_timing:ccd0|pixel_cntr[4]                                  ;
+; 3:1                ; 14 bits   ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |film_scanner|ccd_timing:ccd0|pixel_cntr[13]                                 ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |film_scanner|ccd_timing:ccd0|timings_cntr[4]                                ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |film_scanner|data_formater:form0|tx_data_int[0]                             ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |film_scanner|ft_232h:ft0|ft232h_fifos_interface:usb_ft232h_fifo_int|receive ;
@@ -1394,7 +1394,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; nrst      ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (1 bits) it drives.  The 31 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
 ; nrst[-1]  ; Input ; Info     ; Stuck at VCC                                                                                                                                                                       ;
-; speed     ; Input ; Warning  ; Input port expression (16 bits) is wider than the input port (8 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts.  ;
 ; mtr_nhome ; Input ; Info     ; Explicitly unconnected                                                                                                                                                             ;
 ; mtr_nflt  ; Input ; Info     ; Explicitly unconnected                                                                                                                                                             ;
 +-----------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1426,26 +1425,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 47                          ;
-; cycloneiii_ff         ; 684                         ;
-;     ENA               ; 296                         ;
+; cycloneiii_ff         ; 699                         ;
+;     ENA               ; 311                         ;
 ;     ENA SCLR          ; 5                           ;
+;     SCLR              ; 19                          ;
 ;     SLD               ; 1                           ;
-;     plain             ; 382                         ;
+;     plain             ; 363                         ;
 ; cycloneiii_io_obuf    ; 8                           ;
-; cycloneiii_lcell_comb ; 783                         ;
-;     arith             ; 46                          ;
-;         2 data inputs ; 46                          ;
-;     normal            ; 737                         ;
-;         0 data inputs ; 2                           ;
+; cycloneiii_lcell_comb ; 797                         ;
+;     arith             ; 56                          ;
+;         2 data inputs ; 55                          ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 741                         ;
+;         0 data inputs ; 3                           ;
 ;         1 data inputs ; 16                          ;
-;         2 data inputs ; 86                          ;
-;         3 data inputs ; 114                         ;
-;         4 data inputs ; 519                         ;
+;         2 data inputs ; 79                          ;
+;         3 data inputs ; 116                         ;
+;         4 data inputs ; 527                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 24                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 7.00                        ;
-; Average LUT depth     ; 3.38                        ;
+; Average LUT depth     ; 3.28                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1464,7 +1465,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Fri May 18 12:42:18 2018
+    Info: Processing started: Sat May 19 10:59:52 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off film_scanner -c film_scanner
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1502,7 +1503,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file ft_txfi
 Warning (10236): Verilog HDL Implicit Net warning at film_scanner.sv(190): created implicit net for "rx_aclr" File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 190
 Info (12127): Elaborating entity "film_scanner" for the top level hierarchy
 Warning (10030): Net "rx_aclr" at film_scanner.sv(190) has no driver or initial value, using a default initial value '0' File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 190
-Warning (10034): Output port "led[3..2]" at film_scanner.sv(58) has no driver File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 58
+Warning (10034): Output port "led[3]" at film_scanner.sv(58) has no driver File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 58
 Warning (10034): Output port "led_pwm" at film_scanner.sv(7) has no driver File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 7
 Info (12128): Elaborating entity "pll_80" for hierarchy "pll_80:pll_80_inst" File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 102
 Info (12128): Elaborating entity "altpll" for hierarchy "pll_80:pll_80_inst|altpll:altpll_component" File: C:/Users/George/Documents/FilmScannerFPGA/quartus/pll_80.v Line: 95
@@ -1587,7 +1588,7 @@ Warning (10230): Verilog HDL assignment warning at dac.sv(198): truncated value 
 Warning (10230): Verilog HDL assignment warning at dac.sv(211): truncated value with size 32 to match size of target (5) File: C:/Users/George/Documents/FilmScannerFPGA/dac.sv Line: 211
 Warning (10230): Verilog HDL assignment warning at dac.sv(255): truncated value with size 32 to match size of target (8) File: C:/Users/George/Documents/FilmScannerFPGA/dac.sv Line: 255
 Info (12128): Elaborating entity "stepper" for hierarchy "stepper:step0" File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 168
-Warning (10230): Verilog HDL assignment warning at stepper.sv(72): truncated value with size 32 to match size of target (19) File: C:/Users/George/Documents/FilmScannerFPGA/stepper.sv Line: 72
+Warning (10230): Verilog HDL assignment warning at stepper.sv(68): truncated value with size 32 to match size of target (19) File: C:/Users/George/Documents/FilmScannerFPGA/stepper.sv Line: 68
 Info (12128): Elaborating entity "ft_232h" for hierarchy "ft_232h:ft0" File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 201
 Info (12128): Elaborating entity "ft_rxfifo" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst" File: C:/Users/George/Documents/FilmScannerFPGA/ft232h.sv Line: 58
 Info (12128): Elaborating entity "dcfifo" for hierarchy "ft_232h:ft0|ft_rxfifo:ft_rxfifo_inst|dcfifo:dcfifo_component" File: C:/Users/George/Documents/FilmScannerFPGA/quartus/ft_rxfifo.v Line: 93
@@ -1731,7 +1732,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "ft_siwu" is stuck at VCC File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 52
     Warning (13410): Pin "ft_pwrsav" is stuck at VCC File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 53
     Warning (13410): Pin "ft_nrst" is stuck at VCC File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 54
-    Warning (13410): Pin "led[2]" is stuck at GND File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 58
     Warning (13410): Pin "led[3]" is stuck at GND File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 58
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 2 registers lost all their fanouts during netlist optimizations.
@@ -1742,17 +1742,17 @@ Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "mtr_nflt" File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 37
     Warning (15610): No output dependent on input pin "ft_ac8" File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 45
     Warning (15610): No output dependent on input pin "ft_ac9" File: C:/Users/George/Documents/FilmScannerFPGA/film_scanner.sv Line: 46
-Info (21057): Implemented 1226 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1255 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 30 output pins
     Info (21060): Implemented 8 bidirectional pins
-    Info (21061): Implemented 1154 logic cells
+    Info (21061): Implemented 1183 logic cells
     Info (21064): Implemented 24 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 45 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 44 warnings
     Info: Peak virtual memory: 641 megabytes
-    Info: Processing ended: Fri May 18 12:42:35 2018
-    Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Processing ended: Sat May 19 11:00:10 2018
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:31
 
 

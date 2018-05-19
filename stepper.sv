@@ -7,7 +7,7 @@ module stepper(
 	// Control logic
 	input logic 		en, dir,
 
-	input logic [7:0]	speed,
+	input logic [15:0]	speed,
 
 	// Motor outputs
 	output reg 			mtr_nen,
@@ -23,9 +23,6 @@ module stepper(
 
 	);
 
-
-
-
 	// Set the motor to micro stepping mode 1/32nd speed
 	assign mtr_m = 7;
 
@@ -39,7 +36,6 @@ module stepper(
 
 	// Motor directions
 	assign mtr_dir = dir;
-
 
 	// Divide the clock for the motor steps
 	reg [18:0] mtr_cntr = 0;
@@ -60,7 +56,7 @@ module stepper(
 		begin
 
 			// Create a step
-			if(mtr_cntr == 2000)
+			if(mtr_cntr == ((20000 + speed) / 2))
 			begin
 
 				mtr_step <= ~mtr_step;
@@ -72,29 +68,4 @@ module stepper(
 			else mtr_cntr <= mtr_cntr + 1;
 		end
 	end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 endmodule // stepper

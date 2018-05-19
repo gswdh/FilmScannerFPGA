@@ -80,6 +80,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "led[2]",
+					"strict" : false
+				},
+				{
 					"name" : "ft_bus[0]",
 					"strict" : false
 				},
