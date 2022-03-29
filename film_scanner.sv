@@ -217,7 +217,7 @@ module film_scanner(
 	// Create the bus
 	logic [113:0]	gs_cont_bus;
 
-	gsbus gs_cont(
+	fifo_gsbus gs_cont(
 
 		// Clock and reset
 		.clk(clk_100M), .nrst(1'b1),

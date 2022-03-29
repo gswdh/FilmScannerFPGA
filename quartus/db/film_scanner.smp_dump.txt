@@ -1,5 +1,5 @@
 
-State Machine - |film_scanner|gsbus:gs_cont|read_state
+State Machine - |film_scanner|fifo_gsbus:gs_cont|read_state
 Name read_state.11 read_state.10 read_state.01 read_state.00 
 read_state.00 0 0 0 0 
 read_state.01 0 0 1 1 
