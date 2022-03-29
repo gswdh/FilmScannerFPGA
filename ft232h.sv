@@ -74,7 +74,7 @@ module ft_232h(
 		.wrreq(tx_wrreq),
 		.data(tx_data),
 		.wrfull(tx_full),
-		.wrusedw(tx_nbytes),
+		//.wrusedw(tx_nbytes),
 
 		// Read
 		.rdclk(txe_rdclk),
