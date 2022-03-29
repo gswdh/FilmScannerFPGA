@@ -67,7 +67,7 @@ module film_scanner(
 	end
 
 	// USB FIFO IO
-	logic [7:0]	wr_data = 0;
+	logic [15:0]	wr_data = 0;
 	logic		wr_clk = 0,
 				wr_req = 0,
 				wr_full;

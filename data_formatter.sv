@@ -9,19 +9,19 @@ module data_formater(
 
 	// Output data
 	output reg	 		tx_clk, tx_valid,
-	output reg [7:0]	tx_data
+	output reg [15:0]	tx_data
 	);
 
 	// Put the clocks through
 	assign tx_clk = rx_clk;
 
 	// Intermediatry data
-	reg [7:0] 	rx_data_int;
-	reg [7:0] 	tx_data_int;
+	reg [15:0] 	rx_data_int;
+	reg [15:0] 	tx_data_int;
 	reg 		tx_valid_int;
 
 	// Make the output data
-	assign rx_data_int = (rx_data == 255) ? 254 : rx_data;
+	assign rx_data_int = (rx_data == 65535) ? 65534 : rx_data;
 
 	// rx_valid falling edge captue
 	reg [1:0]	rx_valid_cap = 0;
@@ -57,7 +57,7 @@ module data_formater(
 			begin
 
 				tx_valid_int <= 1;
-				tx_data_int <= 255;
+				tx_data_int <= 65535;
 			end
 
 			// Else just chuck out the the incoming data

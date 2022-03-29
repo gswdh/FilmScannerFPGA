@@ -26,7 +26,7 @@ module ft_232h(
 	input logic 		tx_clk,
 						tx_wrreq,
 						tx_full,
-	input logic	[7:0]	tx_data,
+	input logic	[15:0]	tx_data,
 	output reg	[14:0]	tx_nbytes
 
 	);
